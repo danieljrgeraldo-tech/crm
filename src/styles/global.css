@@ -23,6 +23,11 @@ body {
   text-rendering: geometricPrecision;
 }
 
+::selection {
+  background: rgba(232, 199, 115, .28);
+  color: #fff;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -49,15 +54,17 @@ a {
 
 .section-dark {
   background:
-    radial-gradient(circle at 82% 16%, rgba(185,139,54,.13), transparent 30rem),
-    linear-gradient(180deg, #050505, #0b0907);
+    radial-gradient(circle at 82% 16%, rgba(185,139,54,.14), transparent 30rem),
+    radial-gradient(circle at 16% 78%, rgba(232,199,115,.045), transparent 28rem),
+    linear-gradient(180deg, #050505, #0b0907 58%, #050505);
   border-block: 1px solid rgba(255,255,255,.08);
 }
 
 .section-light {
   background:
-    radial-gradient(circle at 78% 8%, rgba(185,139,54,.13), transparent 28rem),
-    linear-gradient(180deg, #f7f4ee, #efebe2);
+    radial-gradient(circle at 78% 8%, rgba(185,139,54,.11), transparent 28rem),
+    radial-gradient(circle at 18% 72%, rgba(255,255,255,.74), transparent 28rem),
+    linear-gradient(180deg, #faf7f0, #eee8dc);
   color: #19140d;
 }
 
@@ -91,6 +98,13 @@ a {
   bottom: auto;
 }
 
+.section-dark > *,
+.section-light > *,
+.section-warm > * {
+  position: relative;
+  z-index: 1;
+}
+
 .section-band {
   background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015));
   border-block: 1px solid rgba(255,255,255,.08);
@@ -107,14 +121,14 @@ a {
 .section-reveal {
   opacity: 0;
   filter: blur(2px);
-  transform: translateY(18px);
-  transition: opacity .55s ease, transform .55s ease, filter .55s ease;
+  transform: translateY(18px) scale(.992);
+  transition: opacity .65s cubic-bezier(.2, .8, .2, 1), transform .65s cubic-bezier(.2, .8, .2, 1), filter .65s ease;
 }
 
 .section-reveal.is-visible {
   opacity: 1;
   filter: blur(0);
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .checkmark {
@@ -144,6 +158,58 @@ a {
   clip-path: inset(0 round 2rem);
 }
 
+.hero-portrait {
+  transform: translate3d(0, var(--hero-parallax, 0), 0) scale(1.01);
+  transition: transform .18s linear;
+  will-change: transform;
+}
+
+.hero-shell {
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(5,5,5,.92) 0%, rgba(5,5,5,.8) 34%, rgba(5,5,5,.42) 58%, rgba(5,5,5,.18) 100%),
+    radial-gradient(circle at 64% 38%, rgba(232,199,115,.12), transparent 33rem),
+    rgba(255,255,255,.025);
+}
+
+.hero-shell::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, rgba(232,199,115,.18), transparent 22%, transparent 78%, rgba(255,255,255,.08)),
+    linear-gradient(180deg, rgba(255,255,255,.055), transparent 28%);
+  mask-image: linear-gradient(#000, transparent 74%);
+  z-index: 0;
+}
+
+.hero-shell::after {
+  content: "";
+  position: absolute;
+  left: 39%;
+  top: 10%;
+  bottom: 10%;
+  width: 1px;
+  background: linear-gradient(transparent, rgba(232,199,115,.18), transparent);
+  opacity: .7;
+}
+
+.premium-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(145deg, rgba(255,255,255,.16), transparent 34%, rgba(232,199,115,.075));
+  opacity: .55;
+}
+
 .floating-tag {
   position: absolute;
   display: inline-flex;
@@ -151,37 +217,37 @@ a {
   justify-content: center;
   min-height: 3.1rem;
   padding: .72rem 1.15rem;
-  border: 1px solid rgba(232, 199, 115, .42);
+  border: 1px solid rgba(232, 199, 115, .5);
   border-radius: 999px;
-  background: rgba(7, 7, 7, .42);
-  color: rgba(255,255,255,.88);
+  background: linear-gradient(135deg, rgba(7, 7, 7, .5), rgba(255,255,255,.08));
+  color: rgba(255,255,255,.9);
   font-size: 1rem;
   font-weight: 700;
   backdrop-filter: blur(14px);
-  box-shadow: 0 16px 48px rgba(0,0,0,.32), 0 0 30px rgba(185,139,54,.2);
-  animation: floatTag 7s ease-in-out infinite;
+  box-shadow: 0 16px 48px rgba(0,0,0,.34), 0 0 34px rgba(185,139,54,.22);
+  animation: floatTag 8.5s ease-in-out infinite;
 }
 
 .floating-tag-1 {
   left: 10%;
-  top: 20%;
+  top: 21%;
 }
 
 .floating-tag-2 {
   right: 7%;
-  top: 13%;
+  top: 14%;
   animation-delay: -1.4s;
 }
 
 .floating-tag-3 {
-  left: 12%;
-  bottom: 24%;
+  left: 13%;
+  bottom: 25%;
   animation-delay: -2.8s;
 }
 
 .floating-tag-4 {
   right: 8%;
-  bottom: 31%;
+  bottom: 30%;
   animation-delay: -4s;
 }
 
@@ -237,6 +303,17 @@ a {
 }
 
 @media (max-width: 767px) {
+  .hero-shell {
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .hero-shell::before,
+  .hero-shell::after {
+    display: none;
+  }
+
   .floating-tag {
     font-size: .82rem;
     min-height: 2.35rem;

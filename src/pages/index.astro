@@ -172,8 +172,23 @@ import {
     });
 
     const mobileWhatsapp = document.querySelector(".mobile-whatsapp");
+    const heroPortrait = document.querySelector(".hero-portrait");
+    let ticking = false;
+
+    const updateHeroParallax = () => {
+      const offset = Math.min(window.scrollY * 0.025, 16);
+      if (heroPortrait) {
+        heroPortrait.style.setProperty("--hero-parallax", `${offset}px`);
+      }
+      ticking = false;
+    };
+
     const toggleMobileWhatsapp = () => {
       mobileWhatsapp?.classList.toggle("is-visible", window.scrollY > 720);
+      if (!ticking) {
+        window.requestAnimationFrame(updateHeroParallax);
+        ticking = true;
+      }
     };
 
     toggleMobileWhatsapp();

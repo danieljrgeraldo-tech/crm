@@ -4,7 +4,7 @@ const isLight = tone === "light";
 ---
 
 <article class:list={[
-  "section-reveal group rounded-lg p-5 shadow-card transition duration-300 hover:-translate-y-1",
+  "premium-card section-reveal group rounded-lg p-6 shadow-card transition duration-300 hover:-translate-y-1",
   isLight ? "border border-stone-200 bg-white hover:border-gold-700/30" : "border border-white/10 bg-white/[.035] hover:border-gold-300/35 hover:bg-white/[.055]"
 ]}>
   <span class:list={["text-xs", isLight ? "text-gold-700/70" : "text-gold-300/70"]}>{String(index).padStart(2, "0")}</span>
