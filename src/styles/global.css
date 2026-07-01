@@ -229,25 +229,25 @@ a {
 }
 
 .floating-tag-1 {
-  left: 10%;
-  top: 21%;
+  left: 7%;
+  top: 33%;
 }
 
 .floating-tag-2 {
-  right: 7%;
-  top: 14%;
+  left: 12%;
+  top: 45%;
   animation-delay: -1.4s;
 }
 
 .floating-tag-3 {
-  left: 13%;
-  bottom: 25%;
+  left: 17%;
+  top: 57%;
   animation-delay: -2.8s;
 }
 
 .floating-tag-4 {
-  right: 8%;
-  bottom: 30%;
+  left: 22%;
+  top: 69%;
   animation-delay: -4s;
 }
 
@@ -321,23 +321,23 @@ a {
   }
 
   .floating-tag-1 {
-    left: 7%;
-    top: 9%;
+    left: 8%;
+    top: 43%;
   }
 
   .floating-tag-2 {
-    right: 6%;
-    top: 12%;
+    left: 15%;
+    top: 54%;
   }
 
   .floating-tag-3 {
-    left: 7%;
-    bottom: 14%;
+    left: 22%;
+    top: 65%;
   }
 
   .floating-tag-4 {
-    right: 6%;
-    bottom: 19%;
+    left: 29%;
+    top: 76%;
   }
 }
 
