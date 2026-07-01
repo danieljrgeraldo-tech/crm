@@ -1,0 +1,41 @@
+---
+import FloatingTags from "./FloatingTags.astro";
+import { whatsappUrl } from "../data/site";
+---
+
+<section id="top" class="relative isolate min-h-screen overflow-hidden pt-20 lg:pt-24">
+  <div class="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_70%_20%,rgba(185,139,54,.22),transparent_34%),linear-gradient(180deg,#050505_0%,#090806_62%,#050505_100%)]"></div>
+  <div class="absolute inset-x-0 bottom-0 -z-10 h-1/2 bg-gradient-to-t from-ink via-ink/82 to-transparent"></div>
+  <div class="mx-auto grid min-h-[calc(100vh-6rem)] max-w-7xl items-center gap-6 px-4 pb-14 sm:gap-10 sm:px-6 lg:grid-cols-[.92fr_1.08fr] lg:px-8">
+    <div class="section-reveal relative z-30 order-2 max-w-2xl pt-0 lg:order-1 lg:pt-0">
+      <p class="mb-5 inline-flex rounded-full border border-gold-300/25 bg-white/[.04] px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-gold-300 backdrop-blur">
+        Daniel Junior
+      </p>
+      <h1 class="font-display text-[2.8rem] font-semibold leading-[.9] text-white sm:text-6xl lg:text-7xl">
+        Soluções para Empresas e Investidores
+      </h1>
+      <p class="mt-5 max-w-xl text-lg leading-8 text-white/72">
+        Conectando empresários às soluções certas para cada momento do seu negócio.
+      </p>
+      <div class="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
+        <a href={whatsappUrl} target="_blank" rel="noreferrer" class="inline-flex min-h-12 items-center justify-center rounded-full bg-gold-300 px-6 py-3 text-sm font-bold text-black shadow-gold transition hover:bg-gold-100">
+          Solicitar análise
+        </a>
+        <a href="#solucoes" class="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 bg-white/[.04] px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:border-gold-300/45 hover:text-gold-100">
+          Conhecer soluções
+        </a>
+        <a href={whatsappUrl} target="_blank" rel="noreferrer" class="inline-flex min-h-12 items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white/70 transition hover:text-white">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="section-reveal relative order-1 mx-auto w-full max-w-[620px] lg:order-2 lg:max-w-none">
+      <div class="absolute -inset-8 rounded-[3rem] bg-gold-500/10 blur-3xl"></div>
+      <div class="hero-frame relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[.03] shadow-card">
+        <img src="/images/daniel-hero.webp" alt="Daniel Junior" class="h-[40vh] min-h-[330px] w-full object-cover object-[52%_34%] sm:h-[70vh] sm:min-h-[520px] lg:h-[78vh]" width="1280" height="1714" fetchpriority="high" />
+        <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,5,.12),transparent_32%),linear-gradient(0deg,rgba(5,5,5,.72),transparent_38%)]"></div>
+        <FloatingTags />
+      </div>
+    </div>
+  </div>
+</section>
