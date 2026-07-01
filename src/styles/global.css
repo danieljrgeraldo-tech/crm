@@ -39,9 +39,59 @@ a {
   text-decoration: none;
 }
 
+.section-dark,
+.section-light,
+.section-warm,
 .section-band {
   position: relative;
   overflow: hidden;
+}
+
+.section-dark {
+  background:
+    radial-gradient(circle at 82% 16%, rgba(185,139,54,.13), transparent 30rem),
+    linear-gradient(180deg, #050505, #0b0907);
+  border-block: 1px solid rgba(255,255,255,.08);
+}
+
+.section-light {
+  background:
+    radial-gradient(circle at 78% 8%, rgba(185,139,54,.13), transparent 28rem),
+    linear-gradient(180deg, #f7f4ee, #efebe2);
+  color: #19140d;
+}
+
+.section-warm {
+  background:
+    radial-gradient(circle at 16% 18%, rgba(185,139,54,.11), transparent 28rem),
+    linear-gradient(180deg, #f1ece2, #fbfaf6);
+  color: #19140d;
+}
+
+.section-light::before,
+.section-warm::before,
+.section-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.section-light::before,
+.section-warm::before {
+  background-image: linear-gradient(rgba(122,82,31,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(122,82,31,.08) 1px, transparent 1px);
+  background-size: 84px 84px;
+  mask-image: linear-gradient(to bottom, black, transparent 72%);
+}
+
+.section-dark::before {
+  background: linear-gradient(90deg, transparent, rgba(232,199,115,.08), transparent);
+  height: 1px;
+  top: 0;
+  bottom: auto;
+}
+
+.section-band {
   background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015));
   border-block: 1px solid rgba(255,255,255,.08);
 }
@@ -56,13 +106,38 @@ a {
 
 .section-reveal {
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity .7s ease, transform .7s ease;
+  filter: blur(2px);
+  transform: translateY(18px);
+  transition: opacity .55s ease, transform .55s ease, filter .55s ease;
 }
 
 .section-reveal.is-visible {
   opacity: 1;
+  filter: blur(0);
   transform: translateY(0);
+}
+
+.checkmark {
+  position: relative;
+  display: inline-flex;
+  width: 1.35rem;
+  height: 1.35rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(185,139,54,.45);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(232,199,115,.95), rgba(185,139,54,.88));
+  box-shadow: 0 10px 26px rgba(185,139,54,.18);
+}
+
+.checkmark::after {
+  content: "";
+  width: .42rem;
+  height: .72rem;
+  border-bottom: 2px solid #080604;
+  border-right: 2px solid #080604;
+  transform: translateY(-1px) rotate(42deg);
 }
 
 .hero-frame {
@@ -74,39 +149,39 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 2.35rem;
-  padding: .55rem .85rem;
+  min-height: 3.1rem;
+  padding: .72rem 1.15rem;
   border: 1px solid rgba(232, 199, 115, .42);
   border-radius: 999px;
   background: rgba(7, 7, 7, .42);
   color: rgba(255,255,255,.88);
-  font-size: .76rem;
+  font-size: 1rem;
   font-weight: 700;
   backdrop-filter: blur(14px);
-  box-shadow: 0 12px 40px rgba(0,0,0,.28), 0 0 22px rgba(185,139,54,.16);
+  box-shadow: 0 16px 48px rgba(0,0,0,.32), 0 0 30px rgba(185,139,54,.2);
   animation: floatTag 7s ease-in-out infinite;
 }
 
 .floating-tag-1 {
-  left: 8%;
-  top: 22%;
+  left: 10%;
+  top: 20%;
 }
 
 .floating-tag-2 {
-  right: 8%;
-  top: 18%;
+  right: 7%;
+  top: 13%;
   animation-delay: -1.4s;
 }
 
 .floating-tag-3 {
-  left: 10%;
-  bottom: 22%;
+  left: 12%;
+  bottom: 24%;
   animation-delay: -2.8s;
 }
 
 .floating-tag-4 {
-  right: 9%;
-  bottom: 30%;
+  right: 8%;
+  bottom: 31%;
   animation-delay: -4s;
 }
 
@@ -163,29 +238,29 @@ a {
 
 @media (max-width: 767px) {
   .floating-tag {
-    font-size: .68rem;
-    min-height: 2rem;
-    padding: .45rem .68rem;
+    font-size: .82rem;
+    min-height: 2.35rem;
+    padding: .52rem .78rem;
   }
 
   .floating-tag-1 {
-    left: 6%;
-    top: 8%;
+    left: 7%;
+    top: 9%;
   }
 
   .floating-tag-2 {
-    right: 5%;
-    top: 11%;
+    right: 6%;
+    top: 12%;
   }
 
   .floating-tag-3 {
-    left: 6%;
-    bottom: 12%;
+    left: 7%;
+    bottom: 14%;
   }
 
   .floating-tag-4 {
-    right: 5%;
-    bottom: 16%;
+    right: 6%;
+    bottom: 19%;
   }
 }
 

@@ -1,10 +1,12 @@
 ---
-const { eyebrow, title, text, align = "left" } = Astro.props;
+const { eyebrow, title, subtitle, text, align = "left", tone = "dark" } = Astro.props;
 const centered = align === "center";
+const isLight = tone === "light";
 ---
 
 <div class:list={["section-reveal", "max-w-3xl", centered && "mx-auto text-center"]}>
-  {eyebrow && <p class="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-gold-300">{eyebrow}</p>}
-  <h2 class="font-display text-4xl font-semibold leading-[.95] text-white sm:text-5xl lg:text-6xl">{title}</h2>
-  {text && <p class="mt-5 text-base leading-8 text-white/68 sm:text-lg">{text}</p>}
+  {eyebrow && <p class:list={["mb-3 text-xs font-semibold uppercase tracking-[0.22em]", isLight ? "text-gold-700" : "text-gold-300"]}>{eyebrow}</p>}
+  <h2 class:list={["font-display text-4xl font-semibold leading-[.95] sm:text-5xl lg:text-6xl", isLight ? "text-gold-700" : "text-gold-300"]}>{title}</h2>
+  {subtitle && <p class:list={["mt-4 font-display text-2xl font-semibold leading-tight sm:text-3xl", isLight ? "text-stone-950" : "text-white"]}>{subtitle}</p>}
+  {text && <p class:list={["mt-5 text-base leading-8 sm:text-lg", isLight ? "text-stone-700" : "text-white/68"]}>{text}</p>}
 </div>

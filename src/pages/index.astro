@@ -25,54 +25,49 @@ import {
   <main>
     <Hero />
 
-    <section class="section-band px-4 py-20 sm:px-6 lg:px-8">
-      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
-        <SectionTitle eyebrow="Quem sou eu?" title="Negócios, desenvolvimento empresarial e conexões estratégicas." />
-        <div class="section-reveal space-y-6 text-base leading-8 text-white/70 sm:text-lg">
-          <p>
-            Atuo com negócios e desenvolvimento empresarial desde 2013. Ao longo dessa trajetória, construí relacionamento com empresários, investidores, fundos privados e parceiros estratégicos, participando de operações voltadas a crédito, capital, investimentos e crescimento empresarial.
-          </p>
-          <p>
-            Hoje atuo conectando empresas e investidores às oportunidades e soluções mais adequadas para cada cenário.
-          </p>
-          <div class="rounded-lg border border-white/10 bg-white/[.035] p-5">
-            <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-gold-300">Meu papel</h3>
-            <div class="mt-5 grid gap-3 sm:grid-cols-3">
-              {["Entender cenários", "Identificar oportunidades", "Conectar pessoas às soluções certas"].map((item) => (
-                <div class="rounded-md border border-white/10 bg-black/25 p-4 text-sm font-medium text-white">{item}</div>
-              ))}
-            </div>
+    <section class="section-dark px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="mx-auto max-w-6xl">
+        <SectionTitle title="Quem sou eu?" align="center" />
+        <div class="mx-auto mt-10 grid max-w-5xl gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
+          <div class="section-reveal space-y-5 text-base leading-8 text-white/70 sm:text-lg">
+            <p>
+              Atuo com negócios e desenvolvimento empresarial desde 2013. Ao longo dessa trajetória, construí relacionamento com empresários, investidores, fundos privados e parceiros estratégicos, participando de operações voltadas a crédito, capital, investimentos e crescimento empresarial.
+            </p>
+            <p>
+              Hoje atuo conectando empresas e investidores às oportunidades e soluções mais adequadas para cada cenário.
+            </p>
           </div>
+          <ListPanel title="Meu papel" items={["Entender cenários", "Identificar oportunidades", "Conectar pessoas às soluções certas"]} />
         </div>
       </div>
     </section>
 
-    <section id="solucoes" class="px-4 py-20 sm:px-6 lg:px-8">
+    <section id="solucoes" class="section-light px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div class="mx-auto max-w-7xl">
-        <div class="grid gap-8 lg:grid-cols-[.85fr_1.15fr] lg:items-end">
-          <SectionTitle
-            eyebrow="Como posso ajudar?"
-            title="Nem toda empresa precisa da mesma solução."
-            text="Antes de falar sobre produtos, procuro entender o momento da empresa para identificar o melhor caminho para crescer, investir ou acessar capital."
-          />
-          <p class="section-reveal max-w-2xl text-lg leading-8 text-white/72 lg:justify-self-end">
-            O objetivo não é oferecer produtos. É encontrar a solução mais adequada para cada necessidade.
-          </p>
-        </div>
+        <SectionTitle
+          title="Como posso ajudar?"
+          subtitle="Nem toda empresa precisa da mesma solução."
+          text="Antes de falar sobre produtos, procuro entender o momento da empresa para identificar o melhor caminho para crescer, investir ou acessar capital."
+          align="center"
+          tone="light"
+        />
+        <p class="section-reveal mx-auto mt-7 max-w-3xl text-center text-lg leading-8 text-stone-700">
+          O objetivo não é oferecer produtos. É encontrar a solução mais adequada para cada necessidade.
+        </p>
         <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {solutions.map((solution, index) => <SolutionCard title={solution} index={index + 1} />)}
+          {solutions.map((solution, index) => <SolutionCard title={solution} index={index + 1} tone="light" />)}
         </div>
       </div>
     </section>
 
-    <section id="capital" class="section-band px-4 py-20 sm:px-6 lg:px-8">
+    <section id="capital" class="section-dark px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_.9fr] lg:items-center">
         <div>
-          <SectionTitle eyebrow="Soluções em Capital" title="Soluções em Crédito e Home Equity" />
+          <SectionTitle title="Soluções em Capital" subtitle="Soluções em Crédito e Home Equity" />
           <p class="section-reveal mt-6 text-base leading-8 text-white/70 sm:text-lg">
             Oferecemos soluções de Home Equity para proprietários de imóveis que desejam transformar patrimônio em capital para investir, expandir seus negócios ou aproveitar novas oportunidades.
           </p>
-          <p class="section-reveal mt-8 font-display text-3xl font-semibold leading-tight text-gold-100 sm:text-4xl">
+          <p class="section-reveal mt-8 border-l border-gold-300/40 pl-5 font-display text-3xl font-semibold leading-tight text-gold-100 sm:text-4xl">
             Capital para quem quer crescer sem vender patrimônio.
           </p>
         </div>
@@ -80,27 +75,23 @@ import {
       </div>
     </section>
 
-    <section class="px-4 py-20 sm:px-6 lg:px-8">
+    <section class="section-warm px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div class="mx-auto max-w-7xl">
-        <SectionTitle
-          eyebrow="Benefícios exclusivos do Home Equity"
-          title="Utilize o patrimônio que você já possui para acessar recursos de forma rápida, segura e estratégica."
-          align="center"
-        />
+        <SectionTitle title="Benefícios exclusivos do Home Equity" align="center" tone="light" />
         <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {homeEquityBenefits.map((benefit) => <BenefitCard title={benefit.title} text={benefit.text} />)}
+          {homeEquityBenefits.map((benefit) => <BenefitCard title={benefit.title} text={benefit.text} tone="light" />)}
         </div>
       </div>
     </section>
 
-    <section class="section-band px-4 py-20 sm:px-6 lg:px-8">
-      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+    <section class="section-dark px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.95fr_1.05fr] lg:items-center">
         <div>
-          <SectionTitle eyebrow="Crédito e Patrimônio" title="Aquisição Patrimonial e Crédito" />
+          <SectionTitle title="Crédito e Patrimônio" subtitle="Aquisição Patrimonial e Crédito" />
           <p class="section-reveal mt-6 text-base leading-8 text-white/70 sm:text-lg">
             Soluções voltadas para quem deseja adquirir patrimônio, expandir seus negócios ou acessar crédito através de cartas contempladas e consórcios selecionados.
           </p>
-          <p class="section-reveal mt-8 font-display text-3xl font-semibold leading-tight text-gold-100 sm:text-4xl">
+          <p class="section-reveal mt-8 border-l border-gold-300/40 pl-5 font-display text-3xl font-semibold leading-tight text-gold-100 sm:text-4xl">
             Uma alternativa estratégica para quem busca patrimônio, crédito e crescimento.
           </p>
         </div>
@@ -108,37 +99,29 @@ import {
       </div>
     </section>
 
-    <section class="px-4 py-20 sm:px-6 lg:px-8">
-      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
-        <div class="section-reveal relative min-h-[460px] overflow-hidden rounded-lg border border-white/10 bg-white/[.035] shadow-card">
-          <img src="/images/daniel-secondary.webp" alt="Daniel Junior em ambiente executivo" loading="lazy" class="absolute inset-0 h-full w-full object-cover object-[54%_22%] opacity-88" width="1120" height="1500" />
-          <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,5,.78),rgba(5,5,5,.18)),linear-gradient(0deg,rgba(5,5,5,.8),transparent_45%)]"></div>
-          <p class="absolute bottom-6 left-6 right-6 font-display text-3xl font-semibold leading-tight text-white sm:text-4xl">
-            Parcele para o cliente. Proteção para o seu negócio.
-          </p>
-        </div>
+    <section class="section-light px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.95fr_1.05fr] lg:items-center">
         <div>
           <SectionTitle
-            eyebrow="Soluções para Lojistas"
-            title="Venda mais com PIX Parcelado Garantido"
+            title="Soluções para Lojistas"
+            subtitle="Venda mais com PIX Parcelado Garantido"
             text="Permita que seus clientes parcelem no PIX e aumente suas oportunidades de venda. Através de uma estrutura de garantia, assumimos a operação e protegemos o estabelecimento contra inadimplência, permitindo mais vendas e menos riscos."
+            tone="light"
           />
-          <div class="mt-7">
-            <ListPanel title="Benefícios" items={retailBenefits} />
-          </div>
         </div>
+        <ListPanel title="Benefícios" items={retailBenefits} tone="light" />
       </div>
     </section>
 
-    <section id="investidores" class="section-band px-4 py-20 sm:px-6 lg:px-8">
+    <section id="investidores" class="section-dark px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
         <div>
           <SectionTitle
-            eyebrow="Investidores"
-            title="Oportunidades para Investidores"
+            title="Investidores"
+            subtitle="Oportunidades para Investidores"
             text="Identificamos oportunidades para investidores que desejam fazer seu capital trabalhar através de operações privadas, com alternativas que vão desde opções conservadoras até oportunidades de maior retorno."
           />
-          <p class="section-reveal mt-8 font-display text-3xl font-semibold leading-tight text-gold-100 sm:text-4xl">
+          <p class="section-reveal mt-8 border-l border-gold-300/40 pl-5 font-display text-3xl font-semibold leading-tight text-gold-100 sm:text-4xl">
             Seu capital trabalhando de forma estratégica para gerar renda e novas oportunidades.
           </p>
         </div>
@@ -146,19 +129,19 @@ import {
       </div>
     </section>
 
-    <section class="px-4 py-20 sm:px-6 lg:px-8">
+    <section class="section-warm px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div class="mx-auto max-w-7xl">
         <SectionTitle
-          eyebrow="Por que trabalhar comigo?"
-          title="Estratégias para diferentes cenários, com acompanhamento completo."
+          title="Por que trabalhar comigo?"
           text="Antes de falar sobre soluções, procuro entender cada cenário para identificar as oportunidades mais adequadas para seus objetivos."
           align="center"
+          tone="light"
         />
         <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {reasons.map((reason) => (
-            <article class="section-reveal rounded-lg border border-white/10 bg-white/[.035] p-5 text-center shadow-card">
-              <div class="mx-auto mb-5 h-px w-12 bg-gold-300/60"></div>
-              <h3 class="text-base font-semibold leading-snug text-white">{reason}</h3>
+            <article class="section-reveal rounded-lg border border-stone-200 bg-white p-5 text-center shadow-card">
+              <span class="checkmark mx-auto mb-5" aria-hidden="true"></span>
+              <h3 class="text-base font-semibold leading-snug text-stone-950">{reason}</h3>
             </article>
           ))}
         </div>
