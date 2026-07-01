@@ -215,13 +215,13 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 3.1rem;
-  padding: .72rem 1.15rem;
+  min-height: 3.72rem;
+  padding: .86rem 1.38rem;
   border: 1px solid rgba(232, 199, 115, .5);
   border-radius: 999px;
   background: linear-gradient(135deg, rgba(7, 7, 7, .5), rgba(255,255,255,.08));
   color: rgba(255,255,255,.9);
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   backdrop-filter: blur(14px);
   box-shadow: 0 16px 48px rgba(0,0,0,.34), 0 0 34px rgba(185,139,54,.22);
@@ -229,25 +229,25 @@ a {
 }
 
 .floating-tag-1 {
-  left: 7%;
-  top: 33%;
+  left: 10%;
+  top: 29%;
 }
 
 .floating-tag-2 {
-  left: 12%;
-  top: 45%;
+  left: 20%;
+  top: 41%;
   animation-delay: -1.4s;
 }
 
 .floating-tag-3 {
-  left: 17%;
-  top: 57%;
+  left: 30%;
+  top: 54%;
   animation-delay: -2.8s;
 }
 
 .floating-tag-4 {
-  left: 22%;
-  top: 69%;
+  left: 40%;
+  top: 67%;
   animation-delay: -4s;
 }
 
@@ -315,29 +315,29 @@ a {
   }
 
   .floating-tag {
-    font-size: .82rem;
-    min-height: 2.35rem;
-    padding: .52rem .78rem;
+    font-size: .98rem;
+    min-height: 2.82rem;
+    padding: .62rem .94rem;
   }
 
   .floating-tag-1 {
-    left: 8%;
-    top: 43%;
+    left: 10%;
+    top: 33%;
   }
 
   .floating-tag-2 {
-    left: 15%;
-    top: 54%;
+    left: 19%;
+    top: 48%;
   }
 
   .floating-tag-3 {
-    left: 22%;
-    top: 65%;
+    left: 28%;
+    top: 63%;
   }
 
   .floating-tag-4 {
-    left: 29%;
-    top: 76%;
+    left: 37%;
+    top: 78%;
   }
 }
 
