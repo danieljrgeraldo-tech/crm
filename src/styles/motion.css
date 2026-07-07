@@ -42,10 +42,15 @@ body.js-motion-ready [data-motion="scale-in"] {
   body.js-motion-ready [data-motion="reveal-line"],
   body.js-motion-ready [data-motion="fade"],
   body.js-motion-ready [data-motion="mask-open"],
-  body.js-motion-ready [data-motion="scale-in"] {
-    opacity: 1;
-    transform: none;
-    clip-path: none;
+  body.js-motion-ready [data-motion="scale-in"],
+  [data-motion="reveal"],
+  [data-motion="reveal-line"],
+  [data-motion="fade"],
+  [data-motion="mask-open"],
+  [data-motion="scale-in"] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
     transition: none !important;
     animation: none !important;
   }

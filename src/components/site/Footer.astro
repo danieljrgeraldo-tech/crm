@@ -1,0 +1,17 @@
+---
+import { site } from "../../data/site-content.js";
+---
+
+<footer class="border-t border-line bg-paper py-8">
+  <div class="site-container flex flex-col items-center justify-between gap-4 sm:flex-row">
+    <span class="font-sans text-sm text-muted">
+      {site.footer.copyright}
+    </span>
+    <a
+      href="#top"
+      class="font-sans text-sm font-medium text-graphite transition-colors hover:text-ink"
+    >
+      Voltar ao topo
+    </a>
+  </div>
+</footer>

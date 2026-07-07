@@ -1,0 +1,56 @@
+---
+import { site } from "../../data/site-content.js";
+import SectionLabel from "./SectionLabel.astro";
+import MotionText from "./MotionText.astro";
+
+const content = site.structures;
+---
+
+<section
+  id="estruturas"
+  class="relative bg-paper py-20 lg:py-28"
+  aria-labelledby="structures-title"
+>
+  <div class="pointer-events-none absolute inset-0 opacity-30" aria-hidden="true">
+    <div class="technical-line top-0 left-[6%] h-full w-px"></div>
+    <div class="technical-line top-0 right-[6%] h-full w-px hidden lg:block"></div>
+  </div>
+
+  <div class="content-container relative z-10">
+    <SectionLabel text={content.eyebrow} />
+
+    <h2
+      id="structures-title"
+      class="mt-6 max-w-3xl font-display text-4xl font-light leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl"
+    >
+      <MotionText as="span" class="block" type="reveal-line">
+        {content.title}
+      </MotionText>
+    </h2>
+
+    <MotionText as="p" class="mt-6 max-w-2xl text-lg leading-relaxed text-graphite lg:mt-8" type="reveal">
+      {content.intro}
+    </MotionText>
+
+    <div class="structures-list mt-12 border-t border-line lg:mt-16">
+      {content.items.map((item, i) => (
+        <div
+          class="structure-item group grid grid-cols-1 gap-3 border-b border-line py-6 transition-colors hover:bg-paper-light sm:grid-cols-[auto_1fr] sm:gap-8 sm:py-7 lg:gap-12"
+          data-motion="reveal"
+        >
+          <span class="font-sans text-xs font-medium uppercase tracking-widest text-muted">
+            {String(i + 1).padStart(2, "0")}
+          </span>
+          <div>
+            <h3 class="font-display text-xl font-light text-ink sm:text-2xl lg:text-3xl">
+              {item.title}
+            </h3>
+            <p class="mt-2 max-w-2xl text-base leading-relaxed text-muted">
+              {item.text}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

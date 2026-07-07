@@ -1,0 +1,45 @@
+---
+import { site } from "../../data/site-content.js";
+import SectionLabel from "./SectionLabel.astro";
+import MotionText from "./MotionText.astro";
+
+const content = site.about;
+---
+
+<section
+  id="sobre"
+  class="relative bg-paper py-20 lg:py-28"
+  aria-labelledby="about-title"
+>
+  <div class="pointer-events-none absolute inset-0 opacity-30" aria-hidden="true">
+    <div class="technical-line top-0 left-[6%] h-full w-px"></div>
+    <div class="technical-line top-0 right-[6%] h-full w-px hidden lg:block"></div>
+  </div>
+
+  <div class="content-container relative z-10">
+    <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-5">
+        <SectionLabel text={content.eyebrow} />
+
+        <h2
+          id="about-title"
+          class="mt-6 font-display text-4xl font-light leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl"
+        >
+          <MotionText as="span" class="block" type="reveal-line">
+            {content.title}
+          </MotionText>
+        </h2>
+      </div>
+
+      <div class="lg:col-span-6 lg:col-start-7">
+        <div class="space-y-6">
+          {content.paragraphs.map((paragraph) => (
+            <MotionText as="p" class="text-lg leading-relaxed text-graphite lg:text-xl" type="reveal">
+              {paragraph}
+            </MotionText>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -7,23 +7,23 @@ gsap.registerPlugin(ScrollTrigger);
 
 function initScrollMotion() {
   if (!canAnimate()) {
-    // Limpa triggers eventualmente criados e garante visibilidade
     ScrollTrigger.getAll().forEach((st) => st.kill());
     markMotionDisabled();
     return;
   }
 
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isMobile = window.matchMedia("(max-width: 1023px)").matches;
+
   const hero = document.getElementById("top");
   const heroImage = document.querySelector(".hero-image");
   const transitionBand = document.querySelector(".transition-band");
   const transitionLine = document.querySelector(".transition-line");
-  const thesisSection = document.getElementById("visao");
-  const factorGrid = document.querySelector(".factor-grid");
 
-  // Parallax sutil na imagem do hero (apenas desktop)
-  if (hero && heroImage && window.matchMedia("(min-width: 1024px)").matches) {
+  // Parallax sutil na imagem do hero (apenas desktop, reduzido)
+  if (!prefersReducedMotion && !isMobile && hero && heroImage) {
     gsap.to(heroImage, {
-      yPercent: 8,
+      yPercent: 5,
       ease: "none",
       scrollTrigger: {
         trigger: hero,
@@ -41,87 +41,70 @@ function initScrollMotion() {
       ease: "none",
       scrollTrigger: {
         trigger: transitionBand,
-        start: "top 80%",
+        start: "top 85%",
         end: "center center",
         scrub: 1,
       },
     });
   }
 
-  // Revelação da seção de tese
-  if (thesisSection) {
-    const thesisTitle = thesisSection.querySelector("[data-motion='reveal-line']");
-    const thesisTexts = thesisSection.querySelectorAll("[data-motion='reveal']");
+  // Revelação genérica para elementos com data-motion dentro das seções
+  const revealElements = document.querySelectorAll(
+    'section [data-motion="reveal"], section [data-motion="reveal-line"]'
+  );
 
-    if (thesisTitle) {
-      gsap.fromTo(
-        thesisTitle,
-        { opacity: 0, clipPath: "inset(100% 0 0 0)" },
-        {
-          opacity: 1,
-          clipPath: "inset(0% 0 0 0)",
-          duration: 0.9,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: thesisSection,
-            start: "top 75%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    }
+  revealElements.forEach((el) => {
+    const isLine = el.getAttribute("data-motion") === "reveal-line";
+    const from = isLine
+      ? { opacity: 0, clipPath: "inset(100% 0 0 0)" }
+      : { opacity: 0, y: 24 };
+    const to = isLine
+      ? { opacity: 1, clipPath: "inset(0% 0 0 0)", duration: 0.7 }
+      : { opacity: 1, y: 0, duration: 0.6 };
 
-    if (thesisTexts.length) {
-      gsap.fromTo(
-        thesisTexts,
-        { opacity: 0, y: 24 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          stagger: 0.1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: thesisSection,
-            start: "top 70%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    }
-  }
+    gsap.fromTo(el, from, {
+      ...to,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  });
 
-  // Fatores da tese
-  if (factorGrid) {
-    const factors = factorGrid.querySelectorAll(".factor-item");
-    if (factors.length) {
-      gsap.fromTo(
-        factors,
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          stagger: 0.08,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: factorGrid,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    }
-  }
+  // Fatores / nós sequenciais
+  const sequentialGroups = document.querySelectorAll(".factor-node, .decision-item, .method-step, .structure-item, .example-card");
+  sequentialGroups.forEach((group) => {
+    const items = group.parentElement?.querySelectorAll(
+      ".factor-node, .decision-item, .method-step, .structure-item, .example-card"
+    );
+    if (!items || items.length <= 1) return;
+
+    gsap.fromTo(
+      items,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.08,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: group.parentElement,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  });
 }
 
-// Tratamento seguro: qualquer erro mantém o conteúdo visível
 try {
   initScrollMotion();
 } catch (error) {
   ScrollTrigger.getAll().forEach((st) => st.kill());
   markMotionDisabled();
-  // eslint-disable-next-line no-console
   if (process.env.NODE_ENV !== "production") {
     console.warn("[scroll-motion] Movimento de scroll desativado:", error);
   }

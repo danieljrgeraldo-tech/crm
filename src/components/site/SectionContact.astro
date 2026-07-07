@@ -1,0 +1,166 @@
+---
+import { site } from "../../data/site-content.js";
+import SectionLabel from "./SectionLabel.astro";
+import MotionText from "./MotionText.astro";
+import Button from "./Button.astro";
+
+const content = site.contact;
+---
+
+<section
+  id="contato"
+  class="relative bg-paper-light py-20 lg:py-28"
+  aria-labelledby="contact-title"
+>
+  <div class="pointer-events-none absolute inset-0 opacity-30" aria-hidden="true">
+    <div class="technical-line top-0 left-[6%] h-full w-px"></div>
+    <div class="technical-line top-0 right-[6%] h-full w-px hidden lg:block"></div>
+  </div>
+
+  <div class="content-container relative z-10">
+    <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-5">
+        <SectionLabel text={content.eyebrow} />
+
+        <h2
+          id="contact-title"
+          class="mt-6 font-display text-4xl font-light leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl"
+        >
+          <MotionText as="span" class="block" type="reveal-line">
+            {content.title}
+          </MotionText>
+        </h2>
+      </div>
+
+      <div class="lg:col-span-6 lg:col-start-7">
+        <form
+          id="diagnostic-form"
+          class="diagnostic-form space-y-6"
+          data-motion="reveal"
+          novalidate
+        >
+          <div class="grid gap-6 sm:grid-cols-2">
+            <label class="block">
+              <span class="mb-2 block font-sans text-sm font-medium text-graphite">{content.fields.name}</span>
+              <input
+                type="text"
+                name="name"
+                required
+                class="w-full border border-line bg-paper px-4 py-3 font-sans text-base text-ink transition-colors placeholder:text-muted focus:border-ink focus:outline-none"
+                placeholder="Seu nome"
+              />
+            </label>
+            <label class="block">
+              <span class="mb-2 block font-sans text-sm font-medium text-graphite">{content.fields.whatsapp}</span>
+              <input
+                type="tel"
+                name="whatsapp"
+                required
+                class="w-full border border-line bg-paper px-4 py-3 font-sans text-base text-ink transition-colors placeholder:text-muted focus:border-ink focus:outline-none"
+                placeholder="(00) 00000-0000"
+              />
+            </label>
+          </div>
+
+          <label class="block">
+            <span class="mb-2 block font-sans text-sm font-medium text-graphite">{content.fields.company}</span>
+            <input
+              type="text"
+              name="company"
+              class="w-full border border-line bg-paper px-4 py-3 font-sans text-base text-ink transition-colors placeholder:text-muted focus:border-ink focus:outline-none"
+              placeholder="Nome da empresa"
+            />
+          </label>
+
+          <label class="block">
+            <span class="mb-2 block font-sans text-sm font-medium text-graphite">{content.fields.need}</span>
+            <textarea
+              name="need"
+              rows="3"
+              required
+              class="w-full resize-none border border-line bg-paper px-4 py-3 font-sans text-base text-ink transition-colors placeholder:text-muted focus:border-ink focus:outline-none"
+              placeholder="Descreva o que precisa resolver"
+            ></textarea>
+          </label>
+
+          <div class="grid gap-6 sm:grid-cols-2">
+            <label class="block">
+              <span class="mb-2 block font-sans text-sm font-medium text-graphite">{content.fields.amount}</span>
+              <input
+                type="text"
+                name="amount"
+                class="w-full border border-line bg-paper px-4 py-3 font-sans text-base text-ink transition-colors placeholder:text-muted focus:border-ink focus:outline-none"
+                placeholder="Ex: R$ 500 mil a R$ 2 milhões"
+              />
+            </label>
+            <label class="block">
+              <span class="mb-2 block font-sans text-sm font-medium text-graphite">{content.fields.timing}</span>
+              <input
+                type="text"
+                name="timing"
+                class="w-full border border-line bg-paper px-4 py-3 font-sans text-base text-ink transition-colors placeholder:text-muted focus:border-ink focus:outline-none"
+                placeholder="Ex: 30 a 60 dias"
+              />
+            </label>
+          </div>
+
+          <div class="pt-2">
+            <button
+              type="submit"
+              class="inline-flex w-full items-center justify-center bg-ink px-8 py-4 font-sans text-base font-medium tracking-wide text-white transition-colors hover:bg-graphite focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper sm:w-auto"
+            >
+              {content.submit}
+            </button>
+          </div>
+
+          <p class="font-sans text-xs leading-relaxed text-muted">
+            {content.privacy}
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("diagnostic-form");
+
+  function formatWhatsApp(value: string) {
+    return value.replace(/\D/g, "");
+  }
+
+  function buildMessage(formData: FormData) {
+    const name = String(formData.get("name") || "").trim();
+    const phone = formatWhatsApp(String(formData.get("whatsapp") || ""));
+    const company = String(formData.get("company") || "").trim();
+    const need = String(formData.get("need") || "").trim();
+    const amount = String(formData.get("amount") || "").trim();
+    const timing = String(formData.get("timing") || "").trim();
+
+    const lines = [
+      `*Novo diagnóstico - Daniel Junior*`,
+      ``,
+      `*Nome:* ${name}`,
+      `*WhatsApp:* ${phone}`,
+    ];
+    if (company) lines.push(`*Empresa:* ${company}`);
+    lines.push(`*O que precisa resolver:* ${need}`);
+    if (amount) lines.push(`*Faixa aproximada:* ${amount}`);
+    if (timing) lines.push(`*Prazo:* ${timing}`);
+
+    return encodeURIComponent(lines.join("\n"));
+  }
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const formData = new FormData(form);
+    const message = buildMessage(formData);
+    const url = `https://wa.me/?text=${message}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
+</script>

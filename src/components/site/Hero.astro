@@ -14,30 +14,32 @@ const hero = site.hero;
 >
   <!-- Linhas técnicas de fundo -->
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-    <div class="technical-line top-0 left-[8%] h-full w-px"></div>
-    <div class="technical-line top-0 right-[8%] h-full w-px hidden lg:block"></div>
-    <div class="technical-line top-[72%] left-0 right-0 h-px"></div>
+    <div class="technical-line top-0 left-[6%] h-full w-px"></div>
+    <div class="technical-line top-0 right-[6%] h-full w-px hidden lg:block"></div>
+    <div class="technical-line top-[68%] left-0 right-0 h-px hidden lg:block"></div>
   </div>
 
-  <div class="site-container relative z-10">
-    <div class="grid min-h-[calc(100vh-7rem)] grid-cols-1 items-end gap-8 pb-12 lg:grid-cols-12 lg:pb-20">
+  <div class="site-container relative z-10 flex min-h-[calc(100vh-7rem)] flex-col justify-between pb-6 lg:pb-12">
+    <div class="grid flex-1 grid-cols-1 content-end gap-6 pt-4 lg:grid-cols-12 lg:gap-4">
       <!-- Coluna textual -->
-      <div class="order-2 flex flex-col justify-end lg:order-1 lg:col-span-6 lg:col-start-1 lg:pr-8">
+      <div class="flex flex-col justify-end lg:col-span-6 lg:col-start-1 lg:pr-4 xl:pr-8">
         <SectionLabel text={hero.eyebrow} />
 
-        <h1 class="mt-6 font-display text-5xl font-light leading-[0.95] tracking-tight text-ink sm:text-6xl lg:text-7xl xl:text-8xl">
-          {hero.title.map((line, i) => (
-            <MotionText as="span" class="block" type="reveal-line">
-              {line}
-            </MotionText>
-          ))}
+        <h1 class="mt-4 font-display text-[2.75rem] font-light leading-[0.95] tracking-tight text-ink sm:text-6xl lg:mt-5 lg:text-7xl xl:text-[5.5rem]">
+          <MotionText as="span" class="block" type="reveal-line">
+            {hero.title}
+          </MotionText>
         </h1>
 
-        <MotionText as="p" class="mt-8 max-w-xl text-lg leading-relaxed text-graphite" type="reveal">
+        <MotionText as="p" class="mt-4 max-w-xl text-base leading-relaxed text-graphite sm:text-lg lg:mt-6 lg:text-xl" type="reveal">
           {hero.text}
         </MotionText>
 
-        <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center" data-motion="reveal">
+        <MotionText as="p" class="mt-3 max-w-xl text-sm leading-relaxed text-muted sm:text-base" type="reveal">
+          {hero.complement}
+        </MotionText>
+
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-8" data-motion="reveal">
           <Button href="#contato" variant="primary" size="lg">
             {site.cta.primary}
           </Button>
@@ -48,9 +50,9 @@ const hero = site.hero;
       </div>
 
       <!-- Coluna de imagem -->
-      <div class="order-1 lg:order-2 lg:col-span-5 lg:col-start-8">
+      <div class="lg:col-span-6 lg:col-start-7 lg:-ml-12 xl:-ml-16">
         <div
-          class="hero-image-mask relative aspect-[3/4] w-full overflow-hidden bg-line-light lg:aspect-[4/5]"
+          class="hero-image-mask relative aspect-[16/10] w-full overflow-hidden bg-line-light lg:aspect-[4/5] lg:h-[min(76vh,52rem)] lg:max-h-[52rem]"
           data-motion="mask-open"
         >
           <img
@@ -58,17 +60,19 @@ const hero = site.hero;
             alt={hero.imageAlt}
             width="1280"
             height="1714"
-            class="hero-image h-full w-full object-cover object-[52%_34%]"
+            class="hero-image h-full w-full object-cover object-[52%_30%]"
             fetchpriority="high"
             decoding="async"
           />
+          <!-- Sobreposição editorial -->
+          <div class="pointer-events-none absolute inset-y-0 left-0 hidden w-16 bg-gradient-to-r from-paper to-transparent lg:block" aria-hidden="true"></div>
         </div>
       </div>
     </div>
 
     <!-- Marcadores inferiores -->
     <div
-      class="relative z-10 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line pb-8 pt-6 lg:pb-12"
+      class="relative z-10 mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-line pt-5 lg:mt-8 lg:gap-x-10 lg:pt-8"
       data-motion="reveal"
     >
       {hero.markers.map((marker) => (
@@ -77,11 +81,5 @@ const hero = site.hero;
         </span>
       ))}
     </div>
-  </div>
-
-  <!-- Indicador discreto de continuação -->
-  <div class="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 lg:flex" data-motion="fade">
-    <span class="font-sans text-[10px] uppercase tracking-widest text-muted">Rolar</span>
-    <span class="block h-8 w-px bg-line"></span>
   </div>
 </section>
