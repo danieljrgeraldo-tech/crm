@@ -1,0 +1,87 @@
+---
+import { site } from "../../data/site-content.js";
+import Button from "./Button.astro";
+import SectionLabel from "./SectionLabel.astro";
+import MotionText from "./MotionText.astro";
+
+const hero = site.hero;
+---
+
+<section
+  id="top"
+  class="relative min-h-screen overflow-hidden bg-paper pt-24 lg:pt-28"
+  aria-label="Introdução"
+>
+  <!-- Linhas técnicas de fundo -->
+  <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+    <div class="technical-line top-0 left-[8%] h-full w-px"></div>
+    <div class="technical-line top-0 right-[8%] h-full w-px hidden lg:block"></div>
+    <div class="technical-line top-[72%] left-0 right-0 h-px"></div>
+  </div>
+
+  <div class="site-container relative z-10">
+    <div class="grid min-h-[calc(100vh-7rem)] grid-cols-1 items-end gap-8 pb-12 lg:grid-cols-12 lg:pb-20">
+      <!-- Coluna textual -->
+      <div class="order-2 flex flex-col justify-end lg:order-1 lg:col-span-6 lg:col-start-1 lg:pr-8">
+        <SectionLabel text={hero.eyebrow} />
+
+        <h1 class="mt-6 font-display text-5xl font-light leading-[0.95] tracking-tight text-ink sm:text-6xl lg:text-7xl xl:text-8xl">
+          {hero.title.map((line, i) => (
+            <MotionText as="span" class="block" type="reveal-line">
+              {line}
+            </MotionText>
+          ))}
+        </h1>
+
+        <MotionText as="p" class="mt-8 max-w-xl text-lg leading-relaxed text-graphite" type="reveal">
+          {hero.text}
+        </MotionText>
+
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center" data-motion="reveal">
+          <Button href="#contato" variant="primary" size="lg">
+            {site.cta.primary}
+          </Button>
+          <Button href="#metodo" variant="text" size="lg">
+            {site.cta.secondary}
+          </Button>
+        </div>
+      </div>
+
+      <!-- Coluna de imagem -->
+      <div class="order-1 lg:order-2 lg:col-span-5 lg:col-start-8">
+        <div
+          class="hero-image-mask relative aspect-[3/4] w-full overflow-hidden bg-line-light lg:aspect-[4/5]"
+          data-motion="mask-open"
+        >
+          <img
+            src="/images/daniel-hero.webp"
+            alt={hero.imageAlt}
+            width="1280"
+            height="1714"
+            class="hero-image h-full w-full object-cover object-[52%_34%]"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Marcadores inferiores -->
+    <div
+      class="relative z-10 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line pb-8 pt-6 lg:pb-12"
+      data-motion="reveal"
+    >
+      {hero.markers.map((marker) => (
+        <span class="font-sans text-xs font-medium uppercase tracking-widest text-muted">
+          {marker}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <!-- Indicador discreto de continuação -->
+  <div class="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 lg:flex" data-motion="fade">
+    <span class="font-sans text-[10px] uppercase tracking-widest text-muted">Rolar</span>
+    <span class="block h-8 w-px bg-line"></span>
+  </div>
+</section>

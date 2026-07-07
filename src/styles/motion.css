@@ -1,0 +1,52 @@
+/* Motion — Daniel Junior V2
+ *
+ * Progressive enhancement: o conteúdo é visível por padrão.
+ * Os estados iniciais de animação só são aplicados quando o JavaScript
+ * adiciona a classe .js-motion-ready ao <body>.
+ */
+
+/* Padrão: conteúdo visível e acessível */
+[data-motion] {
+  opacity: 1;
+  transform: none;
+  clip-path: none;
+}
+
+/* Quando o JS está pronto e o usuário não prefere movimento reduzido */
+body.js-motion-ready [data-motion="reveal"] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+body.js-motion-ready [data-motion="reveal-line"] {
+  opacity: 0;
+  clip-path: inset(100% 0 0 0);
+}
+
+body.js-motion-ready [data-motion="fade"] {
+  opacity: 0;
+}
+
+body.js-motion-ready [data-motion="mask-open"] {
+  clip-path: inset(0 0 100% 0);
+}
+
+body.js-motion-ready [data-motion="scale-in"] {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+/* Reduced motion: sempre visível, independentemente de JS */
+@media (prefers-reduced-motion: reduce) {
+  body.js-motion-ready [data-motion="reveal"],
+  body.js-motion-ready [data-motion="reveal-line"],
+  body.js-motion-ready [data-motion="fade"],
+  body.js-motion-ready [data-motion="mask-open"],
+  body.js-motion-ready [data-motion="scale-in"] {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,160 @@
+---
+import { site } from "../../data/site-content.js";
+import Button from "./Button.astro";
+
+const navItems = site.nav;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50" data-motion="fade">
+  <div class="site-container">
+    <nav
+      class="mt-5 flex items-center justify-between border-b border-line bg-paper/90 px-6 py-4 backdrop-blur-sm lg:px-8"
+      aria-label="Navegação principal"
+    >
+      <a href="#top" class="font-sans text-base font-semibold tracking-tight text-ink">
+        {site.brand}
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="hidden items-center gap-8 lg:flex">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="font-sans text-sm font-medium text-graphite transition-colors hover:text-ink"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="hidden lg:block">
+        <Button href="#contato" variant="primary" size="base">
+          {site.cta.primary}
+        </Button>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button
+        type="button"
+        class="mobile-menu-toggle flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Abrir menu"
+      >
+        <span class="block h-px w-6 bg-ink transition-transform" aria-hidden="true"></span>
+        <span class="block h-px w-6 bg-ink transition-opacity" aria-hidden="true"></span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="mobile-menu absolute left-0 right-0 top-full border-b border-line bg-paper-light opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"
+    aria-hidden="true"
+  >
+    <div class="site-container py-8">
+      <ul class="flex flex-col gap-5">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="font-sans text-lg font-medium text-graphite transition-colors hover:text-ink mobile-menu-link outline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-copper"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+        <li class="pt-3">
+          <Button href="#contato" variant="primary" size="lg" class="w-full">
+            {site.cta.primary}
+          </Button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Fallback sem JS: menu mobile sempre visível -->
+  <noscript>
+    <div class="absolute left-0 right-0 top-full border-b border-line bg-paper-light lg:hidden">
+      <div class="site-container py-6">
+        <ul class="flex flex-col gap-3">
+          {navItems.map((item) => (
+            <li>
+              <a href={item.href} class="font-sans text-base font-medium text-graphite hover:text-ink">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </noscript>
+</header>
+
+<script>
+  const toggle = document.querySelector(".mobile-menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const links = menu?.querySelectorAll<HTMLAnchorElement>(".mobile-menu-link");
+  const focusableSelector = "a, button, input, textarea, select, [tabindex]:not([tabindex='-1'])";
+
+  function setMenuOpen(open: boolean) {
+    if (!toggle || !menu) return;
+    const wasOpen = toggle.getAttribute("aria-expanded") === "true";
+
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+    menu.setAttribute("aria-hidden", String(!open));
+    menu.classList.toggle("opacity-0", !open);
+    menu.classList.toggle("pointer-events-none", !open);
+
+    const bars = toggle.querySelectorAll("span");
+    bars[0]?.classList.toggle("rotate-45", open);
+    bars[0]?.classList.toggle("translate-y-2", open);
+    bars[1]?.classList.toggle("opacity-0", open);
+
+    if (open && !wasOpen && links && links.length > 0) {
+      // Move foco para o primeiro link ao abrir
+      setTimeout(() => links[0].focus(), 10);
+    } else if (!open && wasOpen) {
+      // Retorna foco ao botão ao fechar
+      toggle.focus();
+    }
+  }
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    setMenuOpen(!isOpen);
+  });
+
+  links?.forEach((link) => {
+    link.addEventListener("click", () => setMenuOpen(false));
+  });
+
+  // Fechar ao pressionar Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && toggle?.getAttribute("aria-expanded") === "true") {
+      setMenuOpen(false);
+    }
+  });
+
+  // Focus trap simples: quando Tab no último link, volta para o botão
+  if (links && links.length > 0 && toggle) {
+    const lastLink = links[links.length - 1];
+    lastLink.addEventListener("keydown", (e) => {
+      if (e.key === "Tab" && !e.shiftKey) {
+        e.preventDefault();
+        toggle.focus();
+      }
+    });
+
+    toggle.addEventListener("keydown", (e) => {
+      if (e.key === "Tab" && e.shiftKey && toggle.getAttribute("aria-expanded") === "true") {
+        e.preventDefault();
+        lastLink.focus();
+      }
+    });
+  }
+</script>

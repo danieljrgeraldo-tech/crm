@@ -4,26 +4,37 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: "#050505",
-        coal: "#0b0a09",
-        graphite: "#141210",
-        line: "rgba(255,255,255,.12)",
-        gold: {
-          100: "#fff3c4",
-          300: "#e8c773",
-          500: "#b98b36",
-          700: "#7a521f"
-        }
+        paper: {
+          DEFAULT: "#F1ECE3",
+          light: "#F8F5EF",
+          dark: "#E8E2D6",
+        },
+        ink: "#191815",
+        graphite: "#292722",
+        muted: "#777166",
+        line: {
+          DEFAULT: "#CEC5B8",
+          light: "#E0D9CE",
+        },
+        wine: {
+          DEFAULT: "#642E2B",
+          dark: "#4A2220",
+        },
+        copper: {
+          DEFAULT: "#A46743",
+          light: "#C2825D",
+        },
+        white: "#FCFBF8",
       },
       fontFamily: {
-        display: ['"Cormorant Garamond"', "Georgia", "serif"],
-        sans: ['"Inter"', "system-ui", "sans-serif"]
+        display: ['"Newsreader Variable"', "Georgia", "serif"],
+        sans: ['"Geist Sans Variable"', "system-ui", "sans-serif"],
       },
-      boxShadow: {
-        gold: "0 0 34px rgba(185,139,54,.18)",
-        card: "0 24px 80px rgba(0,0,0,.36)"
-      }
-    }
+      maxWidth: {
+        site: "1440px",
+        content: "1280px",
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };
