@@ -10,7 +10,7 @@ const rightFactors = content.factors.slice(3);
 
 <section
   id="visao"
-  class="relative bg-paper-dark py-16 lg:py-20"
+  class="relative bg-paper-dark py-12 lg:py-16"
   aria-labelledby="product-title"
 >
   <div class="pointer-events-none absolute inset-0 opacity-30" aria-hidden="true">
@@ -105,21 +105,23 @@ const rightFactors = content.factors.slice(3);
     </div>
 
     <!-- Mobile: sequência vertical conectada -->
-    <div class="decision-map-mobile relative mt-10 block lg:hidden">
-      <div class="relative space-y-3 pl-6">
-        <div class="absolute left-[11px] top-3 bottom-3 w-px bg-line" aria-hidden="true"></div>
+    <div class="decision-map-mobile relative mt-8 block lg:hidden">
+      <div class="relative space-y-0">
+        <div class="absolute left-[15px] top-4 bottom-4 w-px bg-line" aria-hidden="true"></div>
         {content.factors.map((factor, i) => (
-          <div class="factor-node relative border border-line bg-paper-light px-4 py-3" data-motion="reveal">
-            <div class="absolute -left-6 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center border border-line bg-paper-dark">
-              <span class="font-sans text-[10px] font-medium text-muted">{String(i + 1).padStart(2, "0")}</span>
+          <div class="factor-node relative pl-10 py-3" data-motion="reveal">
+            <div class="absolute left-0 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center border border-line bg-paper-light">
+              <span class="font-sans text-[10px] font-medium uppercase tracking-widest text-muted">{String(i + 1).padStart(2, "0")}</span>
             </div>
-            <span class="font-display text-xl font-light text-ink">{factor.label}</span>
-            <span class="mt-1 block font-sans text-sm leading-relaxed text-muted">{factor.description}</span>
+            <div class="border-b border-line pb-3">
+              <span class="font-display text-xl font-light text-ink">{factor.label}</span>
+              <span class="mt-1 block font-sans text-sm leading-relaxed text-muted">{factor.description}</span>
+            </div>
           </div>
         ))}
       </div>
 
-      <div class="ml-6 mt-4 border border-ink bg-ink px-5 py-5 text-center" data-motion="reveal">
+      <div class="mt-2 border border-ink bg-ink px-5 py-5 text-center" data-motion="reveal">
         <span class="font-sans text-[10px] font-medium uppercase tracking-widest text-copper-light">
           Decisão estruturada
         </span>

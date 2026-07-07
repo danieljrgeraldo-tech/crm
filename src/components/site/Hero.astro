@@ -9,20 +9,19 @@ const hero = site.hero;
 
 <section
   id="top"
-  class="relative min-h-screen overflow-hidden bg-paper pt-24 lg:pt-28"
+  class="relative overflow-hidden bg-paper pt-24 lg:pt-28"
   aria-label="Introdução"
 >
   <!-- Linhas técnicas de fundo -->
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
     <div class="technical-line top-0 left-[6%] h-full w-px"></div>
     <div class="technical-line top-0 right-[6%] h-full w-px hidden lg:block"></div>
-    <div class="technical-line top-[68%] left-0 right-0 h-px hidden lg:block"></div>
   </div>
 
-  <div class="site-container relative z-10 flex min-h-[calc(100vh-6.5rem)] flex-col justify-between pb-5 lg:pb-10">
-    <div class="grid flex-1 grid-cols-1 content-end gap-5 pt-3 lg:grid-cols-12 lg:gap-4">
+  <div class="site-container relative z-10 pb-5 lg:pb-8">
+    <div class="grid grid-cols-1 items-end gap-5 lg:grid-cols-12 lg:gap-4">
       <!-- Coluna textual -->
-      <div class="flex flex-col justify-end lg:col-span-6 lg:col-start-1 lg:pr-4 xl:pr-8">
+      <div class="flex flex-col justify-end pt-3 lg:col-span-6 lg:col-start-1 lg:pr-4 xl:pr-8">
         <SectionLabel text={hero.eyebrow} />
 
         <h1 class="mt-3 font-display text-[2.75rem] font-light leading-[0.95] tracking-tight text-ink sm:text-6xl lg:mt-4 lg:text-7xl xl:text-[5.5rem]">
@@ -52,7 +51,7 @@ const hero = site.hero;
       <!-- Coluna de imagem -->
       <div class="lg:col-span-6 lg:col-start-7 lg:-ml-12 xl:-ml-16">
         <div
-          class="hero-image-mask relative aspect-[16/10] w-full overflow-hidden bg-line-light lg:aspect-[4/5] lg:h-[min(76vh,50rem)] lg:max-h-[50rem]"
+          class="hero-image-mask relative aspect-[16/10] w-full overflow-hidden bg-line-light lg:aspect-[4/5] lg:h-[min(70vh,46rem)] lg:max-h-[46rem]"
           data-motion="mask-open"
         >
           <img
@@ -72,7 +71,7 @@ const hero = site.hero;
 
     <!-- Marcadores inferiores -->
     <div
-      class="relative z-10 mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-line pt-4 lg:mt-7 lg:gap-x-10 lg:pt-7"
+      class="relative z-10 mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-line pt-4 lg:mt-7 lg:gap-x-10 lg:pt-6"
       data-motion="reveal"
     >
       {hero.markers.map((marker) => (
