@@ -8,7 +8,7 @@ const content = site.example;
 
 <section
   id="exemplo"
-  class="relative bg-paper-dark py-20 lg:py-28"
+  class="relative bg-ink py-20 lg:py-24"
   aria-labelledby="example-title"
 >
   <div class="pointer-events-none absolute inset-0 opacity-30" aria-hidden="true">
@@ -21,25 +21,25 @@ const content = site.example;
 
     <h2
       id="example-title"
-      class="mt-6 max-w-3xl font-display text-4xl font-light leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl"
+      class="mt-6 max-w-3xl font-display text-4xl font-light leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl"
     >
       <MotionText as="span" class="block" type="reveal-line">
         {content.title}
       </MotionText>
     </h2>
 
-    <MotionText as="p" class="mt-6 max-w-3xl text-lg leading-relaxed text-graphite lg:mt-8" type="reveal">
+    <MotionText as="p" class="mt-6 max-w-3xl text-base leading-relaxed text-white/70 lg:mt-8 lg:text-lg" type="reveal">
       {content.intro}
     </MotionText>
 
-    <div class="example-grid mt-12 grid gap-4 lg:mt-16 lg:grid-cols-3">
+    <div class="example-grid mt-10 grid gap-3 lg:mt-14 lg:grid-cols-3">
       <!-- Coluna 1 -->
-      <div class="example-card border border-line bg-paper-light p-5 sm:p-6" data-motion="reveal">
-        <h3 class="font-display text-xl font-light text-ink sm:text-2xl">{content.situation.title}</h3>
+      <div class="example-card border border-line/30 bg-paper/10 p-5 sm:p-6" data-motion="reveal">
+        <h3 class="font-display text-xl font-light text-white sm:text-2xl">{content.situation.title}</h3>
         <ul class="mt-4 space-y-3">
           {content.situation.points.map((point) => (
-            <li class="flex items-start gap-3 font-sans text-sm leading-relaxed text-graphite">
-              <span class="mt-2 block h-1 w-1 flex-shrink-0 bg-copper" aria-hidden="true"></span>
+            <li class="flex items-start gap-3 font-sans text-sm leading-relaxed text-white/80">
+              <span class="mt-2 block h-1 w-1 flex-shrink-0 bg-copper-light" aria-hidden="true"></span>
               {point}
             </li>
           ))}
@@ -47,12 +47,12 @@ const content = site.example;
       </div>
 
       <!-- Coluna 2 -->
-      <div class="example-card border border-line bg-paper-light p-5 sm:p-6" data-motion="reveal">
-        <h3 class="font-display text-xl font-light text-ink sm:text-2xl">{content.constraints.title}</h3>
+      <div class="example-card border border-line/30 bg-paper/10 p-5 sm:p-6" data-motion="reveal">
+        <h3 class="font-display text-xl font-light text-white sm:text-2xl">{content.constraints.title}</h3>
         <ul class="mt-4 space-y-3">
           {content.constraints.points.map((point) => (
-            <li class="flex items-start gap-3 font-sans text-sm leading-relaxed text-graphite">
-              <span class="mt-2 block h-1 w-1 flex-shrink-0 bg-copper" aria-hidden="true"></span>
+            <li class="flex items-start gap-3 font-sans text-sm leading-relaxed text-white/80">
+              <span class="mt-2 block h-1 w-1 flex-shrink-0 bg-copper-light" aria-hidden="true"></span>
               {point}
             </li>
           ))}
@@ -60,12 +60,12 @@ const content = site.example;
       </div>
 
       <!-- Coluna 3 -->
-      <div class="example-card border border-line bg-paper-light p-5 sm:p-6" data-motion="reveal">
-        <h3 class="font-display text-xl font-light text-ink sm:text-2xl">{content.evaluated.title}</h3>
+      <div class="example-card border border-line/30 bg-paper/10 p-5 sm:p-6" data-motion="reveal">
+        <h3 class="font-display text-xl font-light text-white sm:text-2xl">{content.evaluated.title}</h3>
         <ul class="mt-4 space-y-3">
           {content.evaluated.points.map((point) => (
-            <li class="flex items-start gap-3 font-sans text-sm leading-relaxed text-graphite">
-              <span class="mt-2 block h-1 w-1 flex-shrink-0 bg-copper" aria-hidden="true"></span>
+            <li class="flex items-start gap-3 font-sans text-sm leading-relaxed text-white/80">
+              <span class="mt-2 block h-1 w-1 flex-shrink-0 bg-copper-light" aria-hidden="true"></span>
               {point}
             </li>
           ))}
@@ -73,12 +73,12 @@ const content = site.example;
       </div>
 
       <!-- Coluna 4 -->
-      <div class="example-card border border-line bg-paper-light p-5 sm:p-6 lg:col-span-2" data-motion="reveal">
-        <h3 class="font-display text-xl font-light text-ink sm:text-2xl">{content.discarded.title}</h3>
+      <div class="example-card border border-line/30 bg-paper/10 p-5 sm:p-6 lg:col-span-2" data-motion="reveal">
+        <h3 class="font-display text-xl font-light text-white sm:text-2xl">{content.discarded.title}</h3>
         <ul class="mt-4 grid gap-3 sm:grid-cols-2">
           {content.discarded.points.map((point) => (
-            <li class="flex items-start gap-3 font-sans text-sm leading-relaxed text-graphite">
-              <span class="mt-2 block h-1 w-1 flex-shrink-0 bg-muted" aria-hidden="true"></span>
+            <li class="flex items-start gap-3 font-sans text-sm leading-relaxed text-white/70">
+              <span class="mt-2 block h-1 w-1 flex-shrink-0 bg-white/50" aria-hidden="true"></span>
               {point}
             </li>
           ))}
@@ -86,7 +86,7 @@ const content = site.example;
       </div>
 
       <!-- Coluna 5 -->
-      <div class="example-card border border-ink bg-ink p-5 text-white sm:p-6" data-motion="reveal">
+      <div class="example-card border border-copper/40 bg-paper/15 p-5 sm:p-6" data-motion="reveal">
         <h3 class="font-display text-xl font-light text-copper-light sm:text-2xl">{content.direction.title}</h3>
         <ul class="mt-4 space-y-3">
           {content.direction.points.map((point) => (

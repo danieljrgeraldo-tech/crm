@@ -8,7 +8,7 @@ const content = site.about;
 
 <section
   id="sobre"
-  class="relative bg-paper py-20 lg:py-28"
+  class="relative bg-paper py-16 lg:py-20"
   aria-labelledby="about-title"
 >
   <div class="pointer-events-none absolute inset-0 opacity-30" aria-hidden="true">
@@ -17,13 +17,13 @@ const content = site.about;
   </div>
 
   <div class="content-container relative z-10">
-    <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+    <div class="grid gap-10 lg:grid-cols-12 lg:gap-14">
       <div class="lg:col-span-5">
         <SectionLabel text={content.eyebrow} />
 
         <h2
           id="about-title"
-          class="mt-6 font-display text-4xl font-light leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl"
+          class="mt-5 font-display text-4xl font-light leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl"
         >
           <MotionText as="span" class="block" type="reveal-line">
             {content.title}
@@ -32,9 +32,9 @@ const content = site.about;
       </div>
 
       <div class="lg:col-span-6 lg:col-start-7">
-        <div class="space-y-6">
+        <div class="space-y-5">
           {content.paragraphs.map((paragraph) => (
-            <MotionText as="p" class="text-lg leading-relaxed text-graphite lg:text-xl" type="reveal">
+            <MotionText as="p" class="text-base leading-relaxed text-graphite lg:text-lg" type="reveal">
               {paragraph}
             </MotionText>
           ))}

@@ -11,14 +11,15 @@ function initHeroMotion() {
   markMotionReady();
 
   // Estado inicial aplicado dinamicamente pelo JS (progressive enhancement)
-  gsap.set('[data-motion="fade"]', { opacity: 0, y: 0 });
-  gsap.set('[data-motion="reveal"]', { opacity: 0, y: 24 });
-  gsap.set('[data-motion="reveal-line"]', { opacity: 0, clipPath: "inset(100% 0 0 0)", y: 0 });
-  gsap.set('[data-motion="mask-open"]', { clipPath: "inset(0 0 100% 0)", y: 0 });
+  gsap.set('[data-motion="fade"]', { opacity: 0 });
+  gsap.set('[data-motion="reveal"]', { opacity: 0, y: 20 });
+  gsap.set('[data-motion="reveal-line"]', { opacity: 0, clipPath: "inset(100% 0 0 0)" });
+  gsap.set('[data-motion="mask-open"]', { clipPath: "inset(0 0 100% 0)" });
 
   const tl = gsap.timeline({
     defaults: { ease: "power3.out" },
     onComplete: () => {
+      // Limpa propriedades animadas, mantendo visibilidade final
       gsap.set(
         [
           '[data-motion="fade"]',
@@ -26,24 +27,24 @@ function initHeroMotion() {
           '[data-motion="reveal-line"]',
           '[data-motion="mask-open"]',
         ],
-        { clearProps: "all" }
+        { clearProps: "transform,clipPath,opacity" }
       );
     },
   });
 
-  tl.to("header[data-motion='fade']", { opacity: 1, duration: 0.5, delay: 0.1 })
-    .to("#top .section-label[data-motion='fade']", { opacity: 1, duration: 0.4 }, "-=0.25")
+  tl.to("header[data-motion='fade']", { opacity: 1, duration: 0.4, delay: 0.05 })
+    .to("#top .section-label[data-motion='fade']", { opacity: 1, duration: 0.35 }, "-=0.2")
     .to(
       "#top h1 [data-motion='reveal-line']",
-      { opacity: 1, clipPath: "inset(0% 0 0 0)", duration: 0.7 },
-      "-=0.2"
+      { opacity: 1, clipPath: "inset(0% 0 0 0)", duration: 0.6 },
+      "-=0.15"
     )
-    .to("#top p[data-motion='reveal']", { opacity: 1, y: 0, duration: 0.55, stagger: 0.08 }, "-=0.4")
-    .to("#top div[data-motion='reveal']", { opacity: 1, y: 0, duration: 0.5 }, "-=0.35")
+    .to("#top p[data-motion='reveal']", { opacity: 1, y: 0, duration: 0.45, stagger: 0.06 }, "-=0.35")
+    .to("#top div[data-motion='reveal']", { opacity: 1, y: 0, duration: 0.4 }, "-=0.3")
     .to(
       ".hero-image-mask[data-motion='mask-open']",
-      { clipPath: "inset(0% 0 0% 0)", duration: 0.9 },
-      "-=0.8"
+      { clipPath: "inset(0% 0 0% 0)", duration: 0.7 },
+      "-=0.6"
     );
 }
 

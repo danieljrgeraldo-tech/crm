@@ -19,27 +19,27 @@ const hero = site.hero;
     <div class="technical-line top-[68%] left-0 right-0 h-px hidden lg:block"></div>
   </div>
 
-  <div class="site-container relative z-10 flex min-h-[calc(100vh-7rem)] flex-col justify-between pb-6 lg:pb-12">
-    <div class="grid flex-1 grid-cols-1 content-end gap-6 pt-4 lg:grid-cols-12 lg:gap-4">
+  <div class="site-container relative z-10 flex min-h-[calc(100vh-6.5rem)] flex-col justify-between pb-5 lg:pb-10">
+    <div class="grid flex-1 grid-cols-1 content-end gap-5 pt-3 lg:grid-cols-12 lg:gap-4">
       <!-- Coluna textual -->
       <div class="flex flex-col justify-end lg:col-span-6 lg:col-start-1 lg:pr-4 xl:pr-8">
         <SectionLabel text={hero.eyebrow} />
 
-        <h1 class="mt-4 font-display text-[2.75rem] font-light leading-[0.95] tracking-tight text-ink sm:text-6xl lg:mt-5 lg:text-7xl xl:text-[5.5rem]">
+        <h1 class="mt-3 font-display text-[2.75rem] font-light leading-[0.95] tracking-tight text-ink sm:text-6xl lg:mt-4 lg:text-7xl xl:text-[5.5rem]">
           <MotionText as="span" class="block" type="reveal-line">
             {hero.title}
           </MotionText>
         </h1>
 
-        <MotionText as="p" class="mt-4 max-w-xl text-base leading-relaxed text-graphite sm:text-lg lg:mt-6 lg:text-xl" type="reveal">
+        <MotionText as="p" class="mt-4 max-w-xl text-base leading-relaxed text-graphite sm:text-lg lg:mt-5 lg:text-xl" type="reveal">
           {hero.text}
         </MotionText>
 
-        <MotionText as="p" class="mt-3 max-w-xl text-sm leading-relaxed text-muted sm:text-base" type="reveal">
+        <MotionText as="p" class="mt-2 max-w-xl text-sm leading-relaxed text-muted sm:text-base" type="reveal">
           {hero.complement}
         </MotionText>
 
-        <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-8" data-motion="reveal">
+        <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-7" data-motion="reveal">
           <Button href="#contato" variant="primary" size="lg">
             {site.cta.primary}
           </Button>
@@ -52,7 +52,7 @@ const hero = site.hero;
       <!-- Coluna de imagem -->
       <div class="lg:col-span-6 lg:col-start-7 lg:-ml-12 xl:-ml-16">
         <div
-          class="hero-image-mask relative aspect-[16/10] w-full overflow-hidden bg-line-light lg:aspect-[4/5] lg:h-[min(76vh,52rem)] lg:max-h-[52rem]"
+          class="hero-image-mask relative aspect-[16/10] w-full overflow-hidden bg-line-light lg:aspect-[4/5] lg:h-[min(76vh,50rem)] lg:max-h-[50rem]"
           data-motion="mask-open"
         >
           <img
@@ -72,7 +72,7 @@ const hero = site.hero;
 
     <!-- Marcadores inferiores -->
     <div
-      class="relative z-10 mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-line pt-5 lg:mt-8 lg:gap-x-10 lg:pt-8"
+      class="relative z-10 mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-line pt-4 lg:mt-7 lg:gap-x-10 lg:pt-7"
       data-motion="reveal"
     >
       {hero.markers.map((marker) => (

@@ -8,7 +8,7 @@ const content = site.method;
 
 <section
   id="metodo"
-  class="relative bg-paper-light py-20 lg:py-28"
+  class="relative bg-paper-light py-16 lg:py-20"
   aria-labelledby="method-title"
 >
   <div class="pointer-events-none absolute inset-0 opacity-30" aria-hidden="true">
@@ -21,36 +21,36 @@ const content = site.method;
 
     <h2
       id="method-title"
-      class="mt-6 max-w-3xl font-display text-4xl font-light leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl"
+      class="mt-5 max-w-3xl font-display text-4xl font-light leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl"
     >
       <MotionText as="span" class="block" type="reveal-line">
         {content.title}
       </MotionText>
     </h2>
 
-    <div class="method-track relative mt-14 lg:mt-20">
+    <div class="method-track relative mt-10 lg:mt-14">
       <!-- Linha de progresso -->
-      <div class="method-line pointer-events-none absolute left-[15px] top-0 bottom-0 w-px bg-line sm:left-[19px] lg:left-1/2 lg:-translate-x-1/2" aria-hidden="true"></div>
+      <div class="method-line pointer-events-none absolute left-[11px] top-0 bottom-0 w-px bg-line sm:left-[15px] lg:left-1/2 lg:-translate-x-1/2" aria-hidden="true"></div>
 
-      <div class="space-y-10 lg:space-y-16">
+      <div class="space-y-8 lg:space-y-12">
         {content.steps.map((step, i) => (
           <div
-            class="method-step relative grid grid-cols-[auto_1fr] gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-16"
+            class="method-step relative grid grid-cols-[auto_1fr] gap-5 sm:gap-7 lg:grid-cols-2 lg:gap-14"
             data-motion="reveal"
           >
             <!-- Marcador -->
             <div class="flex flex-col items-center lg:items-end">
-              <div class="flex h-8 w-8 items-center justify-center border border-ink bg-ink text-white sm:h-10 sm:w-10">
-                <span class="font-sans text-xs font-medium sm:text-sm">{String(i + 1).padStart(2, "0")}</span>
+              <div class="flex h-7 w-7 items-center justify-center border border-ink bg-ink text-white sm:h-9 sm:w-9">
+                <span class="font-sans text-xs font-medium">{String(i + 1).padStart(2, "0")}</span>
               </div>
             </div>
 
             <!-- Conteúdo -->
             <div class="lg:col-start-2">
-              <h3 class="font-display text-2xl font-light text-ink sm:text-3xl">
+              <h3 class="font-display text-xl font-light text-ink sm:text-2xl lg:text-3xl">
                 {step.title}
               </h3>
-              <p class="mt-3 max-w-lg text-base leading-relaxed text-graphite lg:text-lg">
+              <p class="mt-2 max-w-lg text-sm leading-relaxed text-graphite lg:text-base">
                 {step.text}
               </p>
             </div>
