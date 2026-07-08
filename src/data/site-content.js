@@ -2,7 +2,7 @@
 
 export const site = {
   brand: "Daniel Junior",
-  category: "Estratégia de capital para empresários e investidores",
+  category: "Soluções financeiras para empresas e investidores",
   nav: [
     { label: "Visão", href: "#visao" },
     { label: "Método", href: "#metodo" },
@@ -12,23 +12,23 @@ export const site = {
     { label: "Contato", href: "#contato" },
   ],
   cta: {
-    primary: "Mapear meu cenário",
-    secondary: "Ver como funciona",
+    primary: "Solicitar uma análise",
+    secondary: "Conhecer as soluções",
   },
   hero: {
-    eyebrow: "ESTRATÉGIA DE CAPITAL PARA EMPRESÁRIOS E INVESTIDORES",
-    title: "Capital com critério.",
-    text: "Estruturo caminhos de crédito, patrimônio e capital para decisões empresariais que não podem ser tratadas como produto de prateleira.",
-    complement: "Primeiro, entendo o objetivo, o caixa, o prazo e o risco. Depois, comparo possibilidades e conecto as partes certas.",
-    markers: ["Crédito", "Patrimônio", "Capital privado", "Investimentos"],
+    eyebrow: "SOLUÇÕES FINANCEIRAS PARA EMPRESAS E INVESTIDORES",
+    title: "Soluções financeiras para empresas e investidores",
+    text: "Ajudo empresários e investidores a encontrar estruturas de crédito, capital e pagamento adequadas ao seu cenário.",
+    complement: "Cada operação é analisada conforme o objetivo, o prazo, a capacidade financeira e as garantias disponíveis.",
+    markers: ["Crédito", "Capital", "Patrimônio", "Investimentos"],
     imageAlt: "Daniel Junior em retrato editorial",
   },
   productComesLater: {
-    eyebrow: "PRINCÍPIO",
-    title: "O produto vem depois.",
-    text: "Uma operação pode parecer simples até que prazo, caixa, garantias, custo e risco sejam colocados na mesma mesa.",
+    eyebrow: "ANÁLISE",
+    title: "Cada empresa precisa de uma solução diferente",
+    text: "Antes de indicar uma operação, analiso o objetivo, o prazo, a capacidade financeira, as garantias disponíveis e o momento do negócio.",
     factors: [
-      { label: "objetivo", description: "O que a decisão precisa resolver" },
+      { label: "objetivo", description: "O que a operação precisa resolver" },
       { label: "prazo", description: "Quando o recurso precisa estar disponível" },
       { label: "caixa", description: "Capacidade de pagamento e fluxo" },
       { label: "risco", description: "O que pode sair do controle" },
@@ -37,26 +37,26 @@ export const site = {
     ],
   },
   decisions: {
-    eyebrow: "CENÁRIOS",
-    title: "Qual decisão precisa avançar?",
+    eyebrow: "COMO POSSO AJUDAR",
+    title: "Como posso ajudar",
     items: [
-      { title: "Preciso gerar liquidez", text: "Caixa apertado, contas a pagar ou oportunidade que não pode esperar." },
-      { title: "Quero financiar crescimento", text: "Expansão, aquisição, estoque ou estrutura que demanda capital." },
-      { title: "Tenho patrimônio, mas não liquidez", text: "Ativos que podem ser lastreados sem precisar ser vendidos às pressas." },
-      { title: "Quero organizar uma operação específica", text: "Operação com múltiplas partes, garantias e prazos diferentes." },
-      { title: "Quero aumentar as possibilidades de pagamento", text: "Estruturas que ampliam flexibilidade sem comprometer saúde financeira." },
-      { title: "Quero avaliar uma oportunidade de investimento", text: "Análise de risco, retorno e encaixe estratégico do capital." },
+      { title: "Crédito com garantia de imóvel", text: "Capital para quem tem patrimônio imobiliário e precisa de liquidez com prazos mais longos." },
+      { title: "Crédito estruturado", text: "Operações desenhadas conforme o cenário da empresa, considerando fluxo, garantias e necessidades específicas." },
+      { title: "Antecipação de recebíveis", text: "Transformação de fluxos futuros em capital disponível para honrar compromissos ou aproveitar oportunidades." },
+      { title: "Capital privado", text: "Conexão com investidores e fundos para operações que demandam estrutura e valor mais elevado." },
+      { title: "Cartas contempladas", text: "Uso estratégico de contemplação para aquisição de imóveis, veículos, equipamentos ou expandir o negócio." },
+      { title: "Pix Parcelado Garantido", text: "Estrutura para lojistas oferecerem parcelamento no Pix com proteção contra inadimplência." },
+      { title: "Operações financeiras estruturadas", text: "Operações com múltiplas partes, garantias e cronogramas, organizadas de ponta a ponta." },
     ],
   },
   method: {
     eyebrow: "MÉTODO",
-    title: "Como Daniel estrutura uma análise",
+    title: "Como funciona",
     steps: [
-      { title: "Leitura do cenário", text: "Entender objetivo, caixa, prazo, risco, garantias e partes envolvidas." },
-      { title: "Comparação dos caminhos", text: "Mapear alternativas e descartar as que não fazem sentido para aquele caso." },
-      { title: "Estruturação da operação", text: "Definir lastros, fluxos, responsabilidades e documentação necessária." },
-      { title: "Conexão entre as partes", text: "Articular investidores, instituições, empresas e assessorias envolvidas." },
-      { title: "Acompanhamento", text: "Acompanhar execução, ajustes e próximos passos após a estruturação." },
+      { title: "Você explica o que precisa resolver", text: "Conta o objetivo, o prazo, a situação financeira e as garantias disponíveis." },
+      { title: "Analiso o cenário e as possibilidades", text: "Avalio as alternativas viáveis e descarto as que não fazem sentido para aquele caso." },
+      { title: "Apresento as alternativas adequadas", text: "Mostro as soluções financeiras que se encaixam no cenário, com clareza sobre lastro, fluxo e prazo." },
+      { title: "Acompanho a operação e a comunicação entre as partes", text: "Conecto as partes envolvidas e acompanho a execução até a conclusão." },
     ],
   },
   structures: {
@@ -75,19 +75,19 @@ export const site = {
   },
   example: {
     eyebrow: "EXEMPLO DE ANÁLISE",
-    title: "Como o raciocínio é construído",
-    intro: "Cenário ilustrativo: uma empresa tem oportunidade de expansão, patrimônio disponível, fluxo mensal limitado e necessidade de prazo maior.",
+    title: "Como uma operação é desenhada",
+    intro: "Cenário ilustrativo de uma empresa que precisa de capital para expandir, tem patrimônio disponível, mas fluxo mensal apertado no curto prazo.",
     situation: {
       title: "Situação inicial",
-      points: ["Oportunidade de expansão identificada", "Patrimônio disponível para lastro", "Fluxo mensal limitado no curto prazo", "Necessidade de prazo estendido"],
+      points: ["Necessidade de capital para expansão", "Patrimônio imobiliário disponível", "Fluxo mensal limitado no curto prazo", "Prazo estendido é essencial"],
     },
     constraints: {
       title: "Restrições",
-      points: ["Prestação alta comprometeria caixa", "Venda do ativo seria custosa", "Crédito puro sem lastro é caro"],
+      points: ["Prestação alta comprometeria o caixa", "Venda do ativo não é viável", "Crédito sem lastro teria custo elevado"],
     },
     evaluated: {
       title: "Possibilidades avaliadas",
-      points: ["Crédito com garantia de imóvel", "Capital privado com participação", "Operação estruturada mista"],
+      points: ["Crédito com garantia de imóvel", "Operação estruturada mista", "Capital privado com participação"],
     },
     discarded: {
       title: "Critérios de descarte",
@@ -95,20 +95,20 @@ export const site = {
     },
     direction: {
       title: "Direção construída",
-      points: ["Estrutura de crédito com garantia", "Prazo alongado alinhado ao fluxo", "Condições que preservam o patrimônio"],
+      points: ["Crédito com garantia de imóvel", "Prazo alongado alinhado ao fluxo", "Condições que preservam o patrimônio"],
     },
   },
   about: {
     eyebrow: "SOBRE",
     title: "Daniel Junior",
     paragraphs: [
-      "Comecei no design. Depois, passei a construir marcas e estratégias de posicionamento. Com o tempo, fui atraído pelo lado operacional dos negócios: capital, estruturação, tecnologia e como empresas tomam decisões financeiras.",
-      "Hoje trabalho com empresários e investidores que precisam enxergar o cenário completo antes de escolher uma estrutura. Acredito que toda empresa é um sistema — e que uma boa decisão de capital começa com as perguntas certas.",
+      "Atuo com negócios e desenvolvimento empresarial desde 2013. Ao longo dessa trajetória, construí relacionamento com empresários, investidores, fundos privados e parceiros estratégicos, participando de operações voltadas a crédito, capital, investimentos e crescimento empresarial.",
+      "Hoje atuo conectando empresas e investidores às oportunidades e soluções mais adequadas para cada cenário.",
     ],
   },
   contact: {
-    eyebrow: "DIAGNÓSTICO",
-    title: "Uma boa estrutura começa com as perguntas certas.",
+    eyebrow: "CONTATO",
+    title: "Vamos conversar?",
     fields: {
       name: "Nome",
       whatsapp: "WhatsApp",
@@ -117,7 +117,7 @@ export const site = {
       amount: "Faixa aproximada envolvida",
       timing: "Prazo ou urgência",
     },
-    submit: "Enviar resumo no WhatsApp",
+    submit: "Solicitar análise no WhatsApp",
     privacy: "As informações serão usadas apenas para organizar a primeira conversa.",
   },
   footer: {
