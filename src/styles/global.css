@@ -114,3 +114,11 @@ ul, ol {
   background-color: var(--line-light);
   pointer-events: none;
 }
+
+/* Hero media: fotografia sempre visível por padrão */
+.hero-media,
+.hero-media img {
+  opacity: 1 !important;
+  visibility: visible !important;
+  clip-path: none !important;
+}
