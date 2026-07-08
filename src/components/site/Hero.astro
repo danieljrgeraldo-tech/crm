@@ -2,7 +2,6 @@
 import { site } from "../../data/site-content.js";
 import Button from "./Button.astro";
 import SectionLabel from "./SectionLabel.astro";
-import MotionText from "./MotionText.astro";
 
 const hero = site.hero;
 ---
@@ -22,23 +21,21 @@ const hero = site.hero;
     <div class="grid grid-cols-1 items-end gap-5 lg:grid-cols-12 lg:gap-4">
       <!-- Coluna textual -->
       <div class="flex flex-col justify-end pt-3 lg:col-span-6 lg:col-start-1 lg:pr-4 xl:pr-8">
-        <SectionLabel text={hero.eyebrow} />
+        <SectionLabel text={hero.eyebrow} motion={false} />
 
         <h1 class="mt-3 font-display text-[2.75rem] font-light leading-[0.95] tracking-tight text-ink sm:text-6xl lg:mt-4 lg:text-7xl xl:text-[5.5rem]">
-          <MotionText as="span" class="block" type="reveal-line">
-            {hero.title}
-          </MotionText>
+          <span class="block">{hero.title}</span>
         </h1>
 
-        <MotionText as="p" class="mt-4 max-w-xl text-base leading-relaxed text-graphite sm:text-lg lg:mt-5 lg:text-xl" type="reveal">
+        <p class="mt-4 max-w-xl text-base leading-relaxed text-graphite sm:text-lg lg:mt-5 lg:text-xl">
           {hero.text}
-        </MotionText>
+        </p>
 
-        <MotionText as="p" class="mt-2 max-w-xl text-sm leading-relaxed text-muted sm:text-base" type="reveal">
+        <p class="mt-2 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
           {hero.complement}
-        </MotionText>
+        </p>
 
-        <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-7" data-motion="reveal">
+        <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-7">
           <Button href="#contato" variant="primary" size="lg">
             {site.cta.primary}
           </Button>
@@ -51,8 +48,7 @@ const hero = site.hero;
       <!-- Coluna de imagem -->
       <div class="lg:col-span-6 lg:col-start-7 lg:-ml-12 xl:-ml-16">
         <div
-          class="hero-media hero-image-mask relative aspect-[16/10] w-full overflow-hidden bg-line-light lg:aspect-[4/5] lg:h-[min(70vh,46rem)] lg:max-h-[46rem]"
-          data-motion="mask-open"
+          class="hero-image-mask relative aspect-[16/10] w-full overflow-hidden bg-line-light lg:aspect-[4/5] lg:h-[min(70vh,46rem)] lg:max-h-[46rem]"
         >
           <img
             src="/images/daniel-hero.webp"
@@ -72,7 +68,6 @@ const hero = site.hero;
     <!-- Marcadores inferiores -->
     <div
       class="relative z-10 mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-line pt-4 lg:mt-7 lg:gap-x-10 lg:pt-6"
-      data-motion="reveal"
     >
       {hero.markers.map((marker) => (
         <span class="font-sans text-xs font-medium uppercase tracking-widest text-muted">

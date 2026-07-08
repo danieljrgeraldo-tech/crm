@@ -1,11 +1,12 @@
 ---
 export interface Props {
   text: string;
+  motion?: boolean;
 }
 
-const { text } = Astro.props;
+const { text, motion = true } = Astro.props;
 ---
 
-<span class="section-label" data-motion="fade">
+<span class="section-label" {...(motion ? { "data-motion": "fade" } : {})}>
   {text}
 </span>
