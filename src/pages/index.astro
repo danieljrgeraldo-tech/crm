@@ -1,33 +1,309 @@
----
-import SiteLayout from "../layouts/SiteLayout.astro";
-import Header from "../components/site/Header.astro";
-import Hero from "../components/site/Hero.astro";
-import SectionProductComesLater from "../components/site/SectionProductComesLater.astro";
-import SectionDecisions from "../components/site/SectionDecisions.astro";
-import SectionMethod from "../components/site/SectionMethod.astro";
-import SectionStructures from "../components/site/SectionStructures.astro";
-import SectionExample from "../components/site/SectionExample.astro";
-import SectionAbout from "../components/site/SectionAbout.astro";
-import SectionContact from "../components/site/SectionContact.astro";
-import Footer from "../components/site/Footer.astro";
----
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daniel Junior | Soluções para Empresas e Investidores</title>
+    <meta
+      name="description"
+      content="Conectando empresários às soluções certas para cada momento do seu negócio: crédito, capital, investimentos e patrimônio."
+    />
+    <link rel="preload" as="image" href="/images/daniel-hero.webp" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor-spotlight" aria-hidden="true"></div>
 
-<SiteLayout>
-  <Header />
-  <main>
-    <Hero />
-    <SectionProductComesLater />
-    <SectionDecisions />
-    <SectionMethod />
-    <SectionStructures />
-    <SectionExample />
-    <SectionAbout />
-    <SectionContact />
-  </main>
-  <Footer />
-</SiteLayout>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Voltar ao início">
+        <span>Daniel Junior</span>
+        <small>@danieljunior.com.br</small>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#quem-sou">Quem sou eu</a>
+        <a href="#solucoes">Soluções</a>
+        <a href="#home-equity">Home Equity</a>
+        <a href="#contato">Conversar</a>
+      </nav>
+      <a class="header-cta magnetic" href="#contato">Solicitar análise</a>
+    </header>
 
-<script>
-  import "../scripts/hero-motion.js";
-  import "../scripts/scroll-motion.js";
-</script>
+    <main id="top">
+      <section class="hero section-dark" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <picture>
+            <source media="(max-width: 760px)" srcset="/images/daniel-hero.webp" />
+            <img src="/images/daniel-hero.webp" alt="" />
+          </picture>
+        </div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="container hero-content">
+          <p class="eyebrow reveal">Soluções para Empresas e Investidores</p>
+          <h1 id="hero-title" class="reveal">Conectando empresários às <span>soluções certas</span> para cada momento do seu negócio.</h1>
+          <div class="hero-actions reveal">
+            <a class="button primary magnetic" href="#contato">Solicitar análise</a>
+            <a class="button ghost magnetic" href="#solucoes">Ver soluções</a>
+          </div>
+        </div>
+        <div class="hero-pillars reveal" aria-label="Áreas de atuação">
+          <a href="#home-equity">Crédito</a>
+          <a href="#capital">Capital</a>
+          <a href="#capital">Investimentos</a>
+          <a href="#patrimonio">Patrimônio</a>
+        </div>
+        <a class="scroll-cue" href="#quem-sou" aria-label="Ir para a próxima seção">
+          <span></span>
+        </a>
+      </section>
+
+      <section id="quem-sou" class="section profile-section">
+        <div class="container two-column">
+          <div class="section-intro sticky-copy">
+            <p class="eyebrow reveal">Quem sou eu?</p>
+            <h2 class="reveal">Atuo com negócios e <span class="title-accent">desenvolvimento empresarial</span> desde 2013.</h2>
+          </div>
+          <div class="copy-stack">
+            <p class="lead reveal">
+              Ao longo dessa trajetória, construí relacionamento com empresários, investidores, fundos privados e parceiros
+              estratégicos, participando de operações voltadas a crédito, capital, investimentos e crescimento empresarial.
+            </p>
+            <p class="lead reveal">
+              Hoje atuo conectando empresas e investidores às oportunidades e soluções mais adequadas para cada cenário.
+            </p>
+            <div class="role-card reveal">
+              <span>Meu papel</span>
+              <ul>
+                <li>Entender cenários</li>
+                <li>Identificar oportunidades</li>
+                <li>Conectar pessoas às soluções certas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="solucoes" class="section approach-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow reveal">Como posso ajudar?</p>
+            <h2 class="reveal">O objetivo não é oferecer produtos. É encontrar a <span class="title-accent">solução mais adequada</span> para cada necessidade.</h2>
+            <p class="section-copy reveal">
+              Nem toda empresa precisa da mesma solução. Antes de falar sobre produtos, procuro entender o momento da empresa
+              para identificar o melhor caminho para crescer, investir ou acessar capital.
+            </p>
+          </div>
+          <div class="solution-grid">
+            <article class="solution-card reveal">
+              <span>01</span>
+              <h3>Home Equity</h3>
+            </article>
+            <article class="solution-card reveal">
+              <span>02</span>
+              <h3>Crédito Estruturado</h3>
+            </article>
+            <article class="solution-card reveal">
+              <span>03</span>
+              <h3>Cartas Contempladas</h3>
+            </article>
+            <article class="solution-card reveal">
+              <span>04</span>
+              <h3>PIX Parcelado Garantido</h3>
+            </article>
+            <article class="solution-card reveal">
+              <span>05</span>
+              <h3>Capital Privado</h3>
+            </article>
+            <article class="solution-card reveal">
+              <span>06</span>
+              <h3>Antecipação de Recebíveis</h3>
+            </article>
+            <article class="solution-card reveal wide">
+              <span>07</span>
+              <h3>Operações Estruturadas</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="home-equity" class="section feature-section section-dark">
+        <div class="container feature-layout">
+          <div class="feature-main">
+            <p class="eyebrow reveal">Soluções em Crédito e Home Equity</p>
+            <h2 class="reveal">Oferecemos soluções de <span class="title-accent">Home Equity</span> para proprietários de imóveis que desejam transformar patrimônio em capital.</h2>
+            <p class="lead reveal">
+              Capital para investir, expandir seus negócios ou aproveitar novas oportunidades.
+            </p>
+            <p class="statement reveal">Capital para quem quer crescer sem vender patrimônio.</p>
+          </div>
+          <div class="applications reveal">
+            <span>Aplicações</span>
+            <ul>
+              <li>Crédito com Garantia de Imóvel</li>
+              <li>Capital para Expansão Empresarial</li>
+              <li>Reorganização Financeira</li>
+              <li>Capital para Investimentos</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section benefits-section">
+        <div class="container">
+          <div class="section-heading compact">
+            <p class="eyebrow reveal">Benefícios exclusivos do Home Equity</p>
+            <h2 class="reveal">Utilize o patrimônio que você já possui para acessar recursos de forma <span class="title-accent">rápida, segura e estratégica</span>.</h2>
+          </div>
+          <div class="benefit-track">
+            <article class="benefit-card reveal">
+              <span>01</span>
+              <h3>Sem consulta de nome e renda</h3>
+              <p>O processo é ágil e simplificado: não exigimos comprovação de renda ou consultas de score e CPF.</p>
+            </article>
+            <article class="benefit-card reveal">
+              <span>02</span>
+              <h3>Acesso rápido ao capital</h3>
+              <p>Em até 10 dias após a aprovação, o valor solicitado está na sua conta, pronto para ser utilizado.</p>
+            </article>
+            <article class="benefit-card reveal">
+              <span>03</span>
+              <h3>Liberdade de uso</h3>
+              <p>O capital pode ser usado como você desejar, seja para investir em projetos, quitar dívidas, reformar ou expandir seu negócio.</p>
+            </article>
+            <article class="benefit-card reveal">
+              <span>04</span>
+              <h3>Condições flexíveis</h3>
+              <p>Oferecemos até 60% de LTV (Loan-to-Value) para imóveis em áreas urbanas e aceitamos imóveis sem averbação completa.</p>
+            </article>
+            <article class="benefit-card reveal">
+              <span>05</span>
+              <h3>Taxas de juros acessíveis</h3>
+              <p>Aproveite as melhores condições de crédito com juros competitivos, ideais para quem busca uma solução financeira vantajosa.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="patrimonio" class="section acquisition-section">
+        <div class="container split-showcase">
+          <div>
+            <p class="eyebrow reveal">Aquisição Patrimonial e Crédito</p>
+            <h2 class="reveal">Soluções voltadas para quem deseja adquirir patrimônio, expandir seus negócios ou acessar <span class="title-accent">crédito</span>.</h2>
+            <p class="section-copy reveal">
+              Através de cartas contempladas e consórcios selecionados.
+            </p>
+            <p class="statement light reveal">Uma alternativa estratégica para quem busca patrimônio, crédito e crescimento.</p>
+          </div>
+          <div class="list-panel reveal">
+            <span>Possibilidades</span>
+            <ul>
+              <li>Cartas contempladas</li>
+              <li>Crédito através de contemplação</li>
+              <li>Imóveis e terrenos</li>
+              <li>Veículos e equipamentos</li>
+              <li>Expansão empresarial</li>
+              <li>Planejamento patrimonial</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section pix-section section-dark">
+        <div class="container product-demo">
+          <div class="demo-copy">
+            <p class="eyebrow reveal">Soluções para Lojistas</p>
+            <h2 class="reveal">Venda mais com <span class="title-accent">PIX Parcelado Garantido</span></h2>
+            <p class="lead reveal">Permita que seus clientes parcelem no PIX e aumente suas oportunidades de venda.</p>
+            <p class="section-copy reveal">
+              Através de uma estrutura de garantia, assumimos a operação e protegemos o estabelecimento contra inadimplência,
+              permitindo mais vendas e menos riscos.
+            </p>
+            <p class="statement reveal">Parcele para o cliente. Proteção para o seu negócio.</p>
+          </div>
+          <div class="demo-terminal reveal" aria-label="Benefícios do PIX Parcelado Garantido">
+            <div class="terminal-top">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="terminal-line active">
+              <small>Benefício</small>
+              <strong>Garantia contra inadimplência</strong>
+            </div>
+            <div class="terminal-line">
+              <small>Conversão</small>
+              <strong>Mais aprovação de vendas</strong>
+            </div>
+            <div class="terminal-line">
+              <small>Receita</small>
+              <strong>Aumento do ticket médio</strong>
+            </div>
+            <div class="terminal-line">
+              <small>Operação</small>
+              <strong>Segurança para o estabelecimento</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="capital" class="section capital-section">
+        <div class="container split-showcase reverse">
+          <div class="list-panel reveal">
+            <span>Possibilidades</span>
+            <ul>
+              <li>Investimentos conservadores</li>
+              <li>Operações com garantia real</li>
+              <li>Renda recorrente</li>
+              <li>Oportunidades de maior rentabilidade</li>
+            </ul>
+          </div>
+          <div>
+            <p class="eyebrow reveal">Capital privado</p>
+            <h2 class="reveal">Identificamos oportunidades para investidores que desejam fazer seu capital trabalhar através de <span class="title-accent">operações privadas</span>.</h2>
+            <p class="section-copy reveal">
+              Com alternativas que vão desde opções conservadoras até oportunidades de maior retorno.
+            </p>
+            <p class="statement light reveal">Seu capital trabalhando de forma estratégica para gerar renda e novas oportunidades.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" class="section final-section section-dark">
+        <div class="container final-layout">
+          <div>
+            <p class="eyebrow reveal">Por que trabalhar comigo?</p>
+            <h2 class="reveal">Antes de falar sobre soluções, procuro entender cada cenário para identificar as <span class="title-accent">oportunidades mais adequadas</span> para seus objetivos.</h2>
+            <p class="lead reveal">
+              Cada cenário exige uma estratégia diferente. O primeiro passo é entender seus objetivos para identificar as melhores oportunidades.
+            </p>
+          </div>
+          <div class="final-panel reveal">
+            <span>Benefícios</span>
+            <ul>
+              <li>Atendimento sem custo</li>
+              <li>Simulações sem compromisso</li>
+              <li>Análise personalizada</li>
+              <li>Estratégias para diferentes cenários</li>
+              <li>Acompanhamento completo</li>
+            </ul>
+            <div class="cta-box">
+              <h3>Vamos conversar?</h3>
+              <a class="button primary magnetic" href="https://wa.me/?text=Ol%C3%A1%2C%20Daniel.%20Quero%20solicitar%20uma%20an%C3%A1lise." target="_blank" rel="noreferrer">
+                WhatsApp
+              </a>
+              <a class="button ghost magnetic" href="https://wa.me/?text=Ol%C3%A1%2C%20Daniel.%20Quero%20solicitar%20uma%20an%C3%A1lise." target="_blank" rel="noreferrer">Solicitar análise</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>Daniel Junior</span>
+        <span>@danieljunior.com.br</span>
+      </div>
+    </footer>
+
+    <script is:inline src="./script.js"></script>
+  </body>
+</html>
