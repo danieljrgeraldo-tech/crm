@@ -1,34 +1,47 @@
-<div class="followup-demo" aria-label="Exemplo de acompanhamento automático de uma conversa">
+<div class="followup-demo" aria-label="Demonstração visual de um follow-up automático">
   <div class="followup-bar">
-    <div><span></span><span></span><span></span></div>
-    <strong>Acompanhamento da conversa</strong>
-    <span class="active-status"><i></i> Em andamento</span>
+    <strong>Follow-up da Carla</strong>
+    <span><i></i> Acompanhamento ativo</span>
   </div>
 
   <div class="followup-body">
-    <aside class="followup-contact">
-      <div class="contact-head"><i>CR</i><div><strong>Carla Reis</strong><small>Interesse em orçamento</small></div></div>
-      <div class="progress-copy"><span>Progresso do contato</span><strong>80%</strong></div>
-      <div class="progress-bar"><i></i></div>
-      <dl>
-        <div><dt>Responsável</dt><dd><i>RA</i> Rafael Alves</dd></div>
-        <div><dt>Etapa</dt><dd>Follow-up</dd></div>
-        <div><dt>Último contato</dt><dd>Hoje, 10:24</dd></div>
-      </dl>
-      <div class="suggestion">
-        <small>MENSAGEM SUGERIDA</small>
-        <p>Olá, Carla. Conseguiu analisar o orçamento que enviamos?</p>
+    <section class="contact-card">
+      <div class="contact-head">
+        <img src="/images/people/fernanda.jpg" alt="" width="80" height="80" />
+        <div><small>CLIENTE</small><strong>Carla Reis</strong><span>Recebeu um orçamento hoje</span></div>
       </div>
-    </aside>
+      <div class="waiting">
+        <span>◷</span>
+        <div><small>O SISTEMA ESTÁ AGUARDANDO</small><strong>Se Carla não responder, o próximo contato já está pronto.</strong></div>
+      </div>
+      <div class="message-preview">
+        <small>MENSAGEM QUE SERÁ ENVIADA</small>
+        <p>Olá, Carla. Conseguiu analisar o orçamento que enviamos? Posso ajudar com alguma dúvida?</p>
+        <span>Amanhã · 09:00</span>
+      </div>
+    </section>
 
-    <section class="timeline" aria-label="Histórico e próximas ações">
-      <header><div><small>HISTÓRICO E PRÓXIMAS AÇÕES</small><strong>O sistema acompanha até o cliente responder.</strong></div><b>5 etapas</b></header>
+    <section class="followup-steps" aria-label="Passo a passo do acompanhamento">
+      <header>
+        <small>SEM DEPENDER DA MEMÓRIA DO VENDEDOR</small>
+        <strong>O que acontece depois?</strong>
+      </header>
       <ol>
-        <li class="done"><i>✓</i><div><strong>Primeiro atendimento realizado</strong><small>Dúvidas respondidas pela IA</small></div><time>Hoje · 10:24</time></li>
-        <li class="done"><i>✓</i><div><strong>Retorno agendado</strong><small>Próximo contato criado automaticamente</small></div><time>Hoje · 10:25</time></li>
-        <li class="current"><i>→</i><div><strong>Mensagem enviada</strong><small>Contato retomado no horário programado</small></div><time>Amanhã · 09:00</time></li>
-        <li><i>4</i><div><strong>Cliente respondeu</strong><small>O sistema identifica a nova mensagem</small></div><time>Aguardando</time></li>
-        <li><i>5</i><div><strong>Conversa volta para o vendedor</strong><small>Rafael recebe o histórico completo</small></div><time>Próxima ação</time></li>
+        <li class="step-one">
+          <i>01</i>
+          <div><small>NO HORÁRIO CERTO</small><strong>O sistema chama a cliente.</strong><p>A mensagem é enviada automaticamente pelo WhatsApp.</p></div>
+          <span>09:00</span>
+        </li>
+        <li class="step-two">
+          <i>02</i>
+          <div><small>QUANDO ELA RESPONDE</small><strong>A conversa volta para a equipe.</strong><p>Rafael recebe a resposta junto com todo o histórico.</p></div>
+          <span>Ao vivo</span>
+        </li>
+        <li class="step-three">
+          <i>03</i>
+          <div><small>SE ELA NÃO RESPONDER</small><strong>Uma nova tentativa é organizada.</strong><p>Nenhuma oportunidade fica esquecida na agenda.</p></div>
+          <span>Pronto</span>
+        </li>
       </ol>
     </section>
   </div>
@@ -36,77 +49,76 @@
 
 <style>
   .followup-demo {
-    overflow: hidden; border: 1px solid #d9dde5; border-radius: 20px; color: #20232b;
-    background: #f4f5f8; box-shadow: 0 28px 70px rgba(24,28,38,.14);
+    overflow:hidden; border:1px solid #cfd5df; border-radius:22px; color:#20232b; background:#e3e8f0;
+    box-shadow:0 32px 78px rgba(24,28,38,.17);
   }
   .followup-bar {
-    height: 54px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
-    padding: 0 18px; border-bottom: 1px solid #e0e3e8; background: white;
+    height:64px; display:flex; align-items:center; justify-content:space-between; padding:0 24px;
+    border-bottom:1px solid #d8dde6; background:#f5f7fa;
   }
-  .followup-bar > div { display: flex; gap: .3rem; }
-  .followup-bar > div span { width: 7px; height: 7px; border-radius: 50%; background: #d5d8de; }
-  .followup-bar > strong { font-size: .65rem; }
-  .active-status { justify-self: end; display: flex; align-items: center; gap: .4rem; color: #6e7480; font-size: .5rem; }
-  .active-status i { width: 6px; height: 6px; border-radius: 50%; background: #35bf81; box-shadow: 0 0 0 4px rgba(53,191,129,.1); }
-  .followup-body { display: grid; grid-template-columns: 310px 1fr; min-height: 540px; }
-  .followup-contact { padding: 24px; border-right: 1px solid #e0e3e8; background: #fff; }
-  .contact-head { display: flex; align-items: center; gap: .7rem; padding-bottom: 1.1rem; border-bottom: 1px solid #eceef1; }
-  .contact-head > i {
-    width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%;
-    color: white; background: linear-gradient(145deg,#c66f5c,#e09a80); font-size: .52rem; font-style: normal; font-weight: 700;
+  .followup-bar strong { font-size:.78rem; }
+  .followup-bar span { display:flex; align-items:center; gap:.48rem; color:#626a78; font-size:.62rem; }
+  .followup-bar i { width:7px; height:7px; border-radius:50%; background:#35bf81; box-shadow:0 0 0 5px rgba(53,191,129,.1); }
+  .followup-body { display:grid; grid-template-columns:minmax(330px,.82fr) minmax(0,1.18fr); min-height:570px; }
+  .contact-card { padding:32px; border-right:1px solid #d3d9e3; background:#edf1f6; }
+  .contact-head { display:flex; align-items:center; gap:1rem; }
+  .contact-head img { width:58px; height:58px; border:3px solid white; border-radius:50%; object-fit:cover; box-shadow:0 7px 20px rgba(29,34,44,.15); }
+  .contact-head div { display:flex; flex-direction:column; }
+  .contact-head small,.waiting small,.message-preview small,.followup-steps header small,.followup-steps li small { color:#7158e5; font-size:.51rem; font-weight:800; letter-spacing:.08em; }
+  .contact-head strong { margin-top:.2rem; font-size:.94rem; }
+  .contact-head span { margin-top:.18rem; color:#747b88; font-size:.62rem; }
+  .waiting { display:flex; gap:.9rem; margin-top:2rem; padding:1.1rem; border:1px solid #d4dae4; border-radius:15px; background:#f8f9fb; }
+  .waiting > span { width:38px; height:38px; display:grid; flex:0 0 auto; place-items:center; border-radius:12px; color:#7358ed; background:#e9e4ff; font-size:1.1rem; }
+  .waiting div { display:flex; flex-direction:column; }
+  .waiting strong { max-width:250px; margin-top:.4rem; font-size:.75rem; line-height:1.45; }
+  .message-preview { margin-top:1rem; padding:1.15rem; border:1px solid #cfc6ff; border-radius:15px; background:linear-gradient(145deg,#e4deff,#f0edff); }
+  .message-preview p { margin:.65rem 0 .85rem; color:#45405f; font-size:.75rem; line-height:1.58; }
+  .message-preview span { color:#6753bd; font-size:.57rem; font-weight:700; }
+  .followup-steps { padding:34px clamp(24px,4vw,50px); background:#171b25; color:#eef0f6; }
+  .followup-steps header { padding-bottom:1.5rem; border-bottom:1px solid rgba(255,255,255,.09); }
+  .followup-steps header strong { display:block; margin-top:.45rem; font-size:1.35rem; }
+  .followup-steps ol { display:grid; gap:.85rem; margin:1.35rem 0 0; padding:0; list-style:none; }
+  .followup-steps li {
+    position:relative; display:grid; grid-template-columns:48px 1fr auto; gap:1rem; align-items:center; min-height:118px;
+    padding:1rem; border:1px solid rgba(255,255,255,.09); border-radius:15px; background:rgba(255,255,255,.035);
+    opacity:.78; animation:follow-step 12s ease infinite;
   }
-  .contact-head div { display: flex; flex-direction: column; }
-  .contact-head strong { font-size: .72rem; } .contact-head small { color: #858a95; font-size: .49rem; }
-  .progress-copy { display: flex; justify-content: space-between; margin-top: 1.2rem; color: #858a95; font-size: .5rem; }
-  .progress-copy strong { color: #634bdc; }
-  .progress-bar { height: 7px; margin-top: .45rem; overflow: hidden; border-radius: 999px; background: #eceef2; }
-  .progress-bar i { display: block; width: 80%; height: 100%; border-radius: inherit; background: linear-gradient(90deg,#7357ed,#4e89f3); animation: progress 2.2s cubic-bezier(.2,.7,.2,1) both; }
-  dl { margin: 1.3rem 0 0; }
-  dl > div { display: flex; align-items: center; justify-content: space-between; padding: .75rem 0; border-bottom: 1px solid #eff0f3; }
-  dt { color: #8c919b; font-size: .5rem; }
-  dd { display: flex; align-items: center; gap: .35rem; margin: 0; font-size: .56rem; font-weight: 650; }
-  dd i { width: 20px; height: 20px; display: grid; place-items: center; border-radius: 50%; color: white; background: #6383a2; font-size: .34rem; font-style: normal; }
-  .suggestion { margin-top: 1.2rem; padding: .85rem; border: 1px solid #ded8ff; border-radius: 10px; background: #efecff; }
-  .suggestion small { color: #7056e9; font-size: .42rem; font-weight: 700; letter-spacing: .06em; }
-  .suggestion p { margin: .45rem 0 0; color: #554a82; font-size: .56rem; line-height: 1.55; }
-  .timeline { padding: 28px clamp(20px,4vw,48px); background: linear-gradient(145deg,#f6f7f9,#eef0f4); }
-  .timeline > header { display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid #dfe2e7; }
-  .timeline > header div { display: flex; flex-direction: column; }
-  .timeline > header small { color: #7056e9; font-size: .44rem; font-weight: 700; letter-spacing: .08em; }
-  .timeline > header strong { max-width: 480px; margin-top: .4rem; font-size: 1.08rem; }
-  .timeline > header b { padding: .35rem .5rem; border-radius: 6px; color: #6f7480; background: white; font-size: .48rem; }
-  ol { position: relative; margin: 1.3rem 0 0; padding: 0; list-style: none; }
-  ol::before { content:""; position:absolute; left:18px; top:28px; bottom:28px; width:1px; background:#cfd3da; }
-  li {
-    position: relative; z-index: 1; display: grid; grid-template-columns: 38px 1fr auto; gap: .8rem; align-items: center;
-    min-height: 74px; padding: .55rem; border-radius: 10px;
+  .followup-steps li > i {
+    width:42px; height:42px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.13);
+    border-radius:13px; color:#a99cf4; background:rgba(113,88,229,.12); font-size:.61rem; font-style:normal; font-weight:800;
   }
-  li > i { width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid #d4d8df; border-radius: 9px; color: #979ca6; background: #f8f9fa; font-size: .48rem; font-style: normal; font-weight: 700; }
-  li div { display: flex; flex-direction: column; }
-  li strong { font-size: .62rem; } li small { margin-top: .18rem; color: #858a95; font-size: .48rem; }
-  li time { color: #8d929d; font-size: .46rem; }
-  li.done > i { color: #25805b; border-color: #c8ead9; background: #e7f6ee; }
-  li.current { border: 1px solid #d7d0ff; background: rgba(255,255,255,.78); box-shadow: 0 8px 25px rgba(103,77,222,.08); }
-  li.current > i { color: white; border-color: #7257eb; background: #7257eb; }
-  li.current time { color: #654bdc; font-weight: 700; }
-  @keyframes progress { from{width:0} to{width:80%} }
-
-  @media (max-width: 760px) {
-    .followup-demo { border-radius: 14px; }
-    .followup-bar { height: 50px; grid-template-columns: 1fr auto; padding: 0 12px; }
-    .followup-bar > div { display: none; }
-    .followup-body { grid-template-columns: 1fr; }
-    .followup-contact { padding: 18px 14px; border-right: 0; border-bottom: 1px solid #e0e3e8; }
-    .followup-contact dl { display: grid; grid-template-columns: repeat(3,1fr); gap: .5rem; }
-    dl > div { align-items: flex-start; flex-direction: column; gap: .3rem; padding: .65rem; border: 1px solid #eceef1; border-radius: 8px; }
-    .timeline { padding: 22px 10px; }
-    .timeline > header { align-items: flex-start; gap: .8rem; }
-    .timeline > header strong { font-size: .88rem; }
-    li { grid-template-columns: 34px 1fr; }
-    li time { grid-column: 2; margin-top: -.5rem; }
+  .followup-steps li div { display:flex; flex-direction:column; }
+  .followup-steps li strong { margin-top:.28rem; font-size:.79rem; }
+  .followup-steps li p { margin:.28rem 0 0; color:#969dac; font-size:.62rem; line-height:1.45; }
+  .followup-steps li > span { align-self:start; padding:.32rem .46rem; border-radius:6px; color:#b4a9ef; background:rgba(113,88,229,.13); font-size:.51rem; }
+  .step-one{animation-delay:0s}.step-two{animation-delay:4s}.step-three{animation-delay:8s}
+  @keyframes follow-step {
+    0%,6%{opacity:.76;transform:translateX(6px)}
+    12%,30%{opacity:1;transform:none;border-color:rgba(127,104,244,.5);background:rgba(113,88,229,.1)}
+    38%,100%{opacity:.82;transform:none}
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .progress-bar i { animation: none; }
+  @media (max-width:760px) {
+    .followup-demo { border-radius:17px; }
+    .followup-bar { height:58px; padding-inline:15px; }
+    .followup-bar strong { font-size:.72rem; }
+    .followup-bar span { font-size:.55rem; }
+    .followup-body { grid-template-columns:1fr; }
+    .contact-card { padding:24px 15px; border-right:0; border-bottom:1px solid #d3d9e3; }
+    .contact-head img { width:62px; height:62px; }
+    .contact-head strong { font-size:1rem; }
+    .waiting { padding:1rem; }
+    .waiting strong { font-size:.8rem; }
+    .message-preview p { font-size:.82rem; }
+    .followup-steps { padding:28px 13px; }
+    .followup-steps header strong { font-size:1.25rem; }
+    .followup-steps li { grid-template-columns:46px 1fr; min-height:142px; padding:1rem .85rem; }
+    .followup-steps li strong { padding-right:2.7rem; font-size:.84rem; }
+    .followup-steps li p { font-size:.69rem; }
+    .followup-steps li > span { position:absolute; right:.75rem; top:.8rem; }
+  }
+
+  @media (prefers-reduced-motion:reduce) {
+    .followup-steps li { animation:none; opacity:1; transform:none; }
   }
 </style>
