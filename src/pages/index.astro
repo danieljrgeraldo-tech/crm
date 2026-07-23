@@ -1,309 +1,829 @@
-<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Daniel Junior | Soluções para Empresas e Investidores</title>
-    <meta
-      name="description"
-      content="Conectando empresários às soluções certas para cada momento do seu negócio: crédito, capital, investimentos e patrimônio."
-    />
-    <link rel="preload" as="image" href="/images/daniel-hero.webp" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <div class="scroll-progress" aria-hidden="true"></div>
-    <div class="grain" aria-hidden="true"></div>
-    <div class="cursor-spotlight" aria-hidden="true"></div>
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
 
-    <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="Voltar ao início">
-        <span>Daniel Junior</span>
-        <small>@danieljunior.com.br</small>
+const whatsappUrl =
+  "https://wa.me/5548998493150?text=" +
+  encodeURIComponent(
+    "Olá, Daniel. Quero entender como organizar o atendimento e o acompanhamento comercial da minha empresa."
+  );
+
+const painPoints = [
+  {
+    number: "01",
+    title: "Conversas espalhadas",
+    text: "O cliente chama, troca de atendente e o contexto se perde entre celulares, anotações e planilhas.",
+  },
+  {
+    number: "02",
+    title: "Vendas sem acompanhamento",
+    text: "Orçamentos são enviados, mas ninguém sabe com clareza quem respondeu, quem esfriou ou quem precisa de retorno.",
+  },
+  {
+    number: "03",
+    title: "Gestão no escuro",
+    text: "Sem uma visão única da operação, decisões importantes dependem de percepção — não de informação organizada.",
+  },
+];
+
+const managementPillars = [
+  {
+    number: "01",
+    title: "Entender",
+    text: "Mapeio como os clientes chegam, quem atende e onde as oportunidades se perdem.",
+  },
+  {
+    number: "02",
+    title: "Organizar",
+    text: "Estruturo etapas, responsáveis, históricos e regras claras para o atendimento.",
+  },
+  {
+    number: "03",
+    title: "Automatizar",
+    text: "A tecnologia assume tarefas repetitivas sem tirar o controle da equipe.",
+  },
+  {
+    number: "04",
+    title: "Acompanhar",
+    text: "Reviso o funcionamento, ajusto os fluxos e mantenho a operação evoluindo.",
+  },
+];
+
+const followupSteps = [
+  ["Agora", "Novo contato recebido", "Atendimento iniciado e oportunidade registrada."],
+  ["+ 1 dia", "Retorno programado", "A equipe sabe exatamente quem precisa ser procurado."],
+  ["+ 3 dias", "Oportunidade acompanhada", "O histórico continua completo, mesmo se o responsável mudar."],
+  ["No fechamento", "Resultado registrado", "A gestão enxerga o que avançou, o que parou e por quê."],
+];
+
+const faqItems = [
+  [
+    "Isso é um software que eu compro?",
+    "Não. Daniel atua como gestor da operação. As ferramentas são escolhidas e configuradas de acordo com a realidade da empresa.",
+  ],
+  [
+    "Minha equipe precisa mudar a forma de atender?",
+    "O processo é desenhado para facilitar a rotina. A implantação considera o que já funciona e organiza o que hoje depende de improviso.",
+  ],
+  [
+    "A automação substitui vendedores?",
+    "Não. Ela cuida de tarefas repetitivas, organiza informações e ajuda a equipe a agir no momento certo.",
+  ],
+  [
+    "Depois da implantação eu fico sozinho?",
+    "Não. O acompanhamento contínuo é parte do trabalho: a operação é observada, ajustada e melhorada ao longo do tempo.",
+  ],
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Daniel Junior — Gestão de Automação com IA",
+  url: "https://danieljunior.com.br",
+  description:
+    "Gestão de automação com IA para empresas que vendem e atendem pelo WhatsApp.",
+  areaServed: "BR",
+  serviceType: "Gestão de automação, atendimento e operação comercial",
+};
+---
+
+<SiteLayout
+  title="Daniel Junior | Gestão de Automação com IA"
+  description="Organize atendimento, equipe e oportunidades com uma operação acompanhada de perto por Daniel Junior, Gestor de Automação com IA."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header" data-header>
+    <div class="shell header-inner">
+      <a class="brand" href="#inicio" aria-label="Daniel Junior — início">
+        <strong>Daniel Junior</strong>
+        <span>Gestão de Automação com IA</span>
       </a>
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="#quem-sou">Quem sou eu</a>
-        <a href="#solucoes">Soluções</a>
-        <a href="#home-equity">Home Equity</a>
-        <a href="#contato">Conversar</a>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span class="sr-only">Abrir menu</span>
+        <i></i><i></i>
+      </button>
+
+      <nav id="main-nav" class="main-nav" aria-label="Navegação principal">
+        <a href="#desafio">O desafio</a>
+        <a href="#operacao">A operação</a>
+        <a href="#metodo">Como funciona</a>
+        <a href="#sobre">Sobre</a>
       </nav>
-      <a class="header-cta magnetic" href="#contato">Solicitar análise</a>
-    </header>
 
-    <main id="top">
-      <section class="hero section-dark" aria-labelledby="hero-title">
-        <div class="hero-media" aria-hidden="true">
-          <picture>
-            <source media="(max-width: 760px)" srcset="/images/daniel-hero.webp" />
-            <img src="/images/daniel-hero.webp" alt="" />
-          </picture>
-        </div>
-        <div class="hero-overlay" aria-hidden="true"></div>
-        <div class="container hero-content">
-          <p class="eyebrow reveal">Soluções para Empresas e Investidores</p>
-          <h1 id="hero-title" class="reveal">Conectando empresários às <span>soluções certas</span> para cada momento do seu negócio.</h1>
-          <div class="hero-actions reveal">
-            <a class="button primary magnetic" href="#contato">Solicitar análise</a>
-            <a class="button ghost magnetic" href="#solucoes">Ver soluções</a>
+      <a class="header-action" href={whatsappUrl} target="_blank" rel="noreferrer">
+        Conversar com Daniel <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section id="inicio" class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-reveal>Gestão de atendimento & automação</p>
+          <h1 data-reveal>
+            Seu atendimento pode funcionar com mais
+            <em>clareza, ritmo e controle.</em>
+          </h1>
+          <p class="hero-lead" data-reveal>
+            Eu organizo pessoas, processos e tecnologia para sua empresa atender melhor,
+            acompanhar oportunidades e parar de perder vendas por falta de processo.
+          </p>
+          <div class="hero-actions" data-reveal>
+            <a class="button button-dark" href={whatsappUrl} target="_blank" rel="noreferrer">
+              Quero organizar minha operação <span aria-hidden="true">↗</span>
+            </a>
+            <a class="text-link" href="#operacao">Ver como funciona <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-proof" data-reveal>
+            <span>Estratégia</span><i></i><span>Implantação</span><i></i><span>Acompanhamento</span>
           </div>
         </div>
-        <div class="hero-pillars reveal" aria-label="Áreas de atuação">
-          <a href="#home-equity">Crédito</a>
-          <a href="#capital">Capital</a>
-          <a href="#capital">Investimentos</a>
-          <a href="#patrimonio">Patrimônio</a>
-        </div>
-        <a class="scroll-cue" href="#quem-sou" aria-label="Ir para a próxima seção">
-          <span></span>
-        </a>
-      </section>
 
-      <section id="quem-sou" class="section profile-section">
-        <div class="container two-column">
-          <div class="section-intro sticky-copy">
-            <p class="eyebrow reveal">Quem sou eu?</p>
-            <h2 class="reveal">Atuo com negócios e <span class="title-accent">desenvolvimento empresarial</span> desde 2013.</h2>
+        <div class="hero-visual" data-reveal>
+          <div class="portrait-frame">
+            <img
+              src="/images/daniel-hero.webp"
+              alt="Daniel Junior, Gestor de Automação com IA"
+              width="1800"
+              height="2400"
+              loading="eager"
+              fetchpriority="high"
+            />
           </div>
-          <div class="copy-stack">
-            <p class="lead reveal">
-              Ao longo dessa trajetória, construí relacionamento com empresários, investidores, fundos privados e parceiros
-              estratégicos, participando de operações voltadas a crédito, capital, investimentos e crescimento empresarial.
-            </p>
-            <p class="lead reveal">
-              Hoje atuo conectando empresas e investidores às oportunidades e soluções mais adequadas para cada cenário.
-            </p>
-            <div class="role-card reveal">
-              <span>Meu papel</span>
-              <ul>
-                <li>Entender cenários</li>
-                <li>Identificar oportunidades</li>
-                <li>Conectar pessoas às soluções certas</li>
-              </ul>
+
+          <div class="status-card status-card-top" aria-hidden="true">
+            <span class="status-dot"></span>
+            <div>
+              <small>Operação acompanhada</small>
+              <strong>Atendimento em ordem</strong>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section id="solucoes" class="section approach-section">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow reveal">Como posso ajudar?</p>
-            <h2 class="reveal">O objetivo não é oferecer produtos. É encontrar a <span class="title-accent">solução mais adequada</span> para cada necessidade.</h2>
-            <p class="section-copy reveal">
-              Nem toda empresa precisa da mesma solução. Antes de falar sobre produtos, procuro entender o momento da empresa
-              para identificar o melhor caminho para crescer, investir ou acessar capital.
-            </p>
-          </div>
-          <div class="solution-grid">
-            <article class="solution-card reveal">
-              <span>01</span>
-              <h3>Home Equity</h3>
-            </article>
-            <article class="solution-card reveal">
-              <span>02</span>
-              <h3>Crédito Estruturado</h3>
-            </article>
-            <article class="solution-card reveal">
-              <span>03</span>
-              <h3>Cartas Contempladas</h3>
-            </article>
-            <article class="solution-card reveal">
-              <span>04</span>
-              <h3>PIX Parcelado Garantido</h3>
-            </article>
-            <article class="solution-card reveal">
-              <span>05</span>
-              <h3>Capital Privado</h3>
-            </article>
-            <article class="solution-card reveal">
-              <span>06</span>
-              <h3>Antecipação de Recebíveis</h3>
-            </article>
-            <article class="solution-card reveal wide">
-              <span>07</span>
-              <h3>Operações Estruturadas</h3>
-            </article>
+          <div class="status-card status-card-bottom" aria-hidden="true">
+            <span class="mini-label">Hoje</span>
+            <strong>12 oportunidades</strong>
+            <small>com próximo passo definido</small>
           </div>
         </div>
-      </section>
-
-      <section id="home-equity" class="section feature-section section-dark">
-        <div class="container feature-layout">
-          <div class="feature-main">
-            <p class="eyebrow reveal">Soluções em Crédito e Home Equity</p>
-            <h2 class="reveal">Oferecemos soluções de <span class="title-accent">Home Equity</span> para proprietários de imóveis que desejam transformar patrimônio em capital.</h2>
-            <p class="lead reveal">
-              Capital para investir, expandir seus negócios ou aproveitar novas oportunidades.
-            </p>
-            <p class="statement reveal">Capital para quem quer crescer sem vender patrimônio.</p>
-          </div>
-          <div class="applications reveal">
-            <span>Aplicações</span>
-            <ul>
-              <li>Crédito com Garantia de Imóvel</li>
-              <li>Capital para Expansão Empresarial</li>
-              <li>Reorganização Financeira</li>
-              <li>Capital para Investimentos</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section benefits-section">
-        <div class="container">
-          <div class="section-heading compact">
-            <p class="eyebrow reveal">Benefícios exclusivos do Home Equity</p>
-            <h2 class="reveal">Utilize o patrimônio que você já possui para acessar recursos de forma <span class="title-accent">rápida, segura e estratégica</span>.</h2>
-          </div>
-          <div class="benefit-track">
-            <article class="benefit-card reveal">
-              <span>01</span>
-              <h3>Sem consulta de nome e renda</h3>
-              <p>O processo é ágil e simplificado: não exigimos comprovação de renda ou consultas de score e CPF.</p>
-            </article>
-            <article class="benefit-card reveal">
-              <span>02</span>
-              <h3>Acesso rápido ao capital</h3>
-              <p>Em até 10 dias após a aprovação, o valor solicitado está na sua conta, pronto para ser utilizado.</p>
-            </article>
-            <article class="benefit-card reveal">
-              <span>03</span>
-              <h3>Liberdade de uso</h3>
-              <p>O capital pode ser usado como você desejar, seja para investir em projetos, quitar dívidas, reformar ou expandir seu negócio.</p>
-            </article>
-            <article class="benefit-card reveal">
-              <span>04</span>
-              <h3>Condições flexíveis</h3>
-              <p>Oferecemos até 60% de LTV (Loan-to-Value) para imóveis em áreas urbanas e aceitamos imóveis sem averbação completa.</p>
-            </article>
-            <article class="benefit-card reveal">
-              <span>05</span>
-              <h3>Taxas de juros acessíveis</h3>
-              <p>Aproveite as melhores condições de crédito com juros competitivos, ideais para quem busca uma solução financeira vantajosa.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="patrimonio" class="section acquisition-section">
-        <div class="container split-showcase">
-          <div>
-            <p class="eyebrow reveal">Aquisição Patrimonial e Crédito</p>
-            <h2 class="reveal">Soluções voltadas para quem deseja adquirir patrimônio, expandir seus negócios ou acessar <span class="title-accent">crédito</span>.</h2>
-            <p class="section-copy reveal">
-              Através de cartas contempladas e consórcios selecionados.
-            </p>
-            <p class="statement light reveal">Uma alternativa estratégica para quem busca patrimônio, crédito e crescimento.</p>
-          </div>
-          <div class="list-panel reveal">
-            <span>Possibilidades</span>
-            <ul>
-              <li>Cartas contempladas</li>
-              <li>Crédito através de contemplação</li>
-              <li>Imóveis e terrenos</li>
-              <li>Veículos e equipamentos</li>
-              <li>Expansão empresarial</li>
-              <li>Planejamento patrimonial</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section pix-section section-dark">
-        <div class="container product-demo">
-          <div class="demo-copy">
-            <p class="eyebrow reveal">Soluções para Lojistas</p>
-            <h2 class="reveal">Venda mais com <span class="title-accent">PIX Parcelado Garantido</span></h2>
-            <p class="lead reveal">Permita que seus clientes parcelem no PIX e aumente suas oportunidades de venda.</p>
-            <p class="section-copy reveal">
-              Através de uma estrutura de garantia, assumimos a operação e protegemos o estabelecimento contra inadimplência,
-              permitindo mais vendas e menos riscos.
-            </p>
-            <p class="statement reveal">Parcele para o cliente. Proteção para o seu negócio.</p>
-          </div>
-          <div class="demo-terminal reveal" aria-label="Benefícios do PIX Parcelado Garantido">
-            <div class="terminal-top">
-              <span></span><span></span><span></span>
-            </div>
-            <div class="terminal-line active">
-              <small>Benefício</small>
-              <strong>Garantia contra inadimplência</strong>
-            </div>
-            <div class="terminal-line">
-              <small>Conversão</small>
-              <strong>Mais aprovação de vendas</strong>
-            </div>
-            <div class="terminal-line">
-              <small>Receita</small>
-              <strong>Aumento do ticket médio</strong>
-            </div>
-            <div class="terminal-line">
-              <small>Operação</small>
-              <strong>Segurança para o estabelecimento</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="capital" class="section capital-section">
-        <div class="container split-showcase reverse">
-          <div class="list-panel reveal">
-            <span>Possibilidades</span>
-            <ul>
-              <li>Investimentos conservadores</li>
-              <li>Operações com garantia real</li>
-              <li>Renda recorrente</li>
-              <li>Oportunidades de maior rentabilidade</li>
-            </ul>
-          </div>
-          <div>
-            <p class="eyebrow reveal">Capital privado</p>
-            <h2 class="reveal">Identificamos oportunidades para investidores que desejam fazer seu capital trabalhar através de <span class="title-accent">operações privadas</span>.</h2>
-            <p class="section-copy reveal">
-              Com alternativas que vão desde opções conservadoras até oportunidades de maior retorno.
-            </p>
-            <p class="statement light reveal">Seu capital trabalhando de forma estratégica para gerar renda e novas oportunidades.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contato" class="section final-section section-dark">
-        <div class="container final-layout">
-          <div>
-            <p class="eyebrow reveal">Por que trabalhar comigo?</p>
-            <h2 class="reveal">Antes de falar sobre soluções, procuro entender cada cenário para identificar as <span class="title-accent">oportunidades mais adequadas</span> para seus objetivos.</h2>
-            <p class="lead reveal">
-              Cada cenário exige uma estratégia diferente. O primeiro passo é entender seus objetivos para identificar as melhores oportunidades.
-            </p>
-          </div>
-          <div class="final-panel reveal">
-            <span>Benefícios</span>
-            <ul>
-              <li>Atendimento sem custo</li>
-              <li>Simulações sem compromisso</li>
-              <li>Análise personalizada</li>
-              <li>Estratégias para diferentes cenários</li>
-              <li>Acompanhamento completo</li>
-            </ul>
-            <div class="cta-box">
-              <h3>Vamos conversar?</h3>
-              <a class="button primary magnetic" href="https://wa.me/?text=Ol%C3%A1%2C%20Daniel.%20Quero%20solicitar%20uma%20an%C3%A1lise." target="_blank" rel="noreferrer">
-                WhatsApp
-              </a>
-              <a class="button ghost magnetic" href="https://wa.me/?text=Ol%C3%A1%2C%20Daniel.%20Quero%20solicitar%20uma%20an%C3%A1lise." target="_blank" rel="noreferrer">Solicitar análise</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <span>Daniel Junior</span>
-        <span>@danieljunior.com.br</span>
       </div>
-    </footer>
+      <div class="shell hero-foot">
+        <p>Para empresas que vendem pelo WhatsApp e precisam transformar conversa em processo.</p>
+      </div>
+    </section>
 
-    <script is:inline src="./script.js"></script>
-  </body>
-</html>
+    <section id="desafio" class="section section-paper">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow" data-reveal>O problema não é falta de esforço</p>
+            <h2 data-reveal>Quando o atendimento cresce sem estrutura, a operação perde o controle.</h2>
+          </div>
+          <p data-reveal>
+            Mais mensagens não significam mais vendas. Sem organização, a equipe trabalha muito,
+            clientes esperam e oportunidades desaparecem na rotina.
+          </p>
+        </div>
+
+        <div class="pain-grid">
+          {painPoints.map((item) => (
+            <article class="pain-card" data-reveal>
+              <span>{item.number}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+
+        <div class="statement" data-reveal>
+          <span>Não é sobre colocar mais uma ferramenta na empresa.</span>
+          <strong>É sobre construir uma operação que as pessoas conseguem seguir.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="operacao" class="section operation-section">
+      <div class="shell">
+        <div class="section-heading centered">
+          <p class="eyebrow" data-reveal>Uma central para a operação</p>
+          <h2 data-reveal>Conversas, equipe e oportunidades no mesmo lugar.</h2>
+          <p data-reveal>
+            Cada cliente ganha histórico, responsável, etapa e próximo passo.
+            A tecnologia trabalha nos bastidores; sua equipe enxerga apenas o que precisa fazer.
+          </p>
+        </div>
+
+        <div class="crm-window" data-reveal>
+          <div class="window-bar" aria-hidden="true">
+            <div class="window-dots"><i></i><i></i><i></i></div>
+            <span>Central de Atendimento</span>
+            <div class="live-pill"><i></i> Operação ativa</div>
+          </div>
+          <div class="crm-image-wrap">
+            <img
+              src="/images/crm/painel-atendimento.webp"
+              alt="Central de atendimento em português com lista de conversas, histórico e perfil do cliente"
+              width="1800"
+              height="1187"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <article data-reveal>
+            <span class="feature-index">01</span>
+            <h3>Histórico completo</h3>
+            <p>Quem assumir a conversa entende o contexto sem pedir que o cliente conte tudo de novo.</p>
+          </article>
+          <article data-reveal>
+            <span class="feature-index">02</span>
+            <h3>Responsabilidade clara</h3>
+            <p>Cada oportunidade tem um responsável e nenhuma conversa fica sem dono.</p>
+          </article>
+          <article data-reveal>
+            <span class="feature-index">03</span>
+            <h3>Prioridades visíveis</h3>
+            <p>Etiquetas, etapas e alertas mostram o que exige atenção antes que seja tarde.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pipeline-section">
+      <div class="shell pipeline-layout">
+        <div class="pipeline-copy">
+          <p class="eyebrow" data-reveal>Visão comercial</p>
+          <h2 data-reveal>Todo contato tem um caminho — e a gestão consegue enxergar.</h2>
+          <p data-reveal>
+            O quadro transforma conversas em uma rotina comercial visual. A equipe sabe o que avançou,
+            o que precisa de retorno e onde a operação está travando.
+          </p>
+          <ul data-reveal>
+            <li><i></i> Etapas adaptadas ao seu processo</li>
+            <li><i></i> Movimentação simples entre responsáveis</li>
+            <li><i></i> Resultado registrado sem planilha paralela</li>
+          </ul>
+        </div>
+
+        <div class="kanban" data-reveal aria-label="Exemplo de quadro de oportunidades">
+          <div class="kanban-head">
+            <div>
+              <small>Pipeline comercial</small>
+              <strong>Oportunidades</strong>
+            </div>
+            <span>Esta semana</span>
+          </div>
+          <div class="kanban-columns">
+            <div class="kanban-column">
+              <div class="column-title"><span>Novo contato</span><b>3</b></div>
+              <div class="lead-card">
+                <small>Distribuidora Aurora</small>
+                <strong>Catálogo solicitado</strong>
+                <div><i class="avatar a1">LM</i><span>há 12 min</span></div>
+              </div>
+              <div class="lead-card muted-card">
+                <small>Studio Nativa</small>
+                <strong>Primeiro atendimento</strong>
+                <div><i class="avatar a2">RS</i><span>há 28 min</span></div>
+              </div>
+            </div>
+            <div class="kanban-column">
+              <div class="column-title"><span>Em negociação</span><b>4</b></div>
+              <div class="lead-card featured-card">
+                <span class="card-tag">Prioridade</span>
+                <small>Casa Horizonte</small>
+                <strong>Proposta enviada</strong>
+                <div><i class="avatar a3">AD</i><span>Retorno hoje</span></div>
+              </div>
+              <div class="lead-card">
+                <small>Grupo Essenza</small>
+                <strong>Condições alinhadas</strong>
+                <div><i class="avatar a4">VT</i><span>amanhã</span></div>
+              </div>
+            </div>
+            <div class="kanban-column">
+              <div class="column-title"><span>Fechamento</span><b>2</b></div>
+              <div class="lead-card success-card">
+                <span class="card-tag">Próximo passo</span>
+                <small>Mercado da Vila</small>
+                <strong>Confirmação do pedido</strong>
+                <div><i class="avatar a5">TS</i><span>às 16h</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section followup-section">
+      <div class="shell">
+        <div class="section-heading split-heading light-heading">
+          <div>
+            <p class="eyebrow" data-reveal>Follow-up que acontece</p>
+            <h2 data-reveal>O cliente não some. O processo é que deixa de acompanhar.</h2>
+          </div>
+          <p data-reveal>
+            Com cadência e responsabilidade definidas, cada oportunidade recebe o próximo contato
+            no momento certo — sem depender da memória de alguém.
+          </p>
+        </div>
+
+        <div class="timeline" data-reveal>
+          {followupSteps.map(([time, title, text], index) => (
+            <article>
+              <span class="timeline-number">{String(index + 1).padStart(2, "0")}</span>
+              <small>{time}</small>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="metodo" class="section method-section">
+      <div class="shell">
+        <div class="section-heading centered">
+          <p class="eyebrow" data-reveal>Gestão, não instalação</p>
+          <h2 data-reveal>Da rotina atual a uma operação que continua melhorando.</h2>
+          <p data-reveal>
+            Daniel acompanha o processo de ponta a ponta. A ferramenta é apenas uma parte de uma
+            gestão que combina diagnóstico, implantação e evolução.
+          </p>
+        </div>
+
+        <div class="method-grid">
+          {managementPillars.map((pillar) => (
+            <article data-reveal>
+              <span>{pillar.number}</span>
+              <h3>{pillar.title}</h3>
+              <p>{pillar.text}</p>
+            </article>
+          ))}
+        </div>
+
+        <div class="method-note" data-reveal>
+          <span class="pulse" aria-hidden="true"></span>
+          <p><strong>Acompanhamento contínuo:</strong> fluxos mudam, equipes crescem e a operação precisa evoluir junto.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section about-section">
+      <div class="shell about-grid">
+        <div class="about-image" data-reveal>
+          <img
+            src="/images/daniel-secondary.webp"
+            alt="Daniel Junior em ambiente de trabalho"
+            width="1120"
+            height="1500"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="about-badge">
+            <span>Desde 2013</span>
+            <small>atuando com negócios e operações</small>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <p class="eyebrow" data-reveal>Quem conduz a operação</p>
+          <h2 data-reveal>Daniel Junior</h2>
+          <p class="role" data-reveal>Gestor de Automação com IA</p>
+          <p data-reveal>
+            Minha função não é entregar um sistema e desaparecer. Eu entendo a rotina,
+            desenho o processo, conecto as ferramentas e acompanho a operação para que
+            atendimento e vendas funcionem com mais organização.
+          </p>
+          <p data-reveal>
+            A tecnologia entra onde pode reduzir trabalho repetitivo, dar visibilidade à gestão
+            e ajudar pessoas a tomarem decisões melhores.
+          </p>
+          <div class="quote" data-reveal>
+            “Automação boa é a que sua equipe entende, sua gestão acompanha e seu cliente percebe como cuidado.”
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section">
+      <div class="shell faq-grid">
+        <div class="faq-intro">
+          <p class="eyebrow" data-reveal>Antes de começar</p>
+          <h2 data-reveal>Perguntas que ajudam a entender o trabalho.</h2>
+        </div>
+        <div class="faq-list" data-reveal>
+          {faqItems.map(([question, answer], index) => (
+            <details>
+              <summary><span>{String(index + 1).padStart(2, "0")}</span>{question}<i>+</i></summary>
+              <p>{answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="final-cta">
+      <div class="final-glow" aria-hidden="true"></div>
+      <div class="shell final-content">
+        <p class="eyebrow" data-reveal>O próximo passo é uma conversa</p>
+        <h2 data-reveal>Sua operação pode ser mais organizada do que é hoje.</h2>
+        <p data-reveal>
+          Conte como sua equipe atende atualmente. Daniel analisa o cenário e mostra
+          onde processos e automação podem gerar mais controle.
+        </p>
+        <a class="button button-light" href={whatsappUrl} target="_blank" rel="noreferrer" data-reveal>
+          Conversar com Daniel no WhatsApp <span aria-hidden="true">↗</span>
+        </a>
+        <small data-reveal>Conversa direta, sem compromisso e sem apresentação genérica.</small>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div class="brand footer-brand">
+        <strong>Daniel Junior</strong>
+        <span>Gestão de Automação com IA</span>
+      </div>
+      <p>Estratégia, implantação e acompanhamento para operações de atendimento.</p>
+      <div>
+        <a href="#inicio">Voltar ao topo ↑</a>
+        <span>© 2026 Daniel Junior</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.querySelector("[data-header]");
+    const menuButton = document.querySelector(".menu-button");
+    const nav = document.querySelector(".main-nav");
+
+    menuButton?.addEventListener("click", () => {
+      const expanded = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!expanded));
+      nav?.classList.toggle("is-open", !expanded);
+      document.body.classList.toggle("menu-open", !expanded);
+    });
+
+    nav?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menuButton?.setAttribute("aria-expanded", "false");
+        nav.classList.remove("is-open");
+        document.body.classList.remove("menu-open");
+      });
+    });
+
+    const updateHeader = () => header?.classList.toggle("is-scrolled", window.scrollY > 24);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+
+    const revealItems = document.querySelectorAll("[data-reveal]");
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+      document.documentElement.classList.add("has-motion");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px" }
+      );
+      revealItems.forEach((item) => observer.observe(item));
+    }
+  </script>
+</SiteLayout>
+
+<style>
+  :global(:root) {
+    --cream: #f4efe7;
+    --cream-2: #ebe2d6;
+    --white: #fffdf9;
+    --charcoal: #171916;
+    --charcoal-2: #242721;
+    --forest: #20392e;
+    --sage: #879c8d;
+    --copper: #ad6a45;
+    --copper-soft: #d3a17d;
+    --line: rgba(23, 25, 22, 0.15);
+    --muted: #68695f;
+    --shell: min(1240px, calc(100vw - 48px));
+  }
+
+  :global(html) { scroll-behavior: smooth; }
+  :global(body) { background: var(--cream); color: var(--charcoal); overflow-x: hidden; }
+  :global(body.menu-open) { overflow: hidden; }
+  :global(.shell) { width: var(--shell); margin-inline: auto; }
+  :global(.skip-link) {
+    position: fixed; left: 1rem; top: 1rem; z-index: 100;
+    transform: translateY(-150%); background: var(--white); color: var(--charcoal);
+    padding: .75rem 1rem; border: 1px solid var(--charcoal);
+  }
+  :global(.skip-link:focus) { transform: translateY(0); }
+  :global(.eyebrow) {
+    display: flex; align-items: center; gap: .75rem; color: var(--copper);
+    font-size: .72rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  }
+  :global(.eyebrow::before) { content: ""; width: 1.75rem; height: 1px; background: currentColor; }
+  :global(.section) { padding: clamp(5rem, 9vw, 9rem) 0; }
+  :global(.section-heading h2) {
+    margin-top: 1.25rem; font-family: var(--font-display); font-weight: 300;
+    font-size: clamp(2.7rem, 5.6vw, 5.4rem); line-height: .98; letter-spacing: -.045em;
+  }
+  :global(.section-heading > p:not(.eyebrow)) {
+    color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.7;
+  }
+
+  .site-header {
+    position: fixed; inset: 0 0 auto; z-index: 50; border-bottom: 1px solid transparent;
+    transition: background .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+  }
+  .site-header.is-scrolled {
+    background: color-mix(in srgb, var(--cream) 88%, transparent);
+    border-color: var(--line); backdrop-filter: blur(18px);
+  }
+  .header-inner { height: 86px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 2rem; }
+  .brand { display: inline-flex; flex-direction: column; line-height: 1.1; width: max-content; }
+  .brand strong { font-family: var(--font-display); font-size: 1.35rem; font-weight: 500; letter-spacing: -.02em; }
+  .brand span { margin-top: .25rem; color: var(--muted); font-size: .58rem; letter-spacing: .13em; text-transform: uppercase; }
+  .main-nav { display: flex; gap: 2rem; font-size: .82rem; color: #42453e; }
+  .main-nav a { position: relative; padding: .5rem 0; }
+  .main-nav a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: .2rem; height: 1px; background: var(--copper); transition: right .25s ease; }
+  .main-nav a:hover::after { right: 0; }
+  .header-action { justify-self: end; display: flex; align-items: center; gap: .65rem; font-size: .78rem; font-weight: 600; }
+  .header-action span { display: grid; place-items: center; width: 2.1rem; height: 2.1rem; border: 1px solid var(--charcoal); border-radius: 50%; transition: .25s ease; }
+  .header-action:hover span { background: var(--charcoal); color: var(--white); transform: rotate(45deg); }
+  .menu-button { display: none; border: 0; background: transparent; padding: .7rem; }
+  .menu-button i { display: block; width: 22px; height: 1px; background: var(--charcoal); margin: 5px 0; transition: .25s ease; }
+
+  .hero {
+    position: relative; min-height: 860px; padding-top: 150px; overflow: hidden;
+    background:
+      linear-gradient(90deg, rgba(173,106,69,.06) 1px, transparent 1px) 0 0 / 11.11% 100%,
+      var(--cream);
+  }
+  .hero-glow {
+    position: absolute; width: 700px; height: 700px; border-radius: 50%;
+    right: -240px; top: -210px; background: rgba(173,106,69,.15); filter: blur(110px);
+  }
+  .hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(3rem, 7vw, 8rem); align-items: center; }
+  .hero-copy { padding: 3rem 0 5rem; }
+  .hero h1 {
+    max-width: 760px; margin-top: 1.6rem; font-family: var(--font-display); font-weight: 300;
+    font-size: clamp(4rem, 7.3vw, 7.4rem); line-height: .88; letter-spacing: -.06em;
+  }
+  .hero h1 em { display: block; color: var(--copper); font-weight: 300; }
+  .hero-lead { max-width: 650px; margin-top: 2.25rem; color: #52544d; font-size: clamp(1.05rem, 1.55vw, 1.28rem); line-height: 1.65; }
+  .hero-actions { display: flex; align-items: center; gap: 1.8rem; margin-top: 2.25rem; }
+  .button {
+    display: inline-flex; align-items: center; justify-content: center; gap: .9rem;
+    min-height: 58px; padding: 0 1.5rem; font-size: .84rem; font-weight: 600; transition: transform .25s ease, background .25s ease, color .25s ease;
+  }
+  .button:hover { transform: translateY(-2px); }
+  .button-dark { background: var(--charcoal); color: var(--white); }
+  .button-dark:hover { background: var(--forest); }
+  .button span { font-size: 1.1rem; }
+  .text-link { font-size: .84rem; font-weight: 600; border-bottom: 1px solid var(--line); padding-bottom: .35rem; }
+  .hero-proof { display: flex; align-items: center; gap: .8rem; margin-top: 3.4rem; color: var(--muted); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+  .hero-proof i { width: 4px; height: 4px; border-radius: 50%; background: var(--copper); }
+  .hero-visual { position: relative; min-height: 650px; display: flex; align-items: flex-end; justify-content: center; }
+  .portrait-frame {
+    position: relative; width: min(100%, 530px); height: 650px; overflow: hidden;
+    border-radius: 260px 260px 12px 12px; background: var(--cream-2);
+    box-shadow: 0 40px 90px rgba(47,37,28,.17);
+  }
+  .portrait-frame::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,.25); pointer-events: none; }
+  .portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 52% 31%; }
+  .status-card {
+    position: absolute; z-index: 3; display: flex; align-items: center; gap: .85rem;
+    background: rgba(255,253,249,.9); border: 1px solid rgba(255,255,255,.8);
+    box-shadow: 0 18px 50px rgba(35,31,25,.14); backdrop-filter: blur(14px);
+  }
+  .status-card-top { top: 14%; left: -12%; padding: 1rem 1.2rem; }
+  .status-card-bottom { right: -8%; bottom: 8%; flex-direction: column; align-items: flex-start; gap: .2rem; padding: 1.1rem 1.3rem; }
+  .status-card small { color: var(--muted); font-size: .68rem; }
+  .status-card strong { font-size: .83rem; }
+  .status-dot { width: 10px; height: 10px; border-radius: 50%; background: #4f8d64; box-shadow: 0 0 0 5px rgba(79,141,100,.12); }
+  .mini-label { color: var(--copper); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; }
+  .hero-foot { position: relative; z-index: 3; border-top: 1px solid var(--line); padding: 1.4rem 0; color: var(--muted); font-size: .75rem; }
+
+  .section-paper { background: var(--white); }
+  .split-heading { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(300px, .55fr); gap: 7rem; align-items: end; }
+  .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 5rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .pain-card { min-height: 330px; padding: 2rem; border-right: 1px solid var(--line); transition: background .3s ease, transform .3s ease; }
+  .pain-card:last-child { border-right: 0; }
+  .pain-card:hover { background: var(--cream); transform: translateY(-6px); }
+  .pain-card > span, .feature-index { color: var(--copper); font-size: .7rem; letter-spacing: .14em; }
+  .pain-card h3 { margin-top: 5.5rem; font-family: var(--font-display); font-size: 2rem; font-weight: 400; letter-spacing: -.025em; }
+  .pain-card p { margin-top: 1rem; color: var(--muted); line-height: 1.7; }
+  .statement { margin-top: 4rem; display: flex; justify-content: center; gap: .55rem; color: var(--muted); font-family: var(--font-display); font-size: clamp(1.3rem, 2.2vw, 2rem); text-align: center; }
+  .statement strong { color: var(--charcoal); font-weight: 400; }
+
+  .operation-section { background: var(--cream); }
+  .centered { max-width: 850px; margin-inline: auto; text-align: center; }
+  .centered .eyebrow { justify-content: center; }
+  .centered > p:not(.eyebrow) { max-width: 690px; margin: 1.5rem auto 0; }
+  .crm-window { margin-top: 4.5rem; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: white; box-shadow: 0 35px 90px rgba(54,45,35,.14); }
+  .window-bar { height: 56px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 1.1rem; border-bottom: 1px solid #e6e5e2; color: #555850; font-size: .72rem; background: #fbfbfa; }
+  .window-dots { display: flex; gap: 6px; }
+  .window-dots i { width: 8px; height: 8px; border-radius: 50%; background: #d4d2cc; }
+  .live-pill { justify-self: end; display: flex; align-items: center; gap: .45rem; border: 1px solid #e2e5df; padding: .4rem .7rem; border-radius: 99px; }
+  .live-pill i { width: 6px; height: 6px; background: #4f8d64; border-radius: 50%; }
+  .crm-image-wrap { aspect-ratio: 1.65 / 1; overflow: hidden; background: #f7f7f6; }
+  .crm-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+  .feature-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 4rem; }
+  .feature-row article { padding-top: 1.4rem; border-top: 1px solid var(--line); }
+  .feature-row h3 { margin-top: 2rem; font-family: var(--font-display); font-size: 1.65rem; font-weight: 400; }
+  .feature-row p { margin-top: .8rem; color: var(--muted); line-height: 1.65; font-size: .94rem; }
+
+  .pipeline-section { background: var(--white); }
+  .pipeline-layout { display: grid; grid-template-columns: .68fr 1.32fr; gap: clamp(4rem, 8vw, 9rem); align-items: center; }
+  .pipeline-copy h2 { margin-top: 1.2rem; font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 4.8rem); font-weight: 300; line-height: .98; letter-spacing: -.045em; }
+  .pipeline-copy > p:not(.eyebrow) { margin-top: 1.5rem; color: var(--muted); line-height: 1.7; }
+  .pipeline-copy ul { margin-top: 2rem; display: grid; gap: .85rem; }
+  .pipeline-copy li { display: flex; gap: .8rem; align-items: center; color: #454840; font-size: .9rem; }
+  .pipeline-copy li i { width: 7px; height: 7px; border: 1px solid var(--copper); transform: rotate(45deg); }
+  .kanban { background: #f5f5f2; border: 1px solid #e2e1dc; border-radius: 16px; padding: 1.25rem; box-shadow: 0 25px 65px rgba(40,35,29,.1); }
+  .kanban-head { display: flex; align-items: center; justify-content: space-between; padding: .5rem .25rem 1.2rem; border-bottom: 1px solid #deddd8; }
+  .kanban-head div { display: flex; flex-direction: column; }
+  .kanban-head small, .kanban-head > span { color: #7d7e77; font-size: .62rem; }
+  .kanban-head strong { margin-top: .15rem; font-size: .95rem; }
+  .kanban-head > span { border: 1px solid #d7d6d0; padding: .4rem .65rem; border-radius: 6px; }
+  .kanban-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; padding-top: 1rem; }
+  .kanban-column { min-height: 360px; padding: .8rem; background: #ebece7; border-radius: 10px; }
+  .column-title { display: flex; justify-content: space-between; align-items: center; color: #62655f; font-size: .7rem; padding: .2rem .15rem .75rem; }
+  .column-title b { display: grid; place-items: center; min-width: 20px; height: 20px; border-radius: 50%; background: #dedfd9; font-weight: 500; }
+  .lead-card { margin-bottom: .65rem; padding: .85rem; background: white; border: 1px solid #deded9; border-radius: 8px; box-shadow: 0 3px 10px rgba(30,30,28,.04); }
+  .lead-card small { display: block; color: #7c7f78; font-size: .62rem; }
+  .lead-card strong { display: block; margin-top: .3rem; font-size: .76rem; line-height: 1.35; }
+  .lead-card > div { display: flex; align-items: center; justify-content: space-between; margin-top: 1.1rem; color: #8a8b84; font-size: .57rem; }
+  .avatar { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; color: white; font-style: normal; font-size: .5rem; }
+  .a1 { background: #567565; } .a2 { background: #9b684a; } .a3 { background: #525e7f; } .a4 { background: #8d725b; } .a5 { background: #4e7b6e; }
+  .featured-card { border-color: #d9a47e; box-shadow: inset 3px 0 #c67e4e; }
+  .success-card { border-color: #9bb5a2; }
+  .card-tag { display: inline-block; margin-bottom: .55rem; color: #a1542d; background: #f7e9df; padding: .22rem .4rem; border-radius: 4px; font-size: .5rem; text-transform: uppercase; letter-spacing: .06em; }
+
+  .followup-section { position: relative; overflow: hidden; background: var(--charcoal); color: var(--white); }
+  .followup-section::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 80% 0%, rgba(173,106,69,.22), transparent 35%); }
+  .followup-section .shell { position: relative; }
+  .light-heading > p:not(.eyebrow) { color: #a9aaa3; }
+  .timeline { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 5rem; border-top: 1px solid rgba(255,255,255,.18); }
+  .timeline article { position: relative; min-height: 300px; padding: 2.1rem 1.5rem 1.5rem 0; border-right: 1px solid rgba(255,255,255,.15); }
+  .timeline article:last-child { border-right: 0; padding-left: 1.5rem; }
+  .timeline article:not(:first-child) { padding-left: 1.5rem; }
+  .timeline-number { position: absolute; top: -13px; left: 0; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--copper); font-size: .56rem; }
+  .timeline article:not(:first-child) .timeline-number { left: 1.5rem; }
+  .timeline small { color: var(--copper-soft); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
+  .timeline h3 { margin-top: 4rem; font-family: var(--font-display); font-size: 1.65rem; font-weight: 400; }
+  .timeline p { margin-top: .8rem; color: #a9aaa3; line-height: 1.65; font-size: .9rem; }
+
+  .method-section { background: var(--cream-2); }
+  .method-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 4.5rem; background: var(--line); border: 1px solid var(--line); }
+  .method-grid article { min-height: 320px; padding: 2rem; background: var(--cream); }
+  .method-grid span { color: var(--copper); font-size: .68rem; letter-spacing: .14em; }
+  .method-grid h3 { margin-top: 6rem; font-family: var(--font-display); font-size: 2rem; font-weight: 400; }
+  .method-grid p { margin-top: .8rem; color: var(--muted); line-height: 1.7; font-size: .92rem; }
+  .method-note { display: flex; align-items: center; justify-content: center; gap: .9rem; margin-top: 2rem; color: var(--muted); font-size: .82rem; }
+  .method-note strong { color: var(--charcoal); }
+  .pulse { width: 8px; height: 8px; border-radius: 50%; background: #4f8d64; box-shadow: 0 0 0 6px rgba(79,141,100,.12); }
+
+  .about-section { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(4rem, 9vw, 10rem); align-items: center; }
+  .about-image { position: relative; max-width: 530px; }
+  .about-image img { width: 100%; aspect-ratio: .76 / 1; object-fit: cover; object-position: center 25%; }
+  .about-badge { position: absolute; right: -3rem; bottom: 3rem; display: flex; flex-direction: column; width: 190px; padding: 1.2rem; background: var(--charcoal); color: var(--white); }
+  .about-badge span { font-family: var(--font-display); font-size: 1.5rem; }
+  .about-badge small { margin-top: .3rem; color: #a9aaa3; font-size: .68rem; line-height: 1.4; }
+  .about-copy h2 { margin-top: 1.2rem; font-family: var(--font-display); font-size: clamp(3.5rem, 6vw, 6rem); font-weight: 300; line-height: .9; letter-spacing: -.05em; }
+  .about-copy .role { margin-top: .8rem; color: var(--copper); font-size: .72rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
+  .about-copy > p:not(.eyebrow):not(.role) { max-width: 650px; margin-top: 1.4rem; color: var(--muted); font-size: 1.04rem; line-height: 1.75; }
+  .quote { max-width: 650px; margin-top: 2.2rem; padding: 1.5rem 0 0 2rem; border-top: 1px solid var(--line); border-left: 2px solid var(--copper); font-family: var(--font-display); font-size: 1.45rem; line-height: 1.4; }
+
+  .faq-section { background: var(--cream); }
+  .faq-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 8rem; }
+  .faq-intro h2 { margin-top: 1.2rem; font-family: var(--font-display); font-size: clamp(2.8rem, 4.7vw, 4.7rem); font-weight: 300; line-height: .98; letter-spacing: -.04em; }
+  .faq-list { border-top: 1px solid var(--line); }
+  .faq-list details { border-bottom: 1px solid var(--line); }
+  .faq-list summary { display: grid; grid-template-columns: 2.5rem 1fr auto; gap: 1rem; align-items: center; padding: 1.5rem 0; cursor: pointer; list-style: none; font-size: 1rem; font-weight: 500; }
+  .faq-list summary::-webkit-details-marker { display: none; }
+  .faq-list summary span { color: var(--copper); font-size: .65rem; }
+  .faq-list summary i { font-style: normal; font-size: 1.3rem; font-weight: 300; transition: transform .25s ease; }
+  .faq-list details[open] summary i { transform: rotate(45deg); }
+  .faq-list details p { padding: 0 2rem 1.5rem 3.5rem; color: var(--muted); line-height: 1.7; }
+
+  .final-cta { position: relative; overflow: hidden; padding: clamp(6rem, 11vw, 11rem) 0; background: var(--forest); color: var(--white); text-align: center; }
+  .final-glow { position: absolute; width: 700px; height: 700px; border-radius: 50%; left: 50%; top: 45%; transform: translate(-50%, -50%); background: rgba(173,106,69,.18); filter: blur(110px); }
+  .final-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+  .final-content .eyebrow { color: var(--copper-soft); }
+  .final-content h2 { max-width: 900px; margin-top: 1.5rem; font-family: var(--font-display); font-size: clamp(3.3rem, 7vw, 7rem); font-weight: 300; line-height: .92; letter-spacing: -.05em; }
+  .final-content > p:not(.eyebrow) { max-width: 660px; margin-top: 1.8rem; color: #bec6c0; font-size: 1.05rem; line-height: 1.7; }
+  .button-light { margin-top: 2.2rem; background: var(--white); color: var(--charcoal); }
+  .button-light:hover { background: var(--copper-soft); }
+  .final-content > small { margin-top: 1rem; color: #93a097; font-size: .68rem; }
+
+  .site-footer { padding: 3rem 0; background: var(--charcoal); color: var(--white); border-top: 1px solid rgba(255,255,255,.1); }
+  .footer-inner { display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: end; gap: 2rem; }
+  .footer-brand span, .footer-inner p, .footer-inner div:last-child { color: #979a93; }
+  .footer-inner p { max-width: 330px; font-size: .74rem; line-height: 1.5; }
+  .footer-inner div:last-child { justify-self: end; display: flex; flex-direction: column; align-items: flex-end; gap: .45rem; font-size: .68rem; }
+
+  :global(.has-motion [data-reveal]) { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+  :global(.has-motion [data-reveal].is-visible) { opacity: 1; transform: none; }
+
+  @media (max-width: 1050px) {
+    :global(:root) { --shell: min(100% - 40px, 920px); }
+    .main-nav { gap: 1.15rem; }
+    .hero { min-height: auto; }
+    .hero-grid { grid-template-columns: 1fr .78fr; gap: 2.5rem; }
+    .hero h1 { font-size: clamp(3.8rem, 7.5vw, 5.6rem); }
+    .portrait-frame { height: 570px; }
+    .status-card-top { left: -5%; }
+    .status-card-bottom { right: -4%; }
+    .split-heading { gap: 3rem; }
+    .pipeline-layout { grid-template-columns: 1fr; gap: 4rem; }
+    .pipeline-copy { max-width: 700px; }
+    .method-grid { grid-template-columns: repeat(2, 1fr); }
+    .faq-grid { gap: 4rem; }
+  }
+
+  @media (max-width: 780px) {
+    :global(:root) { --shell: calc(100vw - 32px); }
+    :global(.section) { padding: 4.5rem 0; }
+    :global(.section-heading h2) { font-size: clamp(2.55rem, 12vw, 4rem); }
+    .header-inner { height: 72px; grid-template-columns: 1fr auto; }
+    .header-action { display: none; }
+    .menu-button { display: block; position: relative; z-index: 3; }
+    .menu-button[aria-expanded="true"] i:first-of-type { transform: translateY(3px) rotate(45deg); }
+    .menu-button[aria-expanded="true"] i:last-of-type { transform: translateY(-3px) rotate(-45deg); }
+    .main-nav {
+      position: fixed; inset: 0; display: flex; flex-direction: column; justify-content: center;
+      gap: 1.5rem; padding: 2rem; background: var(--cream); visibility: hidden; opacity: 0;
+      pointer-events: none; transition: opacity .25s ease;
+    }
+    .main-nav.is-open { visibility: visible; opacity: 1; pointer-events: auto; }
+    .main-nav a { font-family: var(--font-display); font-size: 2.4rem; font-weight: 300; }
+    .brand span { font-size: .5rem; }
+    .hero { padding-top: 105px; background-size: 25% 100%; }
+    .hero-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .hero-copy { padding: 2rem 0 0; }
+    .hero h1 { font-size: clamp(3.5rem, 17vw, 5.1rem); line-height: .9; }
+    .hero-lead { font-size: 1rem; }
+    .hero-actions { align-items: flex-start; flex-direction: column; gap: 1.2rem; }
+    .button { width: 100%; }
+    .hero-proof { flex-wrap: wrap; margin-top: 2.4rem; font-size: .6rem; }
+    .hero-visual { min-height: 500px; margin-top: 1rem; }
+    .portrait-frame { width: calc(100% - 1rem); height: 500px; border-radius: 200px 200px 10px 10px; }
+    .status-card-top { top: 9%; left: 0; padding: .8rem; }
+    .status-card-bottom { right: 0; bottom: 5%; padding: .9rem; }
+    .status-card small { font-size: .6rem; }
+    .status-card strong { font-size: .7rem; }
+    .hero-foot { margin-top: 1.5rem; font-size: .66rem; line-height: 1.5; }
+    .split-heading, .about-grid, .faq-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .pain-grid, .feature-row { grid-template-columns: 1fr; }
+    .pain-card { min-height: auto; padding: 1.6rem 0; border-right: 0; border-bottom: 1px solid var(--line); }
+    .pain-card:last-child { border-bottom: 0; }
+    .pain-card h3 { margin-top: 2.5rem; }
+    .statement { flex-direction: column; margin-top: 2.5rem; }
+    .crm-window { margin-top: 3rem; border-radius: 10px; }
+    .window-bar { height: 48px; grid-template-columns: 1fr 1fr; }
+    .window-bar > span { display: none; }
+    .crm-image-wrap { aspect-ratio: .92 / 1; }
+    .crm-image-wrap img { width: 155%; max-width: none; object-position: 37% center; }
+    .feature-row { gap: 2rem; }
+    .pipeline-copy h2 { font-size: clamp(2.7rem, 13vw, 4rem); }
+    .kanban { overflow-x: auto; padding: .85rem; }
+    .kanban-columns { min-width: 720px; }
+    .timeline { grid-template-columns: 1fr; margin-top: 3rem; border-top: 0; border-left: 1px solid rgba(255,255,255,.18); }
+    .timeline article, .timeline article:not(:first-child), .timeline article:last-child { min-height: auto; padding: 0 0 2.8rem 2rem; border-right: 0; }
+    .timeline-number, .timeline article:not(:first-child) .timeline-number { top: 0; left: -13px; }
+    .timeline h3 { margin-top: 1rem; }
+    .method-grid { grid-template-columns: 1fr; margin-top: 3rem; }
+    .method-grid article { min-height: auto; }
+    .method-grid h3 { margin-top: 3.2rem; }
+    .method-note { align-items: flex-start; }
+    .pulse { flex: 0 0 auto; margin-top: .3rem; }
+    .about-image { width: calc(100% - 1.5rem); }
+    .about-badge { right: -1.5rem; bottom: 1.5rem; width: 160px; }
+    .about-copy { margin-top: 1rem; }
+    .faq-grid { gap: 3rem; }
+    .faq-list summary { grid-template-columns: 2rem 1fr auto; font-size: .92rem; }
+    .faq-list details p { padding-left: 3rem; }
+    .final-content h2 { font-size: clamp(3rem, 14vw, 5rem); }
+    .footer-inner { grid-template-columns: 1fr; align-items: start; }
+    .footer-inner div:last-child { justify-self: start; align-items: flex-start; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :global(html) { scroll-behavior: auto; }
+    :global(*) { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  }
+</style>
