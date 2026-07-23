@@ -8,9 +8,11 @@ export interface Props {
 }
 
 const {
-  title = "Daniel Junior | Capital com critério",
-  description = "Estratégia e estruturação de capital para empresários e investidores.",
+  title = "Daniel Junior | Gestão de Automação com IA",
+  description = "Gestão de automação com IA para organizar atendimento, equipe e oportunidades comerciais.",
 } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
 ---
 
 <!doctype html>
@@ -20,7 +22,20 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#F1ECE3" />
+    <meta name="theme-color" content="#F4EFE7" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Daniel Junior" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL("/images/og-daniel-junior.webp", canonical)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL("/images/og-daniel-junior.webp", canonical)} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
