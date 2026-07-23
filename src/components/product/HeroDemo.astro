@@ -1,0 +1,186 @@
+<div class="hero-demo" aria-label="Demonstração da operação de atendimento com inteligência artificial">
+  <div class="demo-bar">
+    <div class="demo-brand"><i>DJ</i><strong>Central de atendimento</strong></div>
+    <div class="demo-live"><span></span> Operação em andamento</div>
+  </div>
+
+  <div class="demo-body">
+    <section class="chat-window" aria-label="Conversa atendida pela inteligência artificial">
+      <header>
+        <div class="person">
+          <span class="avatar">MC</span>
+          <div><strong>Mariana Costa</strong><small>WhatsApp · agora</small></div>
+        </div>
+        <span class="service-status">IA atendendo</span>
+      </header>
+
+      <div class="messages">
+        <div class="message customer">
+          <p>Quero saber as condições para comprar no atacado.</p>
+          <time>10:24</time>
+        </div>
+        <div class="read-state"><span></span><span></span><span></span> Entendendo a dúvida</div>
+        <div class="message assistant">
+          <small>Resposta automática</small>
+          <p>Claro. Qual quantidade você pretende comprar por mês?</p>
+          <time>10:24 · ✓✓</time>
+        </div>
+        <div class="message customer compact">
+          <p>Em torno de 150 peças.</p>
+          <time>10:25</time>
+        </div>
+      </div>
+
+      <footer><span>＋</span><p>Responder mensagem...</p><b>Enviar</b></footer>
+    </section>
+
+    <section class="operation-window" aria-label="Ações realizadas pelo sistema">
+      <header>
+        <span>O que aconteceu com a conversa</span>
+        <b>4 ações concluídas</b>
+      </header>
+
+      <div class="operation-list">
+        <article class="operation-item is-done">
+          <i>01</i>
+          <div><small>CONTATO IDENTIFICADO</small><strong>Interesse em atacado</strong></div>
+          <span>Concluído</span>
+        </article>
+        <article class="operation-item is-done">
+          <i>02</i>
+          <div><small>CRM ATUALIZADO</small><strong>Novo → Qualificado</strong></div>
+          <span>Concluído</span>
+        </article>
+        <article class="operation-item is-current">
+          <i>03</i>
+          <div><small>RODÍZIO DA EQUIPE</small><strong>Conversa enviada para Rafael</strong></div>
+          <span>Agora</span>
+        </article>
+        <article class="operation-item">
+          <i>04</i>
+          <div><small>PRÓXIMO CONTATO</small><strong>Follow-up amanhã, 09:00</strong></div>
+          <span>Agendado</span>
+        </article>
+      </div>
+
+      <div class="operation-summary">
+        <div><small>Etapa</small><strong>Qualificado</strong></div>
+        <div><small>Responsável</small><strong><i>RA</i> Rafael Alves</strong></div>
+        <div><small>Prioridade</small><strong class="priority">Alta</strong></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<style>
+  .hero-demo {
+    width: min(1120px, 100%); overflow: hidden; border: 1px solid rgba(255,255,255,.13);
+    border-radius: 20px; color: #20232b; background: #f6f7f9;
+    box-shadow: 0 42px 110px rgba(0,0,0,.52), 0 0 80px rgba(100,75,255,.12);
+  }
+  .demo-bar {
+    height: 54px; display: flex; align-items: center; justify-content: space-between;
+    padding: 0 18px; border-bottom: 1px solid #e2e5ea; background: rgba(255,255,255,.96);
+  }
+  .demo-brand, .demo-live, .person, .operation-item, .operation-summary > div { display: flex; align-items: center; }
+  .demo-brand { gap: .65rem; font-size: .7rem; }
+  .demo-brand i {
+    width: 27px; height: 27px; display: grid; place-items: center; border-radius: 7px;
+    color: white; background: linear-gradient(145deg,#7b5cff,#557bff); font-size: .52rem; font-style: normal;
+  }
+  .demo-live { gap: .45rem; color: #646975; font-size: .58rem; font-weight: 600; }
+  .demo-live span { width: 6px; height: 6px; border-radius: 50%; background: #35c887; box-shadow: 0 0 0 4px rgba(53,200,135,.1); }
+  .demo-body { display: grid; grid-template-columns: minmax(0,1.12fr) minmax(340px,.88fr); min-height: 520px; }
+  .chat-window { min-width: 0; display: grid; grid-template-rows: 68px 1fr 62px; border-right: 1px solid #e2e5ea; background: #f7f8fa; }
+  .chat-window > header {
+    display: flex; align-items: center; justify-content: space-between; padding: 0 20px;
+    border-bottom: 1px solid #e2e5ea; background: white;
+  }
+  .person { gap: .65rem; }
+  .avatar {
+    width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%;
+    color: white; background: linear-gradient(145deg,#6383a2,#91aac0); font-size: .52rem; font-weight: 700;
+  }
+  .person div { display: flex; flex-direction: column; }
+  .person strong { font-size: .67rem; }
+  .person small { color: #397a5a; font-size: .49rem; }
+  .service-status { padding: .35rem .55rem; border-radius: 999px; color: #664fe0; background: #efecff; font-size: .5rem; font-weight: 700; }
+  .messages { padding: 24px clamp(18px,4vw,42px); overflow: hidden; }
+  .message {
+    width: fit-content; max-width: 77%; margin-bottom: .8rem; padding: .75rem .85rem;
+    border: 1px solid #e5e7eb; border-radius: 12px; background: white; box-shadow: 0 5px 14px rgba(29,33,41,.04);
+  }
+  .message p { margin: 0; font-size: .67rem; line-height: 1.55; }
+  .message time { display: block; margin-top: .35rem; color: #5d636f; font-size: .46rem; text-align: right; }
+  .message.assistant { margin-left: auto; border-color: #ddd7ff; background: #eae7ff; animation: message-in 5s ease-in-out infinite; }
+  .message.assistant small { display: block; margin-bottom: .35rem; color: #644ce0; font-size: .45rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  .message.compact { padding-block: .6rem; }
+  .read-state { display: flex; justify-content: flex-end; align-items: center; gap: .2rem; margin: -.25rem 0 .65rem; color: #6652b8; font-size: .47rem; }
+  .read-state span { width: 3px; height: 3px; border-radius: 50%; background: #7966db; animation: dot 1.4s ease-in-out infinite; }
+  .read-state span:nth-child(2) { animation-delay: .12s; } .read-state span:nth-child(3) { animation-delay: .24s; margin-right: .25rem; }
+  .chat-window > footer {
+    margin: 0 18px 14px; display: grid; grid-template-columns: auto 1fr auto; gap: .6rem; align-items: center;
+    padding: .55rem .65rem; border: 1px solid #e0e3e8; border-radius: 10px; background: white;
+  }
+  .chat-window > footer span { color: #8d929e; }
+  .chat-window > footer p { margin: 0; color: #686e79; font-size: .58rem; }
+  .chat-window > footer b { padding: .45rem .65rem; border-radius: 7px; color: white; background: #7358ed; font-size: .52rem; }
+  .operation-window { padding: 22px; background: linear-gradient(160deg,#f9fafc,#eff1f6); }
+  .operation-window > header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 1rem; }
+  .operation-window > header span { color: #747985; font-size: .58rem; }
+  .operation-window > header b { color: #4a8a6d; font-size: .5rem; }
+  .operation-list { position: relative; display: grid; gap: .55rem; }
+  .operation-list::before { content:""; position:absolute; left:17px; top:28px; bottom:28px; width:1px; background:#daddE5; }
+  .operation-item {
+    position: relative; z-index: 1; display: grid; grid-template-columns: 36px 1fr auto; gap: .7rem;
+    min-height: 68px; padding: .7rem; border: 1px solid #e1e4e9; border-radius: 11px; background: rgba(255,255,255,.88);
+    box-shadow: 0 8px 22px rgba(37,42,52,.04);
+  }
+  .operation-item > i {
+    width: 28px; height: 28px; display: grid; place-items: center; border: 1px solid #daddE4;
+    border-radius: 9px; color: #999da8; background: white; font-size: .46rem; font-style: normal; font-weight: 700;
+  }
+  .operation-item > div { min-width: 0; display: flex; flex-direction: column; }
+  .operation-item small { color: #999da7; font-size: .42rem; letter-spacing: .07em; }
+  .operation-item strong { margin-top: .18rem; overflow: hidden; font-size: .6rem; white-space: nowrap; text-overflow: ellipsis; }
+  .operation-item > span { padding: .22rem .35rem; border-radius: 5px; color: #7f8490; background: #f2f3f6; font-size: .42rem; }
+  .operation-item.is-done > i { color:#22865d; border-color:#ccebdd; background:#eaf8f1; }
+  .operation-item.is-done > span { color:#277b59; background:#e7f5ed; }
+  .operation-item.is-current { border-color:#cfc5ff; box-shadow:0 10px 28px rgba(105,77,226,.12); }
+  .operation-item.is-current > i { color:white; border-color:#7358ed; background:#7358ed; }
+  .operation-item.is-current > span { color:#654bdc; background:#eeeaff; }
+  .operation-summary {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: .5rem; margin-top: .8rem; padding: .8rem;
+    border: 1px solid #e0e3e8; border-radius: 11px; background: rgba(255,255,255,.78);
+  }
+  .operation-summary > div { min-width: 0; align-items: flex-start; flex-direction: column; }
+  .operation-summary small { color:#9b9fa9; font-size:.42rem; }
+  .operation-summary strong { display:flex; align-items:center; gap:.3rem; margin-top:.2rem; font-size:.54rem; }
+  .operation-summary strong i { width:17px; height:17px; display:grid; place-items:center; border-radius:50%; color:white; background:#466888; font-size:.34rem; font-style:normal; }
+  .operation-summary .priority { color:#c66042; }
+
+  @keyframes dot { 0%,100%{opacity:.25;transform:translateY(0)} 50%{opacity:1;transform:translateY(-2px)} }
+  @keyframes message-in { 0%,8%{opacity:.65;transform:translateY(7px)} 15%,100%{opacity:1;transform:none} }
+
+  @media (max-width: 760px) {
+    .hero-demo { border-radius: 15px; }
+    .demo-bar { height: 48px; padding-inline: 12px; }
+    .demo-live { font-size: .49rem; }
+    .demo-brand strong { font-size: .6rem; }
+    .demo-body { grid-template-columns: 1fr; }
+    .chat-window { min-height: 460px; border-right: 0; border-bottom: 1px solid #e2e5ea; }
+    .chat-window > header { padding-inline: 14px; }
+    .messages { padding: 18px 14px; }
+    .message { max-width: 86%; }
+    .operation-window { padding: 16px 12px; }
+    .operation-window > header { align-items: flex-start; gap: .75rem; }
+    .operation-item { grid-template-columns: 34px 1fr; }
+    .operation-item > span { position: absolute; right: .65rem; bottom: .5rem; }
+    .operation-summary { grid-template-columns: 1fr 1fr; }
+    .operation-summary > div:last-child { grid-column: 1 / -1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .message.assistant, .read-state span { animation: none; }
+  }
+</style>

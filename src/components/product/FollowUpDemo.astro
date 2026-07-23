@@ -1,0 +1,112 @@
+<div class="followup-demo" aria-label="Exemplo de acompanhamento automático de uma conversa">
+  <div class="followup-bar">
+    <div><span></span><span></span><span></span></div>
+    <strong>Acompanhamento da conversa</strong>
+    <span class="active-status"><i></i> Em andamento</span>
+  </div>
+
+  <div class="followup-body">
+    <aside class="followup-contact">
+      <div class="contact-head"><i>CR</i><div><strong>Carla Reis</strong><small>Interesse em orçamento</small></div></div>
+      <div class="progress-copy"><span>Progresso do contato</span><strong>80%</strong></div>
+      <div class="progress-bar"><i></i></div>
+      <dl>
+        <div><dt>Responsável</dt><dd><i>RA</i> Rafael Alves</dd></div>
+        <div><dt>Etapa</dt><dd>Follow-up</dd></div>
+        <div><dt>Último contato</dt><dd>Hoje, 10:24</dd></div>
+      </dl>
+      <div class="suggestion">
+        <small>MENSAGEM SUGERIDA</small>
+        <p>Olá, Carla. Conseguiu analisar o orçamento que enviamos?</p>
+      </div>
+    </aside>
+
+    <section class="timeline" aria-label="Histórico e próximas ações">
+      <header><div><small>HISTÓRICO E PRÓXIMAS AÇÕES</small><strong>O sistema acompanha até o cliente responder.</strong></div><b>5 etapas</b></header>
+      <ol>
+        <li class="done"><i>✓</i><div><strong>Primeiro atendimento realizado</strong><small>Dúvidas respondidas pela IA</small></div><time>Hoje · 10:24</time></li>
+        <li class="done"><i>✓</i><div><strong>Retorno agendado</strong><small>Próximo contato criado automaticamente</small></div><time>Hoje · 10:25</time></li>
+        <li class="current"><i>→</i><div><strong>Mensagem enviada</strong><small>Contato retomado no horário programado</small></div><time>Amanhã · 09:00</time></li>
+        <li><i>4</i><div><strong>Cliente respondeu</strong><small>O sistema identifica a nova mensagem</small></div><time>Aguardando</time></li>
+        <li><i>5</i><div><strong>Conversa volta para o vendedor</strong><small>Rafael recebe o histórico completo</small></div><time>Próxima ação</time></li>
+      </ol>
+    </section>
+  </div>
+</div>
+
+<style>
+  .followup-demo {
+    overflow: hidden; border: 1px solid #d9dde5; border-radius: 20px; color: #20232b;
+    background: #f4f5f8; box-shadow: 0 28px 70px rgba(24,28,38,.14);
+  }
+  .followup-bar {
+    height: 54px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+    padding: 0 18px; border-bottom: 1px solid #e0e3e8; background: white;
+  }
+  .followup-bar > div { display: flex; gap: .3rem; }
+  .followup-bar > div span { width: 7px; height: 7px; border-radius: 50%; background: #d5d8de; }
+  .followup-bar > strong { font-size: .65rem; }
+  .active-status { justify-self: end; display: flex; align-items: center; gap: .4rem; color: #6e7480; font-size: .5rem; }
+  .active-status i { width: 6px; height: 6px; border-radius: 50%; background: #35bf81; box-shadow: 0 0 0 4px rgba(53,191,129,.1); }
+  .followup-body { display: grid; grid-template-columns: 310px 1fr; min-height: 540px; }
+  .followup-contact { padding: 24px; border-right: 1px solid #e0e3e8; background: #fff; }
+  .contact-head { display: flex; align-items: center; gap: .7rem; padding-bottom: 1.1rem; border-bottom: 1px solid #eceef1; }
+  .contact-head > i {
+    width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%;
+    color: white; background: linear-gradient(145deg,#c66f5c,#e09a80); font-size: .52rem; font-style: normal; font-weight: 700;
+  }
+  .contact-head div { display: flex; flex-direction: column; }
+  .contact-head strong { font-size: .72rem; } .contact-head small { color: #858a95; font-size: .49rem; }
+  .progress-copy { display: flex; justify-content: space-between; margin-top: 1.2rem; color: #858a95; font-size: .5rem; }
+  .progress-copy strong { color: #634bdc; }
+  .progress-bar { height: 7px; margin-top: .45rem; overflow: hidden; border-radius: 999px; background: #eceef2; }
+  .progress-bar i { display: block; width: 80%; height: 100%; border-radius: inherit; background: linear-gradient(90deg,#7357ed,#4e89f3); animation: progress 2.2s cubic-bezier(.2,.7,.2,1) both; }
+  dl { margin: 1.3rem 0 0; }
+  dl > div { display: flex; align-items: center; justify-content: space-between; padding: .75rem 0; border-bottom: 1px solid #eff0f3; }
+  dt { color: #8c919b; font-size: .5rem; }
+  dd { display: flex; align-items: center; gap: .35rem; margin: 0; font-size: .56rem; font-weight: 650; }
+  dd i { width: 20px; height: 20px; display: grid; place-items: center; border-radius: 50%; color: white; background: #6383a2; font-size: .34rem; font-style: normal; }
+  .suggestion { margin-top: 1.2rem; padding: .85rem; border: 1px solid #ded8ff; border-radius: 10px; background: #efecff; }
+  .suggestion small { color: #7056e9; font-size: .42rem; font-weight: 700; letter-spacing: .06em; }
+  .suggestion p { margin: .45rem 0 0; color: #554a82; font-size: .56rem; line-height: 1.55; }
+  .timeline { padding: 28px clamp(20px,4vw,48px); background: linear-gradient(145deg,#f6f7f9,#eef0f4); }
+  .timeline > header { display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 1.4rem; border-bottom: 1px solid #dfe2e7; }
+  .timeline > header div { display: flex; flex-direction: column; }
+  .timeline > header small { color: #7056e9; font-size: .44rem; font-weight: 700; letter-spacing: .08em; }
+  .timeline > header strong { max-width: 480px; margin-top: .4rem; font-size: 1.08rem; }
+  .timeline > header b { padding: .35rem .5rem; border-radius: 6px; color: #6f7480; background: white; font-size: .48rem; }
+  ol { position: relative; margin: 1.3rem 0 0; padding: 0; list-style: none; }
+  ol::before { content:""; position:absolute; left:18px; top:28px; bottom:28px; width:1px; background:#cfd3da; }
+  li {
+    position: relative; z-index: 1; display: grid; grid-template-columns: 38px 1fr auto; gap: .8rem; align-items: center;
+    min-height: 74px; padding: .55rem; border-radius: 10px;
+  }
+  li > i { width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid #d4d8df; border-radius: 9px; color: #979ca6; background: #f8f9fa; font-size: .48rem; font-style: normal; font-weight: 700; }
+  li div { display: flex; flex-direction: column; }
+  li strong { font-size: .62rem; } li small { margin-top: .18rem; color: #858a95; font-size: .48rem; }
+  li time { color: #8d929d; font-size: .46rem; }
+  li.done > i { color: #25805b; border-color: #c8ead9; background: #e7f6ee; }
+  li.current { border: 1px solid #d7d0ff; background: rgba(255,255,255,.78); box-shadow: 0 8px 25px rgba(103,77,222,.08); }
+  li.current > i { color: white; border-color: #7257eb; background: #7257eb; }
+  li.current time { color: #654bdc; font-weight: 700; }
+  @keyframes progress { from{width:0} to{width:80%} }
+
+  @media (max-width: 760px) {
+    .followup-demo { border-radius: 14px; }
+    .followup-bar { height: 50px; grid-template-columns: 1fr auto; padding: 0 12px; }
+    .followup-bar > div { display: none; }
+    .followup-body { grid-template-columns: 1fr; }
+    .followup-contact { padding: 18px 14px; border-right: 0; border-bottom: 1px solid #e0e3e8; }
+    .followup-contact dl { display: grid; grid-template-columns: repeat(3,1fr); gap: .5rem; }
+    dl > div { align-items: flex-start; flex-direction: column; gap: .3rem; padding: .65rem; border: 1px solid #eceef1; border-radius: 8px; }
+    .timeline { padding: 22px 10px; }
+    .timeline > header { align-items: flex-start; gap: .8rem; }
+    .timeline > header strong { font-size: .88rem; }
+    li { grid-template-columns: 34px 1fr; }
+    li time { grid-column: 2; margin-top: -.5rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .progress-bar i { animation: none; }
+  }
+</style>
