@@ -383,29 +383,42 @@
   }
 
   @media (max-width: 650px) {
-    .tabs-guide { align-items:flex-start; flex-wrap:wrap; margin-left:0; }.tabs-guide strong { flex:1; font-size:.66rem; }.tabs-guide i { width:100%; margin-top:-.35rem; text-align:center; }
+    .tabs-guide { align-items:flex-start; flex-wrap:wrap; margin-left:0; }.tabs-guide span { font-size:.625rem; }.tabs-guide strong { flex:1; font-size:.72rem; }.tabs-guide i { width:100%; margin-top:-.35rem; text-align:center; }
     .tabs { width: 100%; display: grid; grid-template-columns: repeat(3,1fr); gap: .25rem; }
-    .tabs button { height: 52px; padding: 0 .35rem; font-size: .57rem; line-height: 1.2; }
-    .tabs button span { display: block; margin: 0 0 .15rem; }
+    .tabs button { min-height: 58px; padding: .4rem; font-size: .66rem; line-height: 1.2; }
+    .tabs button span { display: block; margin: 0 0 .15rem; font-size:.625rem; }
     .viewport { border-radius: 14px; }
     .panel-top { height: 50px; grid-template-columns: 1fr auto; padding: 0 12px; }
     .panel-top > div { display: none; }
-    .panel-top > strong { justify-self: start; }
+    .panel-top > strong { justify-self: start; font-size:.72rem; }
+    .panel-top > span { font-size:.625rem; }
     .service-layout { grid-template-columns: 1fr; min-height: 0; }
     .conversation-list { display: grid; grid-template-columns: 1fr; border-right: 0; border-bottom: 1px solid #d9dee7; }
-    .conversation-list header { grid-column: 1 / -1; min-height: 56px; }
+    .conversation-list header { grid-column: 1 / -1; min-height: 64px; }
+    .conversation-list header small { font-size:.625rem; }
+    .conversation-list header strong { font-size:.9rem; }
+    .conversation-list header b { font-size:.625rem; }
     .conversation-list article { min-width: 0; grid-template-columns: 42px 1fr; gap: .7rem; padding: .8rem .75rem; border-right: 0; }
     .conversation-list .avatar { width: 42px; height: 42px; }
-    .conversation-list article strong { font-size:.68rem; }
-    .conversation-list article p { display:block; font-size:.57rem; }
-    .conversation-list article span { font-size:.48rem; }
+    .conversation-list article strong { font-size:.76rem; }
+    .conversation-list article p { display:block; font-size:.66rem; }
+    .conversation-list article span { font-size:.625rem; }
     .open-chat { min-height: 490px; grid-template-rows: 68px 1fr 60px; }
     .open-chat > header { padding-inline: 12px; }
-    .open-chat > header > span { max-width: 118px; font-size: .39rem; }
+    .chat-person strong { font-size:.74rem; }.chat-person small { font-size:.625rem; }
+    .open-chat > header > span { max-width: 145px; font-size: .625rem; }
     .chat-messages { padding: 18px 12px; }
-    .bubble { max-width: 88%; }
+    .bubble { max-width: 88%; font-size:.78rem; }
+    .bubble.ai small { font-size:.625rem; }
+    .understanding { font-size:.625rem; }
+    .system-note strong { font-size:.68rem; }.system-note small { font-size:.625rem; }
+    .open-chat > footer span,.open-chat > footer p { font-size:.64rem; }.open-chat > footer b { font-size:.6rem; }
     .customer-card { grid-template-columns: 1fr 1fr; padding: 12px; }
     .customer-head { grid-column: 1 / -1; }
+    .customer-head strong { font-size:.76rem; }.customer-head small { font-size:.625rem; }
+    .field > small { font-size:.625rem; }.field > strong { font-size:.7rem; }.field > span { font-size:.625rem; }
+    .mini-avatar { font-size:.5rem; }
+    .next-action small { font-size:.625rem; }.next-action strong { font-size:.68rem; }
     .field:nth-of-type(3) { grid-column: 1 / -1; }
     .next-action { grid-column: 1 / -1; }
     .kanban-intro { align-items: flex-start; flex-direction: column; gap: .7rem; padding: 18px 12px 8px; }
@@ -415,12 +428,14 @@
     .kanban-column { width:min(calc(100vw - 92px),310px); padding:.8rem; opacity:.56; transform:scale(.96); }
     .kanban-column.is-active { opacity:1; transform:scale(1); box-shadow:0 16px 32px rgba(47,56,75,.15); }
     .kanban-column header { min-height:46px; }
-    .kanban-column header strong { font-size:.66rem; }
+    .kanban-column header strong { font-size:.72rem; }
+    .kanban-column header b { font-size:.55rem; }
     .deal-card { padding:.85rem; }
     .deal-card img { width:36px; height:36px; }
-    .deal-card strong { font-size:.7rem; }
-    .deal-card p { min-height:4.35em;font-size:.58rem;line-height:1.45; }
-    .deal-card > span { font-size:.5rem; }
+    .deal-card small { font-size:.52rem; }
+    .deal-card strong { font-size:.76rem; }
+    .deal-card p { min-height:4.35em;font-size:.66rem;line-height:1.45; }
+    .deal-card > span { font-size:.58rem; }
     .kanban-pagination { display:flex; justify-content:center; gap:.48rem; margin:.2rem 0 .55rem; }
     .kanban-pagination button { width:7px; height:7px; padding:0; border:0; border-radius:999px; background:#b8bfcb; transition:width .3s ease,background .3s ease; cursor:pointer; }
     .kanban-pagination button[aria-current="step"] { width:25px; background:#7358ed; }
@@ -429,7 +444,8 @@
     .automation-layout > header strong { font-size: 1.45rem; }
     .automation-steps { grid-template-columns: 1fr; }
     .automation-steps article { min-height:108px; grid-template-columns:42px 1fr; padding:1rem; }
-    .automation-steps article small { font-size:.52rem; }.automation-steps article strong { font-size:.76rem; }.automation-steps article > span { position:absolute; right:.75rem; top:.7rem; font-size:.5rem; }
+    .automation-steps article small { font-size:.6rem; }.automation-steps article strong { font-size:.8rem; }.automation-steps article > span { position:absolute; right:.75rem; top:.7rem; font-size:.58rem; }
+    .automation-result small { font-size:.56rem; }.automation-result strong { font-size:.7rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {

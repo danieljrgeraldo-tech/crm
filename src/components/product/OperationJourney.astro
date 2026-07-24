@@ -1,0 +1,50 @@
+<div class="journey" data-operation-journey>
+  <header class="journey-bar">
+    <div class="journey-person">
+      <span class="avatar-wrap">
+        <img src="/images/people/mariana.jpg" alt="" width="72" height="72" />
+        <i aria-hidden="true">✓</i>
+      </span>
+      <span>
+        <small>OPORTUNIDADE EM ANDAMENTO</small>
+        <strong>Mariana Costa</strong>
+        <em>WhatsApp · Atacado</em>
+      </span>
+    </div>
+    <div class="journey-status"><i></i> Operação ativa</div>
+  </header>
+
+  <div class="journey-progress" aria-label="Progresso da oportunidade">
+    <span><i></i></span>
+    <b>7 de 7 ações concluídas</b>
+  </div>
+
+  <ol class="journey-steps">
+    <li><i>01</i><span><small>10:24 · ENTRADA</small><strong>Nova mensagem recebida</strong><p>“Quero comprar cerca de 150 peças.”</p></span><b>WhatsApp</b></li>
+    <li><i>02</i><span><small>10:24 · ATENDIMENTO</small><strong>A IA iniciou a conversa</strong><p>Entendeu a dúvida e fez as perguntas necessárias.</p></span><b>Respondido</b></li>
+    <li><i>03</i><span><small>10:25 · QUALIFICAÇÃO</small><strong>Perfil e intenção identificados</strong><p>Atacado · 150 peças · Região Sul · Alta intenção.</p></span><b>Qualificada</b></li>
+    <li><i>04</i><span><small>10:25 · CRM</small><strong>Dados registrados automaticamente</strong><p>Contato, interesse e histórico salvos sem preenchimento manual.</p></span><b>Registrado</b></li>
+    <li><i>05</i><span><small>10:25 · KANBAN</small><strong>Oportunidade criada</strong><p>Mariana entrou na etapa “Qualificado”.</p></span><b>CRM atualizado</b></li>
+    <li><i>06</i><span><small>10:25 · DISTRIBUIÇÃO</small><strong>Rafael recebeu a oportunidade</strong><p>Cliente, dados e conversa foram enviados juntos.</p></span><b>Atribuída</b></li>
+    <li><i>07</i><span><small>10:26 · PRÓXIMO PASSO</small><strong>Retorno agendado para amanhã</strong><p>O histórico fica disponível para gestor e vendedor.</p></span><b>09:00</b></li>
+  </ol>
+
+  <footer class="journey-result">
+    <span aria-hidden="true">✓</span>
+    <div><small>RESULTADO DA OPERAÇÃO</small><strong>Uma oportunidade pronta para continuar.</strong></div>
+    <b>Histórico completo</b>
+  </footer>
+</div>
+
+<style>
+  .journey{overflow:hidden;border:1px solid rgba(139,120,235,.34);border-radius:24px;background:linear-gradient(160deg,#151827,#0d0f17 65%);box-shadow:0 35px 100px rgba(0,0,0,.42)}
+  .journey-bar{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.025)}
+  .journey-person,.journey-person>span:last-child{display:flex}.journey-person{align-items:center;gap:.85rem}.journey-person>span:last-child{flex-direction:column}.avatar-wrap{position:relative;flex:0 0 auto}.avatar-wrap img{width:52px;height:52px;border:2px solid rgba(255,255,255,.7);border-radius:50%;object-fit:cover}.avatar-wrap i{position:absolute;right:-2px;bottom:0;width:18px;height:18px;display:grid;place-items:center;border:2px solid #151827;border-radius:50%;color:#08261a;background:#56d99c;font-size:.55rem;font-style:normal}
+  .journey-person small,.journey-steps small,.journey-result small{color:#9d8df2;font-size:.52rem;font-weight:800;letter-spacing:.09em}.journey-person strong{margin-top:.14rem;color:#fff;font-size:1rem}.journey-person em{margin-top:.1rem;color:#858c9c;font-size:.69rem;font-style:normal}.journey-status{display:flex;align-items:center;gap:.45rem;color:#a4aab7;font-size:.64rem}.journey-status i{width:8px;height:8px;border-radius:50%;background:#46d298;box-shadow:0 0 0 6px rgba(70,210,152,.1)}
+  .journey-progress{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem}.journey-progress>span{height:5px;flex:1;overflow:hidden;border-radius:999px;background:rgba(255,255,255,.07)}.journey-progress i{display:block;width:100%;height:100%;border-radius:inherit;background:linear-gradient(90deg,#6f57eb,#5b9cff,#4bd39b)}.journey-progress b{color:#7f8796;font-size:.56rem}
+  .journey-steps{display:grid;grid-template-columns:repeat(2,1fr);gap:.65rem;padding:0 1.25rem 1.25rem}.journey-steps li{min-height:122px;display:grid;grid-template-columns:38px 1fr auto;align-items:start;gap:.8rem;padding:1rem;border:1px solid rgba(255,255,255,.085);border-radius:15px;background:rgba(255,255,255,.035);transition:border-color .3s ease,background .3s ease,transform .3s ease}.journey-steps li:last-child{grid-column:1/-1}.journey-steps li:hover{transform:translateY(-2px);border-color:rgba(139,120,235,.46);background:rgba(119,91,235,.085)}
+  .journey-steps>li>i{width:36px;height:36px;display:grid;place-items:center;border:1px solid rgba(145,128,235,.3);border-radius:10px;color:#b4a8f3;background:rgba(115,87,235,.09);font-size:.55rem;font-style:normal;font-weight:800}.journey-steps>li>span{display:flex;min-width:0;flex-direction:column}.journey-steps strong{margin-top:.28rem;color:#f5f6f9;font-size:.8rem;line-height:1.3}.journey-steps p{margin:.34rem 0 0;color:#858c9c;font-size:.66rem;line-height:1.45}.journey-steps>li>b{padding:.3rem .42rem;border-radius:6px;color:#7ce0b3;background:rgba(52,190,128,.1);font-size:.48rem;white-space:nowrap}
+  .journey-result{display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:.8rem;margin:0 1.25rem 1.25rem;padding:1rem;border:1px solid rgba(74,209,150,.24);border-radius:14px;background:rgba(48,177,120,.09)}.journey-result>span{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;color:#58dda1;background:rgba(54,207,141,.13)}.journey-result>div{display:flex;flex-direction:column}.journey-result small{color:#5fdca6}.journey-result strong{margin-top:.18rem;color:#f2f6f4;font-size:.78rem}.journey-result>b{color:#75cda5;font-size:.54rem}
+  @media(max-width:760px){.journey-bar{align-items:flex-start}.journey-status{font-size:0}.journey-status i{margin-top:.55rem}.journey-steps{grid-template-columns:1fr}.journey-steps li:last-child{grid-column:auto}.journey-steps li{grid-template-columns:38px 1fr;min-height:142px}.journey-steps>li>b{grid-column:2;width:max-content}.journey-result{grid-template-columns:42px 1fr}.journey-result>b{grid-column:2}.journey-person strong{font-size:.88rem}.journey-person small{font-size:.45rem}}
+  @media(max-width:420px){.journey{border-radius:18px}.journey-bar,.journey-progress{padding-inline:.85rem}.journey-steps{padding-inline:.85rem}.journey-steps li{padding:.9rem}.journey-result{margin-inline:.85rem}.journey-person em{font-size:.6rem}}
+</style>
