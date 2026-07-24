@@ -133,3 +133,16 @@ O resultado de SEO é reduzido exclusivamente pelo bloqueio deliberado de indexa
 - Botão de Daniel e selo sobre a foto foram centralizados no mobile.
 - Nota de implantação recebeu um reflexo discreto.
 - Mensagem automática do follow-up ganhou entrada em formato de balão e confirmação visível de envio pela IA.
+
+## Refinamento mobile — terceira revisão visual
+
+- Qualificações do hero e da conversa natural ganharam check, entrada e reflexo de conclusão.
+- Problemas ficaram mais baixos, com fundo neutro e apenas a borda superior colorida.
+- Identificadores dos canais voltaram ao formato de figurinha com fundo e borda.
+- Gavetas recuperaram altura natural; as anteriores ficam foscas e somente o cartão atual mantém foco.
+- Memória fictícia foi alterada para uma proposta de 200 unidades.
+- Confirmação do follow-up foi reposicionada e o painel de etapas ganhou fundo neutro claro.
+- Selo online da seção Daniel ganhou pulso animado.
+- Ícone da nota de Daniel recebeu o mesmo reflexo da marca.
+- Aplicações foram comprimidas no mobile.
+- Jornada desktop recebeu fundo azul-marinho mais claro e cartões com contraste reforçado, sem alterar o mobile.

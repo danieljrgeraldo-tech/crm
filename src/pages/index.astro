@@ -174,7 +174,7 @@ const navItems = [
           <article class="resource large memory-resource" data-reveal>
             <div class="resource-copy"><div class="resource-icon">◫</div><small>MEMÓRIA</small><h3>A conversa continua exatamente de onde parou.</h3><p>O histórico acompanha o lead e mantém contexto, preferências e decisões disponíveis.</p></div>
             <ol class="memory-steps" data-scroll-select>
-              <li><i>01</i><span><small>ÚLTIMO ATENDIMENTO</small><strong>150 peças para a Região Sul</strong><p>Volume e região permanecem registrados.</p></span></li>
+              <li><i>01</i><span><small>ÚLTIMO ATENDIMENTO</small><strong>Proposta para 200 unidades</strong><p>Condição comercial e prazo permanecem registrados.</p></span></li>
               <li><i>02</i><span><small>QUANDO O LEAD VOLTA</small><strong>A equipe recebe todo o contexto.</strong><p>Ninguém precisa perguntar tudo de novo.</p></span></li>
               <li><i>03</i><span><small>PRÓXIMO PASSO</small><strong>A negociação continua sem perder o raciocínio.</strong><p>A IA e o vendedor sabem o que já foi combinado.</p></span></li>
             </ol>
@@ -294,6 +294,28 @@ const navItems = [
     window.addEventListener("scroll", updateScrollSelection, { passive: true });
     window.addEventListener("resize", updateScrollSelection);
     updateScrollSelection();
+    const drawerGroups = document.querySelectorAll("[data-drawer-group]");
+    const updateDrawerFocus = () => {
+      if (window.innerWidth > 760) {
+        drawerGroups.forEach((group) => Array.from(group.children).forEach((item) => item.classList.remove("is-drawer-active", "is-drawer-past")));
+        return;
+      }
+      drawerGroups.forEach((group) => {
+        const items = Array.from(group.children);
+        let activeIndex = 0;
+        const focusLine = window.innerHeight * .42;
+        items.forEach((item, index) => {
+          if (item.getBoundingClientRect().top <= focusLine) activeIndex = index;
+        });
+        items.forEach((item, index) => {
+          item.classList.toggle("is-drawer-active", index === activeIndex);
+          item.classList.toggle("is-drawer-past", index < activeIndex);
+        });
+      });
+    };
+    window.addEventListener("scroll", updateDrawerFocus, { passive: true });
+    window.addEventListener("resize", updateDrawerFocus);
+    updateDrawerFocus();
   </script>
 </SiteLayout>
 
@@ -342,4 +364,26 @@ const navItems = [
 
 <style>
   .channel-logo-stack svg{width:20px;height:20px;fill:currentColor}
+  .qualified{position:relative;overflow:hidden}
+  .qualified::after{content:"✓ Concluída";position:absolute;right:.65rem;top:.55rem;padding:.28rem .48rem;border-radius:999px;color:#eafff5;background:#279d6d;font-size:.42rem;font-weight:800;opacity:0;animation:qualified-check 14s cubic-bezier(.2,.9,.25,1.2) infinite}
+  .qualified::before{content:"";position:absolute;inset:-80% -30%;background:linear-gradient(110deg,transparent 42%,rgba(157,255,211,.46),transparent 58%);transform:translateX(-70%) rotate(12deg);animation:qualified-shine 14s ease-in-out infinite}
+  .avatar-channel i{width:24px;height:24px;padding:2px;border:2px solid #fff;border-radius:50%;background:#fff!important;box-shadow:0 4px 10px rgba(26,31,42,.18)}
+  .avatar-channel i svg{width:18px;height:18px}
+  .daniel-photo>div>i{animation:online-live 1.5s ease-in-out infinite}
+  .daniel-note>span{position:relative;overflow:hidden}
+  .daniel-note>span::after{content:"";position:absolute;inset:-50%;background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.85),transparent 62%);transform:translateX(-70%) rotate(18deg);animation:icon-shine 3.8s ease-in-out infinite}
+  @keyframes qualified-check{0%,59%,100%{opacity:0;transform:scale(.65)}66%,91%{opacity:1;transform:scale(1)}}@keyframes qualified-shine{0%,64%{transform:translateX(-70%) rotate(12deg)}78%,100%{transform:translateX(75%) rotate(12deg)}}@keyframes online-live{0%,100%{transform:scale(.8);box-shadow:0 0 0 4px rgba(56,200,139,.12)}50%{transform:scale(1.18);box-shadow:0 0 0 9px rgba(56,200,139,.2)}}@keyframes icon-shine{0%,48%{transform:translateX(-70%) rotate(18deg)}70%,100%{transform:translateX(75%) rotate(18deg)}}
+  :global(.message-bubble){padding-bottom:2.05rem}
+  :global(.message-bubble)::after{right:.65rem;bottom:.5rem}
+  :global(.sent-confirmation){width:100%;align-self:stretch;box-sizing:border-box}
+  :global(.sent-confirmation)>i{flex:0 0 auto}
+  :global(.followup-steps){background:#edf1f6}
+  @media(max-width:760px){
+    .problems-grid article{min-height:128px;background:#fff}.problems-grid article:nth-child(n){background:#fff}
+    .resources-grid>.resource:not(.followup-resource){min-height:0}.resources-grid>.qualification-resource{min-height:360px}.qualification-resource .qualification-mini{margin-top:1.4rem}
+    [data-drawer-group]>.is-drawer-past{opacity:.38;filter:blur(2px) saturate(.65);transform:scale(.985);pointer-events:none}
+    [data-drawer-group]>.is-drawer-active{opacity:1;filter:none;transform:scale(1);box-shadow:0 22px 44px rgba(31,38,52,.15)}
+    .resources-grid>.resource,.problems-grid article,.process-grid article,.segments-grid article{transition:opacity .32s ease,filter .32s ease,transform .32s ease,box-shadow .32s ease}
+    .segments-grid article{min-height:245px;padding:1.2rem}.segments-grid article>small{margin-top:.8rem}.segments-grid article div{margin-top:1.25rem}
+  }
 </style>
