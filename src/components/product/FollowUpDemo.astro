@@ -34,7 +34,7 @@
         <small>SEM DEPENDER DA MEMÓRIA DO VENDEDOR</small>
         <strong>O que acontece depois?</strong>
       </header>
-      <ol>
+      <ol data-scroll-focus-group>
         <li class="step-one">
           <i>01</i>
           <div><small>NO HORÁRIO CERTO</small><strong>O sistema chama a cliente.</strong><p>A mensagem é enviada automaticamente pelo WhatsApp.</p></div>
@@ -95,7 +95,7 @@
   .followup-steps li {
     position:relative; display:grid; grid-template-columns:48px 1fr auto; gap:1rem; align-items:center; min-height:118px;
     z-index:1; padding:1rem; border:1px solid #bec9d8; border-radius:15px; background:rgba(250,252,255,.68);
-    opacity:.58; transform:scale(.97); animation:follow-select 12s ease infinite;
+    opacity:.78; transform:scale(.985); transition:opacity .35s,transform .35s,border-color .35s,background .35s,box-shadow .35s;
   }
   .followup-steps li > i {
     width:42px; height:42px; display:grid; place-items:center; border:1px solid #b9c4d4;
@@ -105,8 +105,6 @@
   .followup-steps li strong { margin-top:.28rem; font-size:.79rem; }
   .followup-steps li p { margin:.28rem 0 0; color:#697588; font-size:.62rem; line-height:1.45; }
   .followup-steps li > span { align-self:start; padding:.32rem .46rem; border-radius:6px; color:#604caf; background:#e4defc; font-size:.51rem; }
-  .step-one{animation-delay:0s}.step-two{animation-delay:4s}.step-three{animation-delay:8s}
-  @keyframes follow-select { 0%,7%,34%,100%{opacity:.58;transform:scale(.97)} 12%,28%{opacity:1;transform:scale(1.025);border-color:#8068ea;background:#f4f1ff;box-shadow:0 16px 30px rgba(86,66,177,.16)} }
   @keyframes kanban-state { 0%,52%{opacity:1;transform:scale(1)} 60%,92%{opacity:0;transform:scale(.94)} 100%{opacity:1;transform:scale(1)} }
   @keyframes sent-state { 0%,54%,100%{opacity:0;transform:scale(.94)} 63%,92%{opacity:1;transform:scale(1)} }
   @keyframes toggle-followup { 0%,30%{background:#b7bfcc} 38%,100%{background:#32a875} }
@@ -128,14 +126,15 @@
     .followup-steps { padding:28px 15px; border-left:0; border-top:1px solid #cdd6e2; }
     .followup-steps header strong { font-size:1.25rem; }
     .followup-steps ol { display:grid; gap:.75rem; padding-bottom:0; }
-    .followup-steps li { position:relative; min-height:155px; grid-template-columns:46px 1fr; margin:0; padding:1.15rem; background:#f5f2ff; }
+    .followup-steps li { position:relative; min-height:155px; grid-template-columns:46px 1fr; margin:0; padding:1.15rem; opacity:.56; transform:scale(.975); background:#f5f2ff; }
+    .followup-steps li.is-scroll-active { opacity:1; transform:scale(1.025); border-color:#8068ea; background:#f4f1ff; box-shadow:0 16px 30px rgba(86,66,177,.16); }
     .followup-steps li strong { padding-right:2.7rem; font-size:.84rem; }
     .followup-steps li p { font-size:.69rem; }
     .followup-steps li > span { position:absolute; right:.75rem; top:.8rem; }
   }
 
   @media (prefers-reduced-motion:reduce) {
-    .followup-steps li { animation:none; opacity:1; transform:none; }
+    .followup-steps li { opacity:1; transform:none; }
     .kanban-state { display:none; }.sent-state { opacity:1;transform:none;animation:none; }
   }
 </style>

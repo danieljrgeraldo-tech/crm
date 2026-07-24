@@ -760,7 +760,7 @@ const schema = {
     .daniel-grid { grid-template-columns: 1fr; gap: 3rem; }
     .daniel-photo { width: calc(100% - 12px); }
     .daniel-photo img { height: 455px; object-position: center 22%; }
-    .photo-status { right:10px;left:10px;bottom:18px;justify-content:center;gap:.8rem;padding:1rem 1.1rem;border-radius:14px; }
+    .photo-status { right:auto;left:50%;bottom:18px;width:max-content;max-width:calc(100% - 32px);justify-content:center;gap:.8rem;padding:.85rem 1.35rem;border-radius:14px;transform:translateX(-50%); }
     .photo-status small { font-size:.47rem; }.photo-status strong { margin-top:.1rem;font-size:.7rem; }
     .daniel-copy h2 { font-size: clamp(2.25rem,9.8vw,2.9rem); }
     .daniel-points { grid-template-columns:1fr; }

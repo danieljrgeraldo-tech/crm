@@ -78,28 +78,28 @@
         <div class="kanban-grid">
           <article class="kanban-column blue">
             <header><span></span><strong>Novo atendimento</strong><b>4</b></header>
-            <div class="deal-card"><div><img src="/images/people/fernanda.jpg" alt="" width="54" height="54" /><small>agora</small></div><strong>Fernanda Costa</strong><p>Pediu informações</p><span>Primeiro contato</span></div>
-            <div class="deal-card"><div><img src="/images/people/renato.jpg" alt="" width="54" height="54" /><small>5 min</small></div><strong>Renato Melo</strong><p>Veio pelo WhatsApp</p><span>Novo</span></div>
+            <div class="deal-card"><div><img src="/images/people/fernanda.jpg" alt="" width="54" height="54" /><small>agora</small></div><strong>Fernanda Costa</strong><p>Busca automação para 3 atendentes. Quer centralizar o WhatsApp e receber uma demonstração.</p><span>Primeiro contato</span></div>
+            <div class="deal-card"><div><img src="/images/people/renato.jpg" alt="" width="54" height="54" /><small>5 min</small></div><strong>Renato Melo</strong><p>Equipe com 5 vendedores. Precisa organizar conversas do WhatsApp e do site.</p><span>Novo</span></div>
           </article>
           <article class="kanban-column cyan">
             <header><span></span><strong>Em conversa</strong><b>6</b></header>
-            <div class="deal-card"><div><img src="/images/people/amanda.jpg" alt="" width="54" height="54" /><small>2 min</small></div><strong>Amanda Silva</strong><p>Tirando dúvidas</p><span>Respondendo</span></div>
+            <div class="deal-card"><div><img src="/images/people/amanda.jpg" alt="" width="54" height="54" /><small>2 min</small></div><strong>Amanda Silva</strong><p>Áudio analisado. Interesse em CRM, distribuição automática e histórico por cliente.</p><span>Respondendo</span></div>
           </article>
           <article class="kanban-column purple">
             <header><span></span><strong>Qualificado</strong><b>5</b></header>
-            <div class="deal-card featured"><div><img src="/images/people/mariana.jpg" alt="" width="54" height="54" /><small>agora</small></div><strong>Mariana Costa</strong><p>150 peças por mês</p><span>Alta intenção</span></div>
+            <div class="deal-card featured"><div><img src="/images/people/mariana.jpg" alt="" width="54" height="54" /><small>agora</small></div><strong>Mariana Costa</strong><p>Atacado, 150 peças por mês, Região Sul e compra prevista para esta semana.</p><span>Alta intenção</span></div>
           </article>
           <article class="kanban-column amber">
             <header><span></span><strong>Com vendedor</strong><b>3</b></header>
-            <div class="deal-card"><div><img src="/images/people/lucas.jpg" alt="" width="54" height="54" /><small>12 min</small></div><strong>João Pereira</strong><p>Proposta enviada</p><span>Rafael</span></div>
+            <div class="deal-card"><div><img src="/images/people/lucas.jpg" alt="" width="54" height="54" /><small>12 min</small></div><strong>João Pereira</strong><p>Perfil atacadista qualificado. Proposta enviada por Rafael com prazo e condições.</p><span>Rafael</span></div>
           </article>
           <article class="kanban-column coral">
             <header><span></span><strong>Follow-up</strong><b>4</b></header>
-            <div class="deal-card"><div><img src="/images/people/fernanda.jpg" alt="" width="54" height="54" /><small>09:00</small></div><strong>Carla Reis</strong><p>Retorno amanhã</p><span>Agendado</span></div>
+            <div class="deal-card"><div><img src="/images/people/fernanda.jpg" alt="" width="54" height="54" /><small>09:00</small></div><strong>Carla Reis</strong><p>Orçamento enviado. Follow-up 1 de 3 agendado para amanhã às 09:00.</p><span>Agendado</span></div>
           </article>
           <article class="kanban-column green">
             <header><span></span><strong>Venda concluída</strong><b>2</b></header>
-            <div class="deal-card"><div><img src="/images/people/amanda.jpg" alt="" width="54" height="54" /><small>hoje</small></div><strong>Natália Braga</strong><p>Pedido confirmado</p><span>Concluído</span></div>
+            <div class="deal-card"><div><img src="/images/people/amanda.jpg" alt="" width="54" height="54" /><small>hoje</small></div><strong>Natália Braga</strong><p>Pedido de 200 peças confirmado. Negociação, responsável e histórico registrados.</p><span>Concluído</span></div>
           </article>
         </div>
         </div>
@@ -259,7 +259,7 @@
   .panel-top > strong { font-size: .65rem; }
   .panel-top > span { justify-self: end; color: #656b76; font-size: .52rem; }
   .panel-state { display: flex; align-items: center; gap: .4rem; }
-  .panel-state i { width: 6px; height: 6px; border-radius: 50%; background: #39c989; box-shadow: 0 0 0 4px rgba(57,201,137,.1); }
+  .panel-state i { width: 6px; height: 6px; border-radius: 50%; background: #39c989; box-shadow: 0 0 0 4px rgba(57,201,137,.1); animation:live-status 1.4s ease-in-out infinite; }
 
   .service-layout { min-height: 590px; display: grid; grid-template-columns: 220px minmax(360px,1fr) 235px; }
   .conversation-list { border-right: 1px solid #d9dee7; background: #f1f3f8; }
@@ -282,6 +282,7 @@
   .chat-person strong { font-size: .62rem; } .chat-person small { color: #287552; font-size: .45rem; }
   .open-chat > header > span { max-width: 160px; padding: .35rem .5rem; border-radius: 6px; color: #6654b6; background: #efecff; font-size: .44rem; text-align: center; }
   .chat-messages { padding: 24px clamp(16px,3vw,36px); }
+  .chat-messages > * { opacity:0; transform:translateY(10px); }
   .bubble { width: fit-content; max-width: 78%; margin-bottom: .9rem; padding: .85rem .95rem; border: 1px solid #d9dee7; border-radius: 13px; background: #f9fafc; font-size: .67rem; line-height: 1.55; }
   .bubble.ai { margin-left: auto; border-color: #cfc5ff; background: #ded8ff; }
   .bubble.ai small { display: block; margin-bottom: .25rem; color: #5140ad; font-size: .42rem; font-weight: 750; }
@@ -291,6 +292,10 @@
   .system-note > i { width: 25px; height: 25px; display: grid; place-items: center; border-radius: 7px; color: white; background: #7056e9; font-style: normal; font-size: .55rem; }
   .system-note div { display: flex; flex-direction: column; }
   .system-note strong { font-size: .53rem; } .system-note small { color: #626873; font-size: .42rem; }
+  .chat-messages .bubble.client { animation:chat-stage-one 13s ease-in-out infinite; }
+  .chat-messages .understanding { animation:chat-stage-two 13s ease-in-out infinite; }
+  .chat-messages .bubble.ai { animation:chat-stage-three 13s ease-in-out infinite; }
+  .chat-messages .system-note { animation:chat-stage-four 13s ease-in-out infinite; }
   .open-chat > footer { margin: 0 16px 14px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .6rem; padding: .5rem .65rem; border: 1px solid #dfe2e7; border-radius: 9px; background: white; }
   .open-chat > footer span, .open-chat > footer p { color: #626873; font-size: .52rem; }
   .open-chat > footer p { margin: 0; }
@@ -315,7 +320,7 @@
   .kanban-intro strong { max-width: 600px; margin-top: .35rem; font-size: .86rem; }
   .kanban-intro > span { color: #858a95; font-size: .48rem; }
   .kanban-viewport { overflow:hidden; padding:12px 18px 8px; scroll-behavior:smooth; }
-  .kanban-grid { min-height:470px; width:max-content; display:flex; gap:.62rem; }
+  .kanban-grid { min-height:535px; width:max-content; display:flex; gap:.62rem; }
   .kanban-column { width:clamp(156px,12.5vw,180px); flex:0 0 auto; padding:.68rem; border:1px solid var(--column-border); border-top:3px solid var(--column); border-radius:12px; background:linear-gradient(180deg,var(--column-soft),#e2e6ed 64%); transition:opacity .35s ease,transform .55s cubic-bezier(.2,.75,.2,1),box-shadow .35s ease; }
   .kanban-column header { min-height: 35px; display: grid; grid-template-columns: 6px 1fr auto; gap: .4rem; align-items: start; }
   .kanban-column header > span { width: 6px; height: 6px; margin-top: .23rem; border-radius: 50%; background: var(--column); }
@@ -327,8 +332,8 @@
   .deal-card img { width: 28px; height: 28px; border: 2px solid white; border-radius: 50%; object-fit: cover; box-shadow: 0 3px 9px rgba(32,36,46,.13); }
   .deal-card small { color: #a0a4ad; font-size: .37rem; }
   .deal-card strong { display: block; margin-top: .62rem; overflow: hidden; font-size: .55rem; white-space: nowrap; text-overflow: ellipsis; }
-  .deal-card p { margin: .25rem 0 .65rem; overflow: hidden; color: #6f7581; font-size: .47rem; white-space: nowrap; text-overflow: ellipsis; }
-  .deal-card > span { padding: .23rem .34rem; border-radius: 5px; color: color-mix(in srgb,var(--column),#222 25%); background: color-mix(in srgb,var(--column),white 84%); font-size: .41rem; }
+  .deal-card p { min-height:3.9em;margin:.32rem 0 .68rem;display:-webkit-box;overflow:hidden;color:#626a77;font-size:.46rem;line-height:1.45;-webkit-box-orient:vertical;-webkit-line-clamp:3; }
+  .deal-card > span { display:inline-block;padding: .23rem .34rem; border-radius: 5px; color: color-mix(in srgb,var(--column),#222 25%); background: color-mix(in srgb,var(--column),white 84%); font-size: .41rem; }
   .kanban-pagination { display:none; }
   .kanban-hint { display:flex; align-items:center; gap:.5rem; margin:.1rem 20px 18px; color:#737a88; font-size:.54rem; }
   .kanban-hint span { color:#7358ed; font-size:.75rem; }
@@ -338,6 +343,11 @@
   .kanban-column.amber { --column:#d7982e; --column-soft:#f3e8d2; --column-border:#e5d2ad; }
   .kanban-column.coral { --column:#de725b; --column-soft:#f4dfdb; --column-border:#e7c7c0; }
   .kanban-column.green { --column:#32a875; --column-soft:#dceee6; --column-border:#c1ddcf; }
+  @keyframes live-status { 0%,100%{box-shadow:0 0 0 4px rgba(57,201,137,.1);opacity:.65} 50%{box-shadow:0 0 0 8px rgba(57,201,137,.18);opacity:1} }
+  @keyframes chat-stage-one { 0%,3%,100%{opacity:0;transform:translateY(10px)} 8%,88%{opacity:1;transform:none} 95%{opacity:0;transform:translateY(-4px)} }
+  @keyframes chat-stage-two { 0%,18%,100%{opacity:0;transform:translateY(8px)} 23%,88%{opacity:1;transform:none} 95%{opacity:0} }
+  @keyframes chat-stage-three { 0%,36%,100%{opacity:0;transform:translateY(10px)} 42%,88%{opacity:1;transform:none} 95%{opacity:0} }
+  @keyframes chat-stage-four { 0%,58%,100%{opacity:0;transform:translateY(10px)} 64%,88%{opacity:1;transform:none} 95%{opacity:0} }
 
   .automation-layout { min-height: 590px; display: grid; grid-template-columns: .72fr 1.28fr; gap: 2rem; padding: 34px; background: linear-gradient(145deg,#f5f6f8,#eef0f5); }
   .automation-layout > header { align-self: center; }
@@ -401,7 +411,7 @@
     .kanban-intro { align-items: flex-start; flex-direction: column; gap: .7rem; padding: 18px 12px 8px; }
     .kanban-intro strong { max-width:280px; font-size: .82rem; line-height:1.4; }
     .kanban-viewport { padding:10px 10px 8px; }
-    .kanban-grid { min-height:420px; gap:.75rem; }
+    .kanban-grid { min-height:570px; gap:.75rem; }
     .kanban-column { width:min(calc(100vw - 92px),310px); padding:.8rem; opacity:.56; transform:scale(.96); }
     .kanban-column.is-active { opacity:1; transform:scale(1); box-shadow:0 16px 32px rgba(47,56,75,.15); }
     .kanban-column header { min-height:46px; }
@@ -409,7 +419,7 @@
     .deal-card { padding:.85rem; }
     .deal-card img { width:36px; height:36px; }
     .deal-card strong { font-size:.7rem; }
-    .deal-card p { font-size:.59rem; }
+    .deal-card p { min-height:4.35em;font-size:.58rem;line-height:1.45; }
     .deal-card > span { font-size:.5rem; }
     .kanban-pagination { display:flex; justify-content:center; gap:.48rem; margin:.2rem 0 .55rem; }
     .kanban-pagination button { width:7px; height:7px; padding:0; border:0; border-radius:999px; background:#b8bfcb; transition:width .3s ease,background .3s ease; cursor:pointer; }
@@ -424,6 +434,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     .track, .tabs button { transition: none; }
+    .panel-state i,.chat-messages > * { animation:none;opacity:1;transform:none; }
     .kanban-column { opacity:1; transform:none; transition:none; }
     .kanban-viewport { overflow-x:auto; scrollbar-width:thin; }
   }

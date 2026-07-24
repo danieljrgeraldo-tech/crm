@@ -55,7 +55,7 @@
 
       <div class="operation-progress"><span></span><b>Analisando e atualizando a operação</b></div>
 
-      <div class="operation-list">
+      <div class="operation-list" data-scroll-focus-group>
         <article class="operation-item operation-one">
           <i>01</i>
           <div><small>ENTENDEU O INTERESSE</small><strong>Cliente quer comprar no atacado</strong><p>A dúvida e a intenção foram identificadas.</p></div>
@@ -167,8 +167,7 @@
   .operation-item {
     position:relative; z-index:1; display:grid; grid-template-columns:44px 1fr auto; gap:.82rem; min-height:94px;
     padding:.9rem; border:1px solid #bac6d6; border-radius:14px; background:rgba(250,252,255,.66);
-    opacity:.58; box-shadow:0 10px 24px rgba(49,65,88,.06); transition:opacity .35s,transform .35s,border-color .35s,background .35s;
-    animation:operation-focus 16s ease infinite;
+    opacity:.78; box-shadow:0 10px 24px rgba(49,65,88,.06); transition:opacity .35s,transform .35s,border-color .35s,background .35s,box-shadow .35s;
   }
   .operation-item > i {
     width:35px; height:35px; display:grid; place-items:center; border:1px solid #b9c4d3;
@@ -179,7 +178,6 @@
   .operation-item strong { margin-top:.25rem; font-size:.73rem; line-height:1.3; }
   .operation-item p { margin:.22rem 0 0; color:#5f6b7d; font-size:.59rem; line-height:1.35; }
   .operation-item > span { align-self:start; padding:.3rem .42rem; border-radius:6px; color:#614eb2; background:rgba(117,88,237,.12); font-size:.48rem; }
-  .operation-one { animation-delay:1s }.operation-two { animation-delay:4s }.operation-three { animation-delay:7s }.operation-four { animation-delay:10s }
   .operation-result { gap:.75rem; margin-top:1rem; padding:1rem; border:1px solid #9bcfbc; border-radius:13px; background:#dff3eb; }
   .operation-result > span { width:32px; height:32px; display:grid; flex:0 0 auto; place-items:center; border-radius:10px; color:#167653; background:#c6eadc; }
   .operation-result div { display:flex; flex-direction:column; }
@@ -192,10 +190,6 @@
   @keyframes stage-four { 0%,41%,100%{opacity:0;transform:translateY(12px)} 46%,88%{opacity:1;transform:none} 95%{opacity:0} }
   @keyframes stage-five { 0%,55%,100%{opacity:0;transform:translateY(10px)} 60%,88%{opacity:1;transform:none} 95%{opacity:0} }
   @keyframes stage-six { 0%,69%,100%{opacity:0;transform:translateY(12px)} 74%,88%{opacity:1;transform:none} 95%{opacity:0} }
-  @keyframes operation-focus {
-    0%,5%,30%,100%{opacity:.58;transform:scale(.975)}
-    10%,24%{opacity:1;transform:scale(1.025);border-color:#7459e9;background:#f0edff;box-shadow:0 16px 34px rgba(91,69,190,.18),inset 4px 0 0 #7459e9}
-  }
   @keyframes operation-loading { 0%{transform:translateX(-110%)} 60%,100%{transform:translateX(240%)} }
   @keyframes ai-pulse { 50%{box-shadow:0 0 0 6px rgba(67,211,158,.12)} }
 
@@ -216,6 +210,8 @@
     .operation-window > header { align-items:flex-start; }
     .operation-window > header strong { font-size:1.05rem; }
     .operation-item { grid-template-columns:42px 1fr; min-height:112px; padding:1rem .85rem; }
+    .operation-item { opacity:.56; transform:scale(.975); }
+    .operation-item.is-scroll-active { opacity:1; transform:scale(1.025); border-color:#7459e9; background:#f0edff; box-shadow:0 16px 34px rgba(91,69,190,.18),inset 4px 0 0 #7459e9; }
     .operation-item strong { padding-right:2.3rem; font-size:.8rem; }
     .operation-item p { max-width:235px; font-size:.66rem; line-height:1.45; }
     .operation-item > span { position:absolute; right:.75rem; top:.8rem; }
@@ -223,6 +219,7 @@
   }
 
   @media (prefers-reduced-motion:reduce) {
-    .message,.ai-reading,.qualification-card,.operation-item { animation:none; opacity:1; transform:none; }
+    .message,.ai-reading,.qualification-card { animation:none; opacity:1; transform:none; }
+    .operation-item { opacity:1; transform:none; }
   }
 </style>
