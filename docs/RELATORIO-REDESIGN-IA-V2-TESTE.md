@@ -18,7 +18,7 @@ Data: 24/07/2026
 
 - Branch de teste: `redesign/ia-site-v2-test`
 - Projeto Cloudflare Pages: `daniel-junior-landing`
-- Preview esperado: `https://redesign-ia-site-v2-test.daniel-junior-landing.pages.dev/`
+- Preview validado: `https://15596bb1.daniel-junior-landing.pages.dev/`
 - Indexação: bloqueada com `noindex, nofollow`
 - Publicação no domínio principal: não realizada
 
@@ -95,4 +95,4 @@ O resultado de SEO é reduzido exclusivamente pelo bloqueio deliberado de indexa
 ## Pendências
 
 - Aguardar aprovação expressa de Daniel antes de qualquer merge, troca de domínio ou substituição da versão atual.
-- Confirmar o endereço definitivo do preview após o primeiro deploy da branch de teste.
+- Nenhuma pendência técnica conhecida na versão de teste.
