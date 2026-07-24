@@ -73,7 +73,7 @@
           <span>Atualizado automaticamente</span>
         </div>
 
-        <div class="kanban-viewport" aria-label="As seis etapas do processo comercial">
+        <div class="kanban-viewport" data-kanban-viewport aria-label="As seis etapas do processo comercial">
         <div class="kanban-grid">
           <article class="kanban-column blue">
             <header><span></span><strong>Novo atendimento</strong><b>4</b></header>
@@ -102,35 +102,43 @@
           </article>
         </div>
         </div>
-        <p class="kanban-hint"><span></span> O painel percorre todas as etapas automaticamente</p>
+        <div class="kanban-pagination" aria-label="Selecionar etapa do Kanban">
+          <button type="button" data-kanban-dot aria-label="Mostrar Novo atendimento"></button>
+          <button type="button" data-kanban-dot aria-label="Mostrar Em conversa"></button>
+          <button type="button" data-kanban-dot aria-label="Mostrar Qualificado"></button>
+          <button type="button" data-kanban-dot aria-label="Mostrar Com vendedor"></button>
+          <button type="button" data-kanban-dot aria-label="Mostrar Follow-up"></button>
+          <button type="button" data-kanban-dot aria-label="Mostrar Venda concluída"></button>
+        </div>
+        <p class="kanban-hint">Acompanhe uma etapa por vez <span aria-hidden="true">→</span></p>
       </section>
 
       <section id="product-panel-automation" class="panel" role="tabpanel" aria-labelledby="product-tab-automation" data-panel-index="2" aria-hidden="true">
         <div class="panel-top">
           <div><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span></div>
-          <strong>Ações realizadas automaticamente</strong>
+          <strong>Regras ativas na operação</strong>
           <span class="panel-state"><i></i> Sistema ativo</span>
         </div>
 
         <div class="automation-layout">
           <header>
-            <small>UMA CONVERSA ENTROU PELO WHATSAPP</small>
-            <strong>O sistema cuidou do restante.</strong>
-            <p>Cada ação abaixo aconteceu sem preenchimento manual.</p>
+            <small>AUTOMAÇÕES CONFIGURADAS</small>
+            <strong>O próximo passo já tem uma regra.</strong>
+            <p>Cada situação aciona uma resposta operacional diferente.</p>
           </header>
 
           <div class="automation-steps">
-            <article><i class="step-icon blue">01</i><div><small>CLIENTE PERGUNTOU</small><strong>“Vocês vendem no atacado?”</strong></div><span>10:24</span></article>
-            <article><i class="step-icon purple">02</i><div><small>RESPOSTA ENVIADA</small><strong>Dúvida respondida na hora</strong></div><span>4 s</span></article>
-            <article><i class="step-icon cyan">03</i><div><small>DADOS ORGANIZADOS</small><strong>Interesse e quantidade registrados</strong></div><span>Feito</span></article>
-            <article><i class="step-icon amber">04</i><div><small>VENDEDOR DEFINIDO</small><strong>Rafael recebeu a conversa</strong></div><span>Rodízio</span></article>
-            <article><i class="step-icon coral">05</i><div><small>RETORNO CRIADO</small><strong>Follow-up amanhã às 09:00</strong></div><span>Agendado</span></article>
-            <article><i class="step-icon green">06</i><div><small>CONVERSA RETOMADA</small><strong>Cliente respondeu ao contato</strong></div><span>Concluído</span></article>
+            <article><i class="step-icon blue">01</i><div><small>FORA DO HORÁRIO</small><strong>Enviar a primeira resposta</strong></div><span>Imediato</span></article>
+            <article><i class="step-icon purple">02</i><div><small>INTERESSE EM ATACADO</small><strong>Marcar como alta prioridade</strong></div><span>Regra</span></article>
+            <article><i class="step-icon cyan">03</i><div><small>CLIENTE DA REGIÃO SUL</small><strong>Encaminhar para Rafael</strong></div><span>Carteira</span></article>
+            <article><i class="step-icon amber">04</i><div><small>SEM RESPOSTA POR 24 H</small><strong>Criar uma tentativa de retorno</strong></div><span>Cadência</span></article>
+            <article><i class="step-icon coral">05</i><div><small>CLIENTE RESPONDEU</small><strong>Reabrir para o responsável</strong></div><span>Ao vivo</span></article>
+            <article><i class="step-icon green">06</i><div><small>VENDA CONCLUÍDA</small><strong>Encerrar os próximos contatos</strong></div><span>Finalizado</span></article>
           </div>
 
           <div class="automation-result">
             <span>✓</span>
-            <div><small>RESULTADO</small><strong>Sua equipe recebeu a oportunidade pronta para continuar.</strong></div>
+            <div><small>RESULTADO</small><strong>A operação avança com critérios claros, mesmo quando ninguém está olhando.</strong></div>
           </div>
         </div>
       </section>
@@ -145,6 +153,34 @@
     const tabs = Array.from(showcase.querySelectorAll<HTMLButtonElement>("[data-tab-index]"));
     const panels = Array.from(showcase.querySelectorAll<HTMLElement>("[data-panel-index]"));
     const track = showcase.querySelector<HTMLElement>("[data-showcase-track]");
+    const kanbanViewport = showcase.querySelector<HTMLElement>("[data-kanban-viewport]");
+    const kanbanColumns = Array.from(showcase.querySelectorAll<HTMLElement>(".kanban-column"));
+    const kanbanDots = Array.from(showcase.querySelectorAll<HTMLButtonElement>("[data-kanban-dot]"));
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let kanbanIndex = 0;
+    let kanbanTimer: number | undefined;
+
+    const showKanbanStep = (index: number, smooth = true) => {
+      if (!kanbanViewport || !kanbanColumns.length) return;
+      kanbanIndex = (index + kanbanColumns.length) % kanbanColumns.length;
+      const column = kanbanColumns[kanbanIndex];
+      const firstColumnOffset = kanbanColumns[0]?.offsetLeft ?? 0;
+      kanbanViewport.scrollTo({ left: Math.max(0, column.offsetLeft - firstColumnOffset), behavior: smooth ? "smooth" : "auto" });
+      kanbanColumns.forEach((item, itemIndex) => item.classList.toggle("is-active", itemIndex === kanbanIndex));
+      kanbanDots.forEach((dot, dotIndex) => dot.setAttribute("aria-current", dotIndex === kanbanIndex ? "step" : "false"));
+    };
+
+    const stopKanban = () => {
+      if (kanbanTimer) window.clearInterval(kanbanTimer);
+      kanbanTimer = undefined;
+    };
+
+    const startKanban = () => {
+      stopKanban();
+      showKanbanStep(0, false);
+      if (reduceMotion.matches || !window.matchMedia("(max-width: 650px)").matches) return;
+      kanbanTimer = window.setInterval(() => showKanbanStep(kanbanIndex + 1), 3200);
+    };
 
     const activate = (tab: HTMLButtonElement) => {
       const index = Number(tab.dataset.tabIndex ?? 0);
@@ -155,6 +191,8 @@
       });
       panels.forEach((panel, panelIndex) => panel.setAttribute("aria-hidden", String(panelIndex !== index)));
       track?.style.setProperty("--showcase-index", String(index));
+      if (index === 1) startKanban();
+      else stopKanban();
     };
 
     tabs.forEach((tab, index) => {
@@ -172,6 +210,15 @@
         nextTab.focus();
       });
     });
+
+    kanbanDots.forEach((dot, index) => dot.addEventListener("click", () => {
+      showKanbanStep(index);
+      if (!reduceMotion.matches && window.matchMedia("(max-width: 650px)").matches) {
+        stopKanban();
+        kanbanTimer = window.setInterval(() => showKanbanStep(kanbanIndex + 1), 3200);
+      }
+    }));
+    showKanbanStep(0, false);
   });
 </script>
 
@@ -264,9 +311,9 @@
   .kanban-intro small { color: #7056e9; font-size: .44rem; font-weight: 700; letter-spacing: .08em; }
   .kanban-intro strong { max-width: 600px; margin-top: .35rem; font-size: .86rem; }
   .kanban-intro > span { color: #858a95; font-size: .48rem; }
-  .kanban-viewport { overflow: hidden; padding: 12px 18px 8px; }
-  .kanban-grid { min-height: 470px; width: max-content; display: flex; gap: .62rem; will-change: transform; }
-  .kanban-column { width: clamp(156px,12.5vw,180px); flex: 0 0 auto; padding: .68rem; border: 1px solid #d5dae4; border-top: 3px solid var(--column); border-radius: 12px; background: #dfe4ed; }
+  .kanban-viewport { overflow:hidden; padding:12px 18px 8px; scroll-behavior:smooth; }
+  .kanban-grid { min-height:470px; width:max-content; display:flex; gap:.62rem; }
+  .kanban-column { width:clamp(156px,12.5vw,180px); flex:0 0 auto; padding:.68rem; border:1px solid #d5dae4; border-top:3px solid var(--column); border-radius:12px; background:#dfe4ed; transition:opacity .35s ease,transform .55s cubic-bezier(.2,.75,.2,1),box-shadow .35s ease; }
   .kanban-column header { min-height: 35px; display: grid; grid-template-columns: 6px 1fr auto; gap: .4rem; align-items: start; }
   .kanban-column header > span { width: 6px; height: 6px; margin-top: .23rem; border-radius: 50%; background: var(--column); }
   .kanban-column header strong { font-size: .54rem; line-height: 1.25; }
@@ -279,16 +326,11 @@
   .deal-card strong { display: block; margin-top: .62rem; overflow: hidden; font-size: .55rem; white-space: nowrap; text-overflow: ellipsis; }
   .deal-card p { margin: .25rem 0 .65rem; overflow: hidden; color: #6f7581; font-size: .47rem; white-space: nowrap; text-overflow: ellipsis; }
   .deal-card > span { padding: .23rem .34rem; border-radius: 5px; color: color-mix(in srgb,var(--column),#222 25%); background: color-mix(in srgb,var(--column),white 84%); font-size: .41rem; }
+  .kanban-pagination { display:none; }
   .kanban-hint { display:flex; align-items:center; gap:.5rem; margin:.1rem 20px 18px; color:#737a88; font-size:.54rem; }
-  .kanban-hint span { position:relative; width:52px; height:3px; overflow:hidden; border-radius:999px; background:#cbd0da; }
-  .kanban-hint span::after { content:""; position:absolute; inset:0 auto 0 0; width:45%; border-radius:inherit; background:#7458ed; animation:hint-progress 4s ease-in-out infinite alternate; }
+  .kanban-hint span { color:#7358ed; font-size:.75rem; }
   .kanban-column.blue { --column:#4e7cf5; } .kanban-column.cyan { --column:#23a9bf; } .kanban-column.purple { --column:#7758e8; }
   .kanban-column.amber { --column:#d7982e; } .kanban-column.coral { --column:#de725b; } .kanban-column.green { --column:#32a875; }
-  @keyframes hint-progress { to { transform:translateX(125%); } }
-  @keyframes kanban-tour {
-    0%,8% { transform:translateX(0); }
-    92%,100% { transform:translateX(calc(-100% + min(88vw,860px))); }
-  }
 
   .automation-layout { min-height: 590px; display: grid; grid-template-columns: .72fr 1.28fr; gap: 2rem; padding: 34px; background: linear-gradient(145deg,#f5f6f8,#eef0f5); }
   .automation-layout > header { align-self: center; }
@@ -319,7 +361,6 @@
     .service-layout { grid-template-columns: 190px 1fr; }
     .customer-card { display: grid; grid-template-columns: repeat(2,1fr); gap: .6rem; grid-column: 1 / -1; border-left: 0; border-top: 1px solid #e1e4e9; }
     .customer-head, .field, .next-action { margin: 0; padding: .65rem; border: 1px solid #e7e9ed; border-radius: 8px; }
-    .kanban-grid { animation:kanban-tour 25s ease-in-out infinite alternate; }
     .automation-layout { grid-template-columns: 1fr; }
     .automation-layout > header strong { max-width: 520px; }
     .automation-result { grid-column: 1; }
@@ -353,8 +394,9 @@
     .kanban-intro { align-items: flex-start; flex-direction: column; gap: .7rem; padding: 18px 12px 8px; }
     .kanban-intro strong { max-width:280px; font-size: .82rem; line-height:1.4; }
     .kanban-viewport { padding:10px 10px 8px; }
-    .kanban-grid { min-height:420px; gap:.75rem; animation-name:kanban-tour-mobile; }
-    .kanban-column { width:min(76vw,260px); padding:.8rem; }
+    .kanban-grid { min-height:420px; gap:.75rem; }
+    .kanban-column { width:min(calc(100vw - 92px),310px); padding:.8rem; opacity:.56; transform:scale(.96); }
+    .kanban-column.is-active { opacity:1; transform:scale(1); box-shadow:0 16px 32px rgba(47,56,75,.15); }
     .kanban-column header { min-height:46px; }
     .kanban-column header strong { font-size:.66rem; }
     .deal-card { padding:.85rem; }
@@ -362,7 +404,10 @@
     .deal-card strong { font-size:.7rem; }
     .deal-card p { font-size:.59rem; }
     .deal-card > span { font-size:.5rem; }
-    .kanban-hint { margin-inline:12px; font-size:.59rem; }
+    .kanban-pagination { display:flex; justify-content:center; gap:.48rem; margin:.2rem 0 .55rem; }
+    .kanban-pagination button { width:7px; height:7px; padding:0; border:0; border-radius:999px; background:#b8bfcb; transition:width .3s ease,background .3s ease; cursor:pointer; }
+    .kanban-pagination button[aria-current="step"] { width:25px; background:#7358ed; }
+    .kanban-hint { justify-content:center; margin:0 12px 16px; font-size:.59rem; }
     .automation-layout { min-height: 0; gap: 1.3rem; padding: 24px 12px; }
     .automation-layout > header strong { font-size: 1.45rem; }
     .automation-steps { grid-template-columns: 1fr; }
@@ -372,12 +417,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     .track, .tabs button { transition: none; }
-    .kanban-grid,.kanban-hint span::after { animation:none; }
+    .kanban-column { opacity:1; transform:none; transition:none; }
     .kanban-viewport { overflow-x:auto; scrollbar-width:thin; }
-  }
-
-  @keyframes kanban-tour-mobile {
-    0%,7% { transform:translateX(0); }
-    93%,100% { transform:translateX(calc(-100% + min(82vw,300px))); }
   }
 </style>

@@ -74,27 +74,28 @@
   .message-preview { margin-top:1rem; padding:1.15rem; border:1px solid #cfc6ff; border-radius:15px; background:linear-gradient(145deg,#e4deff,#f0edff); }
   .message-preview p { margin:.65rem 0 .85rem; color:#45405f; font-size:.75rem; line-height:1.58; }
   .message-preview span { color:#6753bd; font-size:.57rem; font-weight:700; }
-  .followup-steps { padding:34px clamp(24px,4vw,50px); background:#171b25; color:#eef0f6; }
-  .followup-steps header { padding-bottom:1.5rem; border-bottom:1px solid rgba(255,255,255,.09); }
+  .followup-steps { padding:34px clamp(24px,4vw,50px); border-left:1px solid #d3d9e3; background:linear-gradient(155deg,#e7edf5,#dce5f0); color:#202939; }
+  .followup-steps header { padding-bottom:1.5rem; border-bottom:1px solid #cbd4e0; }
   .followup-steps header strong { display:block; margin-top:.45rem; font-size:1.35rem; }
-  .followup-steps ol { display:grid; gap:.85rem; margin:1.35rem 0 0; padding:0; list-style:none; }
+  .followup-steps ol { position:relative; display:grid; gap:.85rem; margin:1.35rem 0 0; padding:0; list-style:none; }
+  .followup-steps ol::before { content:""; position:absolute; left:31px; top:38px; bottom:38px; width:1px; background:#aebbd0; }
   .followup-steps li {
     position:relative; display:grid; grid-template-columns:48px 1fr auto; gap:1rem; align-items:center; min-height:118px;
-    padding:1rem; border:1px solid rgba(255,255,255,.09); border-radius:15px; background:rgba(255,255,255,.035);
+    z-index:1; padding:1rem; border:1px solid #bec9d8; border-radius:15px; background:rgba(250,252,255,.68);
     opacity:.78; animation:follow-step 12s ease infinite;
   }
   .followup-steps li > i {
-    width:42px; height:42px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.13);
-    border-radius:13px; color:#a99cf4; background:rgba(113,88,229,.12); font-size:.61rem; font-style:normal; font-weight:800;
+    width:42px; height:42px; display:grid; place-items:center; border:1px solid #b9c4d4;
+    border-radius:13px; color:#6650c4; background:#ece8ff; font-size:.61rem; font-style:normal; font-weight:800;
   }
   .followup-steps li div { display:flex; flex-direction:column; }
   .followup-steps li strong { margin-top:.28rem; font-size:.79rem; }
-  .followup-steps li p { margin:.28rem 0 0; color:#969dac; font-size:.62rem; line-height:1.45; }
-  .followup-steps li > span { align-self:start; padding:.32rem .46rem; border-radius:6px; color:#b4a9ef; background:rgba(113,88,229,.13); font-size:.51rem; }
+  .followup-steps li p { margin:.28rem 0 0; color:#697588; font-size:.62rem; line-height:1.45; }
+  .followup-steps li > span { align-self:start; padding:.32rem .46rem; border-radius:6px; color:#604caf; background:#e4defc; font-size:.51rem; }
   .step-one{animation-delay:0s}.step-two{animation-delay:4s}.step-three{animation-delay:8s}
   @keyframes follow-step {
-    0%,6%{opacity:.76;transform:translateX(6px)}
-    12%,30%{opacity:1;transform:none;border-color:rgba(127,104,244,.5);background:rgba(113,88,229,.1)}
+    0%,6%{opacity:.76;transform:translateY(-10px)}
+    12%,30%{opacity:1;transform:none;border-color:#8068ea;background:#f0edff;box-shadow:0 14px 28px rgba(86,66,177,.13)}
     38%,100%{opacity:.82;transform:none}
   }
 
@@ -104,13 +105,13 @@
     .followup-bar strong { font-size:.72rem; }
     .followup-bar span { font-size:.55rem; }
     .followup-body { grid-template-columns:1fr; }
-    .contact-card { padding:24px 15px; border-right:0; border-bottom:1px solid #d3d9e3; }
+    .contact-card { padding:24px 15px; border-right:0; border-bottom:0; }
     .contact-head img { width:62px; height:62px; }
     .contact-head strong { font-size:1rem; }
     .waiting { padding:1rem; }
     .waiting strong { font-size:.8rem; }
     .message-preview p { font-size:.82rem; }
-    .followup-steps { padding:28px 13px; }
+    .followup-steps { padding:28px 15px; border-left:0; border-top:1px solid #cdd6e2; }
     .followup-steps header strong { font-size:1.25rem; }
     .followup-steps li { grid-template-columns:46px 1fr; min-height:142px; padding:1rem .85rem; }
     .followup-steps li strong { padding-right:2.7rem; font-size:.84rem; }
