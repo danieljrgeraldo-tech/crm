@@ -96,3 +96,24 @@ O resultado de SEO é reduzido exclusivamente pelo bloqueio deliberado de indexa
 
 - Aguardar aprovação expressa de Daniel antes de qualquer merge, troca de domínio ou substituição da versão atual.
 - Nenhuma pendência técnica conhecida na versão de teste.
+
+## Refinamento orientado pela análise mobile
+
+- Hero, jornada principal da operação e bloco de problemas foram preservados.
+- A demonstração de conversa natural voltou antes do painel do gestor, com áudio, reação, espera de contexto, digitação e conversão em oportunidade.
+- A jornada da operação ganhou seleção pelo scroll e setas entre as etapas no mobile.
+- A área do produto passou a apresentar somente o Kanban, com avanço automático entre colunas e sinalização da movimentação feita pela IA.
+- Canais unificados ganharam uma caixa de entrada visual com conversas de WhatsApp, Instagram e TikTok.
+- Distribuição foi ampliada com lead qualificado, comparação entre vendedores, seleção automática e entrega do histórico.
+- Follow-up voltou a usar a demonstração completa de Carla, incluindo preparação, ativação, envio e próximos passos.
+- Memória do lead ganhou uma explicação visual em três etapas com seleção pelo scroll.
+- Recursos, implantação e aplicações passaram a usar composição em gavetas sobrepostas no mobile.
+- Aplicações voltaram ao formato de cartões coloridos por tipo de negócio.
+
+### Validação desta rodada
+
+- Build Astro: aprovado.
+- Larguras verificadas: 360, 390, 414, 768, 1294 e 1920 px.
+- Rolagem horizontal involuntária: não encontrada.
+- Erros de JavaScript no navegador: não encontrados.
+- Seleção pelo scroll, gavetas sticky e Kanban automático: aprovados.

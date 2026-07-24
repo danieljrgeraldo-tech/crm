@@ -1,10 +1,10 @@
 <div class="showcase" data-showcase>
   <div class="tabs-guide"><span>EXPLORE O SISTEMA</span><strong>Escolha uma visão abaixo</strong><i aria-hidden="true">↓</i></div>
   <div class="tabs" role="tablist" aria-label="Demonstrações do produto">
-    <button id="product-tab-service" type="button" role="tab" aria-selected="true" aria-controls="product-panel-service" data-tab-index="0">
+    <button id="product-tab-service" type="button" role="tab" aria-selected="false" aria-controls="product-panel-service" data-tab-index="0" tabindex="-1">
       <span>01</span> Atendimento
     </button>
-    <button id="product-tab-kanban" type="button" role="tab" aria-selected="false" aria-controls="product-panel-kanban" data-tab-index="1" tabindex="-1">
+    <button id="product-tab-kanban" type="button" role="tab" aria-selected="true" aria-controls="product-panel-kanban" data-tab-index="1">
       <span>02</span> Kanban comercial
     </button>
     <button id="product-tab-automation" type="button" role="tab" aria-selected="false" aria-controls="product-panel-automation" data-tab-index="2" tabindex="-1">
@@ -13,8 +13,8 @@
   </div>
 
   <div class="viewport">
-    <div class="track" data-showcase-track>
-      <section id="product-panel-service" class="panel" role="tabpanel" aria-labelledby="product-tab-service" data-panel-index="0">
+    <div class="track" data-showcase-track style="--showcase-index:1">
+      <section id="product-panel-service" class="panel" role="tabpanel" aria-labelledby="product-tab-service" data-panel-index="0" aria-hidden="true">
         <div class="panel-top">
           <div><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span></div>
           <strong>Atendimento em andamento</strong>
@@ -62,7 +62,7 @@
         </div>
       </section>
 
-      <section id="product-panel-kanban" class="panel" role="tabpanel" aria-labelledby="product-tab-kanban" data-panel-index="1" aria-hidden="true">
+      <section id="product-panel-kanban" class="panel" role="tabpanel" aria-labelledby="product-tab-kanban" data-panel-index="1" aria-hidden="false">
         <div class="panel-top">
           <div><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span></div>
           <strong>Clientes organizados por etapa</strong>
@@ -219,12 +219,15 @@
         kanbanTimer = window.setInterval(() => showKanbanStep(kanbanIndex + 1), 3200);
       }
     }));
-    showKanbanStep(0, false);
+    track?.style.setProperty("--showcase-index", "1");
+    panels.forEach((panel, panelIndex) => panel.setAttribute("aria-hidden", String(panelIndex !== 1)));
+    startKanban();
   });
 </script>
 
 <style>
   .showcase { margin-top: 3rem; }
+  .tabs-guide,.tabs{display:none!important}
   .tabs-guide { display:flex; align-items:center; gap:.65rem; margin:0 0 .65rem .4rem; }.tabs-guide span { color:#8e7aef; font-size:.49rem; font-weight:800; letter-spacing:.09em; }.tabs-guide strong { color:#c7cad3; font-size:.62rem; }.tabs-guide i { color:#9d8cf0; font-style:normal; animation:guide-bounce 1.4s ease-in-out infinite; }
   .tabs {
     width: max-content; max-width: 100%; display: flex; gap: .35rem; padding: .4rem;
@@ -343,6 +346,10 @@
   .kanban-column.amber { --column:#d7982e; --column-soft:#f3e8d2; --column-border:#e5d2ad; }
   .kanban-column.coral { --column:#de725b; --column-soft:#f4dfdb; --column-border:#e7c7c0; }
   .kanban-column.green { --column:#32a875; --column-soft:#dceee6; --column-border:#c1ddcf; }
+  .kanban-column.purple .deal-card.featured{position:relative;animation:ai-card-move 6.4s cubic-bezier(.2,.75,.2,1) infinite}
+  .kanban-column.purple .deal-card.featured::after{content:"IA moveu para Qualificado";position:absolute;right:.55rem;top:.55rem;padding:.28rem .4rem;border-radius:5px;color:#fff;background:#6d54e4;font-size:.38rem;font-weight:800;opacity:0;animation:ai-card-label 6.4s ease infinite}
+  @keyframes ai-card-move{0%,14%{opacity:0;transform:translateX(-54px) scale(.94)}24%,78%{opacity:1;transform:none}90%,100%{opacity:1;transform:none}}
+  @keyframes ai-card-label{0%,20%,62%,100%{opacity:0;transform:translateY(4px)}28%,52%{opacity:1;transform:none}}
   @keyframes live-status { 0%,100%{box-shadow:0 0 0 4px rgba(57,201,137,.1);opacity:.65} 50%{box-shadow:0 0 0 8px rgba(57,201,137,.18);opacity:1} }
   @keyframes chat-stage-one { 0%,3%,100%{opacity:0;transform:translateY(10px)} 8%,88%{opacity:1;transform:none} 95%{opacity:0;transform:translateY(-4px)} }
   @keyframes chat-stage-two { 0%,18%,100%{opacity:0;transform:translateY(8px)} 23%,88%{opacity:1;transform:none} 95%{opacity:0} }
