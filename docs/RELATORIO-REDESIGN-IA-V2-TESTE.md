@@ -117,3 +117,19 @@ O resultado de SEO é reduzido exclusivamente pelo bloqueio deliberado de indexa
 - Rolagem horizontal involuntária: não encontrada.
 - Erros de JavaScript no navegador: não encontrados.
 - Seleção pelo scroll, gavetas sticky e Kanban automático: aprovados.
+
+## Refinamento mobile — segunda revisão visual
+
+- Hero centralizado no mobile e benefícios mantidos em uma única linha.
+- Conversa do hero animada em sequência, com ciclo mais rápido e maior permanência no resultado da qualificação.
+- Setas removidas da jornada e espaçamento entre etapas reduzido.
+- Ícones da conversa natural convertidos em reações visuais consistentes.
+- Card qualificado ganhou estado verde de conclusão.
+- Altura excedente do Kanban removida.
+- Bloco de problemas recebeu copy direta e gavetas coloridas no mobile.
+- Canais unificados ganharam logos visuais e identificadores maiores sobre os perfis.
+- Gavetas de recursos foram padronizadas; follow-up foi movido para a última posição e permanece com altura própria.
+- Memória e etapas do follow-up ficaram estáticas, claras e sem desfoque.
+- Botão de Daniel e selo sobre a foto foram centralizados no mobile.
+- Nota de implantação recebeu um reflexo discreto.
+- Mensagem automática do follow-up ganhou entrada em formato de balão e confirmação visível de envio pela IA.
