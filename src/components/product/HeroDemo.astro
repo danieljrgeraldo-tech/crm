@@ -50,8 +50,10 @@
     <section class="operation-window" aria-label="Ações que a inteligência artificial realiza durante a conversa">
       <header>
         <div><small>ENQUANTO CONVERSA</small><strong>A IA organiza tudo em segundo plano.</strong></div>
-        <span><i></i> ao vivo</span>
+        <span><i></i> IA trabalhando</span>
       </header>
+
+      <div class="operation-progress"><span></span><b>Analisando e atualizando a operação</b></div>
 
       <div class="operation-list">
         <article class="operation-item operation-one">
@@ -158,12 +160,14 @@
   .operation-window > header small { color:#654bcf; font-size:.53rem; font-weight:800; letter-spacing:.1em; }
   .operation-window > header strong { max-width:270px; margin-top:.4rem; font-size:1rem; line-height:1.3; }
   .operation-window > header span { gap:.4rem; color:#5f6b7c; font-size:.57rem; }
+  .operation-progress { display:flex;align-items:center;gap:.65rem;margin:0 0 .9rem;padding:.62rem .75rem;border:1px solid #c5baf1;border-radius:10px;color:#5742b2;background:rgba(241,238,255,.76);overflow:hidden; }
+  .operation-progress > span { width:58px;height:5px;overflow:hidden;border-radius:99px;background:#d9d2f5; }.operation-progress > span::after { content:"";display:block;width:42%;height:100%;border-radius:inherit;background:#7358ed;animation:operation-loading 2.2s ease-in-out infinite; }.operation-progress b { font-size:.52rem; }
   .operation-list { position:relative; display:grid; gap:.7rem; }
   .operation-list::before { content:""; position:absolute; left:21px; top:34px; bottom:34px; width:1px; background:#aebacc; }
   .operation-item {
     position:relative; z-index:1; display:grid; grid-template-columns:44px 1fr auto; gap:.82rem; min-height:94px;
     padding:.9rem; border:1px solid #bac6d6; border-radius:14px; background:rgba(250,252,255,.66);
-    opacity:.68; box-shadow:0 10px 24px rgba(49,65,88,.06); transition:opacity .35s,transform .35s,border-color .35s,background .35s;
+    opacity:.58; box-shadow:0 10px 24px rgba(49,65,88,.06); transition:opacity .35s,transform .35s,border-color .35s,background .35s;
     animation:operation-focus 16s ease infinite;
   }
   .operation-item > i {
@@ -189,10 +193,10 @@
   @keyframes stage-five { 0%,55%,100%{opacity:0;transform:translateY(10px)} 60%,88%{opacity:1;transform:none} 95%{opacity:0} }
   @keyframes stage-six { 0%,69%,100%{opacity:0;transform:translateY(12px)} 74%,88%{opacity:1;transform:none} 95%{opacity:0} }
   @keyframes operation-focus {
-    0%,5%{opacity:.68;transform:translateX(5px)}
-    10%,24%{opacity:1;transform:none;border-color:#8c75ef;background:#f0edff;box-shadow:0 14px 32px rgba(91,69,190,.14)}
-    31%,100%{opacity:.78;transform:none}
+    0%,5%,30%,100%{opacity:.58;transform:scale(.975)}
+    10%,24%{opacity:1;transform:scale(1.025);border-color:#7459e9;background:#f0edff;box-shadow:0 16px 34px rgba(91,69,190,.18),inset 4px 0 0 #7459e9}
   }
+  @keyframes operation-loading { 0%{transform:translateX(-110%)} 60%,100%{transform:translateX(240%)} }
   @keyframes ai-pulse { 50%{box-shadow:0 0 0 6px rgba(67,211,158,.12)} }
 
   @media (max-width:760px) {

@@ -8,16 +8,24 @@
     <section class="contact-card">
       <div class="contact-head">
         <img src="/images/people/fernanda.jpg" alt="" width="80" height="80" />
-        <div><small>CLIENTE</small><strong>Carla Reis</strong><span>Recebeu um orçamento hoje e não respondeu.</span></div>
+        <div><small>LEAD EM ACOMPANHAMENTO</small><strong>Carla Reis</strong><span>Recebeu um orçamento e não respondeu.</span></div>
       </div>
-      <div class="waiting">
-        <span>◷</span>
-        <div><small>O SISTEMA ESTÁ AGUARDANDO</small><strong>Se Carla não responder, a IA vai chamar de novo.</strong></div>
-      </div>
-      <div class="message-preview">
-        <small>MENSAGEM QUE SERÁ ENVIADA</small>
-        <p>Olá, Carla. Conseguiu analisar o orçamento que enviamos? Posso ajudar com alguma dúvida?</p>
-        <div class="message-meta"><span>Amanhã · 09:00</span><b>✓ Mensagem enviada pela IA</b></div>
+      <div class="followup-visual" aria-label="A inteligência artificial ativa o follow-up e envia a mensagem automaticamente">
+        <div class="followup-state kanban-state">
+          <div class="state-top"><span><i></i> FOLLOW-UP AUTOMÁTICO</span><b>1 de 3</b></div>
+          <article class="lead-card">
+            <header><span>CR</span><small>sem resposta há 24 h</small></header>
+            <strong>Carla Reis</strong>
+            <p>Fazendo follow-up 1/3</p>
+            <div class="ai-progress"><i></i><span><b>IA preparando o próximo contato</b><small>Contexto e mensagem revisados</small></span></div>
+          </article>
+          <div class="activation"><span>ATIVAR FOLLOW-UP</span><i></i><b>Ativado pela IA</b></div>
+        </div>
+        <div class="followup-state sent-state">
+          <small>MENSAGEM ENVIADA AGORA</small>
+          <div class="message-bubble"><p>Olá, Carla. Conseguiu analisar o orçamento que enviamos? Posso ajudar com alguma dúvida?</p><time>09:00 ✓✓</time></div>
+          <div class="sent-confirmation"><i>✓</i><span><strong>Mensagem enviada pela IA</strong><small>O próximo retorno também ficou programado.</small></span></div>
+        </div>
       </div>
     </section>
 
@@ -67,13 +75,19 @@
   .contact-head small,.waiting small,.message-preview small,.followup-steps header small,.followup-steps li small { color:#7158e5; font-size:.51rem; font-weight:800; letter-spacing:.08em; }
   .contact-head strong { margin-top:.2rem; font-size:.94rem; }
   .contact-head span { margin-top:.18rem; color:#747b88; font-size:.62rem; }
-  .waiting { display:flex; gap:.9rem; margin-top:2rem; padding:1.1rem; border:1px solid #d4dae4; border-radius:15px; background:#f8f9fb; }
-  .waiting > span { width:38px; height:38px; display:grid; flex:0 0 auto; place-items:center; border-radius:12px; color:#7358ed; background:#e9e4ff; font-size:1.1rem; }
-  .waiting div { display:flex; flex-direction:column; }
-  .waiting strong { max-width:250px; margin-top:.4rem; font-size:.75rem; line-height:1.45; }
-  .message-preview { margin-top:1rem; padding:1.15rem; border:1px solid #cfc6ff; border-radius:15px; background:linear-gradient(145deg,#e4deff,#f0edff); animation:message-sent 8s ease-in-out infinite; }
-  .message-preview p { margin:.65rem 0 .85rem; color:#45405f; font-size:.75rem; line-height:1.58; }
-  .message-preview span { color:#6753bd; font-size:.57rem; font-weight:700; }.message-meta { display:flex; align-items:center; justify-content:space-between; gap:.5rem; }.message-meta b { padding:.32rem .45rem; border-radius:6px; color:#237a57; background:#d8f2e5; font-size:.48rem; opacity:0; animation:sent-badge 8s ease-in-out infinite; }
+  .followup-visual { position:relative; min-height:390px; margin-top:1.6rem; }
+  .followup-state { position:absolute; inset:0; border-radius:17px; }
+  .kanban-state { padding:1rem; border:1px solid #cfd6e1; background:linear-gradient(160deg,#e2e8f1,#d8e0eb); animation:kanban-state 10s ease-in-out infinite; }
+  .state-top { display:flex; align-items:center; justify-content:space-between; color:#626d7d; font-size:.5rem; font-weight:800; letter-spacing:.06em; }
+  .state-top span { display:flex; align-items:center; gap:.45rem; }.state-top span i { width:7px;height:7px;border-radius:50%;background:#de725b;box-shadow:0 0 0 5px rgba(222,114,91,.11); }.state-top b { padding:.3rem .44rem;border-radius:6px;color:#9b4d3d;background:#f4dcd7;font-size:.46rem; }
+  .lead-card { margin-top:1rem;padding:1rem;border:1px solid #d3d8e1;border-top:3px solid #de725b;border-radius:13px;background:#fff;box-shadow:0 14px 30px rgba(33,40,53,.1); }
+  .lead-card header { display:flex;align-items:center;justify-content:space-between; }.lead-card header span { width:34px;height:34px;display:grid;place-items:center;border-radius:10px;color:#a95240;background:#f6e0dc;font-size:.52rem;font-weight:800; }.lead-card header small { color:#8a909b;font-size:.48rem; }
+  .lead-card > strong { display:block;margin-top:.8rem;font-size:.85rem; }.lead-card > p { margin:.3rem 0 .9rem;color:#a95240;font-size:.65rem;font-weight:750; }
+  .ai-progress { display:flex;align-items:center;gap:.65rem;padding:.72rem;border:1px solid #d7d0f5;border-radius:10px;background:#f2efff; }.ai-progress > i { width:9px;height:9px;border-radius:50%;background:#7358ed;animation:work-pulse 1s ease infinite; }.ai-progress span { display:flex;flex-direction:column; }.ai-progress b { color:#4e3aa8;font-size:.58rem; }.ai-progress small { margin-top:.2rem;color:#7f77a0;font-size:.48rem; }
+  .activation { display:grid;grid-template-columns:1fr 42px auto;gap:.7rem;align-items:center;margin-top:1rem;padding:.75rem;border:1px solid #d2d8e2;border-radius:11px;background:rgba(255,255,255,.75);font-size:.48rem;font-weight:800; }.activation > i { position:relative;width:40px;height:22px;border-radius:999px;background:#b7bfcc;animation:toggle-followup 10s ease-in-out infinite; }.activation > i::after { content:"";position:absolute;left:3px;top:3px;width:16px;height:16px;border-radius:50%;background:white;box-shadow:0 2px 5px rgba(0,0,0,.18);animation:toggle-knob 10s ease-in-out infinite; }.activation > b { color:#247857;font-size:.47rem;opacity:0;animation:activation-label 10s ease-in-out infinite; }
+  .sent-state { display:flex;justify-content:center;flex-direction:column;padding:1.1rem;border:1px solid #a8ddc4;background:linear-gradient(155deg,#e4f5ec,#f4fbf7);opacity:0;transform:scale(.94);animation:sent-state 10s ease-in-out infinite; }
+  .sent-state > small { color:#28825f;font-size:.5rem;font-weight:800;letter-spacing:.08em; }.message-bubble { margin-top:.8rem;padding:1rem;border:1px solid #a7d8c0;border-radius:15px 15px 4px 15px;background:#d2efe1;box-shadow:0 12px 26px rgba(36,121,87,.1); }.message-bubble p { margin:0;color:#245541;font-size:.75rem;line-height:1.55; }.message-bubble time { display:block;margin-top:.6rem;color:#4f8e73;font-size:.49rem;text-align:right; }
+  .sent-confirmation { display:flex;align-items:center;gap:.7rem;margin-top:1rem;padding:.8rem;border-radius:11px;background:#fff; }.sent-confirmation > i { width:30px;height:30px;display:grid;place-items:center;border-radius:9px;color:white;background:#32a875;font-style:normal; }.sent-confirmation span { display:flex;flex-direction:column; }.sent-confirmation strong { color:#28644d;font-size:.6rem; }.sent-confirmation small { margin-top:.2rem;color:#6d7d75;font-size:.49rem; }
   .followup-steps { padding:34px clamp(24px,4vw,50px); border-left:1px solid #d3d9e3; background:linear-gradient(155deg,#e7edf5,#dce5f0); color:#202939; }
   .followup-steps header { padding-bottom:1.5rem; border-bottom:1px solid #cbd4e0; }
   .followup-steps header strong { display:block; margin-top:.45rem; font-size:1.35rem; }
@@ -81,7 +95,7 @@
   .followup-steps li {
     position:relative; display:grid; grid-template-columns:48px 1fr auto; gap:1rem; align-items:center; min-height:118px;
     z-index:1; padding:1rem; border:1px solid #bec9d8; border-radius:15px; background:rgba(250,252,255,.68);
-    opacity:.68; transform:translateX(16px) scale(.97); animation:follow-step 12s ease infinite;
+    opacity:.58; transform:scale(.97); animation:follow-select 12s ease infinite;
   }
   .followup-steps li > i {
     width:42px; height:42px; display:grid; place-items:center; border:1px solid #b9c4d4;
@@ -92,13 +106,13 @@
   .followup-steps li p { margin:.28rem 0 0; color:#697588; font-size:.62rem; line-height:1.45; }
   .followup-steps li > span { align-self:start; padding:.32rem .46rem; border-radius:6px; color:#604caf; background:#e4defc; font-size:.51rem; }
   .step-one{animation-delay:0s}.step-two{animation-delay:4s}.step-three{animation-delay:8s}
-  @keyframes follow-step {
-    0%,7%,100%{opacity:.62;transform:translateX(18px) scale(.97)}
-    13%,29%{opacity:1;transform:none;border-color:#8068ea;background:#f0edff;box-shadow:0 16px 30px rgba(86,66,177,.16)}
-    37%{opacity:.7;transform:translateX(-6px) scale(.98)}
-  }
-  @keyframes message-sent { 0%,48%,100%{border-color:#cfc6ff;background:linear-gradient(145deg,#e4deff,#f0edff)} 58%,86%{border-color:#9cd7bc;background:linear-gradient(145deg,#dff5e9,#ecf9f2)} }
-  @keyframes sent-badge { 0%,50%,100%{opacity:0;transform:translateY(4px)} 60%,86%{opacity:1;transform:none} }
+  @keyframes follow-select { 0%,7%,34%,100%{opacity:.58;transform:scale(.97)} 12%,28%{opacity:1;transform:scale(1.025);border-color:#8068ea;background:#f4f1ff;box-shadow:0 16px 30px rgba(86,66,177,.16)} }
+  @keyframes kanban-state { 0%,52%{opacity:1;transform:scale(1)} 60%,92%{opacity:0;transform:scale(.94)} 100%{opacity:1;transform:scale(1)} }
+  @keyframes sent-state { 0%,54%,100%{opacity:0;transform:scale(.94)} 63%,92%{opacity:1;transform:scale(1)} }
+  @keyframes toggle-followup { 0%,30%{background:#b7bfcc} 38%,100%{background:#32a875} }
+  @keyframes toggle-knob { 0%,30%{transform:none} 38%,100%{transform:translateX(18px)} }
+  @keyframes activation-label { 0%,31%{opacity:0} 39%,100%{opacity:1} }
+  @keyframes work-pulse { 50%{box-shadow:0 0 0 7px rgba(115,88,237,.14)} }
 
   @media (max-width:760px) {
     .followup-demo { overflow:visible; border-radius:17px; }
@@ -110,15 +124,11 @@
     .contact-card { padding:24px 15px; border-right:0; border-bottom:0; }
     .contact-head img { width:62px; height:62px; }
     .contact-head strong { font-size:1rem; }
-    .waiting { padding:1rem; }
-    .waiting strong { font-size:.8rem; }
-    .message-preview p { font-size:.82rem; }
-    .message-meta { align-items:flex-start; flex-direction:column; }.message-meta b { font-size:.55rem; }
+    .followup-visual { min-height:390px; }.message-bubble p { font-size:.8rem; }
     .followup-steps { padding:28px 15px; border-left:0; border-top:1px solid #cdd6e2; }
     .followup-steps header strong { font-size:1.25rem; }
-    .followup-steps ol { display:block; padding-bottom:0; }
-    .followup-steps li { position:sticky; top:82px; min-height:180px; grid-template-columns:46px 1fr; margin-bottom:16px; padding:1.15rem; opacity:1; transform:none; animation:none; background:#f5f2ff; box-shadow:0 18px 38px rgba(44,51,66,.16); }
-    .followup-steps li:nth-child(1){z-index:1}.followup-steps li:nth-child(2){z-index:2}.followup-steps li:nth-child(3){z-index:3;margin-bottom:0}
+    .followup-steps ol { display:grid; gap:.75rem; padding-bottom:0; }
+    .followup-steps li { position:relative; min-height:155px; grid-template-columns:46px 1fr; margin:0; padding:1.15rem; background:#f5f2ff; }
     .followup-steps li strong { padding-right:2.7rem; font-size:.84rem; }
     .followup-steps li p { font-size:.69rem; }
     .followup-steps li > span { position:absolute; right:.75rem; top:.8rem; }
@@ -126,5 +136,6 @@
 
   @media (prefers-reduced-motion:reduce) {
     .followup-steps li { animation:none; opacity:1; transform:none; }
+    .kanban-state { display:none; }.sent-state { opacity:1;transform:none;animation:none; }
   }
 </style>

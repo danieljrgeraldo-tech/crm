@@ -316,7 +316,7 @@
   .kanban-intro > span { color: #858a95; font-size: .48rem; }
   .kanban-viewport { overflow:hidden; padding:12px 18px 8px; scroll-behavior:smooth; }
   .kanban-grid { min-height:470px; width:max-content; display:flex; gap:.62rem; }
-  .kanban-column { width:clamp(156px,12.5vw,180px); flex:0 0 auto; padding:.68rem; border:1px solid #d5dae4; border-top:3px solid var(--column); border-radius:12px; background:#dfe4ed; transition:opacity .35s ease,transform .55s cubic-bezier(.2,.75,.2,1),box-shadow .35s ease; }
+  .kanban-column { width:clamp(156px,12.5vw,180px); flex:0 0 auto; padding:.68rem; border:1px solid var(--column-border); border-top:3px solid var(--column); border-radius:12px; background:linear-gradient(180deg,var(--column-soft),#e2e6ed 64%); transition:opacity .35s ease,transform .55s cubic-bezier(.2,.75,.2,1),box-shadow .35s ease; }
   .kanban-column header { min-height: 35px; display: grid; grid-template-columns: 6px 1fr auto; gap: .4rem; align-items: start; }
   .kanban-column header > span { width: 6px; height: 6px; margin-top: .23rem; border-radius: 50%; background: var(--column); }
   .kanban-column header strong { font-size: .54rem; line-height: 1.25; }
@@ -332,8 +332,12 @@
   .kanban-pagination { display:none; }
   .kanban-hint { display:flex; align-items:center; gap:.5rem; margin:.1rem 20px 18px; color:#737a88; font-size:.54rem; }
   .kanban-hint span { color:#7358ed; font-size:.75rem; }
-  .kanban-column.blue { --column:#4e7cf5; } .kanban-column.cyan { --column:#23a9bf; } .kanban-column.purple { --column:#7758e8; }
-  .kanban-column.amber { --column:#d7982e; } .kanban-column.coral { --column:#de725b; } .kanban-column.green { --column:#32a875; }
+  .kanban-column.blue { --column:#4e7cf5; --column-soft:#dce6ff; --column-border:#c5d4f5; }
+  .kanban-column.cyan { --column:#23a9bf; --column-soft:#d8eef2; --column-border:#bddde3; }
+  .kanban-column.purple { --column:#7758e8; --column-soft:#e5e0fa; --column-border:#d0c6f1; }
+  .kanban-column.amber { --column:#d7982e; --column-soft:#f3e8d2; --column-border:#e5d2ad; }
+  .kanban-column.coral { --column:#de725b; --column-soft:#f4dfdb; --column-border:#e7c7c0; }
+  .kanban-column.green { --column:#32a875; --column-soft:#dceee6; --column-border:#c1ddcf; }
 
   .automation-layout { min-height: 590px; display: grid; grid-template-columns: .72fr 1.28fr; gap: 2rem; padding: 34px; background: linear-gradient(145deg,#f5f6f8,#eef0f5); }
   .automation-layout > header { align-self: center; }
