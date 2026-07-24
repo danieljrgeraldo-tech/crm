@@ -3,6 +3,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 import HeroDemo from "../components/product/HeroDemo.astro";
 import ProductShowcase from "../components/product/ProductShowcase.astro";
 import FollowUpDemo from "../components/product/FollowUpDemo.astro";
+import HumanizedAIDemo from "../components/product/HumanizedAIDemo.astro";
 
 const whatsappUrl =
   "https://wa.me/5548998493150?text=Ol%C3%A1%2C%20Daniel.%20Quero%20entender%20como%20essa%20opera%C3%A7%C3%A3o%20pode%20funcionar%20na%20minha%20empresa.";
@@ -93,6 +94,22 @@ const schema = {
       </div>
     </section>
 
+    <section id="conversa-natural" class="human-section">
+      <div class="shell human-grid">
+        <div class="human-copy">
+          <p class="eyebrow" data-reveal>CONVERSA NATURAL, OPERAÇÃO INTELIGENTE</p>
+          <h2 data-reveal>A IA conversa sem parecer uma resposta automática.</h2>
+          <p data-reveal>Ela entende áudio, reage às mensagens, mostra que está digitando e responde em partes, com o tom definido pela sua empresa.</p>
+          <div class="human-features" data-reveal>
+            <span><i>❤</i><b>Reage e acolhe</b><small>A conversa continua leve e natural.</small></span>
+            <span><i>◖</i><b>Escuta antes de responder</b><small>Aguarda o cliente terminar e une o contexto.</small></span>
+            <span><i>✦</i><b>Qualifica enquanto conversa</b><small>Transforma o diálogo em uma oportunidade organizada.</small></span>
+          </div>
+        </div>
+        <div data-reveal><HumanizedAIDemo /></div>
+      </div>
+    </section>
+
     <section id="daniel" class="daniel-section">
       <div class="shell daniel-grid">
         <div class="daniel-photo" data-reveal>
@@ -145,9 +162,9 @@ const schema = {
         <div class="omnichannel-visual" data-reveal aria-label="WhatsApp, Instagram, TikTok e site conectados a uma única central de atendimento">
           <div class="channel-list">
             <article class="channel whatsapp"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></i><span><strong>WhatsApp</strong><small>12 novas</small></span></article>
-            <article class="channel instagram"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.03.084c-1.277.06-2.149.264-2.911.563-.789.308-1.458.72-2.123 1.388C1.331 2.702.921 3.371.616 4.161.321 4.925.121 5.798.064 7.076.008 8.353-.005 8.764.002 12.023c.006 3.258.02 3.667.082 4.947.061 1.277.264 2.148.563 2.911.308.789.72 1.457 1.388 2.123.668.665 1.337 1.074 2.129 1.38.763.295 1.636.496 2.913.552 1.277.056 1.688.069 4.946.063 3.258-.006 3.668-.021 4.948-.082 1.28-.061 2.147-.265 2.91-.563.789-.309 1.458-.72 2.123-1.388.665-.668 1.074-1.338 1.38-2.128.295-.763.496-1.636.551-2.913.056-1.281.069-1.69.063-4.948-.006-3.258-.021-3.667-.082-4.946-.061-1.28-.264-2.149-.563-2.912-.309-.789-.72-1.457-1.388-2.123C21.298 1.33 20.628.921 19.838.617 19.074.321 18.202.12 16.924.065 15.647.009 15.236-.005 11.977.001 8.718.008 8.31.022 7.03.084M5.839 12.012c.007 3.403 2.77 6.156 6.173 6.149 3.403-.006 6.157-2.77 6.151-6.173-.007-3.403-2.771-6.156-6.174-6.15-3.403.007-6.156 2.771-6.15 6.174M8 12.008A4 4 0 1112.008 16 4 4 0 018 12.008m8.953-6.422a1.44 1.44 0 101.437-1.442 1.44 1.44 0 00-1.437 1.442"/></svg></i><span><strong>Instagram</strong><small>7 novas</small></span></article>
+            <article class="channel instagram"><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></i><span><strong>Instagram</strong><small>7 novas</small></span></article>
             <article class="channel tiktok"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></i><span><strong>TikTok</strong><small>4 novas</small></span></article>
-            <article class="channel website"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20Zm6.9 6h-3.05a15.7 15.7 0 00-1.38-3.38A8.05 8.05 0 0118.9 8ZM12 4c.83 1.01 1.47 2.36 1.8 4h-3.6c.33-1.64.97-2.99 1.8-4ZM4.26 14a8.13 8.13 0 010-4h3.45a17.2 17.2 0 000 4H4.26Zm.84 2h3.05a15.7 15.7 0 001.38 3.38A8.05 8.05 0 015.1 16Zm3.05-8H5.1a8.05 8.05 0 014.43-3.38A15.7 15.7 0 008.15 8ZM12 20c-.83-1.01-1.47-2.36-1.8-4h3.6c-.33 1.64-.97 2.99-1.8 4Zm2.15-6h-4.3a15.2 15.2 0 010-4h4.3a15.2 15.2 0 010 4Zm.32 5.38A15.7 15.7 0 0015.85 16h3.05a8.05 8.05 0 01-4.43 3.38ZM16.29 14a17.2 17.2 0 000-4h3.45a8.13 8.13 0 010 4h-3.45Z"/></svg></i><span><strong>Seu site</strong><small>3 novas</small></span></article>
+            <article class="channel website"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20Zm6.9 6h-3.05a15.7 15.7 0 00-1.38-3.38A8.05 8.05 0 0118.9 8ZM12 4c.83 1.01 1.47 2.36 1.8 4h-3.6c.33-1.64.97-2.99 1.8-4ZM4.26 14a8.13 8.13 0 010-4h3.45a17.2 17.2 0 000 4H4.26Zm.84 2h3.05a15.7 15.7 0 001.38 3.38A8.05 8.05 0 015.1 16Zm3.05-8H5.1a8.05 8.05 0 014.43-3.38A15.7 15.7 0 008.15 8ZM12 20c-.83-1.01-1.47-2.36-1.8-4h3.6c-.33 1.64-.97 2.99-1.8 4Zm2.15-6h-4.3a15.2 15.2 0 010-4h4.3a15.2 15.2 0 010 4Zm.32 5.38A15.7 15.7 0 0015.85 16h3.05a8.05 8.05 0 01-4.43 3.38ZM16.29 14a17.2 17.2 0 000-4h3.45a8.13 8.13 0 010 4h-3.45Z"/></svg></i><span><strong>Chat do seu site</strong><small>3 novas</small></span></article>
           </div>
           <div class="channel-arrow" aria-hidden="true"><span>tudo chega aqui</span><i>→</i></div>
           <div class="inbox-hub">
@@ -177,6 +194,22 @@ const schema = {
       </div>
     </section>
 
+    <section id="configuracao" class="qualification-config-section">
+      <div class="shell">
+        <div class="qualification-config-heading">
+          <div><p class="eyebrow" data-reveal>QUALIFICAÇÃO CONFIGURÁVEL</p><h2 data-reveal>Você define como a conversa começa — e qual é o próximo passo.</h2></div>
+          <p data-reveal>A IA aplica o mesmo raciocínio em qualquer porta de entrada e encerra cada qualificação da forma que fizer sentido para sua operação.</p>
+        </div>
+        <div class="qualification-map" data-reveal>
+          <section class="trigger-options"><header><i>01</i><span><small>ONDE COMEÇA</small><strong>Escolha os gatilhos</strong></span></header><div><span><b>▣</b>Simulação no site</span><span><b>≡</b>Formulário enviado</span><span><b>◉</b>Nova mensagem no WhatsApp</span></div></section>
+          <div class="map-arrow"><span>entra</span><i>→</i></div>
+          <section class="qualification-engine"><span>✦</span><small>INTELIGÊNCIA ARTIFICIAL</small><strong>Conversa, entende e qualifica</strong><p>Regras, tom e perguntas definidos para sua empresa.</p></section>
+          <div class="map-arrow"><span>finaliza</span><i>→</i></div>
+          <section class="finish-options"><header><i>03</i><span><small>COMO TERMINA</small><strong>Escolha o destino</strong></span></header><div><span><b>▦</b>Agendamento</span><span><b>☎</b>Ligação</span><span><b>◫</b>Call</span><span><b>✉</b>Mensagem</span></div></section>
+        </div>
+      </div>
+    </section>
+
     <section id="distribuicao" class="routing-section">
       <div class="shell routing-grid">
         <div class="routing-copy">
@@ -187,9 +220,9 @@ const schema = {
             A distribuição deixa de ser uma decisão manual.
           </p>
           <ul data-reveal>
-            <li><i>01</i><span><strong>Rodízio em ordem</strong><small>Cada novo cliente vai para o próximo vendedor da fila.</small></span></li>
-            <li><i>02</i><span><strong>Regras quando necessário</strong><small>Região, produto ou tipo de cliente definem exceções.</small></span></li>
-            <li><i>03</i><span><strong>Contexto completo</strong><small>A conversa chega com dados, interesse e histórico.</small></span></li>
+            <li><i>01</i><span><strong>Setor ou responsável direto</strong><small>Financeiro, suporte ou comercial recebem o assunto certo.</small></span></li>
+            <li><i>02</i><span><strong>Vendedores por rodízio</strong><small>A fila distribui em ordem e mantém a equipe equilibrada.</small></span></li>
+            <li><i>03</i><span><strong>Preferência do próprio lead</strong><small>Se ele pedir alguém, a solicitação é respeitada.</small></span></li>
           </ul>
         </div>
 
@@ -204,6 +237,7 @@ const schema = {
             <article class="candidate-three"><img src="/images/people/lucas.jpg" alt="" width="72" height="72" /><strong>Lucas</strong><small>São Paulo</small></article>
           </div>
           <div class="routing-result"><i>✓</i><span><small>CONVERSA ENCAMINHADA</small><strong>Rafael recebeu todo o histórico</strong></span><time>agora</time></div>
+          <div class="lead-memory"><i>✦</i><span><small>MEMÓRIA DO LEAD</small><strong>A IA continua de onde o último atendimento parou.</strong><p>Contexto, preferências e decisões permanecem registrados.</p></span></div>
         </div>
       </div>
     </section>
@@ -230,10 +264,10 @@ const schema = {
           <p class="eyebrow dark" data-reveal>TUDO FICA REGISTRADO</p>
           <h2 data-reveal>Cada decisão deixa um registro.</h2>
           <p data-reveal>Veja quando algo mudou, por que mudou e quem assumiu o próximo passo. Gestão sem depender de relatos.</p>
-          <div class="control-stats" data-reveal>
-            <div><strong>24</strong><span>conversas hoje</span></div>
-            <div><strong>68%</strong><span>qualificadas</span></div>
-            <div><strong>4 s</strong><span>para responder</span></div>
+          <div class="governance-list" data-reveal>
+            <div><i>01</i><span><strong>Veja o que cada pessoa fez</strong><small>Atendente, vendedor, etapa, horário e decisão ficam registrados.</small></span></div>
+            <div><i>02</i><span><strong>Proteção contra exclusões</strong><small>Conversa, mensagem e contato só podem ser apagados com autorização do administrador.</small></span></div>
+            <div><i>03</i><span><strong>Memória preservada</strong><small>A IA retoma o raciocínio sabendo o que aconteceu no último atendimento.</small></span></div>
           </div>
         </div>
 
@@ -468,6 +502,15 @@ const schema = {
   .text-link span { width:30px; height:30px; display:grid; place-items:center; border-radius:50%; color:white; background:rgba(9,11,18,.2); }
   @keyframes button-shine { 0%,65%{left:-35%} 90%,100%{left:125%} }
 
+  .human-section { padding:clamp(5.5rem,9vw,8.5rem) 0; color:white; background:radial-gradient(circle at 85% 20%,rgba(115,87,235,.16),transparent 34%),#0b0d13; }
+  .human-grid { display:grid; grid-template-columns:.72fr 1.28fr; gap:clamp(3.5rem,8vw,8rem); align-items:center; }
+  .human-copy h2 { max-width:580px; margin:1rem 0 0; font-size:clamp(2.35rem,3.65vw,3.5rem); line-height:1.03; letter-spacing:-.046em; font-weight:620; }
+  .human-copy > p:not(.eyebrow) { max-width:540px; margin:1.35rem 0 0; color:#969ca9; line-height:1.75; }
+  .human-features { display:grid; gap:.65rem; margin-top:1.7rem; }
+  .human-features span { display:grid; grid-template-columns:36px 1fr; gap:.12rem .7rem; align-items:center; padding:.75rem; border:1px solid rgba(255,255,255,.08); border-radius:11px; background:rgba(255,255,255,.035); }
+  .human-features i { grid-row:1 / 3; width:36px; height:36px; display:grid; place-items:center; border-radius:10px; color:#b5a8fa; background:rgba(115,87,235,.13); font-style:normal; }
+  .human-features b { font-size:.7rem; }.human-features small { color:#7f8695; font-size:.56rem; line-height:1.4; }
+
   .omnichannel-section { overflow:hidden; padding:clamp(5.5rem,9vw,8.5rem) 0; background:radial-gradient(circle at 90% 20%,rgba(107,83,231,.12),transparent 35%),#e8ebf1; }
   .omnichannel-grid { display:grid; grid-template-columns:.72fr 1.28fr; gap:clamp(3rem,7vw,7rem); align-items:center; }
   .omnichannel-copy h2 { max-width:610px; margin:1rem 0 0; font-size:clamp(2.4rem,3.8vw,3.65rem); line-height:1.02; letter-spacing:-.047em; font-weight:620; }
@@ -498,6 +541,17 @@ const schema = {
   .dark-heading { position: relative; }
   .dark-heading h2 { color: #f3f4f7; }
   .dark-heading > p { color: #9297a5; }
+
+  .qualification-config-section { padding:clamp(5.5rem,9vw,8rem) 0; background:#f5f6f8; }
+  .qualification-config-heading { display:grid; grid-template-columns:1fr .55fr; gap:5rem; align-items:end; }
+  .qualification-config-heading h2 { max-width:720px; margin:1rem 0 0; font-size:clamp(2.3rem,3.6vw,3.45rem); line-height:1.03; letter-spacing:-.046em; font-weight:620; }
+  .qualification-config-heading > p { margin:0; color:var(--muted); line-height:1.72; }
+  .qualification-map { display:grid; grid-template-columns:1fr 70px 1.08fr 70px 1fr; align-items:stretch; gap:.6rem; margin-top:3rem; }
+  .qualification-map section { min-height:270px; padding:1.2rem; border:1px solid #d6dbe3; border-radius:17px; background:#fff; box-shadow:0 16px 34px rgba(29,33,43,.06); }
+  .qualification-map section > header { display:flex; align-items:center; gap:.65rem; padding-bottom:1rem; border-bottom:1px solid #e8eaf0; }.qualification-map section > header > i { width:32px;height:32px;display:grid;place-items:center;border-radius:9px;color:#7056e9;background:#eae6ff;font-size:.5rem;font-style:normal;font-weight:800; }.qualification-map section > header span { display:flex;flex-direction:column; }.qualification-map section > header small { color:#8a7ad9;font-size:.43rem;font-weight:800;letter-spacing:.08em; }.qualification-map section > header strong { margin-top:.18rem;font-size:.7rem; }
+  .trigger-options > div,.finish-options > div { display:grid;gap:.55rem;margin-top:1rem; }.trigger-options > div span,.finish-options > div span { display:flex;align-items:center;gap:.65rem;padding:.72rem;border:1px solid #e1e4ea;border-radius:10px;color:#555c69;background:#f8f9fb;font-size:.61rem; }.trigger-options b,.finish-options b { width:25px;height:25px;display:grid;place-items:center;border-radius:7px;color:#7056e9;background:#eae6ff;font-size:.58rem; }
+  .qualification-engine { display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;color:white;background:radial-gradient(circle at 50% 10%,rgba(139,113,255,.35),transparent 42%),#141724!important; }.qualification-engine > span { width:48px;height:48px;display:grid;place-items:center;border-radius:15px;color:white;background:linear-gradient(145deg,#7859ff,#4c89ff);box-shadow:0 10px 28px rgba(94,72,215,.33); }.qualification-engine > small { margin-top:1rem;color:#a99bf1;font-size:.45rem;font-weight:800;letter-spacing:.08em; }.qualification-engine > strong { max-width:190px;margin-top:.4rem;font-size:1.05rem;line-height:1.25; }.qualification-engine > p { max-width:200px;margin:.7rem 0 0;color:#858c9c;font-size:.6rem;line-height:1.5; }
+  .map-arrow { display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.3rem;color:#765bea; }.map-arrow span { color:#8d929d;font-size:.44rem;text-transform:uppercase;letter-spacing:.07em; }.map-arrow i { font-size:1.4rem;font-style:normal;animation:arrow-push 1.6s ease-in-out infinite; }
 
   .routing-section { padding: clamp(5.5rem,9vw,8.5rem) 0; background: #eceef2; }
   .routing-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(4rem,8vw,8rem); align-items: center; }
@@ -530,6 +584,7 @@ const schema = {
   .routing-result { display: grid; grid-template-columns: 30px 1fr auto; gap: .7rem; align-items: center; margin-top: .8rem; padding: .75rem; border: 1px solid #cae9d9; border-radius: 10px; background: #e9f7f0; }
   .routing-result > i { width: 27px; height: 27px; display: grid; place-items: center; border-radius: 8px; color: #287b59; background: #d5f0e2; font-style: normal; }
   .routing-result span { display: flex; flex-direction: column; } .routing-result small { color: #5a9278; font-size: .4rem; } .routing-result strong { color: #2d654f; font-size: .54rem; } .routing-result time { color: #6c967f; font-size: .43rem; }
+  .lead-memory { display:flex;align-items:center;gap:.75rem;margin-top:.7rem;padding:.8rem;border:1px solid #cec7f2;border-radius:11px;background:#f0edff; }.lead-memory > i { width:34px;height:34px;display:grid;flex:0 0 auto;place-items:center;border-radius:10px;color:white;background:#7358ed;font-style:normal; }.lead-memory span { display:flex;flex-direction:column; }.lead-memory small { color:#7056e9;font-size:.42rem;font-weight:800;letter-spacing:.07em; }.lead-memory strong { margin-top:.2rem;color:#3f3960;font-size:.58rem; }.lead-memory p { margin:.18rem 0 0;color:#77718f;font-size:.49rem; }
   @keyframes routing-dot { 50%{box-shadow:0 0 0 6px rgba(116,89,233,.12)} }
   @keyframes route-candidate { 0%,12%,100%{transform:none;box-shadow:none} 18%,30%{transform:translateY(-5px);border-color:#8e7aeb;box-shadow:0 12px 25px rgba(104,78,219,.15)} 38%{transform:none} }
   @keyframes route-selected { 0%,12%,62%,100%{transform:none} 18%,30%{transform:translateY(-5px)} 68%,92%{transform:translateY(-7px) scale(1.025);border-color:#765bea;box-shadow:0 16px 32px rgba(104,78,219,.23)} }
@@ -542,9 +597,7 @@ const schema = {
   .control-grid { position: relative; display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(4rem,8vw,8rem); align-items: center; }
   .control-copy h2 { max-width: 540px; margin: 1rem 0 0; font-size: clamp(2.35rem,3.7vw,3.5rem); line-height: 1.04; letter-spacing: -.045em; font-weight: 600; }
   .control-copy > p:not(.eyebrow) { max-width: 510px; margin: 1.35rem 0 0; color: #969ba9; line-height: 1.75; }
-  .control-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: .55rem; margin-top: 1.8rem; }
-  .control-stats div { padding: .8rem; border: 1px solid var(--line-dark); border-radius: 9px; background: rgba(255,255,255,.035); }
-  .control-stats strong { display: block; font-size: 1.25rem; } .control-stats span { color: #818795; font-size: .47rem; }
+  .governance-list { display:grid;gap:.6rem;margin-top:1.7rem; }.governance-list > div { display:grid;grid-template-columns:34px 1fr;gap:.7rem;align-items:center;padding:.8rem;border:1px solid rgba(255,255,255,.09);border-radius:11px;background:rgba(255,255,255,.035); }.governance-list i { width:34px;height:34px;display:grid;grid-row:1;place-items:center;border-radius:9px;color:#aa9cf2;background:rgba(115,87,235,.13);font-size:.5rem;font-style:normal;font-weight:800; }.governance-list span { display:flex;flex-direction:column; }.governance-list strong { font-size:.68rem; }.governance-list small { margin-top:.2rem;color:#818795;font-size:.55rem;line-height:1.4; }
   .history-panel { overflow: hidden; border: 1px solid rgba(255,255,255,.13); border-radius: 17px; background: #12141b; box-shadow: 0 30px 80px rgba(0,0,0,.35); }
   .history-panel > header { height: 68px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; border-bottom: 1px solid var(--line-dark); background: rgba(255,255,255,.035); }
   .history-panel > header > div { display: flex; align-items: center; gap: .65rem; }
@@ -609,6 +662,7 @@ const schema = {
 
   :global(.motion-ready [data-reveal]) { opacity: 0; transform: translateY(22px); transition: opacity .72s ease,transform .72s cubic-bezier(.2,.74,.2,1); }
   :global(.motion-ready [data-reveal].is-visible) { opacity: 1; transform: translateY(0); }
+  :global(main > section:not(#inicio)) { content-visibility:auto; contain-intrinsic-size:auto 950px; }
 
   @media (max-width: 1050px) {
     :global(:root) { --shell: min(940px,calc(100vw - 40px)); }
@@ -617,9 +671,12 @@ const schema = {
     .daniel-grid { gap: 5rem; }
     .routing-grid, .control-grid { gap: 4rem; }
     .omnichannel-grid { grid-template-columns:1fr; }
+    .human-grid { grid-template-columns:1fr; }
+    .qualification-map { grid-template-columns:1fr; }.map-arrow { flex-direction:row;min-height:42px; }.map-arrow i { transform:rotate(90deg);animation:arrow-push-mobile 1.6s ease-in-out infinite; }
   }
 
   @media (max-width: 780px) {
+    :global(main > section:not(#inicio)) { contain-intrinsic-size:auto 1200px; }
     :global(:root) { --shell: calc(100vw - 32px); }
     :global(.section-heading) { grid-template-columns: 1fr; gap: 1.25rem; }
     :global(.section-heading h2) { font-size: clamp(2.2rem,9.8vw,2.8rem); }
@@ -660,6 +717,7 @@ const schema = {
     .daniel-points b { font-size:.76rem; }
     .daniel-points small { font-size:.63rem; }
     .text-link { width:min(100%,320px); margin:2rem auto 0; display:flex; }
+    .human-section { padding:4.8rem 0; }.human-grid { gap:2.5rem; }.human-copy h2 { font-size:clamp(2.2rem,9.5vw,2.8rem); }
     .omnichannel-section { padding:4.8rem 0; }
     .omnichannel-grid { gap:2.5rem; }
     .omnichannel-copy h2 { font-size:clamp(2.2rem,9.5vw,2.8rem); }
@@ -668,6 +726,7 @@ const schema = {
     .channel-arrow { flex-direction:row; justify-content:center; }.channel-arrow i { transform:rotate(90deg); animation:arrow-push-mobile 1.6s ease-in-out infinite; }
     .inbox-hub { padding:1rem; }.inbox-title strong { font-size:1.12rem; }.inbox-hub > article { min-height:68px; }.inbox-hub > article strong { font-size:.65rem; }.inbox-hub > article small { font-size:.5rem; }
     .product-section { padding: 4.8rem 0; }
+    .qualification-config-section { padding:4.8rem 0; }.qualification-config-heading { grid-template-columns:1fr;gap:1.2rem; }.qualification-config-heading h2 { font-size:clamp(2.2rem,9.5vw,2.8rem); }.qualification-map { margin-top:2rem; }.qualification-map section { min-height:0; }.qualification-engine { min-height:230px!important; }
     .routing-section, .followup-section, .control-section, .process-section { padding: 4.8rem 0; }
     .routing-grid, .control-grid { grid-template-columns: 1fr; gap: 3rem; }
     .routing-copy h2, .control-copy h2 { font-size: clamp(2.2rem,9.5vw,2.8rem); }
@@ -681,7 +740,7 @@ const schema = {
     .seller-grid small { font-size:.53rem; }
     .routing-result { min-height:82px; padding:.9rem; }
     .routing-result strong { font-size:.65rem; }
-    .control-stats { gap: .4rem; }
+    .governance-list strong { font-size:.73rem; }.governance-list small { font-size:.61rem; }
     .history-panel > header { height:78px; padding-inline:12px; }
     .history-panel > header small { max-width:190px; font-size:.52rem; }
     .history-panel ol { gap:.7rem; padding:.7rem; }
@@ -691,8 +750,8 @@ const schema = {
     .history-panel li time { grid-column:2; margin-top:-.4rem; font-size:.53rem; }
     .process-intro h2 { font-size: clamp(2.2rem,9.5vw,2.8rem); }
     .process-intro { padding-inline:.35rem; }
-    .process-grid { display:block; margin-top:2rem; padding-bottom:32vh; }
-    .process-grid article { position:sticky; top:86px; min-height:190px; display:grid; grid-template-columns:46px 1fr; align-content:center; gap:.25rem .9rem; margin-bottom:32vh; padding:1.35rem; border:1px solid #d4d8df; border-radius:18px; background:#f9fafb; animation:none; box-shadow:0 18px 38px rgba(29,33,43,.13); }
+    .process-grid { display:block; margin-top:2rem; padding-bottom:0; }
+    .process-grid article { position:sticky; top:82px; min-height:190px; display:grid; grid-template-columns:46px 1fr; align-content:center; gap:.25rem .9rem; margin-bottom:16px; padding:1.35rem; border:1px solid #d4d8df; border-radius:18px; background:#f9fafb; animation:none; box-shadow:0 18px 38px rgba(29,33,43,.13); }
     .process-grid article:nth-child(1){z-index:1}.process-grid article:nth-child(2){z-index:2}.process-grid article:nth-child(3){z-index:3}.process-grid article:nth-child(4){z-index:4;margin-bottom:0}
     .process-grid article > span { position:absolute; top:1rem; right:1rem; }
     .process-grid article > i { grid-row:1 / 3; margin:0; align-self:center; }
@@ -700,8 +759,8 @@ const schema = {
     .process-grid p { margin:.35rem 0 0; font-size:.7rem; }
     .segments-heading { grid-template-columns: 1fr; gap: 1.2rem; }
     .segments-heading h2 { font-size: clamp(2.1rem,9vw,2.7rem); }
-    .segments-grid { display:block; padding-bottom:30vh; }
-    .segments-grid article { position:sticky; top:86px; min-height:230px; margin-bottom:30vh; animation:none; box-shadow:0 18px 38px rgba(29,33,43,.12); }
+    .segments-grid { display:block; padding-bottom:0; }
+    .segments-grid article { position:sticky; top:82px; min-height:230px; margin-bottom:16px; animation:none; box-shadow:0 18px 38px rgba(29,33,43,.12); }
     .segments-grid article:nth-child(1){z-index:1}.segments-grid article:nth-child(2){z-index:2}.segments-grid article:nth-child(3){z-index:3}.segments-grid article:nth-child(4){z-index:4;margin-bottom:0}
     .final-content h2 { font-size: clamp(2.45rem,10.5vw,3.2rem); }
     .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
