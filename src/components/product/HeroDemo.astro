@@ -15,25 +15,29 @@
       </header>
 
       <div class="conversation-stage">
-        <p class="stage-label">Conversa em tempo real</p>
+        <p class="stage-label"><i></i> Qualificação com IA em tempo real</p>
         <div class="message customer message-one">
           <p>Quero comprar no atacado. Como funcionam as condições?</p>
           <time>10:24</time>
         </div>
-        <div class="thinking">
-          <span></span><span></span><span></span>
-          <b>Entendendo o pedido</b>
+        <div class="ai-reading stage-two">
+          <span><i></i><b>IA analisando a intenção</b></span>
+          <small>Identificou: compra no atacado</small>
         </div>
-        <div class="message assistant message-two">
+        <div class="message assistant message-two stage-three">
           <small>Resposta automática</small>
           <p>Claro. Qual quantidade você pretende comprar por mês?</p>
           <time>10:24 · ✓✓</time>
         </div>
-        <div class="message customer compact message-three">
+        <div class="message customer compact message-three stage-four">
           <p>Em torno de 150 peças.</p>
           <time>10:25</time>
         </div>
-        <div class="message assistant compact message-four">
+        <div class="qualification-card stage-five">
+          <header><span>✦</span><div><small>QUALIFICAÇÃO INTELIGENTE</small><strong>Oportunidade de alto potencial</strong></div><b>Concluída</b></header>
+          <div><span><small>Perfil</small><strong>Atacado</strong></span><span><small>Volume</small><strong>150 peças</strong></span><span><small>Próxima ação</small><strong>Especialista</strong></span></div>
+        </div>
+        <div class="message assistant compact message-four stage-six">
           <small>Resposta automática</small>
           <p>Perfeito. Já organizei seus dados e vou encaminhar você ao vendedor certo.</p>
           <time>10:25 · ✓✓</time>
@@ -117,28 +121,29 @@
   .service-status { gap:.4rem; padding:.45rem .7rem; border:1px solid rgba(133,111,255,.25); border-radius:999px; color:#c8bfff; background:rgba(105,81,230,.13); font-size:.6rem; font-weight:700; }
   .service-status i { width:5px; height:5px; box-shadow:none; }
   .conversation-stage { position:relative; min-height:490px; padding:28px clamp(20px,4vw,46px); overflow:hidden; }
-  .stage-label { margin:0 0 1.2rem; color:#747b8d; font-size:.62rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+  .stage-label { display:flex; align-items:center; gap:.5rem; margin:0 0 1.2rem; color:#9a90db; font-size:.62rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+  .stage-label i { width:7px; height:7px; border-radius:50%; background:#43d39e; box-shadow:0 0 0 5px rgba(67,211,158,.1); }
   .message {
     width:fit-content; max-width:82%; margin-bottom:1rem; padding:1rem 1.05rem;
     border:1px solid rgba(255,255,255,.11); border-radius:16px; background:#202634;
     box-shadow:0 12px 30px rgba(0,0,0,.16); opacity:0; transform:translateY(12px) scale(.98);
-    animation:conversation-message 16s cubic-bezier(.2,.75,.2,1) infinite;
   }
   .message p { margin:0; font-size:.84rem; line-height:1.55; }
   .message time { display:block; margin-top:.45rem; color:#9aa1b2; font-size:.55rem; text-align:right; }
   .message.assistant { margin-left:auto; border-color:rgba(137,115,255,.42); background:linear-gradient(145deg,#3c356b,#29284e); }
   .message.assistant small { display:block; margin-bottom:.45rem; color:#b7aaff; font-size:.52rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
   .message.compact { padding-block:.78rem; }
-  .message-one { animation-delay:0s; }
-  .message-two { animation-delay:3s; }
-  .message-three { animation-delay:6s; }
-  .message-four { animation-delay:9s; }
-  .thinking {
-    display:flex; justify-content:flex-end; align-items:center; gap:.22rem; margin:-.3rem 0 .8rem;
-    color:#a89bfd; font-size:.58rem; opacity:0; animation:thinking-state 16s ease infinite 1.6s;
-  }
-  .thinking span { width:4px; height:4px; border-radius:50%; background:#a89bfd; animation:dot 1.2s ease-in-out infinite; }
-  .thinking span:nth-child(2){animation-delay:.12s}.thinking span:nth-child(3){animation-delay:.24s;margin-right:.3rem}
+  .message-one { animation:stage-one 18s cubic-bezier(.2,.75,.2,1) infinite; }
+  .stage-two { animation:stage-two 18s cubic-bezier(.2,.75,.2,1) infinite; }
+  .stage-three { animation:stage-three 18s cubic-bezier(.2,.75,.2,1) infinite; }
+  .stage-four { animation:stage-four 18s cubic-bezier(.2,.75,.2,1) infinite; }
+  .stage-five { animation:stage-five 18s cubic-bezier(.2,.75,.2,1) infinite; }
+  .stage-six { animation:stage-six 18s cubic-bezier(.2,.75,.2,1) infinite; }
+  .ai-reading { width:fit-content; margin:-.35rem 0 .8rem auto; padding:.65rem .8rem; border:1px solid rgba(67,211,158,.24); border-radius:11px; color:#b9f2dc; background:rgba(35,129,98,.13); opacity:0; transform:translateY(10px); }
+  .ai-reading > span { display:flex; align-items:center; gap:.45rem; }.ai-reading > span i { width:7px; height:7px; border-radius:50%; background:#43d39e; animation:ai-pulse 1s ease infinite; }.ai-reading b { font-size:.58rem; }.ai-reading small { display:block; margin-top:.25rem; color:#75bda2; font-size:.49rem; }
+  .qualification-card { margin:0 0 1rem auto; padding:.85rem; border:1px solid rgba(127,105,239,.5); border-radius:14px; background:linear-gradient(145deg,rgba(109,83,229,.23),rgba(58,50,112,.32)); box-shadow:0 14px 30px rgba(0,0,0,.16); opacity:0; transform:translateY(10px); }
+  .qualification-card header { display:grid; grid-template-columns:30px 1fr auto; gap:.65rem; align-items:center; }.qualification-card header > span { width:30px;height:30px;display:grid;place-items:center;border-radius:9px;color:white;background:#7358ed; }.qualification-card header div { display:flex; flex-direction:column; }.qualification-card header small { color:#b7aaff;font-size:.44rem;font-weight:800;letter-spacing:.07em; }.qualification-card header strong { margin-top:.15rem;font-size:.65rem; }.qualification-card header b { padding:.28rem .38rem;border-radius:5px;color:#76ddb5;background:rgba(67,211,158,.1);font-size:.4rem; }
+  .qualification-card > div { display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem;margin-top:.7rem; }.qualification-card > div span { display:flex;flex-direction:column;padding:.55rem;border:1px solid rgba(255,255,255,.08);border-radius:8px;background:rgba(255,255,255,.04); }.qualification-card > div small { color:#858da0;font-size:.42rem; }.qualification-card > div strong { margin-top:.18rem;font-size:.51rem; }
   .chat-window > footer {
     margin:0 22px 18px; display:grid; grid-template-columns:auto 1fr auto; gap:.7rem; align-items:center;
     padding:.68rem .75rem; border:1px solid rgba(255,255,255,.1); border-radius:12px; background:#1c212d;
@@ -176,18 +181,18 @@
   .operation-result small { color:#1d6b4e; font-size:.48rem; font-weight:800; letter-spacing:.07em; }
   .operation-result strong { margin-top:.2rem; font-size:.67rem; line-height:1.35; }
 
-  @keyframes conversation-message {
-    0%,5%{opacity:0;transform:translateY(12px) scale(.98)}
-    10%,84%{opacity:1;transform:none}
-    94%,100%{opacity:0;transform:translateY(-4px)}
-  }
-  @keyframes thinking-state { 0%,7%,28%,100%{opacity:0} 10%,24%{opacity:1} }
+  @keyframes stage-one { 0%,3%,100%{opacity:0;transform:translateY(12px)} 7%,88%{opacity:1;transform:none} 95%{opacity:0;transform:translateY(-5px)} }
+  @keyframes stage-two { 0%,13%,100%{opacity:0;transform:translateY(10px)} 18%,88%{opacity:1;transform:none} 95%{opacity:0} }
+  @keyframes stage-three { 0%,27%,100%{opacity:0;transform:translateY(12px)} 32%,88%{opacity:1;transform:none} 95%{opacity:0} }
+  @keyframes stage-four { 0%,41%,100%{opacity:0;transform:translateY(12px)} 46%,88%{opacity:1;transform:none} 95%{opacity:0} }
+  @keyframes stage-five { 0%,55%,100%{opacity:0;transform:translateY(10px)} 60%,88%{opacity:1;transform:none} 95%{opacity:0} }
+  @keyframes stage-six { 0%,69%,100%{opacity:0;transform:translateY(12px)} 74%,88%{opacity:1;transform:none} 95%{opacity:0} }
   @keyframes operation-focus {
     0%,5%{opacity:.68;transform:translateX(5px)}
     10%,24%{opacity:1;transform:none;border-color:#8c75ef;background:#f0edff;box-shadow:0 14px 32px rgba(91,69,190,.14)}
     31%,100%{opacity:.78;transform:none}
   }
-  @keyframes dot { 0%,100%{opacity:.25;transform:translateY(0)} 50%{opacity:1;transform:translateY(-2px)} }
+  @keyframes ai-pulse { 50%{box-shadow:0 0 0 6px rgba(67,211,158,.12)} }
 
   @media (max-width:760px) {
     .hero-demo { border-radius:18px; }
@@ -195,11 +200,11 @@
     .demo-live { font-size:.58rem; }
     .demo-brand strong { font-size:.68rem; }
     .demo-body { grid-template-columns:1fr; }
-    .chat-window { min-height:660px; border-right:0; border-bottom:1px solid rgba(255,255,255,.08); }
+    .chat-window { min-height:800px; border-right:0; border-bottom:1px solid rgba(255,255,255,.08); }
     .chat-window > header { padding-inline:16px; }
     .person img { width:44px; height:44px; }
     .person strong { font-size:.82rem; }
-    .conversation-stage { min-height:510px; padding:24px 15px; }
+    .conversation-stage { min-height:650px; padding:24px 15px; }
     .message { max-width:91%; padding:.92rem 1rem; border-radius:15px; }
     .message p { font-size:.86rem; }
     .operation-window { padding:24px 14px; }
@@ -213,6 +218,6 @@
   }
 
   @media (prefers-reduced-motion:reduce) {
-    .message,.thinking,.operation-item,.thinking span { animation:none; opacity:1; transform:none; }
+    .message,.ai-reading,.qualification-card,.operation-item { animation:none; opacity:1; transform:none; }
   }
 </style>
