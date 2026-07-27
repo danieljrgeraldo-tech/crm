@@ -406,10 +406,8 @@ const navItems = [
   :global(:root){--dark:#0d1220;--dark-2:#151c2b}
   .site-header.is-scrolled{background:rgba(13,18,32,.9)}
   .operation-section{background:#0e1422}.product-section{background:#111827}
-  .admin-section>.shell:nth-child(2){padding:clamp(1.35rem,3vw,2.4rem);border:1px solid #283850;border-radius:26px;background:linear-gradient(145deg,#121b2a,#0c1421);box-shadow:0 28px 70px rgba(20,28,43,.16)}
-  .admin-section>.shell:nth-child(2) .section-heading h2{color:#f2f6fc}
-  .admin-section>.shell:nth-child(2) .section-heading>p{color:#a7b3c6}
-  .admin-section>.shell:nth-child(2) .eyebrow{color:#aa9dff}
+  /* A apresentação permanece clara; somente o dashboard assume a estética de CRM escuro. */
+  .admin-section>.shell:nth-child(2){padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
 
   /* Follow-up e uma demonstracao larga: no desktop nao pode herdar o span de duas colunas dos cards comuns. */
   @media(min-width:981px){
@@ -419,7 +417,6 @@ const navItems = [
   }
 
   @media(max-width:760px){
-    .admin-section>.shell:nth-child(2){padding:1rem;border-radius:21px}
     .admin-section>.shell:nth-child(2) .section-heading{gap:.9rem}
     .admin-section>.shell:nth-child(2) .section-heading h2{font-size:clamp(2rem,9vw,2.55rem)}
     .admin-section>.shell:nth-child(2) .section-heading>p{font-size:.98rem;line-height:1.6}
