@@ -363,6 +363,45 @@ const navItems = [
 </style>
 
 <style>
+  /* A demonstraÃ§Ã£o de follow-up possui duas colunas internas. No desktop ela usa a largura total para nÃ£o ser comprimida por uma segunda grade. */
+  @media(min-width:981px){
+    .resource.followup-resource{display:block;grid-column:1/-1;min-height:0;padding:1.7rem}
+    .followup-resource .resource-copy{max-width:760px;margin-bottom:1.8rem}
+    .followup-resource :global(.followup-demo){display:block;width:100%;min-width:0}
+  }
+
+  /* Escala de leitura para interfaces e dados no celular. */
+  @media(max-width:760px){
+    .section-heading>p,.human-copy>p:not(.eyebrow),.resource>p,.resource-copy p,.daniel-copy>p:not(.eyebrow){font-size:1rem;line-height:1.62}
+    .resource>small,.resource-copy>small{font-size:.62rem;letter-spacing:.1em}
+    .resource h3,.resource-copy h3{font-size:1.24rem;line-height:1.24}
+    .resource-icon{width:48px;height:48px;font-size:1.08rem}
+    .qualification-mini{gap:.55rem;margin-top:1.5rem}
+    .qualification-mini span{padding:.78rem .66rem}
+    .qualification-mini small{font-size:.48rem}
+    .qualification-mini b{margin-top:.22rem;font-size:.7rem}
+    .mini-flow{margin-top:.75rem;padding:.82rem;font-size:.68rem}
+    .mini-flow b{font-size:.68rem}
+    .mini-list span,.mini-people span{font-size:.68rem}
+    .mini-status small,.mini-memory span{font-size:.5rem}
+    .mini-status strong,.mini-memory b{font-size:.7rem}
+    .inbox-demo>header{padding:1rem;font-size:.65rem}
+    .inbox-search{font-size:.68rem}
+    .inbox-demo article strong{font-size:.76rem}
+    .inbox-demo article small{font-size:.64rem}
+    .inbox-demo article>b{font-size:.56rem}
+    .qualified-lead small{font-size:.5rem}
+    .qualified-lead strong{font-size:.78rem}
+    .qualified-lead em{font-size:.6rem}
+    .qualified-lead>b,.routing-demo>header{font-size:.58rem}
+    .routing-demo>footer{font-size:.67rem}
+    .memory-steps small{font-size:.5rem}
+    .memory-steps strong{font-size:.82rem}
+    .memory-steps p{font-size:.68rem;line-height:1.5}
+  }
+</style>
+
+<style>
   .channel-logo-stack svg{width:20px;height:20px;fill:currentColor}
   .qualified{position:relative;overflow:hidden}
   .qualified::after{content:"✓ Concluída";position:absolute;right:.65rem;top:.55rem;padding:.28rem .48rem;border-radius:999px;color:#eafff5;background:#279d6d;font-size:.42rem;font-weight:800;opacity:0;animation:qualified-check 14s cubic-bezier(.2,.9,.25,1.2) infinite}
