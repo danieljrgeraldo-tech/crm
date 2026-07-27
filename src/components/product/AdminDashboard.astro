@@ -68,4 +68,18 @@
     .attention-view article{min-height:88px}.attention-view article strong{font-size:.78rem}.attention-view article small{font-size:.63rem}.attention-view article>b{font-size:.58rem}
     .admin-audit{margin:.85rem;padding:1rem}.admin-audit strong{font-size:.78rem}.admin-audit p{font-size:.68rem}
   }
+
+  /* No celular, os indicadores continuam com leitura de painel: duas colunas, menos altura e mais densidade visual. */
+  @media(max-width:760px){
+    .admin-panel{border-radius:18px;box-shadow:0 22px 52px rgba(6,13,25,.34)}
+    .admin-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem;padding:.7rem}
+    .admin-stats article{min-height:108px;padding:.8rem}
+    .admin-stats strong{font-size:1.65rem}
+    .admin-stats small{font-size:.62rem;line-height:1.3}
+    .admin-stats b{font-size:.56rem;line-height:1.3}
+    .admin-main{padding:.7rem}
+    .admin-main section>header{min-height:64px;padding:.75rem .8rem}
+    .seller-row,.attention-view article{min-height:76px;padding:.65rem .8rem}
+  }
+  @media(max-width:340px){.admin-stats{grid-template-columns:1fr}}
 </style>

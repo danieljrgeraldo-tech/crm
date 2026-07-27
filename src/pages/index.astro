@@ -106,8 +106,8 @@ const navItems = [
       </div>
       <div class="shell">
         <div class="section-heading">
-          <div><p class="eyebrow" data-reveal>CONTROLE PARA O GESTOR</p><h2 data-reveal>Você acompanha o que acontece dentro da sua operação.</h2></div>
-          <p data-reveal>Veja quem está atendendo, quais leads estão parados, o trabalho de cada vendedor e o que precisa de atenção.</p>
+          <div><p class="eyebrow" data-reveal>CONTROLE PARA O GESTOR</p><h2 data-reveal>Veja sua operação acontecendo em tempo real.</h2></div>
+          <p data-reveal>Atendimentos, vendedores, oportunidades e conversas que aguardam resposta aparecem em uma única tela.</p>
         </div>
         <div class="admin-visual" data-reveal><AdminDashboard /></div>
       </div>
@@ -224,7 +224,7 @@ const navItems = [
 
     <section class="applications-section">
       <div class="shell">
-        <div class="applications-heading"><div><p class="eyebrow" data-reveal>PARA EMPRESAS QUE VENDEM POR CONVERSA</p><h2 data-reveal>Aplicações por tipo de negócio.</h2></div><p data-reveal>A estrutura acompanha as regras, o atendimento e o processo comercial de cada empresa.</p></div>
+        <div class="applications-heading"><div><p class="eyebrow" data-reveal>PARA QUEM É</p><h2 data-reveal>Seu atendimento vende por conversa?</h2></div><p data-reveal>Funciona para empresas que recebem pedidos, orçamentos ou agendamentos pelo WhatsApp, Instagram, site e outros canais.</p></div>
         <div class="segments-grid" data-drawer-group>
           <article data-reveal><i>01</i><small>VENDAS POR VOLUME</small><strong>Atacado e distribuição</strong><span>Qualifica quantidade, região e prazo antes de distribuir.</span><div><b>150 peças</b><em>→</em><b>Vendedor certo</b></div></article>
           <article data-reveal><i>02</i><small>AGENDAMENTOS</small><strong>Clínicas e serviços</strong><span>Entende a necessidade, responde dúvidas e organiza a agenda.</span><div><b>Interesse</b><em>→</em><b>Agendamento</b></div></article>
@@ -398,6 +398,31 @@ const navItems = [
     .memory-steps small{font-size:.5rem}
     .memory-steps strong{font-size:.82rem}
     .memory-steps p{font-size:.68rem;line-height:1.5}
+  }
+</style>
+
+<style>
+  /* A central do gestor e uma tela de CRM dentro da pagina, nao um bloco institucional claro. */
+  :global(:root){--dark:#0d1220;--dark-2:#151c2b}
+  .site-header.is-scrolled{background:rgba(13,18,32,.9)}
+  .operation-section{background:#0e1422}.product-section{background:#111827}
+  .admin-section>.shell:nth-child(2){padding:clamp(1.35rem,3vw,2.4rem);border:1px solid #283850;border-radius:26px;background:linear-gradient(145deg,#121b2a,#0c1421);box-shadow:0 28px 70px rgba(20,28,43,.16)}
+  .admin-section>.shell:nth-child(2) .section-heading h2{color:#f2f6fc}
+  .admin-section>.shell:nth-child(2) .section-heading>p{color:#a7b3c6}
+  .admin-section>.shell:nth-child(2) .eyebrow{color:#aa9dff}
+
+  /* Follow-up e uma demonstracao larga: no desktop nao pode herdar o span de duas colunas dos cards comuns. */
+  @media(min-width:981px){
+    .resources-grid>.resource.large.followup-resource{display:block;grid-column:1/-1;min-height:0;padding:1.7rem}
+    .resources-grid>.followup-resource .resource-copy{max-width:760px;margin-bottom:1.8rem}
+    .resources-grid>.followup-resource :global(.followup-demo){width:100%;min-width:0}
+  }
+
+  @media(max-width:760px){
+    .admin-section>.shell:nth-child(2){padding:1rem;border-radius:21px}
+    .admin-section>.shell:nth-child(2) .section-heading{gap:.9rem}
+    .admin-section>.shell:nth-child(2) .section-heading h2{font-size:clamp(2rem,9vw,2.55rem)}
+    .admin-section>.shell:nth-child(2) .section-heading>p{font-size:.98rem;line-height:1.6}
   }
 </style>
 
