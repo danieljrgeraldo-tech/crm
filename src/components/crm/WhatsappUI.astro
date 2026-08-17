@@ -64,20 +64,20 @@ const {
     margin: 0 auto;
     border-radius: 18px;
     overflow: hidden;
-    background: #0b141a;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 168, 132, 0.2);
+    background: #efeae2;
+    border: 1px solid rgba(17, 27, 33, 0.12);
+    box-shadow: 0 24px 60px rgba(17, 27, 33, 0.22), 0 0 0 1px rgba(0, 128, 105, 0.08);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
 
   .wa-header {
     height: 56px;
     padding: 0 14px;
-    background: #202c33;
+    background: #008069;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(17, 27, 33, 0.08);
     z-index: 5;
   }
 
@@ -107,8 +107,8 @@ const {
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    background: #00a884;
-    border: 2px solid #202c33;
+    background: #d9fdd3;
+    border: 2px solid #008069;
   }
 
   .wa-contact-info {
@@ -117,14 +117,14 @@ const {
   }
 
   .wa-contact-name {
-    color: #e9edef;
+    color: #ffffff;
     font-size: 14.5px;
     font-weight: 600;
     line-height: 1.2;
   }
 
   .wa-contact-status {
-    color: #00a884;
+    color: rgba(255, 255, 255, 0.86);
     font-size: 11.5px;
     line-height: 1.2;
     margin-top: 1px;
@@ -134,7 +134,7 @@ const {
     display: flex;
     align-items: center;
     gap: 14px;
-    color: #aebac1;
+    color: #ffffff;
   }
 
   .wa-icon {
@@ -145,7 +145,7 @@ const {
   .wa-chat-body {
     position: relative;
     min-height: 350px;
-    background: #0b141a;
+    background: #efeae2;
     padding: 14px 12px;
     overflow: hidden;
   }
@@ -153,9 +153,11 @@ const {
   .wa-wallpaper {
     position: absolute;
     inset: 0;
-    opacity: 0.05;
-    background-image: radial-gradient(#00a884 1px, transparent 1px);
-    background-size: 16px 16px;
+    opacity: 0.22;
+    background-image:
+      radial-gradient(circle at 12px 12px, rgba(84, 101, 111, 0.22) 1px, transparent 1.5px),
+      radial-gradient(circle at 4px 4px, rgba(84, 101, 111, 0.12) 1px, transparent 1.5px);
+    background-size: 24px 24px, 24px 24px;
     pointer-events: none;
   }
 
@@ -170,7 +172,7 @@ const {
   .wa-footer {
     height: 54px;
     padding: 6px 10px;
-    background: #202c33;
+    background: #f0f2f5;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -181,18 +183,18 @@ const {
     flex: 1;
     height: 38px;
     border-radius: 8px;
-    background: #2a3942;
+    background: #ffffff;
     display: flex;
     align-items: center;
     padding: 0 10px;
     gap: 8px;
-    color: #8696a0;
+    color: #667781;
   }
 
   .wa-placeholder {
     flex: 1;
     font-size: 13.5px;
-    color: #8696a0;
+    color: #667781;
   }
 
   .wa-icon-subtle {
@@ -208,7 +210,7 @@ const {
     border: none;
     display: grid;
     place-items: center;
-    color: #111b21;
+    color: #ffffff;
   }
 
   .wa-mic-icon {
@@ -230,15 +232,15 @@ const {
 
   :global(.wa-bubble.incoming) {
     align-self: flex-start;
-    background: #202c33;
-    color: #e9edef;
+    background: #ffffff;
+    color: #111b21;
     border-top-left-radius: 0;
   }
 
   :global(.wa-bubble.outgoing) {
     align-self: flex-end;
-    background: #005c4b;
-    color: #e9edef;
+    background: #d9fdd3;
+    color: #111b21;
     border-top-right-radius: 0;
   }
 
@@ -250,16 +252,40 @@ const {
     margin-left: 10px;
     margin-top: 4px;
     font-size: 10.5px;
-    color: #8696a0;
+    color: #667781;
   }
 
   :global(.wa-bubble.outgoing .wa-meta) {
-    color: rgba(233, 237, 239, 0.65);
+    color: #667781;
   }
 
   :global(.wa-checks) {
     color: #53bdeb;
     font-weight: bold;
     font-size: 11px;
+  }
+
+  :global(.wa-window .wa-time-divider),
+  :global(.wa-window .wa-gap-divider) {
+    text-align: center;
+  }
+
+  :global(.wa-window .wa-time-divider span),
+  :global(.wa-window .wa-gap-divider span) {
+    display: inline-block;
+    padding: 4px 9px;
+    border: 0;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #54656f;
+    box-shadow: 0 1px 1px rgba(11, 20, 26, 0.08);
+    font-size: 10px;
+  }
+
+  :global(.wa-window .wa-pdf-attachment-box) {
+    align-self: flex-end;
+    background: #d9fdd3;
+    color: #111b21;
+    border-color: rgba(17, 27, 33, 0.08);
   }
 </style>

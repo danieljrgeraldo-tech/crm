@@ -20,7 +20,7 @@ import CrmFooter from "../components/crm/CrmFooter.astro";
 <SiteLayout
   title="Daniel Junior | IA no seu WhatsApp para Atendimento, CRM e Vendas"
   description="Uma IA no seu WhatsApp que atende, agenda, vende e não deixa cliente sem resposta. Conheça a operação comercial automática."
-  robots="index, follow"
+  robots="noindex, nofollow"
   canonicalUrl="https://ia.danieljunior.com.br/"
 >
   <CrmHeader />
@@ -29,34 +29,32 @@ import CrmFooter from "../components/crm/CrmFooter.astro";
     <!-- 01. Hero (Dark Slate) -->
     <Section01Hero />
 
-    <!-- 02. Carro-Chefe (LIGHT SECTION - Form -> PDF A4 -> WhatsApp -> IA) -->
-    <Section02SimulatorPdf />
-
-    <!-- 03. Memória Continuada (Dark Slate) -->
-    <Section03Memory />
-
-    <!-- 04. Organização / CRM / Kanban (Showcase Real Chatwoot) -->
-    <Section04CrmKanban />
-
-    <!-- 05. BLOCO EXCLUSIVO CRM: Além da IA, o que mais você faz no seu CRM? (LIGHT SECTION) -->
-    <SectionCrmOverview />
-
-    <!-- 06. Follow-up Contextual (Dark Slate) -->
-    <Section05Followup />
-
-    <!-- 07. Agendamento & Lembretes (LIGHT SECTION) -->
+    <!-- 02. A IA cuida da agenda logo no começo da jornada -->
     <Section06Scheduling />
 
-    <!-- 08. Pré-venda & Qualificação (Ficha dentro do Card de Kanban) -->
+    <!-- 03. A conversa continua com memória -->
+    <Section03Memory />
+
+    <!-- 04. Conversa natural vira resumo, card e notificação para a equipe -->
     <Section07QualificationSummary />
 
-    <!-- 09. Distribuição para Equipe (Dark Slate) -->
+    <!-- 05. O cliente chega à pessoa certa -->
     <Section08TeamDistribution />
 
-    <!-- 10. Visão Geral do Gestor (Dark Slate) -->
+    <!-- 06. Organização / CRM / Kanban -->
+    <Section04CrmKanban />
+
+    <!-- 07. Follow-up acontecendo na prática -->
+    <Section05Followup />
+
+    <!-- 08. Produto personalizado de destaque: simulador -> PDF -> WhatsApp -->
+    <Section02SimulatorPdf />
+
+    <!-- 09. CRM e gestão depois do produto personalizado -->
+    <SectionCrmOverview />
     <Section09ManagerControl />
 
-    <!-- 11. Aplicações por Segmento (LIGHT SECTION) -->
+    <!-- 10. Aplicações por segmento -->
     <Section10Segments />
 
     <!-- 12. Implementação Customizada / Daniel Junior (Consultoria para Ideias Exclusivas) -->
@@ -68,6 +66,10 @@ import CrmFooter from "../components/crm/CrmFooter.astro";
 
   <CrmFooter />
 </SiteLayout>
+
+<script>
+  import "../scripts/conversation-playback.js";
+</script>
 
 <style>
   main {

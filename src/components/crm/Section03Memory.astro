@@ -17,48 +17,40 @@ import WhatsappUI from "./WhatsappUI.astro";
           Se o cliente voltar amanhã ou semanas depois, a IA recupera o que já foi conversado e continua de onde parou, sem exigir que ele repita tudo do zero.
         </p>
 
-        <div class="memory-timeline-cards">
-          <div class="timeline-card">
-            <span class="t-badge">Segunda-feira</span>
-            <p><strong>Cliente procurou:</strong> Orçamento de crédito de R$ 85 mil para reforma.</p>
-          </div>
-          <div class="timeline-gap">
-            <span class="gap-line"></span>
-            <span class="gap-text">3 dias depois</span>
-            <span class="gap-line"></span>
-          </div>
-          <div class="timeline-card active">
-            <span class="t-badge green">Quinta-feira</span>
-            <p><strong>Retorno automático:</strong> Histórico e valores recuperados instantaneamente.</p>
-          </div>
+        <div class="memory-facts">
+          <span><i></i>Mesa redonda de 1,35 m</span>
+          <span><i></i>Espaço de 2,70 × 2,40 m</span>
+          <span><i></i>Dúvida entre madeira clara e castanha</span>
         </div>
       </div>
 
       <!-- Visual Content (WhatsApp with Integrated Memory Note) -->
       <div class="visual-content">
-        <WhatsappUI contactName="João Martins" contactStatus="online agora" avatarUrl="/images/people/lucas.jpg">
-          <div class="wa-time-divider"><span>Segunda-feira — 14:20</span></div>
-          <div class="wa-bubble incoming">
-            Estou procurando um crédito de R$ 85 mil para fazer uma reforma.
-            <span class="wa-meta">14:20</span>
+        <WhatsappUI contactName="Casa Nativa" contactStatus="online agora" avatarUrl="/images/people/fernanda.jpg">
+          <div data-chat-playback data-chat-loop class="memory-chat-sequence">
+          <div class="wa-time-divider" data-chat-step data-chat-delay="100"><span>Segunda-feira — 19:51</span></div>
+          <div class="wa-bubble outgoing" data-chat-step data-chat-delay="450">
+            A madeira clara é a mesma da foto. Se quiser, guardo o orçamento com o frete para o Estreito.
+            <span class="wa-meta">19:51 <span class="wa-checks">✓✓</span></span>
           </div>
-
-          <div class="wa-time-divider highlight-time"><span>3 dias depois — Quinta-feira</span></div>
-
-          <!-- Internal System Memory Note (Integrated directly inside conversation) -->
-          <div class="wa-system-pill memory-pill">
-            <span class="pill-dot purple"></span>
-            <span>Histórico recuperado · Último interesse: Crédito R$ 85 mil</span>
+          <div class="wa-bubble incoming" data-chat-step data-chat-delay="1200">
+            vou falar com meu marido e te chamo
+            <span class="wa-meta">19:52</span>
           </div>
-
-          <div class="wa-bubble incoming">
-            Oi, voltei!
+          <div class="wa-time-divider highlight-time" data-chat-step data-chat-delay="2200"><span>3 dias depois — Quinta-feira</span></div>
+          <div class="wa-bubble incoming" data-chat-step data-chat-delay="2850">
+            oi, voltei naquele assunto<br />ele gostou mais da castanha rs
             <span class="wa-meta">09:45</span>
           </div>
-
-          <div class="wa-bubble outgoing">
-            Oi, João! Da última vez você estava olhando os R$ 85 mil para a reforma. Quer continuar daquela proposta ou mudou alguma coisa?
-            <span class="wa-meta">09:45 <span class="wa-checks">✓✓</span></span>
+          <div class="wa-typing" data-chat-step data-chat-delay="4050"><i></i><i></i><i></i></div>
+          <div class="wa-bubble outgoing" data-chat-step data-chat-delay="4850">
+            Oi, Ana! Sem problema 😄 É a mesa redonda de 1,35 m para aquele espaço de 2,70 × 2,40, certo? A castanha tem pronta-entrega também.
+            <span class="wa-meta">09:46 <span class="wa-checks">✓✓</span></span>
+          </div>
+          <div class="wa-bubble incoming" data-chat-step data-chat-delay="6000">
+            essa mesmo! consegue manter o frete que você viu?
+            <span class="wa-meta">09:47</span>
+          </div>
           </div>
         </WhatsappUI>
       </div>
@@ -121,12 +113,17 @@ import WhatsappUI from "./WhatsappUI.astro";
     color: #94a3b8;
   }
 
-  .memory-timeline-cards {
+  .memory-facts {
     margin-top: 28px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 11px;
   }
+
+  .memory-facts span { display: flex; align-items: center; gap: 9px; color: #cbd5e1; font-size: 13px; }
+  .memory-facts i { width: 7px; height: 7px; border-radius: 50%; background: #7659ef; box-shadow: 0 0 0 5px rgba(118,89,239,.12); }
+
+  .memory-chat-sequence { display: flex; flex-direction: column; gap: 9px; }
 
   .timeline-card {
     background: #1e293b;
@@ -195,30 +192,6 @@ import WhatsappUI from "./WhatsappUI.astro";
 
   .visual-content {
     position: relative;
-  }
-
-  /* Internal Memory Pill inside Chat Stream */
-  .wa-system-pill {
-    align-self: center;
-    margin: 4px auto;
-    padding: 5px 12px;
-    background: #1c182b;
-    border: 1px solid rgba(118, 89, 239, 0.4);
-    border-radius: 8px;
-    font-size: 10.5px;
-    color: #a89cf0;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .pill-dot.purple {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #a855f7;
-    box-shadow: 0 0 6px #a855f7;
-    flex-shrink: 0;
   }
 
   .wa-time-divider {

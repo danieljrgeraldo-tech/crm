@@ -11,7 +11,7 @@ import WhatsappUI from "./WhatsappUI.astro";
         <span class="highlight">já sabendo o que ele quer.</span>
       </h2>
       <p class="section-desc">
-        A IA conversa, coleta as informações essenciais e entrega uma ficha completa para o vendedor assumir o atendimento em segundos sem ler dezenas de mensagens.
+        Enquanto conversa, a IA entende o que importa, monta o card no CRM e avisa o vendedor no celular com o contexto necessário para continuar.
       </p>
     </div>
 
@@ -19,64 +19,80 @@ import WhatsappUI from "./WhatsappUI.astro";
     <div class="section-grid">
       <!-- Left Column: Chat -->
       <div class="grid-col-left">
-        <div class="col-header-tag">1. CONVERSA ACONTECENDO</div>
-        <WhatsappUI contactName="Mariana Costa" contactStatus="online agora" avatarUrl="/images/people/mariana.jpg">
-          <div class="wa-bubble incoming">
-            Quero um orçamento para uma equipe de 10 pessoas na minha empresa em Criciúma.
+        <div class="col-header-tag">CONVERSA ACONTECENDO</div>
+        <WhatsappUI contactName="Imobiliária Horizonte" contactStatus="online agora" avatarUrl="/images/people/mariana.jpg">
+          <div data-chat-playback data-chat-loop class="qualification-chat">
+          <div class="wa-bubble incoming" data-chat-step data-chat-delay="150">
+            oi, o apê da rua das acácias ainda tá disponível?<br />vi no story
             <span class="wa-meta">10:24</span>
           </div>
-          <div class="wa-bubble outgoing">
-            Perfeito, Mariana! Qual seria o seu prazo ideal para iniciar a implantação?
-            <span class="wa-meta">10:24 <span class="wa-checks">✓✓</span></span>
+          <div class="wa-typing" data-chat-step data-chat-delay="950"><i></i><i></i><i></i></div>
+          <div class="wa-bubble outgoing" data-chat-step data-chat-delay="1750">
+            Está sim. É o de 2 quartos com sacada, no terceiro andar. Era esse mesmo?
+            <span class="wa-meta">10:25 <span class="wa-checks">✓✓</span></span>
           </div>
-          <div class="wa-bubble incoming">
-            Preciso implantar ainda este mês. Se for rápido, já fechamos esta semana.
-            <span class="wa-meta">10:25</span>
+          <div class="wa-bubble incoming" data-chat-step data-chat-delay="2850">
+            esse! a gente tá de aluguel e precisa mudar até outubro<br />tenho um menino pequeno, queria evitar escada
+            <span class="wa-meta">10:27</span>
+          </div>
+          <div class="wa-typing" data-chat-step data-chat-delay="3600"><i></i><i></i><i></i></div>
+          <div class="wa-bubble outgoing" data-chat-step data-chat-delay="4400">
+            Ele tem elevador e a garagem fica no mesmo nível da entrada. O valor é R$ 420 mil e aceita financiamento. Quer visitar sábado depois das 10h?
+            <span class="wa-meta">10:28 <span class="wa-checks">✓✓</span></span>
+          </div>
+          <div class="wa-bubble incoming" data-chat-step data-chat-delay="5650">
+            10:30 pode ser<br />antes só queria confirmar se dá pra usar o fgts
+            <span class="wa-meta">10:29</span>
+          </div>
           </div>
         </WhatsappUI>
       </div>
 
       <!-- Right Column: Ficha Pronta no Estilo do Kanban (Mesmo Estilo do Kanban em 1 Card Só) -->
       <div class="grid-col-right">
-        <div class="col-header-tag purple-tag">2. FICHA PRONTA NO CARD DE KANBAN</div>
+        <div class="col-header-tag purple-tag">CARD SENDO ORGANIZADO NO CRM</div>
         
         <!-- Kanban Stage Column (Estilo Idêntico ao Kanban da Outra Etapa) -->
-        <div class="kanban-stage-column">
+        <div class="kanban-stage-column" data-chat-playback data-chat-loop>
+          <div class="seller-notification" data-chat-step data-chat-delay="5200">
+            <span class="notify-icon">DJ</span>
+            <div><small>Daniel Junior CRM · agora</small><strong>Novo cliente pronto para continuar</strong></div>
+          </div>
           <header class="kanban-stage-header">
             <span class="stage-dot-purple"></span>
-            <strong>Qualificado / Com Vendedor</strong>
+            <strong>Visita a confirmar</strong>
             <span class="stage-count">1</span>
           </header>
 
           <!-- Single Clean White Kanban Card -->
-          <div class="kanban-deal-card featured-card">
-            <div class="card-user-row">
+          <div class="kanban-deal-card featured-card" data-chat-step data-chat-delay="500">
+            <div class="card-user-row" data-chat-step data-chat-delay="1300">
               <img src="/images/people/mariana.jpg" alt="Mariana Costa" class="deal-avatar" />
               <div>
-                <strong>Mariana Costa</strong>
-                <small>Criciúma · SC · WhatsApp</small>
+                <strong>Mariana Souza</strong>
+                <small>WhatsApp · Apartamento 2 quartos</small>
               </div>
-              <span class="deal-tag purple-tag">Alta Intenção 🔥</span>
+              <span class="deal-tag purple-tag">Visita</span>
             </div>
 
             <!-- Executive IA Summary Quote -->
-            <div class="card-summary-quote">
+            <div class="card-summary-quote" data-chat-step data-chat-delay="2300">
               <span class="quote-label">RESUMO DA IA</span>
-              <p>"Mariana procura uma solução para 10 usuários com implantação este mês em Criciúma. Demonstrou alta intenção e solicitou plano B2B."</p>
+              <p>Mariana mora de aluguel e precisa mudar até outubro. Gostou do apartamento da Rua das Acácias porque tem elevador e aceita financiamento. Quer visitar sábado às 10h30 e perguntou sobre uso do FGTS.</p>
             </div>
 
             <!-- Lead Meta Chips -->
-            <div class="card-chips-row">
-              <span class="chip">Empresarial B2B</span>
-              <span class="chip">10 Usuários</span>
-              <span class="chip">Este mês</span>
+            <div class="card-chips-row" data-chat-step data-chat-delay="3300">
+              <span class="chip">Até outubro</span>
+              <span class="chip">Financiamento</span>
+              <span class="chip">Sábado · 10h30</span>
             </div>
 
             <!-- Assignment Footer -->
-            <div class="card-footer-assign">
+            <div class="card-footer-assign" data-chat-step data-chat-delay="4200">
               <div class="assign-text">
                 <small>ENCAMINHADO PARA</small>
-                <strong>Rafael (Atacado)</strong>
+                <strong>Rafael · Corretor da região</strong>
               </div>
               <button class="btn-takeover" type="button">Assumir atendimento ↗</button>
             </div>
@@ -86,9 +102,8 @@ import WhatsappUI from "./WhatsappUI.astro";
       </div>
     </div>
 
-    <!-- Takeaway Banner -->
     <div class="takeaway-banner">
-      <p>💡 <strong>Seu vendedor não precisa ler 40 mensagens para entender o cliente.</strong> Ele lê o resumo em 5 segundos e foca no fechamento.</p>
+      <p><strong>O vendedor recebe a notificação no celular</strong> e entra sabendo quem é a cliente, o imóvel, a dúvida e o próximo passo.</p>
     </div>
   </div>
 </section>
@@ -167,6 +182,25 @@ import WhatsappUI from "./WhatsappUI.astro";
   .col-header-tag.purple-tag {
     color: #a89cf0;
   }
+
+  .qualification-chat { display: flex; flex-direction: column; gap: 9px; }
+
+  .seller-notification {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: -2px 0 14px;
+    padding: 11px 12px;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, .96);
+    color: #fff;
+    box-shadow: 0 12px 30px rgba(15,23,42,.2);
+  }
+
+  .notify-icon { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 8px; background: #00a884; color: #062c25; font-size: 9px; font-weight: 900; }
+  .seller-notification small, .seller-notification strong { display: block; }
+  .seller-notification small { color: #94a3b8; font-size: 8px; }
+  .seller-notification strong { margin-top: 2px; font-size: 10px; }
 
   /* Kanban Stage Column Container (Estilo Idêntico ao Kanban da Outra Etapa) */
   .kanban-stage-column {

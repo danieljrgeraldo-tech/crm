@@ -10,7 +10,7 @@
         <span class="highlight">para a pessoa certa.</span>
       </h2>
       <p class="section-desc">
-        Você pode distribuir por vendedor, setor, região ou ordem da fila. A IA direciona o atendimento com base no perfil e disponibilidade.
+        O atendimento chega à pessoa que cuida daquele assunto, naquela região e naquele momento — sem o cliente explicar tudo outra vez.
       </p>
     </div>
 
@@ -18,50 +18,50 @@
     <div class="section-grid">
       <!-- Left Column: Incoming Lead & Routing Analysis -->
       <div class="grid-col-left">
-        <div class="col-header-tag">1. IDENTIFICAÇÃO DO PERFIL</div>
+        <div class="col-header-tag">O QUE A CONVERSA JÁ MOSTROU</div>
 
         <div class="incoming-lead-card">
-          <div class="il-badge">NOVO CLIENTE CHEGANDO</div>
+          <div class="il-badge">VISITA SOLICITADA · SÁBADO 10H30</div>
           <div class="il-profile">
             <img src="/images/people/mariana.jpg" alt="Mariana Costa" />
             <div>
-              <strong>Mariana Costa</strong>
-              <small>Criciúma · SC · WhatsApp</small>
+              <strong>Mariana Souza</strong>
+              <small>Rua das Acácias · WhatsApp</small>
             </div>
           </div>
           <div class="il-analysis-box">
             <span class="il-dot"></span>
             <div>
-              <small>ROTEAMENTO AUTOMÁTICO</small>
-              <strong>Perfil identificado: Atacado / B2B</strong>
+              <small>DESTINO DEFINIDO PELO CONTEXTO</small>
+              <strong>Apartamento · Região Norte · Financiamento</strong>
             </div>
           </div>
           <div class="il-arrow-indicator">
-            <span>Redirecionando para o especialista ➔</span>
+            <span>Enviando para quem atende esse imóvel ➔</span>
           </div>
         </div>
       </div>
 
       <!-- Right Column: Team Selection -->
       <div class="grid-col-right">
-        <div class="col-header-tag green-tag">2. EQUIPE DISPONÍVEL</div>
+        <div class="col-header-tag green-tag">EQUIPE DISPONÍVEL AGORA</div>
 
         <div class="team-list">
           <div class="team-item">
             <img src="/images/people/amanda.jpg" alt="Camila" />
             <div class="team-info">
               <strong>Camila</strong>
-              <small>Especialista Varejo</small>
+              <small>Locações · Região Central</small>
             </div>
             <span class="team-status">Disponível</span>
           </div>
 
           <div class="team-item selected-item">
-            <div class="match-badge">⭐ Melhor Opção (B2B)</div>
+            <div class="match-badge">Imóvel da carteira · agenda disponível</div>
             <img src="/images/people/rafael.jpg" alt="Rafael" />
             <div class="team-info">
               <strong>Rafael</strong>
-              <small>Especialista Atacado / B2B</small>
+              <small>Vendas · Região Norte</small>
             </div>
             <span class="team-status active-status">Atribuído ✓</span>
           </div>
@@ -70,7 +70,7 @@
             <img src="/images/people/lucas.jpg" alt="Lucas" />
             <div class="team-info">
               <strong>Lucas</strong>
-              <small>Região São Paulo</small>
+              <small>Lançamentos · Região Sul</small>
             </div>
             <span class="team-status">Disponível</span>
           </div>
@@ -238,6 +238,13 @@
     background: rgba(0, 168, 132, 0.1);
     padding: 6px;
     border-radius: 6px;
+  }
+
+  .il-arrow-indicator span { animation: route-pulse 2.4s ease-in-out infinite; }
+
+  @keyframes route-pulse {
+    0%, 100% { opacity: .55; transform: translateX(0); }
+    50% { opacity: 1; transform: translateX(5px); }
   }
 
   /* Team List Right Column */

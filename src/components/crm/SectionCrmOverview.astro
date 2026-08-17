@@ -18,7 +18,7 @@
     <div class="crm-rectangles-grid">
       
       <!-- Rectangle 1: Múltiplos WhatsApps -->
-      <div class="crm-rect-card">
+      <div class="crm-rect-card" style="--card-index: 0">
         <div class="rect-header">
           <div class="rect-icon green-bg">
             <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -33,7 +33,7 @@
       </div>
 
       <!-- Rectangle 2: Vários Canais -->
-      <div class="crm-rect-card">
+      <div class="crm-rect-card" style="--card-index: 1">
         <div class="rect-header">
           <div class="rect-icon multi-channel-icons">
             <svg class="svg-brand ig-color" viewBox="0 0 24 24" fill="currentColor">
@@ -50,7 +50,7 @@
       </div>
 
       <!-- Rectangle 3: Regras por Canal -->
-      <div class="crm-rect-card">
+      <div class="crm-rect-card" style="--card-index: 2">
         <div class="rect-header">
           <div class="rect-icon purple-bg">
             <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -65,7 +65,7 @@
       </div>
 
       <!-- Rectangle 4: Atendimento Manual & Supervisão -->
-      <div class="crm-rect-card">
+      <div class="crm-rect-card" style="--card-index: 3">
         <div class="rect-header">
           <div class="rect-icon amber-bg">
             <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -141,13 +141,18 @@
 
   /* 4 Rectangles Grid */
   .crm-rectangles-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 860px;
+    margin: 0 auto;
   }
 
   .crm-rect-card {
-    background: #ffffff;
+    position: sticky;
+    top: calc(86px + (var(--card-index) * 18px));
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(16px);
     border: 1px solid #e2e8f0;
     border-radius: 16px;
     padding: 28px;

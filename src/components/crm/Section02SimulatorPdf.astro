@@ -28,29 +28,6 @@ import WhatsappUI from "./WhatsappUI.astro";
       </div>
     </div>
 
-    <!-- Step Progress Indicator Bar -->
-    <div class="step-progress-bar">
-      <div class="step-item active">
-        <span class="step-num">1</span>
-        <span>Formulário Preenchido</span>
-      </div>
-
-      <div class="step-item active">
-        <span class="step-num">2</span>
-        <span>PDF Gerado em 2º Plano</span>
-      </div>
-
-      <div class="step-item active">
-        <span class="step-num">3</span>
-        <span>Enviado ao WhatsApp</span>
-      </div>
-
-      <div class="step-item active glow">
-        <span class="step-num">4</span>
-        <span>Abordagem da IA</span>
-      </div>
-    </div>
-
     <!-- 2-Column Stage Layout with Perfectly Equalized Spacing -->
     <div class="stage-container">
       
@@ -155,10 +132,11 @@ import WhatsappUI from "./WhatsappUI.astro";
       <!-- Right Column: WhatsApp Chat -->
       <div class="stage-col-right">
         <div class="stage-wa-box">
-          <div class="wa-stage-tag">3. ATENDIMENTO DA IA NO WHATSAPP</div>
+          <div class="wa-stage-tag">A CONVERSA CONTINUA NO WHATSAPP</div>
           
           <WhatsappUI contactName="João Martins" contactStatus="online agora" avatarUrl="/images/people/lucas.jpg">
-            <div class="wa-pdf-attachment-box">
+            <div data-chat-playback data-chat-loop class="simulator-chat-sequence">
+            <div class="wa-pdf-attachment-box" data-chat-step data-chat-delay="300">
               <div class="pdf-icon-wrap">📄</div>
               <div class="pdf-att-details">
                 <strong>Simulacao_Credito_85k.pdf</strong>
@@ -167,26 +145,29 @@ import WhatsappUI from "./WhatsappUI.astro";
               <span class="wa-meta">10:30 <span class="wa-checks">✓✓</span></span>
             </div>
 
-            <div class="wa-gap-divider"><span>3 minutos depois</span></div>
+            <div class="wa-gap-divider" data-chat-step data-chat-delay="1200"><span>3 minutos depois</span></div>
 
-            <div class="wa-bubble outgoing">
+            <div class="wa-typing" data-chat-step data-chat-delay="1800"><i></i><i></i><i></i></div>
+            <div class="wa-bubble outgoing" data-chat-step data-chat-delay="2550">
               Oi, João! Sou a Ana. Vi que você acabou de fazer uma simulação no nosso site e já deixei a sua proposta em PDF aqui em cima.
               <span class="wa-meta">10:33 <span class="wa-checks">✓✓</span></span>
             </div>
 
-            <div class="wa-bubble outgoing">
+            <div class="wa-bubble outgoing" data-chat-step data-chat-delay="3700">
               O valor da parcela de R$ 1.850 ficou dentro do seu planejamento ou prefere que eu ajuste o prazo com você?
               <span class="wa-meta">10:33 <span class="wa-checks">✓✓</span></span>
             </div>
 
-            <div class="wa-bubble incoming">
+            <div class="wa-bubble incoming" data-chat-step data-chat-delay="4900">
               A parcela ficou um pouco puxada para mim.
               <span class="wa-meta">10:34</span>
             </div>
 
-            <div class="wa-bubble outgoing">
+            <div class="wa-typing" data-chat-step data-chat-delay="5500"><i></i><i></i><i></i></div>
+            <div class="wa-bubble outgoing" data-chat-step data-chat-delay="6250">
               Entendi! Podemos estender o prazo para 72 meses ou ajustar o valor do crédito. Qual opção fica melhor para o seu momento?
               <span class="wa-meta">10:34 <span class="wa-checks">✓✓</span></span>
+            </div>
             </div>
           </WhatsappUI>
         </div>
@@ -209,6 +190,8 @@ import WhatsappUI from "./WhatsappUI.astro";
     border-top: 1px solid #e2e8f0;
     border-bottom: 1px solid #e2e8f0;
   }
+
+  .simulator-chat-sequence { display: flex; flex-direction: column; gap: 10px; }
 
   .shell {
     width: 100%;
@@ -297,48 +280,6 @@ import WhatsappUI from "./WhatsappUI.astro";
     line-height: 1.5;
     color: #475569;
     margin: 0;
-  }
-
-  .step-progress-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-    max-width: 820px;
-    margin: 0 auto 40px;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    padding: 14px 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    flex-wrap: wrap;
-  }
-
-  .step-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12.5px;
-    font-weight: 600;
-    color: #475569;
-    white-space: nowrap;
-  }
-
-  .step-item.glow {
-    color: #008f70;
-  }
-
-  .step-num {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: #00a884;
-    color: #ffffff;
-    display: grid;
-    place-items: center;
-    font-size: 11px;
-    font-weight: 800;
-    flex-shrink: 0;
   }
 
   /* 2-Column Stage Layout with Symmetrical Gaps */
@@ -636,11 +577,6 @@ import WhatsappUI from "./WhatsappUI.astro";
   }
 
   @media (max-width: 900px) {
-    .step-progress-bar {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-    }
     .stage-container {
       grid-template-columns: 1fr;
     }

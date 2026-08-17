@@ -43,49 +43,56 @@ import WhatsappUI from "./WhatsappUI.astro";
       <div class="visual-chat">
         
         <!-- Chat Panel: Clínica (Default Active) -->
-        <div class="niche-chat-panel active" id="chat-clinica">
-          <WhatsappUI contactName="Atendimento / Clínica" contactStatus="online agora" avatarUrl="/images/people/amanda.jpg">
-            <div class="wa-bubble incoming">
-              Tem horário amanhã à tarde para consulta médica?
+        <div class="niche-chat-panel active" id="chat-clinica" data-chat-playback data-chat-loop>
+          <WhatsappUI contactName="Clínica Movimento" contactStatus="online agora" avatarUrl="/images/people/amanda.jpg">
+            <div class="wa-bubble incoming" data-chat-step data-chat-delay="200">
+              oi, preciso marcar retorno com a dra camila
               <span class="wa-meta">11:10</span>
             </div>
-
-            <div class="wa-bubble outgoing">
-              Tenho sim! Consultei a agenda e temos disponíveis amanhã: 14h, 15h30 e 17h. Qual fica melhor para você?
-              <span class="wa-meta">11:10 <span class="wa-checks">✓✓</span></span>
+            <div class="wa-bubble incoming" data-chat-step data-chat-delay="750">
+              só consigo depois das 17 😕
+              <span class="wa-meta">11:10</span>
             </div>
-
-            <div class="wa-bubble incoming">
-              Pode ser às 15h30.
-              <span class="wa-meta">11:11</span>
-            </div>
-
-            <div class="wa-bubble outgoing">
-              Perfeito! Ficou marcado para amanhã (17/08) às 15h30. Te envio um lembrete antes!
+            <div class="wa-typing" data-chat-step data-chat-delay="1300"><i></i><i></i><i></i></div>
+            <div class="wa-bubble outgoing" data-chat-step data-chat-delay="2100">
+              Com a Camila, depois das 17, o próximo é quinta às 17h30. Amanhã tenho 16h20. A consulta dura uns 40 minutos.
               <span class="wa-meta">11:11 <span class="wa-checks">✓✓</span></span>
+            </div>
+            <div class="wa-bubble incoming" data-chat-step data-chat-delay="3200">
+              quinta 17:30 então<br />minha mãe vai comigo, tem estacionamento?
+              <span class="wa-meta">11:12</span>
+            </div>
+            <div class="wa-typing" data-chat-step data-chat-delay="3850"><i></i><i></i><i></i></div>
+            <div class="wa-bubble outgoing" data-chat-step data-chat-delay="4650">
+              Tem sim, a entrada é pela lateral. Deixei quinta, 17h30, com a Camila. Te lembro no dia anterior.
+              <span class="wa-meta">11:13 <span class="wa-checks">✓✓</span></span>
+            </div>
+            <div class="wa-bubble incoming" data-chat-step data-chat-delay="5900">
+              obrigada! se eu precisar mudar te aviso aqui
+              <span class="wa-meta">11:14</span>
             </div>
           </WhatsappUI>
         </div>
 
         <!-- Chat Panel: Barbearia -->
-        <div class="niche-chat-panel" id="chat-barbearia">
+        <div class="niche-chat-panel" id="chat-barbearia" data-chat-playback>
           <WhatsappUI contactName="Barbearia Vip / Atendimento" contactStatus="online agora" avatarUrl="/images/people/renato.jpg">
-            <div class="wa-bubble incoming">
+            <div class="wa-bubble incoming" data-chat-step data-chat-delay="200">
               Consegue me encaixar hoje no final da tarde para barba e corte?
               <span class="wa-meta">17:15</span>
             </div>
 
-            <div class="wa-bubble outgoing">
+            <div class="wa-bubble outgoing" data-chat-step data-chat-delay="1200">
               Consigo sim! O barbeiro Lucas tem horário livre hoje às 18h e às 19h. Qual você prefere?
               <span class="wa-meta">17:15 <span class="wa-checks">✓✓</span></span>
             </div>
 
-            <div class="wa-bubble incoming">
+            <div class="wa-bubble incoming" data-chat-step data-chat-delay="2300">
               Às 18h fica excelente!
               <span class="wa-meta">17:16</span>
             </div>
 
-            <div class="wa-bubble outgoing">
+            <div class="wa-bubble outgoing" data-chat-step data-chat-delay="3300">
               Agendado! Corte + Barba hoje às 18h. Já deixei sua vaga garantida na cadeira.
               <span class="wa-meta">17:16 <span class="wa-checks">✓✓</span></span>
             </div>
@@ -93,24 +100,24 @@ import WhatsappUI from "./WhatsappUI.astro";
         </div>
 
         <!-- Chat Panel: Estética -->
-        <div class="niche-chat-panel" id="chat-estetica">
+        <div class="niche-chat-panel" id="chat-estetica" data-chat-playback>
           <WhatsappUI contactName="Estética & Bem-Estar" contactStatus="online agora" avatarUrl="/images/people/fernanda.jpg">
-            <div class="wa-bubble incoming">
+            <div class="wa-bubble incoming" data-chat-step data-chat-delay="200">
               Gostaria de agendar uma sessão de limpeza de pele nesta sexta.
               <span class="wa-meta">09:30</span>
             </div>
 
-            <div class="wa-bubble outgoing">
+            <div class="wa-bubble outgoing" data-chat-step data-chat-delay="1200">
               Olá! Temos horários disponíveis na sexta às 10h e às 15h. Qual horário fica melhor para você?
               <span class="wa-meta">09:30 <span class="wa-checks">✓✓</span></span>
             </div>
 
-            <div class="wa-bubble incoming">
+            <div class="wa-bubble incoming" data-chat-step data-chat-delay="2300">
               Pode ser às 10h da manhã.
               <span class="wa-meta">09:31</span>
             </div>
 
-            <div class="wa-bubble outgoing">
+            <div class="wa-bubble outgoing" data-chat-step data-chat-delay="3300">
               Confirmado! Sessão de Limpeza de Pele na sexta-feira às 10h. Enviaremos os cuidados prévios no seu WhatsApp.
               <span class="wa-meta">09:31 <span class="wa-checks">✓✓</span></span>
             </div>
@@ -118,24 +125,24 @@ import WhatsappUI from "./WhatsappUI.astro";
         </div>
 
         <!-- Chat Panel: Consultório -->
-        <div class="niche-chat-panel" id="chat-consultorio">
+        <div class="niche-chat-panel" id="chat-consultorio" data-chat-playback>
           <WhatsappUI contactName="Consultório Odontológico" contactStatus="online agora" avatarUrl="/images/people/mariana.jpg">
-            <div class="wa-bubble incoming">
+            <div class="wa-bubble incoming" data-chat-step data-chat-delay="200">
               Preciso agendar uma avaliação odontológica para a próxima semana.
               <span class="wa-meta">14:00</span>
             </div>
 
-            <div class="wa-bubble outgoing">
+            <div class="wa-bubble outgoing" data-chat-step data-chat-delay="1200">
               Com certeza! Temos disponibilidade na terça-feira às 09h e na quarta-feira às 14h. Qual prefere?
               <span class="wa-meta">14:00 <span class="wa-checks">✓✓</span></span>
             </div>
 
-            <div class="wa-bubble incoming">
+            <div class="wa-bubble incoming" data-chat-step data-chat-delay="2300">
               Terça-feira às 09h funciona perfeitamente.
               <span class="wa-meta">14:01</span>
             </div>
 
-            <div class="wa-bubble outgoing">
+            <div class="wa-bubble outgoing" data-chat-step data-chat-delay="3300">
               Agendamento realizado! Avaliação odontológica na terça às 09h. Te lembramos 1 dia antes da consulta.
               <span class="wa-meta">14:01 <span class="wa-checks">✓✓</span></span>
             </div>

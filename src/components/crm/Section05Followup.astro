@@ -21,7 +21,7 @@ import WhatsappUI from "./WhatsappUI.astro";
             <span class="step-num badge-teal">01</span>
             <div class="step-body">
               <strong>Silêncio Identificado</strong>
-              <p>Proposta de R$ 85 mil enviada sem retorno há 24h.</p>
+              <p>Orçamento da mesa castanha ficou aguardando a confirmação da cliente.</p>
             </div>
           </div>
 
@@ -29,7 +29,7 @@ import WhatsappUI from "./WhatsappUI.astro";
             <span class="step-num badge-green">02</span>
             <div class="step-body">
               <strong>Reabordagem Contextual</strong>
-              <p>IA retoma citando exatamente a simulação anterior.</p>
+              <p>A mensagem retoma modelo, cor, medida e a dúvida que ficou aberta.</p>
             </div>
           </div>
 
@@ -45,40 +45,32 @@ import WhatsappUI from "./WhatsappUI.astro";
 
       <!-- Visual Content (WhatsApp with Integrated System Notes) -->
       <div class="visual-content">
-        <WhatsappUI contactName="João Martins" contactStatus="online agora" avatarUrl="/images/people/lucas.jpg">
-          <div class="wa-time-divider"><span>Ontem — 15:43</span></div>
-          <div class="wa-bubble outgoing">
-            João, deixei a proposta de R$ 85 mil aqui para você. Qual das opções de parcelas fez mais sentido para a sua reforma?
+        <WhatsappUI contactName="Ana Paula" contactStatus="online agora" avatarUrl="/images/people/fernanda.jpg">
+          <div data-chat-playback data-chat-loop class="followup-chat-sequence">
+          <div class="wa-time-divider" data-chat-step data-chat-delay="100"><span>Ontem — 15:43</span></div>
+          <div class="wa-bubble outgoing" data-chat-step data-chat-delay="450">
+            Ana, confirmei o frete para o Estreito e deixei o orçamento da mesa castanha aqui. Se quiser comparar com a clara, te mando as duas fotos lado a lado.
             <span class="wa-meta">15:43 <span class="wa-checks">✓✓</span></span>
           </div>
 
-          <div class="wa-time-divider highlight-time"><span>Hoje — 10:00 (Silêncio de 24h)</span></div>
+          <div class="wa-time-divider highlight-time" data-chat-step data-chat-delay="1500"><span>Hoje — 10:00</span></div>
 
-          <!-- Integrated System Note -->
-          <div class="wa-system-pill alert-pill">
-            <span class="pill-dot yellow"></span>
-            <span>Silêncio identificado há 24h · Reabordagem automática #1 enviada</span>
+          <div class="wa-typing" data-chat-step data-chat-delay="2650"><i></i><i></i><i></i></div>
+          <div class="wa-bubble outgoing" data-chat-step data-chat-delay="3400">
+            Oi, Ana! Vocês conseguiram decidir entre a clara e a castanha? A castanha que você gostou ainda está disponível. Se ficou alguma dúvida de medida, vejo com você.
+            <span class="wa-meta">10:01 <span class="wa-checks">✓✓</span></span>
           </div>
 
-          <div class="wa-bubble outgoing">
-            João, conseguiu dar uma olhadinha nas parcelas da simulação que te mandei ontem? Se quiser, consigo ajustar os prazos com você.
-            <span class="wa-meta">10:00 <span class="wa-checks">✓✓</span></span>
-          </div>
-
-          <div class="wa-bubble incoming">
-            Oi, desculpa a demora! Consegui olhar sim. A opção de 60 meses ficou perfeita.
+          <div class="wa-bubble incoming" data-chat-step data-chat-delay="4750">
+            oi, desculpa a demora<br />medimos de novo e cabe sim<br />meu marido perguntou se divide
             <span class="wa-meta">10:12</span>
           </div>
 
-          <!-- Integrated System Note -->
-          <div class="wa-system-pill success-pill">
-            <span class="pill-dot green"></span>
-            <span>Cliente respondeu · Próximos disparos de follow-up cancelados</span>
+          <div class="wa-typing" data-chat-step data-chat-delay="5950"><i></i><i></i><i></i></div>
+          <div class="wa-bubble outgoing" data-chat-step data-chat-delay="6750">
+            Divide em até 10x. Em 6x fica sem juros. Quer que eu te passe os dois valores certinhos antes de reservar?
+            <span class="wa-meta">10:13 <span class="wa-checks">✓✓</span></span>
           </div>
-
-          <div class="wa-bubble outgoing">
-            Maravilha! Já vou deixar reservada essa condição para você.
-            <span class="wa-meta">10:12 <span class="wa-checks">✓✓</span></span>
           </div>
         </WhatsappUI>
       </div>
@@ -208,42 +200,7 @@ import WhatsappUI from "./WhatsappUI.astro";
     position: relative;
   }
 
-  /* Integrated System Note Pills */
-  .wa-system-pill {
-    align-self: center;
-    margin: 4px auto;
-    padding: 5px 12px;
-    background: #182229;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 8px;
-    font-size: 10.5px;
-    color: #e2e8f0;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .wa-system-pill.alert-pill {
-    border-color: rgba(234, 179, 8, 0.4);
-    background: #242217;
-    color: #fef08a;
-  }
-
-  .wa-system-pill.success-pill {
-    border-color: rgba(0, 168, 132, 0.4);
-    background: #152420;
-    color: #4cd9a4;
-  }
-
-  .pill-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .pill-dot.yellow { background: #eab308; }
-  .pill-dot.green { background: #00a884; }
+  .followup-chat-sequence { display: flex; flex-direction: column; gap: 9px; }
 
   .wa-time-divider { text-align: center; margin: 8px 0; }
   .wa-time-divider span {
