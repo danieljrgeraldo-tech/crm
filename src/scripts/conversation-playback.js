@@ -4,9 +4,19 @@ const playConversation = (root) => {
   const steps = [...root.querySelectorAll("[data-chat-step]")];
   if (!steps.length) return;
   const speed = Number(root.dataset.chatSpeed ?? 0.58);
+  const typewriters = new Map();
+  const getStepTypewriter = (step) => {
+    const target = step.querySelector("[data-typewriter]");
+    return target?.closest("[data-chat-step]") === step ? target : null;
+  };
 
   const timers = [];
   steps.forEach((step) => {
+    const typewriter = getStepTypewriter(step);
+    if (typewriter) {
+      typewriters.set(typewriter, typewriter.textContent.trim());
+      typewriter.textContent = "";
+    }
     step.hidden = true;
     step.classList.remove("is-visible");
   });
@@ -17,13 +27,29 @@ const playConversation = (root) => {
     }
     step.hidden = false;
     step.classList.add("is-visible");
+    const typewriter = getStepTypewriter(step);
+    if (typewriter) typewriter.textContent = typewriters.get(typewriter) ?? "";
   });
+
+  const typeText = (target) => {
+    const fullText = typewriters.get(target) ?? "";
+    target.textContent = "";
+    let cursor = 0;
+    const timer = window.setInterval(() => {
+      cursor += 1;
+      target.textContent = fullText.slice(0, cursor);
+      if (cursor >= fullText.length) window.clearInterval(timer);
+    }, 7);
+    timers.push(timer);
+  };
 
   const run = () => {
     timers.splice(0).forEach(window.clearTimeout);
     steps.forEach((step) => {
       step.classList.remove("is-visible");
       step.hidden = true;
+      const typewriter = getStepTypewriter(step);
+      if (typewriter) typewriter.textContent = "";
     });
 
     if (reduceMotion.matches) {
@@ -43,7 +69,11 @@ const playConversation = (root) => {
             });
         }
         step.hidden = false;
-        window.requestAnimationFrame(() => step.classList.add("is-visible"));
+        window.requestAnimationFrame(() => {
+          step.classList.add("is-visible");
+          const typewriter = getStepTypewriter(step);
+          if (typewriter) typeText(typewriter);
+        });
       }, delay));
     });
 
@@ -78,3 +108,27 @@ if (simulatorSection) {
   }, { threshold: 0.18 });
   simulatorObserver.observe(simulatorSection);
 }
+
+document.querySelectorAll("[data-sticky-stack]").forEach((stack) => {
+  const cards = [...stack.querySelectorAll("[data-stack-card]")];
+  let ticking = false;
+
+  const updateStack = () => {
+    cards.forEach((card, index) => {
+      const nextCard = cards[index + 1];
+      const covered = nextCard && nextCard.getBoundingClientRect().top <= 126 + (index * 6);
+      card.classList.toggle("is-covered", Boolean(covered));
+    });
+    ticking = false;
+  };
+
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateStack);
+  };
+
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
+  requestUpdate();
+});
