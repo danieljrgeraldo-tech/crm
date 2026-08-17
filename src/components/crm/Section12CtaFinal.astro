@@ -87,6 +87,8 @@ const whatsappUrl = "https://wa.me/5548998493150?text=Ol%C3%A1%2C%20Daniel.%20Qu
   }
 
   .btn-cta-large {
+    position: relative;
+    overflow: hidden;
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -98,11 +100,44 @@ const whatsappUrl = "https://wa.me/5548998493150?text=Ol%C3%A1%2C%20Daniel.%20Qu
     font-size: 1.05rem;
     text-decoration: none;
     box-shadow: 0 10px 30px rgba(0, 168, 132, 0.35);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.25s, box-shadow 0.25s;
+    animation: cta-breathe 3.6s ease-in-out infinite;
   }
+
+  .btn-cta-large::before {
+    content: "";
+    position: absolute;
+    inset: -60% auto -60% -35%;
+    width: 28%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.7), transparent);
+    transform: rotate(18deg);
+    animation: cta-shine 3.6s ease-in-out infinite;
+  }
+
+  .btn-cta-large .arrow { animation: cta-arrow 1.8s ease-in-out infinite; }
 
   .btn-cta-large:hover {
     transform: translateY(-2px);
     box-shadow: 0 14px 35px rgba(0, 168, 132, 0.45);
+  }
+
+  @keyframes cta-breathe {
+    0%, 100% { box-shadow: 0 10px 30px rgba(0,168,132,.32), 0 0 0 0 rgba(76,217,164,.2); }
+    50% { box-shadow: 0 16px 38px rgba(0,168,132,.48), 0 0 0 9px rgba(76,217,164,0); }
+  }
+
+  @keyframes cta-shine {
+    0%, 28% { left: -35%; opacity: 0; }
+    42% { opacity: 1; }
+    58%, 100% { left: 118%; opacity: 0; }
+  }
+
+  @keyframes cta-arrow {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(3px, -3px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-cta-large, .btn-cta-large::before, .btn-cta-large .arrow { animation: none; }
   }
 </style>

@@ -273,6 +273,51 @@
     border-color: #00a884;
     background: #192d27;
     box-shadow: 0 8px 20px rgba(0, 168, 132, 0.15);
+    animation: selected-card-pulse 4.8s ease-in-out infinite;
+  }
+
+  .team-item.selected-item::before,
+  .team-item.selected-item::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 44px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .team-item.selected-item::before {
+    border: 2px solid #4cd9a4;
+    animation: selected-ring 4.8s ease-out infinite;
+  }
+
+  .team-item.selected-item::after {
+    width: 4px;
+    height: 4px;
+    margin: 7px;
+    background: #4cd9a4;
+    box-shadow: 0 -16px #4cd9a4, 0 16px #4cd9a4, 16px 0 #4cd9a4, -16px 0 #4cd9a4, 11px 11px #fbbf24, -11px 11px #fbbf24, 11px -11px #fbbf24, -11px -11px #fbbf24;
+    animation: selected-burst 4.8s ease-out infinite;
+  }
+
+  @keyframes selected-card-pulse {
+    0%, 18%, 100% { transform: scale(1); box-shadow: 0 8px 20px rgba(0,168,132,.15); }
+    5% { transform: scale(.985); }
+    10% { transform: scale(1.012); box-shadow: 0 10px 32px rgba(0,168,132,.34); }
+  }
+
+  @keyframes selected-ring {
+    0%, 2% { opacity: 0; transform: translateY(-50%) scale(.2); }
+    7% { opacity: 1; }
+    16%, 100% { opacity: 0; transform: translateY(-50%) scale(2.5); }
+  }
+
+  @keyframes selected-burst {
+    0%, 4% { opacity: 0; transform: translateY(-50%) scale(.2) rotate(0); }
+    8% { opacity: 1; }
+    17%, 100% { opacity: 0; transform: translateY(-50%) scale(1.35) rotate(22deg); }
   }
 
   .match-badge {

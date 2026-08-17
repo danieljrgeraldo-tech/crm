@@ -3,7 +3,7 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const playConversation = (root) => {
   const steps = [...root.querySelectorAll("[data-chat-step]")];
   if (!steps.length) return;
-  const speed = Number(root.dataset.chatSpeed ?? 0.58);
+  const speed = Number(root.dataset.chatSpeed ?? 1.18);
   const typewriters = new Map();
   const getStepTypewriter = (step) => {
     const target = step.querySelector("[data-typewriter]");
@@ -79,7 +79,7 @@ const playConversation = (root) => {
 
     if (root.hasAttribute("data-chat-loop")) {
       const lastDelay = Math.max(...steps.map((step, index) => Number(step.dataset.chatDelay ?? index * 760) * speed));
-      timers.push(window.setTimeout(run, lastDelay + 2600));
+      timers.push(window.setTimeout(run, lastDelay + 4200));
     }
   };
 
@@ -116,7 +116,8 @@ document.querySelectorAll("[data-sticky-stack]").forEach((stack) => {
   const updateStack = () => {
     cards.forEach((card, index) => {
       const nextCard = cards[index + 1];
-      const covered = nextCard && nextCard.getBoundingClientRect().top <= 126 + (index * 6);
+      const nextStickyTop = nextCard ? Number.parseFloat(window.getComputedStyle(nextCard).top) : 0;
+      const covered = nextCard && nextCard.getBoundingClientRect().top <= nextStickyTop + 3;
       card.classList.toggle("is-covered", Boolean(covered));
     });
     ticking = false;
