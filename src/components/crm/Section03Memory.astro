@@ -1,0 +1,248 @@
+---
+import WhatsappUI from "./WhatsappUI.astro";
+---
+
+<section class="memory-section">
+  <div class="shell">
+    <div class="section-grid">
+      
+      <!-- Text & Timeline -->
+      <div class="text-content">
+        <span class="section-tag">MEMÓRIA CONTINUADA</span>
+        <h2 class="section-title">
+          Ela lembra do cliente. <br />
+          <span class="highlight">Mesmo dias depois.</span>
+        </h2>
+        <p class="section-desc">
+          Se o cliente voltar amanhã ou semanas depois, a IA recupera o que já foi conversado e continua de onde parou, sem exigir que ele repita tudo do zero.
+        </p>
+
+        <div class="memory-timeline-cards">
+          <div class="timeline-card">
+            <span class="t-badge">Segunda-feira</span>
+            <p><strong>Cliente procurou:</strong> Orçamento de crédito de R$ 85 mil para reforma.</p>
+          </div>
+          <div class="timeline-gap">
+            <span class="gap-line"></span>
+            <span class="gap-text">3 dias depois</span>
+            <span class="gap-line"></span>
+          </div>
+          <div class="timeline-card active">
+            <span class="t-badge green">Quinta-feira</span>
+            <p><strong>Retorno automático:</strong> Histórico e valores recuperados instantaneamente.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Content (WhatsApp with Integrated Memory Note) -->
+      <div class="visual-content">
+        <WhatsappUI contactName="João Martins" contactStatus="online agora" avatarUrl="/images/people/lucas.jpg">
+          <div class="wa-time-divider"><span>Segunda-feira — 14:20</span></div>
+          <div class="wa-bubble incoming">
+            Estou procurando um crédito de R$ 85 mil para fazer uma reforma.
+            <span class="wa-meta">14:20</span>
+          </div>
+
+          <div class="wa-time-divider highlight-time"><span>3 dias depois — Quinta-feira</span></div>
+
+          <!-- Internal System Memory Note (Integrated directly inside conversation) -->
+          <div class="wa-system-pill memory-pill">
+            <span class="pill-dot purple"></span>
+            <span>Histórico recuperado · Último interesse: Crédito R$ 85 mil</span>
+          </div>
+
+          <div class="wa-bubble incoming">
+            Oi, voltei!
+            <span class="wa-meta">09:45</span>
+          </div>
+
+          <div class="wa-bubble outgoing">
+            Oi, João! Da última vez você estava olhando os R$ 85 mil para a reforma. Quer continuar daquela proposta ou mudou alguma coisa?
+            <span class="wa-meta">09:45 <span class="wa-checks">✓✓</span></span>
+          </div>
+        </WhatsappUI>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .memory-section {
+    padding: 90px 0;
+    background: #0f172a;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .shell {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .section-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(118, 89, 239, 0.15);
+    color: #a89cf0;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+  }
+
+  .section-title .highlight {
+    color: #4cd9a4;
+  }
+
+  .section-desc {
+    margin-top: 16px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #94a3b8;
+  }
+
+  .memory-timeline-cards {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .timeline-card {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .timeline-card.active {
+    border-color: #00a884;
+    background: #1e293b;
+    box-shadow: 0 4px 16px rgba(0, 168, 132, 0.2);
+  }
+
+  .t-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 3px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .t-badge.green {
+    color: #4cd9a4;
+    background: rgba(0, 168, 132, 0.2);
+    border: 1px solid rgba(0, 168, 132, 0.3);
+  }
+
+  .timeline-card p {
+    font-size: 13px;
+    color: #e2e8f0;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .timeline-card p strong {
+    color: #ffffff;
+  }
+
+  .timeline-gap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .gap-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .gap-text {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #a89cf0;
+    background: rgba(118, 89, 239, 0.2);
+    border: 1px solid rgba(118, 89, 239, 0.4);
+    padding: 3px 12px;
+    border-radius: 10px;
+  }
+
+  .visual-content {
+    position: relative;
+  }
+
+  /* Internal Memory Pill inside Chat Stream */
+  .wa-system-pill {
+    align-self: center;
+    margin: 4px auto;
+    padding: 5px 12px;
+    background: #1c182b;
+    border: 1px solid rgba(118, 89, 239, 0.4);
+    border-radius: 8px;
+    font-size: 10.5px;
+    color: #a89cf0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .pill-dot.purple {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #a855f7;
+    box-shadow: 0 0 6px #a855f7;
+    flex-shrink: 0;
+  }
+
+  .wa-time-divider {
+    text-align: center;
+    margin: 8px 0;
+  }
+
+  .wa-time-divider span {
+    background: #182229;
+    color: #8696a0;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 10px;
+  }
+
+  .wa-time-divider.highlight-time span {
+    background: rgba(0, 168, 132, 0.2);
+    color: #00a884;
+    border: 1px solid rgba(0, 168, 132, 0.3);
+  }
+
+  @media (max-width: 900px) {
+    .section-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

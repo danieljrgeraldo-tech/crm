@@ -1,0 +1,314 @@
+---
+---
+
+<section id="equipe" class="distribution-section">
+  <div class="shell">
+    <div class="section-header">
+      <span class="section-tag">DISTRIBUIÇÃO INTELIGENTE</span>
+      <h2 class="section-title">
+        Cada cliente pode ir automaticamente <br />
+        <span class="highlight">para a pessoa certa.</span>
+      </h2>
+      <p class="section-desc">
+        Você pode distribuir por vendedor, setor, região ou ordem da fila. A IA direciona o atendimento com base no perfil e disponibilidade.
+      </p>
+    </div>
+
+    <!-- 2-Column Aligned Layout (1fr 1fr with 48px gap matching sections 1-7) -->
+    <div class="section-grid">
+      <!-- Left Column: Incoming Lead & Routing Analysis -->
+      <div class="grid-col-left">
+        <div class="col-header-tag">1. IDENTIFICAÇÃO DO PERFIL</div>
+
+        <div class="incoming-lead-card">
+          <div class="il-badge">NOVO CLIENTE CHEGANDO</div>
+          <div class="il-profile">
+            <img src="/images/people/mariana.jpg" alt="Mariana Costa" />
+            <div>
+              <strong>Mariana Costa</strong>
+              <small>Criciúma · SC · WhatsApp</small>
+            </div>
+          </div>
+          <div class="il-analysis-box">
+            <span class="il-dot"></span>
+            <div>
+              <small>ROTEAMENTO AUTOMÁTICO</small>
+              <strong>Perfil identificado: Atacado / B2B</strong>
+            </div>
+          </div>
+          <div class="il-arrow-indicator">
+            <span>Redirecionando para o especialista ➔</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Team Selection -->
+      <div class="grid-col-right">
+        <div class="col-header-tag green-tag">2. EQUIPE DISPONÍVEL</div>
+
+        <div class="team-list">
+          <div class="team-item">
+            <img src="/images/people/amanda.jpg" alt="Camila" />
+            <div class="team-info">
+              <strong>Camila</strong>
+              <small>Especialista Varejo</small>
+            </div>
+            <span class="team-status">Disponível</span>
+          </div>
+
+          <div class="team-item selected-item">
+            <div class="match-badge">⭐ Melhor Opção (B2B)</div>
+            <img src="/images/people/rafael.jpg" alt="Rafael" />
+            <div class="team-info">
+              <strong>Rafael</strong>
+              <small>Especialista Atacado / B2B</small>
+            </div>
+            <span class="team-status active-status">Atribuído ✓</span>
+          </div>
+
+          <div class="team-item">
+            <img src="/images/people/lucas.jpg" alt="Lucas" />
+            <div class="team-info">
+              <strong>Lucas</strong>
+              <small>Região São Paulo</small>
+            </div>
+            <span class="team-status">Disponível</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .distribution-section {
+    padding: 90px 0;
+    background: #0d121c;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .shell {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 48px;
+  }
+
+  .section-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(0, 168, 132, 0.15);
+    color: #00a884;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+
+  .section-title .highlight {
+    color: #4cd9a4;
+  }
+
+  .section-desc {
+    margin-top: 16px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #9ba4b5;
+  }
+
+  /* Standardized 2-Column Grid (Matches Sections 1-7) */
+  .section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .col-header-tag {
+    font-size: 9.5px;
+    font-weight: 800;
+    color: #00a884;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .col-header-tag.green-tag {
+    color: #a89cf0;
+  }
+
+  /* Incoming Lead Card */
+  .incoming-lead-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background: #17212b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+  }
+
+  .il-badge {
+    font-size: 9px;
+    font-weight: 800;
+    color: #00a884;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+
+  .il-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .il-profile img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .il-profile strong {
+    display: block;
+    font-size: 13.5px;
+    color: #e9edef;
+  }
+
+  .il-profile small {
+    font-size: 11px;
+    color: #8696a0;
+  }
+
+  .il-analysis-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #111822;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border-left: 3px solid #00a884;
+    margin-bottom: 14px;
+  }
+
+  .il-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #00a884;
+  }
+
+  .il-analysis-box small {
+    display: block;
+    font-size: 8.5px;
+    font-weight: 800;
+    color: #00a884;
+  }
+
+  .il-analysis-box strong {
+    font-size: 11.5px;
+    color: #e2e8f0;
+  }
+
+  .il-arrow-indicator {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #00a884;
+    background: rgba(0, 168, 132, 0.1);
+    padding: 6px;
+    border-radius: 6px;
+  }
+
+  /* Team List Right Column */
+  .team-list {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-sizing: border-box;
+  }
+
+  .team-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #17212b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 12px 16px;
+  }
+
+  .team-item.selected-item {
+    border-color: #00a884;
+    background: #192d27;
+    box-shadow: 0 8px 20px rgba(0, 168, 132, 0.15);
+  }
+
+  .match-badge {
+    position: absolute;
+    top: -9px;
+    right: 14px;
+    font-size: 8.5px;
+    font-weight: 800;
+    color: #111b21;
+    background: #00a884;
+    padding: 2px 7px;
+    border-radius: 8px;
+  }
+
+  .team-item img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .team-info { flex: 1; }
+  .team-info strong { display: block; font-size: 13px; color: #e9edef; }
+  .team-info small { font-size: 10.5px; color: #8696a0; }
+
+  .team-status {
+    font-size: 10px;
+    font-weight: 600;
+    color: #64748b;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+
+  .team-status.active-status {
+    color: #00a884;
+    background: rgba(0, 168, 132, 0.15);
+    font-weight: 800;
+  }
+
+  @media (max-width: 900px) {
+    .section-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,139 @@
+---
+const whatsappUrl = "https://wa.me/5548998493150?text=Ol%C3%A1%2C%20Daniel.%20Gostaria%20de%20falar%20sobre%20o%20atendimento%20com%20IA%20na%20minha%20empresa.";
+---
+
+<header class="crm-header">
+  <div class="shell header-inner">
+    <a href="#inicio" class="brand">
+      <div class="brand-icon">
+        <svg class="b-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+      </div>
+      <div class="brand-text">
+        <strong>Daniel Junior</strong>
+        <small>ATENDIMENTO & IA COMERCIAL</small>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#inicio">Como funciona</a>
+      <a href="#simulacao">Simulações</a>
+      <a href="#agendamento">Agendamento</a>
+      <a href="#segmentos">Para empresas</a>
+      <a href="#daniel">Sobre Daniel</a>
+    </nav>
+
+    <a href={whatsappUrl} target="_blank" rel="noreferrer" class="header-cta">
+      Falar no WhatsApp ↗
+    </a>
+  </div>
+</header>
+
+<style>
+  .crm-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: rgba(9, 12, 19, 0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 100;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .header-inner {
+    height: 100%;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .brand-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00a884, #7659ef);
+    display: grid;
+    place-items: center;
+    color: #fff;
+  }
+
+  .b-svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .brand-text strong {
+    display: block;
+    font-size: 14px;
+    line-height: 1.1;
+  }
+
+  .brand-text small {
+    font-size: 8px;
+    color: #00a884;
+    letter-spacing: 0.1em;
+    font-weight: 800;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .nav-links a {
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: #fff;
+  }
+
+  .header-cta {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: rgba(0, 168, 132, 0.15);
+    border: 1px solid rgba(0, 168, 132, 0.3);
+    color: #00a884;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+
+  .header-cta:hover {
+    background: rgba(0, 168, 132, 0.25);
+  }
+
+  @media (max-width: 768px) {
+    .crm-header {
+      padding: 0 12px;
+    }
+    .header-inner {
+      padding: 0 8px;
+    }
+    .nav-links { display: none; }
+    .brand-text small { font-size: 7.5px; }
+    .header-cta { font-size: 11px; padding: 7px 12px; }
+  }
+</style>

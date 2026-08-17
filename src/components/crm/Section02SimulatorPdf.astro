@@ -1,0 +1,654 @@
+---
+import WhatsappUI from "./WhatsappUI.astro";
+---
+
+<section id="simulacao" class="simulator-section">
+  <div class="shell">
+    <div class="section-header">
+      <span class="section-tag">SIMULAÇÃO AUTOMÁTICA</span>
+      <h2 class="section-title">
+        O cliente fez uma simulação? <br />
+        <span class="highlight">A IA continua a venda no WhatsApp.</span>
+      </h2>
+      <p class="section-desc">
+        O cliente preenche uma simulação no seu site ou formulário, recebe o orçamento em PDF diretamente no WhatsApp e a IA inicia o atendimento já sabendo o que ele acabou de consultar.
+      </p>
+    </div>
+
+    <!-- Callout: Se sua empresa não tiver simulador, nós implementamos! -->
+    <div class="no-simulator-callout">
+      <div class="ns-icon">
+        <svg class="ns-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+      </div>
+      <div class="ns-content">
+        <strong>Sua empresa ainda não tem um simulador?</strong>
+        <p>Não se preocupe! Nós criamos e implementamos um simulador exclusivo no seu próprio site ou disponibilizamos através de um link direto para os seus clientes simularem de onde estiverem.</p>
+      </div>
+    </div>
+
+    <!-- Step Progress Indicator Bar -->
+    <div class="step-progress-bar">
+      <div class="step-item active">
+        <span class="step-num">1</span>
+        <span>Formulário Preenchido</span>
+      </div>
+
+      <div class="step-item active">
+        <span class="step-num">2</span>
+        <span>PDF Gerado em 2º Plano</span>
+      </div>
+
+      <div class="step-item active">
+        <span class="step-num">3</span>
+        <span>Enviado ao WhatsApp</span>
+      </div>
+
+      <div class="step-item active glow">
+        <span class="step-num">4</span>
+        <span>Abordagem da IA</span>
+      </div>
+    </div>
+
+    <!-- 2-Column Stage Layout with Perfectly Equalized Spacing -->
+    <div class="stage-container">
+      
+      <!-- Left Column: Form & Authentic Paper File Sheet -->
+      <div class="stage-col-left">
+        
+        <!-- 1. Simulator Form -->
+        <div class="sim-card sim-form">
+          <div class="card-tag">1. FORMULÁRIO DO SEU SITE OU LINK</div>
+          <div class="form-title">Simulador de Crédito & Financiamento</div>
+          
+          <div class="form-fields">
+            <div class="f-group">
+              <label>Valor desejado</label>
+              <div class="f-val">R$ 85.000,00</div>
+            </div>
+            <div class="f-group">
+              <label>Finalidade</label>
+              <div class="f-val">Reforma & Expansão</div>
+            </div>
+            <div class="f-row">
+              <div class="f-group">
+                <label>Prazo</label>
+                <div class="f-val">60 meses</div>
+              </div>
+              <div class="f-group">
+                <label>Nome</label>
+                <div class="f-val">João Martins</div>
+              </div>
+            </div>
+            <div class="f-btn">Ver minha simulação →</div>
+          </div>
+        </div>
+
+        <!-- Equalized Arrow Connector 1 (Form -> PDF) -->
+        <div class="flow-arrow-separator">
+          <svg class="svg-arrow-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </div>
+
+        <!-- 2. Authentic Paper File Document -->
+        <div class="paper-file-document">
+          <div class="folded-corner"></div>
+
+          <div class="file-header-ribbon">
+            <div class="file-tag-badge">
+              <svg class="file-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <strong>Simulacao_Credito_85k.pdf</strong>
+            </div>
+            <span class="file-type-text">ARQUIVO PDF</span>
+          </div>
+
+          <div class="paper-sheet-content">
+            <div class="a4-header-row">
+              <div class="logo-placeholder-box">
+                <span>[ SUA LOGO AQUI ]</span>
+              </div>
+              <div class="a4-doc-info">
+                <strong>ORÇAMENTO COMERCIAL</strong>
+                <small>Emitido em: 16/08/2026</small>
+              </div>
+            </div>
+
+            <div class="a4-divider"></div>
+
+            <div class="a4-summary-table">
+              <div class="a4-row"><span>Cliente:</span> <strong>João Martins</strong></div>
+              <div class="a4-row"><span>Crédito Solicitado:</span> <strong>R$ 85.000,00</strong></div>
+              <div class="a4-row"><span>Objetivo:</span> <strong>Reforma & Expansão</strong></div>
+              <div class="a4-row highlight-row"><span>Parcela Estimada:</span> <strong class="green-txt">R$ 1.850,00/mês</strong></div>
+            </div>
+
+            <div class="a4-footer-note">
+              <small>Documento gerado automaticamente pelo sistema em PDF.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Equalized Arrow Connector 2 (PDF -> Mobile Flow) -->
+        <div class="flow-arrow-separator mobile-only-arrow">
+          <svg class="svg-arrow-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </div>
+
+      </div>
+
+      <!-- Desktop Center Connector Arrow -->
+      <div class="stage-center-arrow">
+        <svg class="svg-stage-arrow-direct" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </div>
+
+      <!-- Right Column: WhatsApp Chat -->
+      <div class="stage-col-right">
+        <div class="stage-wa-box">
+          <div class="wa-stage-tag">3. ATENDIMENTO DA IA NO WHATSAPP</div>
+          
+          <WhatsappUI contactName="João Martins" contactStatus="online agora" avatarUrl="/images/people/lucas.jpg">
+            <div class="wa-pdf-attachment-box">
+              <div class="pdf-icon-wrap">📄</div>
+              <div class="pdf-att-details">
+                <strong>Simulacao_Credito_85k.pdf</strong>
+                <small>Documento PDF · 1 página</small>
+              </div>
+              <span class="wa-meta">10:30 <span class="wa-checks">✓✓</span></span>
+            </div>
+
+            <div class="wa-gap-divider"><span>3 minutos depois</span></div>
+
+            <div class="wa-bubble outgoing">
+              Oi, João! Sou a Ana. Vi que você acabou de fazer uma simulação no nosso site e já deixei a sua proposta em PDF aqui em cima.
+              <span class="wa-meta">10:33 <span class="wa-checks">✓✓</span></span>
+            </div>
+
+            <div class="wa-bubble outgoing">
+              O valor da parcela de R$ 1.850 ficou dentro do seu planejamento ou prefere que eu ajuste o prazo com você?
+              <span class="wa-meta">10:33 <span class="wa-checks">✓✓</span></span>
+            </div>
+
+            <div class="wa-bubble incoming">
+              A parcela ficou um pouco puxada para mim.
+              <span class="wa-meta">10:34</span>
+            </div>
+
+            <div class="wa-bubble outgoing">
+              Entendi! Podemos estender o prazo para 72 meses ou ajustar o valor do crédito. Qual opção fica melhor para o seu momento?
+              <span class="wa-meta">10:34 <span class="wa-checks">✓✓</span></span>
+            </div>
+          </WhatsappUI>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Impact Statement Banner -->
+    <div class="closing-impact-banner">
+      <p>💡 <strong>O cliente não vira só um cadastro no seu banco de dados.</strong> Ele já entra em uma conversa de venda ativa com contexto.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .simulator-section {
+    padding: 90px 0;
+    background: #f8fafc;
+    color: #0f172a;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .shell {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 24px;
+  }
+
+  .section-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(0, 168, 132, 0.12);
+    color: #008f70;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #0f172a;
+  }
+
+  .section-title .highlight {
+    color: #008f70;
+  }
+
+  .section-desc {
+    margin-top: 16px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #475569;
+  }
+
+  .no-simulator-callout {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #ffffff;
+    border: 1px solid #00a884;
+    border-left: 4px solid #00a884;
+    border-radius: 12px;
+    padding: 16px 20px;
+    max-width: 820px;
+    margin: 0 auto 36px;
+    box-shadow: 0 4px 15px rgba(0, 168, 132, 0.08);
+  }
+
+  .ns-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(0, 168, 132, 0.12);
+    color: #008f70;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+
+  .ns-svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .ns-content strong {
+    display: block;
+    font-size: 13.5px;
+    color: #0f172a;
+    margin-bottom: 3px;
+  }
+
+  .ns-content p {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #475569;
+    margin: 0;
+  }
+
+  .step-progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    max-width: 820px;
+    margin: 0 auto 40px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 14px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    flex-wrap: wrap;
+  }
+
+  .step-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #475569;
+    white-space: nowrap;
+  }
+
+  .step-item.glow {
+    color: #008f70;
+  }
+
+  .step-num {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #00a884;
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    font-size: 11px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  /* 2-Column Stage Layout with Symmetrical Gaps */
+  .stage-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .stage-col-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Managed strictly by flow-arrow-separator */
+  }
+
+  .sim-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  }
+
+  .card-tag {
+    font-size: 9px;
+    font-weight: 800;
+    color: #008f70;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+
+  .form-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 14px;
+  }
+
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .f-group label {
+    display: block;
+    font-size: 10px;
+    color: #64748b;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .f-val {
+    padding: 9px 12px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0f172a;
+  }
+
+  .f-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .f-btn {
+    margin-top: 4px;
+    padding: 11px;
+    background: linear-gradient(135deg, #00a884, #008f70);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  /* Equalized Symmetrical Arrow Separator */
+  .flow-arrow-separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00a884;
+    height: 44px; /* Fixed equalized height for symmetrical spacing */
+  }
+
+  .mobile-only-arrow {
+    display: none;
+  }
+
+  .svg-arrow-green {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Authentic Paper File Document Sheet */
+  .paper-file-document {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+  }
+
+  .folded-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 24px 24px 0;
+    border-color: transparent #e2e8f0 transparent transparent;
+    box-shadow: -2px 2px 4px rgba(0,0,0,0.1);
+    z-index: 2;
+  }
+
+  .file-header-ribbon {
+    background: #f1f5f9;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .file-tag-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #7659ef;
+  }
+
+  .file-svg-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .file-type-text {
+    font-size: 9.5px;
+    font-weight: 800;
+    color: #64748b;
+    letter-spacing: 0.05em;
+    margin-right: 20px;
+  }
+
+  .paper-sheet-content {
+    padding: 20px;
+    background: #ffffff;
+  }
+
+  .a4-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+
+  .logo-placeholder-box {
+    border: 2px dashed #94a3b8;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: #f8fafc;
+  }
+
+  .logo-placeholder-box span {
+    font-size: 10px;
+    font-weight: 800;
+    color: #475569;
+    letter-spacing: 0.05em;
+  }
+
+  .a4-doc-info strong {
+    display: block;
+    font-size: 11px;
+    color: #0f172a;
+  }
+
+  .a4-doc-info small {
+    font-size: 10px;
+    color: #64748b;
+  }
+
+  .a4-divider {
+    height: 1px;
+    background: #e2e8f0;
+    margin-bottom: 14px;
+  }
+
+  .a4-summary-table {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .a4-row {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .a4-row span { color: #64748b; font-size: 12px; }
+  .a4-row strong { color: #0f172a; font-size: 12px; }
+
+  .a4-row.highlight-row {
+    background: #f0fdf4;
+    padding: 8px;
+    border-radius: 6px;
+    border-bottom: none;
+  }
+
+  .green-txt { color: #008f70; }
+
+  .a4-footer-note {
+    text-align: center;
+    color: #64748b;
+    font-size: 9.5px;
+  }
+
+  .stage-center-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00a884;
+    padding: 10px;
+  }
+
+  .svg-stage-arrow-direct {
+    width: 28px;
+    height: 28px;
+    color: #00a884;
+  }
+
+  .stage-wa-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wa-stage-tag {
+    font-size: 9.5px;
+    font-weight: 800;
+    color: #008f70;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .wa-pdf-attachment-box {
+    background: #182229;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 4px solid #7659ef;
+    margin-bottom: 6px;
+  }
+
+  .pdf-icon-wrap { font-size: 20px; }
+  .pdf-att-details { flex: 1; }
+  .pdf-att-details strong { display: block; font-size: 12px; color: #e9edef; }
+  .pdf-att-details small { font-size: 10px; color: #8696a0; }
+
+  .wa-gap-divider { text-align: center; margin: 8px 0; }
+  .wa-gap-divider span {
+    background: #182229;
+    color: #8696a0;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 8px;
+  }
+
+  .closing-impact-banner {
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 18px;
+    max-width: 680px;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+
+  .closing-impact-banner p {
+    font-size: 13.5px;
+    color: #334155;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .step-progress-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .stage-container {
+      grid-template-columns: 1fr;
+    }
+    .mobile-only-arrow {
+      display: flex;
+    }
+    .stage-center-arrow {
+      display: none;
+    }
+  }
+</style>

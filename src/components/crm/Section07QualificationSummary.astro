@@ -1,0 +1,340 @@
+---
+import WhatsappUI from "./WhatsappUI.astro";
+---
+
+<section id="qualificacao" class="qualification-section">
+  <div class="shell">
+    <div class="section-header">
+      <span class="section-tag">PRÉ-VENDA & QUALIFICAÇÃO</span>
+      <h2 class="section-title">
+        Sua equipe recebe o cliente <br />
+        <span class="highlight">já sabendo o que ele quer.</span>
+      </h2>
+      <p class="section-desc">
+        A IA conversa, coleta as informações essenciais e entrega uma ficha completa para o vendedor assumir o atendimento em segundos sem ler dezenas de mensagens.
+      </p>
+    </div>
+
+    <!-- 2-Column Aligned Layout -->
+    <div class="section-grid">
+      <!-- Left Column: Chat -->
+      <div class="grid-col-left">
+        <div class="col-header-tag">1. CONVERSA ACONTECENDO</div>
+        <WhatsappUI contactName="Mariana Costa" contactStatus="online agora" avatarUrl="/images/people/mariana.jpg">
+          <div class="wa-bubble incoming">
+            Quero um orçamento para uma equipe de 10 pessoas na minha empresa em Criciúma.
+            <span class="wa-meta">10:24</span>
+          </div>
+          <div class="wa-bubble outgoing">
+            Perfeito, Mariana! Qual seria o seu prazo ideal para iniciar a implantação?
+            <span class="wa-meta">10:24 <span class="wa-checks">✓✓</span></span>
+          </div>
+          <div class="wa-bubble incoming">
+            Preciso implantar ainda este mês. Se for rápido, já fechamos esta semana.
+            <span class="wa-meta">10:25</span>
+          </div>
+        </WhatsappUI>
+      </div>
+
+      <!-- Right Column: Ficha Pronta no Estilo do Kanban (Mesmo Estilo do Kanban em 1 Card Só) -->
+      <div class="grid-col-right">
+        <div class="col-header-tag purple-tag">2. FICHA PRONTA NO CARD DE KANBAN</div>
+        
+        <!-- Kanban Stage Column (Estilo Idêntico ao Kanban da Outra Etapa) -->
+        <div class="kanban-stage-column">
+          <header class="kanban-stage-header">
+            <span class="stage-dot-purple"></span>
+            <strong>Qualificado / Com Vendedor</strong>
+            <span class="stage-count">1</span>
+          </header>
+
+          <!-- Single Clean White Kanban Card -->
+          <div class="kanban-deal-card featured-card">
+            <div class="card-user-row">
+              <img src="/images/people/mariana.jpg" alt="Mariana Costa" class="deal-avatar" />
+              <div>
+                <strong>Mariana Costa</strong>
+                <small>Criciúma · SC · WhatsApp</small>
+              </div>
+              <span class="deal-tag purple-tag">Alta Intenção 🔥</span>
+            </div>
+
+            <!-- Executive IA Summary Quote -->
+            <div class="card-summary-quote">
+              <span class="quote-label">RESUMO DA IA</span>
+              <p>"Mariana procura uma solução para 10 usuários com implantação este mês em Criciúma. Demonstrou alta intenção e solicitou plano B2B."</p>
+            </div>
+
+            <!-- Lead Meta Chips -->
+            <div class="card-chips-row">
+              <span class="chip">Empresarial B2B</span>
+              <span class="chip">10 Usuários</span>
+              <span class="chip">Este mês</span>
+            </div>
+
+            <!-- Assignment Footer -->
+            <div class="card-footer-assign">
+              <div class="assign-text">
+                <small>ENCAMINHADO PARA</small>
+                <strong>Rafael (Atacado)</strong>
+              </div>
+              <button class="btn-takeover" type="button">Assumir atendimento ↗</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Takeaway Banner -->
+    <div class="takeaway-banner">
+      <p>💡 <strong>Seu vendedor não precisa ler 40 mensagens para entender o cliente.</strong> Ele lê o resumo em 5 segundos e foca no fechamento.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .qualification-section {
+    padding: 90px 0;
+    background: #0f172a;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .shell {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 48px;
+  }
+
+  .section-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(0, 168, 132, 0.15);
+    color: #00a884;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+  }
+
+  .section-title .highlight {
+    color: #4cd9a4;
+  }
+
+  .section-desc {
+    margin-top: 16px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #94a3b8;
+  }
+
+  .section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .col-header-tag {
+    font-size: 9.5px;
+    font-weight: 800;
+    color: #00a884;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .col-header-tag.purple-tag {
+    color: #a89cf0;
+  }
+
+  /* Kanban Stage Column Container (Estilo Idêntico ao Kanban da Outra Etapa) */
+  .kanban-stage-column {
+    background: #faf5ff;
+    border: 1px solid #f3e8ff;
+    border-radius: 16px;
+    padding: 16px;
+    max-width: 420px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  .kanban-stage-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 14px;
+  }
+
+  .stage-dot-purple {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #9333ea;
+  }
+
+  .stage-count {
+    margin-left: auto;
+    font-size: 10px;
+    background: rgba(147, 51, 234, 0.12);
+    color: #7e22ce;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  /* Single Sharp White Kanban Card */
+  .kanban-deal-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  }
+
+  .kanban-deal-card.featured-card {
+    border-color: #a855f7;
+  }
+
+  .card-user-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .deal-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .card-user-row strong { display: block; font-size: 13px; color: #0f172a; }
+  .card-user-row small { font-size: 10px; color: #64748b; }
+
+  .deal-tag {
+    margin-left: auto;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+
+  .purple-tag { background: rgba(147, 51, 234, 0.12); color: #7e22ce; }
+
+  .card-summary-quote {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid #00a884;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+  }
+
+  .quote-label {
+    display: block;
+    font-size: 9px;
+    font-weight: 800;
+    color: #008f70;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+
+  .card-summary-quote p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #334155;
+    font-style: italic;
+    margin: 0;
+  }
+
+  .card-chips-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .chip {
+    font-size: 10px;
+    font-weight: 600;
+    color: #475569;
+    background: #f1f5f9;
+    padding: 3px 8px;
+    border-radius: 5px;
+  }
+
+  .card-footer-assign {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .assign-text small { display: block; font-size: 8.5px; color: #64748b; font-weight: 800; }
+  .assign-text strong { font-size: 12.5px; color: #008f70; }
+
+  .btn-takeover {
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: #7659ef;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .btn-takeover:hover {
+    background: #5f3ee6;
+  }
+
+  .takeaway-banner {
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+    max-width: 680px;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+
+  .takeaway-banner p {
+    font-size: 13px;
+    color: #334155;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .section-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

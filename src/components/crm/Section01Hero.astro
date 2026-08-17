@@ -1,0 +1,242 @@
+---
+import WhatsappUI from "./WhatsappUI.astro";
+
+const whatsappUrl = "https://wa.me/5548998493150?text=Ol%C3%A1%2C%20Daniel.%20Quero%20ver%20como%20a%20IA%20no%20WhatsApp%20funciona%20na%20minha%20empresa.";
+---
+
+<section id="inicio" class="hero-section">
+  <div class="hero-glow-bg" aria-hidden="true"></div>
+  <div class="shell hero-layout">
+    
+    <!-- Hero Copy -->
+    <div class="hero-text-content">
+      <div class="hero-tag">OPERATIZADO COM IA</div>
+      <h1 class="hero-title">
+        Uma IA no seu WhatsApp que atende, agenda, vende e <span class="highlight">não deixa cliente sem resposta.</span>
+      </h1>
+      <p class="hero-lead">
+        Ela conversa com seus clientes, entende o que eles precisam e cuida do próximo passo automaticamente.
+      </p>
+      <div class="hero-cta-bar">
+        <a href={whatsappUrl} target="_blank" rel="noreferrer" class="btn-primary">
+          Quero ver funcionando <span class="arrow">↗</span>
+        </a>
+        <a href="#simulacao" class="btn-secondary">
+          Ver como funciona <span class="arrow">↓</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero Visual Stage: Ultra-Faithful WhatsApp Interface with Integrated Internal AI Notes -->
+    <div class="hero-stage">
+      <div class="hero-whatsapp-container">
+        <WhatsappUI contactName="Mariana Costa" contactStatus="online agora" avatarUrl="/images/people/mariana.jpg">
+          <div class="wa-bubble incoming">
+            Oi! Queria entender como funciona para colocar IA no atendimento da minha equipe.
+            <span class="wa-meta">10:24</span>
+          </div>
+
+          <!-- Internal System Intelligence Note (Integrated inside chat stream) -->
+          <div class="wa-system-pill animated-pill">
+            <span class="pill-dot green"></span>
+            <span>IA analisando mensagem · Intenção: Orçamento B2B</span>
+          </div>
+
+          <div class="wa-bubble outgoing">
+            Claro, Mariana! A IA responde seus clientes, qualifica os pedidos e organiza tudo no CRM. Quantas pessoas atendem hoje na sua empresa?
+            <span class="wa-meta">10:24 <span class="wa-checks">✓✓</span></span>
+          </div>
+
+          <div class="wa-bubble incoming">
+            Temos 10 vendedores e precisamos implantar ainda este mês.
+            <span class="wa-meta">10:25</span>
+          </div>
+
+          <!-- Internal System Intelligence Note (Integrated inside chat stream) -->
+          <div class="wa-system-pill animated-pill purple-pill">
+            <span class="pill-dot purple"></span>
+            <span>Perfil extraído: 10 Vendedores · Prazo: Este mês · CRM Atualizado</span>
+          </div>
+
+          <div class="wa-bubble outgoing">
+            Perfeito! Para essa estrutura conseguimos configurar o rodízio automático de vendedores e a qualificação prévia. Quer agendar uma demonstração rápida?
+            <span class="wa-meta">10:25 <span class="wa-checks">✓✓</span></span>
+          </div>
+        </WhatsappUI>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    position: relative;
+    padding: 130px 0 90px;
+    background: #0f172a;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  .hero-glow-bg {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 168, 132, 0.12) 0%, rgba(118, 89, 239, 0.06) 60%, transparent 80%);
+    filter: blur(90px);
+    pointer-events: none;
+  }
+
+  .shell {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(0, 168, 132, 0.15);
+    color: #00a884;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.3rem, 3.8vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: #f1f5f9;
+  }
+
+  .hero-title .highlight {
+    color: #4cd9a4;
+  }
+
+  .hero-lead {
+    margin-top: 18px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    max-width: 500px;
+  }
+
+  .hero-cta-bar {
+    display: flex;
+    gap: 14px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 26px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #00a884 0%, #008f70 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.98rem;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0, 168, 132, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(0, 168, 132, 0.4);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 22px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #cbd5e1;
+    font-weight: 600;
+    font-size: 0.98rem;
+    text-decoration: none;
+  }
+
+  /* Stage & Integrated System Pills */
+  .hero-stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-whatsapp-container {
+    width: 100%;
+  }
+
+  /* Internal System Note Pills */
+  .wa-system-pill {
+    align-self: center;
+    margin: 4px auto;
+    padding: 4px 10px;
+    background: #182229;
+    border: 1px solid rgba(0, 168, 132, 0.3);
+    border-radius: 8px;
+    font-size: 10.5px;
+    color: #8696a0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .wa-system-pill.purple-pill {
+    border-color: rgba(118, 89, 239, 0.4);
+    background: #1c182b;
+    color: #a89cf0;
+  }
+
+  .pill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .pill-dot.green { background: #00a884; box-shadow: 0 0 5px #00a884; }
+  .pill-dot.purple { background: #7659ef; box-shadow: 0 0 5px #7659ef; }
+
+  @media (max-width: 900px) {
+    .hero-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      text-align: center;
+    }
+
+    .hero-lead {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta-bar {
+      justify-content: center;
+    }
+  }
+</style>

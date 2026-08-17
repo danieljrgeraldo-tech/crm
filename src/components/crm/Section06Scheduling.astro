@@ -1,0 +1,407 @@
+---
+import WhatsappUI from "./WhatsappUI.astro";
+---
+
+<section id="agendamento" class="scheduling-section">
+  <div class="shell">
+    <div class="section-header">
+      <span class="section-tag">AGENDAMENTO DE CONSULTAS & SERVIÇOS</span>
+      <h2 class="section-title">
+        Ela também pode <br />
+        <span class="highlight">cuidar da sua agenda.</span>
+      </h2>
+      <p class="section-desc">
+        A IA consulta horários livres, oferece opções, confirma o agendamento, envia lembretes e faz a remarcação de forma amigável.
+      </p>
+    </div>
+
+    <!-- Interactive Segment Selector Pills -->
+    <div class="segment-pills" id="scheduling-pills">
+      <button class="pill active" type="button" data-niche="clinica">
+        <svg class="pill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+        <span>Clínica</span>
+      </button>
+
+      <button class="pill" type="button" data-niche="barbearia">
+        <svg class="pill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg>
+        <span>Barbearia</span>
+      </button>
+
+      <button class="pill" type="button" data-niche="estetica">
+        <svg class="pill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <span>Estética</span>
+      </button>
+
+      <button class="pill" type="button" data-niche="consultorio">
+        <svg class="pill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span>Consultório</span>
+      </button>
+    </div>
+
+    <div class="scheduling-grid">
+      <!-- WhatsApp Chat Container -->
+      <div class="visual-chat">
+        
+        <!-- Chat Panel: Clínica (Default Active) -->
+        <div class="niche-chat-panel active" id="chat-clinica">
+          <WhatsappUI contactName="Atendimento / Clínica" contactStatus="online agora" avatarUrl="/images/people/amanda.jpg">
+            <div class="wa-bubble incoming">
+              Tem horário amanhã à tarde para consulta médica?
+              <span class="wa-meta">11:10</span>
+            </div>
+
+            <div class="wa-bubble outgoing">
+              Tenho sim! Consultei a agenda e temos disponíveis amanhã: 14h, 15h30 e 17h. Qual fica melhor para você?
+              <span class="wa-meta">11:10 <span class="wa-checks">✓✓</span></span>
+            </div>
+
+            <div class="wa-bubble incoming">
+              Pode ser às 15h30.
+              <span class="wa-meta">11:11</span>
+            </div>
+
+            <div class="wa-bubble outgoing">
+              Perfeito! Ficou marcado para amanhã (17/08) às 15h30. Te envio um lembrete antes!
+              <span class="wa-meta">11:11 <span class="wa-checks">✓✓</span></span>
+            </div>
+          </WhatsappUI>
+        </div>
+
+        <!-- Chat Panel: Barbearia -->
+        <div class="niche-chat-panel" id="chat-barbearia">
+          <WhatsappUI contactName="Barbearia Vip / Atendimento" contactStatus="online agora" avatarUrl="/images/people/renato.jpg">
+            <div class="wa-bubble incoming">
+              Consegue me encaixar hoje no final da tarde para barba e corte?
+              <span class="wa-meta">17:15</span>
+            </div>
+
+            <div class="wa-bubble outgoing">
+              Consigo sim! O barbeiro Lucas tem horário livre hoje às 18h e às 19h. Qual você prefere?
+              <span class="wa-meta">17:15 <span class="wa-checks">✓✓</span></span>
+            </div>
+
+            <div class="wa-bubble incoming">
+              Às 18h fica excelente!
+              <span class="wa-meta">17:16</span>
+            </div>
+
+            <div class="wa-bubble outgoing">
+              Agendado! Corte + Barba hoje às 18h. Já deixei sua vaga garantida na cadeira.
+              <span class="wa-meta">17:16 <span class="wa-checks">✓✓</span></span>
+            </div>
+          </WhatsappUI>
+        </div>
+
+        <!-- Chat Panel: Estética -->
+        <div class="niche-chat-panel" id="chat-estetica">
+          <WhatsappUI contactName="Estética & Bem-Estar" contactStatus="online agora" avatarUrl="/images/people/fernanda.jpg">
+            <div class="wa-bubble incoming">
+              Gostaria de agendar uma sessão de limpeza de pele nesta sexta.
+              <span class="wa-meta">09:30</span>
+            </div>
+
+            <div class="wa-bubble outgoing">
+              Olá! Temos horários disponíveis na sexta às 10h e às 15h. Qual horário fica melhor para você?
+              <span class="wa-meta">09:30 <span class="wa-checks">✓✓</span></span>
+            </div>
+
+            <div class="wa-bubble incoming">
+              Pode ser às 10h da manhã.
+              <span class="wa-meta">09:31</span>
+            </div>
+
+            <div class="wa-bubble outgoing">
+              Confirmado! Sessão de Limpeza de Pele na sexta-feira às 10h. Enviaremos os cuidados prévios no seu WhatsApp.
+              <span class="wa-meta">09:31 <span class="wa-checks">✓✓</span></span>
+            </div>
+          </WhatsappUI>
+        </div>
+
+        <!-- Chat Panel: Consultório -->
+        <div class="niche-chat-panel" id="chat-consultorio">
+          <WhatsappUI contactName="Consultório Odontológico" contactStatus="online agora" avatarUrl="/images/people/mariana.jpg">
+            <div class="wa-bubble incoming">
+              Preciso agendar uma avaliação odontológica para a próxima semana.
+              <span class="wa-meta">14:00</span>
+            </div>
+
+            <div class="wa-bubble outgoing">
+              Com certeza! Temos disponibilidade na terça-feira às 09h e na quarta-feira às 14h. Qual prefere?
+              <span class="wa-meta">14:00 <span class="wa-checks">✓✓</span></span>
+            </div>
+
+            <div class="wa-bubble incoming">
+              Terça-feira às 09h funciona perfeitamente.
+              <span class="wa-meta">14:01</span>
+            </div>
+
+            <div class="wa-bubble outgoing">
+              Agendamento realizado! Avaliação odontológica na terça às 09h. Te lembramos 1 dia antes da consulta.
+              <span class="wa-meta">14:01 <span class="wa-checks">✓✓</span></span>
+            </div>
+          </WhatsappUI>
+        </div>
+
+      </div>
+
+      <!-- Timeline Steps with Standard SVG Icons -->
+      <div class="scheduling-timeline">
+        <div class="timeline-step">
+          <div class="step-icon green">
+            <svg class="svg-timeline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          </div>
+          <div class="step-content">
+            <span class="step-time">No momento do agendamento</span>
+            <strong>Agenda atualizada instantaneamente</strong>
+            <p>Horário reservado no sistema do seu segmento.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="step-icon blue">
+            <svg class="svg-timeline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <div class="step-content">
+            <span class="step-time">1 dia antes</span>
+            <strong>Confirmação de Presença</strong>
+            <p>"Passando para confirmar seu horário agendado."</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="step-icon purple">
+            <svg class="svg-timeline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="step-content">
+            <span class="step-time">30 minutos antes</span>
+            <strong>Lembrete Amigável</strong>
+            <p>"Seu horário está chegando! Te esperamos no local."</p>
+          </div>
+        </div>
+
+        <div class="timeline-step highlight-reschedule">
+          <div class="step-icon yellow">
+            <svg class="svg-timeline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+          </div>
+          <div class="step-content">
+            <span class="step-time">Se o cliente pedir para remarcar</span>
+            <strong>Remarcação Automática</strong>
+            <p>A IA desmarca o horário antigo e oferece novas opções sem intervenção humana.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const pills = document.querySelectorAll('#scheduling-pills .pill');
+    const chatPanels = document.querySelectorAll('.niche-chat-panel');
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const targetNiche = pill.getAttribute('data-niche');
+
+        // Toggle Pill Active State
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        // Toggle Chat Panel Active State
+        chatPanels.forEach(panel => {
+          if (panel.id === `chat-${targetNiche}`) {
+            panel.classList.add('active');
+          } else {
+            panel.classList.remove('active');
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .scheduling-section {
+    padding: 90px 0;
+    background: #ffffff;
+    color: #0f172a;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .shell {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 28px;
+  }
+
+  .section-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(118, 89, 239, 0.12);
+    color: #7659ef;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #0f172a;
+  }
+
+  .section-title .highlight {
+    color: #008f70;
+  }
+
+  .section-desc {
+    margin-top: 16px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #475569;
+  }
+
+  .segment-pills {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border-radius: 30px;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .pill-svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .pill.active, .pill:hover {
+    background: #00a884;
+    color: #ffffff;
+    border-color: #00a884;
+    font-weight: 700;
+  }
+
+  .scheduling-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .visual-chat {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Niche Chat Panels */
+  .niche-chat-panel {
+    display: none;
+    width: 100%;
+  }
+
+  .niche-chat-panel.active {
+    display: block;
+    animation: fadeInChat 0.3s ease-in-out;
+  }
+
+  @keyframes fadeInChat {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .scheduling-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .timeline-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px;
+  }
+
+  .timeline-step.highlight-reschedule {
+    border-color: rgba(234, 179, 8, 0.4);
+    background: #fefce8;
+  }
+
+  .step-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+
+  .svg-timeline {
+    width: 18px;
+    height: 18px;
+  }
+
+  .step-icon.green { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+  .step-icon.blue { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+  .step-icon.purple { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+  .step-icon.yellow { background: rgba(234, 179, 8, 0.15); color: #ca8a04; }
+
+  .step-time {
+    display: block;
+    font-size: 9.5px;
+    font-weight: 800;
+    color: #64748b;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  .step-content strong {
+    display: block;
+    font-size: 13.5px;
+    color: #0f172a;
+  }
+
+  .step-content p {
+    font-size: 11.5px;
+    color: #475569;
+    margin: 2px 0 0;
+  }
+
+  @media (max-width: 900px) {
+    .scheduling-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
