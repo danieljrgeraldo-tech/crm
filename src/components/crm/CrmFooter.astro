@@ -5,8 +5,10 @@
   <div class="shell footer-inner">
     <div class="footer-brand">
       <span class="brand-icon">✦</span>
-      <strong>Daniel Junior</strong>
-      <p>Operação de Atendimento Comercial com Inteligência Artificial</p>
+      <div class="brand-copy">
+        <strong>Daniel Junior</strong>
+        <p>Gestão de atendimento e automação com Inteligência Artificial</p>
+      </div>
     </div>
     <div class="footer-copy">
       <small>© 2026 Daniel Junior · Todos os direitos reservados</small>
@@ -33,34 +35,44 @@
   .footer-brand {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
   }
 
   .brand-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 6px;
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
     background: #00a884;
     color: #111b21;
     display: grid;
     place-items: center;
-    font-size: 12px;
+    font-size: 18px;
+    box-shadow: 0 8px 24px rgba(0,168,132,.2);
   }
+
+  .brand-copy { display: flex; flex-direction: column; gap: 3px; }
 
   .footer-brand strong {
     color: #e9edef;
-    font-size: 14px;
+    font-size: 19px;
+    line-height: 1.1;
+    letter-spacing: -.02em;
   }
 
   .footer-brand p {
-    font-size: 12px;
+    font-size: 11.5px;
     color: #64748b;
-    margin: 0 0 0 12px;
-    padding-left: 12px;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0;
+    max-width: 360px;
   }
 
   .footer-copy small {
     font-size: 12px;
+  }
+
+  @media (max-width: 700px) {
+    .footer-inner { align-items: flex-start; }
+    .footer-brand { width: 100%; }
+    .footer-copy { padding-left: 56px; }
   }
 </style>

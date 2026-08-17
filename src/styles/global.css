@@ -77,6 +77,10 @@ ul, ol {
   transform: translateY(0) scale(1);
 }
 
+[data-chat-step][hidden] {
+  display: none !important;
+}
+
 .wa-typing {
   align-self: flex-end;
   display: flex;

@@ -144,7 +144,8 @@ const {
 
   .wa-chat-body {
     position: relative;
-    min-height: 350px;
+    height: 410px;
+    min-height: 410px;
     background: #efeae2;
     padding: 14px 12px;
     overflow: hidden;
@@ -168,6 +169,13 @@ const {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    height: 100%;
+    justify-content: flex-end;
+  }
+
+  :global(.wa-window [data-chat-playback]) {
+    min-height: 100%;
+    justify-content: flex-end;
   }
 
   .wa-footer {

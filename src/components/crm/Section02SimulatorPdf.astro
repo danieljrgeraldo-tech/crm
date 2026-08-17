@@ -72,6 +72,15 @@ import WhatsappUI from "./WhatsappUI.astro";
 
         <!-- 2. Authentic Paper File Document -->
         <div class="paper-file-document">
+          <div class="pdf-generation-status" aria-hidden="true">
+            <div class="generator-file-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+            </div>
+            <strong>Gerando seu PDF</strong>
+            <span>Montando proposta e valores...</span>
+            <div class="generation-track"><i></i></div>
+            <small>PDF pronto ✓</small>
+          </div>
           <div class="folded-corner"></div>
 
           <div class="file-header-ribbon">
@@ -305,35 +314,22 @@ import WhatsappUI from "./WhatsappUI.astro";
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
   }
 
-  .sim-form {
-    animation: simulator-form-live 8s ease-in-out infinite;
+  .sim-form .f-btn {
+    animation: none;
   }
 
-  .sim-form .f-btn {
-    animation: simulator-button-live 8s ease-in-out infinite;
+  .simulator-section.is-demo-active .sim-form .f-btn {
+    animation: simulator-button-live 10s ease-in-out infinite;
   }
 
   .paper-file-document {
-    animation: simulator-pdf-live 8s ease-in-out infinite;
     transform-origin: top center;
   }
 
-  @keyframes simulator-form-live {
-    0%, 8% { opacity: .45; transform: translateY(8px); }
-    18%, 88% { opacity: 1; transform: translateY(0); }
-    100% { opacity: .45; transform: translateY(8px); }
-  }
-
   @keyframes simulator-button-live {
-    0%, 34% { transform: scale(1); }
-    39% { transform: scale(.96); box-shadow: 0 0 0 5px rgba(0,168,132,.16); }
-    45%, 100% { transform: scale(1); }
-  }
-
-  @keyframes simulator-pdf-live {
-    0%, 42% { opacity: .15; transform: translateY(18px) scale(.97); }
-    55%, 88% { opacity: 1; transform: translateY(0) scale(1); }
-    100% { opacity: .15; transform: translateY(18px) scale(.97); }
+    0%, 14% { transform: scale(1); }
+    18% { transform: scale(.96); box-shadow: 0 0 0 6px rgba(0,168,132,.18); }
+    23%, 100% { transform: scale(1); }
   }
 
   .card-tag {
@@ -418,6 +414,45 @@ import WhatsappUI from "./WhatsappUI.astro";
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
     overflow: hidden;
   }
+
+  .pdf-generation-status {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #ffffff;
+    color: #0f172a;
+  }
+
+  .simulator-section.is-demo-active .pdf-generation-status { animation: generator-stage 10s ease-in-out infinite; }
+
+  .generator-file-icon { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; color: #00a884; background: rgba(0,168,132,.11); }
+  .generator-file-icon svg { width: 24px; height: 24px; }
+  .pdf-generation-status strong { font-size: 15px; }
+  .pdf-generation-status span { font-size: 11px; color: #64748b; }
+  .pdf-generation-status small { color: #008f70; font-weight: 800; opacity: 0; }
+  .simulator-section.is-demo-active .pdf-generation-status small { animation: ready-label 10s ease infinite; }
+  .generation-track { width: 68%; height: 8px; border-radius: 99px; background: #e2e8f0; overflow: hidden; }
+  .generation-track i { display: block; width: 100%; height: 100%; border-radius: inherit; background: linear-gradient(90deg,#00a884,#4cd9a4); transform: scaleX(0); transform-origin: left; }
+  .simulator-section.is-demo-active .generation-track i { animation: generate-progress 10s ease-in-out infinite; }
+
+  .file-header-ribbon,
+  .paper-sheet-content { opacity: 0; clip-path: inset(0 0 100% 0); }
+  .simulator-section.is-demo-active .file-header-ribbon,
+  .simulator-section.is-demo-active .paper-sheet-content { animation: document-build 10s ease-in-out infinite; }
+
+  .paper-sheet-content::after { content: ""; position: absolute; left: 0; right: 0; height: 2px; background: linear-gradient(90deg,transparent,#00a884,transparent); box-shadow: 0 0 14px rgba(0,168,132,.45); opacity: 0; }
+  .simulator-section.is-demo-active .paper-sheet-content::after { animation: document-scan 10s ease-in-out infinite; }
+
+  @keyframes generate-progress { 0%,22% { transform: scaleX(0); } 50% { transform: scaleX(.72); } 64%,100% { transform: scaleX(1); } }
+  @keyframes ready-label { 0%,56% { opacity: 0; } 62%,72% { opacity: 1; } 78%,100% { opacity: 0; } }
+  @keyframes generator-stage { 0%,62% { opacity: 1; visibility: visible; } 72%,92% { opacity: 0; visibility: hidden; } 98%,100% { opacity: 1; visibility: visible; } }
+  @keyframes document-build { 0%,58% { opacity: 0; clip-path: inset(0 0 100% 0); } 72%,92% { opacity: 1; clip-path: inset(0 0 0 0); } 98%,100% { opacity: 0; clip-path: inset(0 0 100% 0); } }
+  @keyframes document-scan { 0%,58% { top: 0; opacity: 0; } 62% { opacity: 1; } 72% { top: 100%; opacity: 1; } 76%,100% { top: 100%; opacity: 0; } }
 
   .folded-corner {
     position: absolute;

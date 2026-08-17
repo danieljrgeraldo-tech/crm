@@ -31,7 +31,7 @@ const whatsappUrl = "https://wa.me/5548998493150?text=Ol%C3%A1%2C%20Daniel.%20Qu
     <div class="hero-stage">
       <div class="hero-whatsapp-container">
         <WhatsappUI contactName="Casa Nativa" contactStatus="online agora" avatarUrl="/images/people/fernanda.jpg" class="hero-live-chat">
-          <div data-chat-playback data-chat-loop class="hero-chat-sequence">
+          <div data-chat-playback data-chat-loop data-chat-bottom-up class="hero-chat-sequence">
           <div class="wa-bubble incoming" data-chat-step data-chat-delay="250">
             oi, vi aquela mesa redonda no insta
             <span class="wa-meta">19:42</span>
@@ -201,11 +201,19 @@ const whatsappUrl = "https://wa.me/5548998493150?text=Ol%C3%A1%2C%20Daniel.%20Qu
   .hero-chat-sequence {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     gap: 8px;
+    min-height: 410px;
   }
 
   .hero-whatsapp-container :global(.wa-chat-body) {
-    min-height: 470px;
+    min-height: 410px;
+    max-height: 410px;
+  }
+
+  @media (max-width: 900px) {
+    .hero-chat-sequence { min-height: 410px; }
+    .hero-whatsapp-container :global(.wa-chat-body) { min-height: 410px; max-height: 410px; }
   }
 
   .compact-bubble { margin-top: -4px; }
