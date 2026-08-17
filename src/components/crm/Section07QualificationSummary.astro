@@ -1,5 +1,4 @@
 ---
-import WhatsappUI from "./WhatsappUI.astro";
 ---
 
 <section id="qualificacao" class="qualification-section">
@@ -15,90 +14,39 @@ import WhatsappUI from "./WhatsappUI.astro";
       </p>
     </div>
 
-    <!-- 2-Column Aligned Layout -->
-    <div class="section-grid">
-      <!-- Left Column: Chat -->
-      <div class="grid-col-left">
-        <div class="col-header-tag">CONVERSA ACONTECENDO</div>
-        <WhatsappUI contactName="Imobiliária Horizonte" contactStatus="online agora" avatarUrl="/images/people/mariana.jpg">
-          <div data-chat-playback data-chat-loop class="qualification-chat">
-          <div class="wa-bubble incoming" data-chat-step data-chat-delay="150">
-            oi, o apê da rua das acácias ainda tá disponível?<br />vi no story
-            <span class="wa-meta">10:24</span>
-          </div>
-          <div class="wa-typing" data-chat-step data-chat-delay="950"><i></i><i></i><i></i></div>
-          <div class="wa-bubble outgoing" data-chat-step data-chat-delay="1750">
-            Está sim. É o de 2 quartos com sacada, no terceiro andar. Era esse mesmo?
-            <span class="wa-meta">10:25 <span class="wa-checks">✓✓</span></span>
-          </div>
-          <div class="wa-bubble incoming" data-chat-step data-chat-delay="2850">
-            esse! a gente tá de aluguel e precisa mudar até outubro<br />tenho um menino pequeno, queria evitar escada
-            <span class="wa-meta">10:27</span>
-          </div>
-          <div class="wa-typing" data-chat-step data-chat-delay="3600"><i></i><i></i><i></i></div>
-          <div class="wa-bubble outgoing" data-chat-step data-chat-delay="4400">
-            Ele tem elevador e a garagem fica no mesmo nível da entrada. O valor é R$ 420 mil e aceita financiamento. Quer visitar sábado depois das 10h?
-            <span class="wa-meta">10:28 <span class="wa-checks">✓✓</span></span>
-          </div>
-          <div class="wa-bubble incoming" data-chat-step data-chat-delay="5650">
-            10:30 pode ser<br />antes só queria confirmar se dá pra usar o fgts
-            <span class="wa-meta">10:29</span>
-          </div>
-          </div>
-        </WhatsappUI>
-      </div>
-
-      <!-- Right Column: Ficha Pronta no Estilo do Kanban (Mesmo Estilo do Kanban em 1 Card Só) -->
-      <div class="grid-col-right">
-        <div class="col-header-tag purple-tag">CARD SENDO ORGANIZADO NO CRM</div>
-        
-        <!-- Kanban Stage Column (Estilo Idêntico ao Kanban da Outra Etapa) -->
-        <div class="kanban-stage-column" data-chat-playback data-chat-loop>
-          <div class="seller-notification" data-chat-step data-chat-delay="5200">
-            <span class="notify-icon">DJ</span>
-            <div><small>Daniel Junior CRM · agora</small><strong>Novo cliente pronto para continuar</strong></div>
-          </div>
+    <div class="kanban-builder-demo" data-chat-playback data-chat-loop>
+      <button class="add-card-trigger" type="button" data-chat-step data-chat-delay="200" aria-label="Adicionar card">+</button>
+      <div class="kanban-stage-column builder-stage" data-chat-step data-chat-delay="1200">
           <header class="kanban-stage-header">
             <span class="stage-dot-purple"></span>
             <strong>Visita a confirmar</strong>
-            <span class="stage-count">1</span>
+            <span class="stage-count" data-chat-step data-chat-delay="4900">1</span>
           </header>
-
-          <!-- Single Clean White Kanban Card -->
-          <div class="kanban-deal-card featured-card" data-chat-step data-chat-delay="500">
-            <div class="card-user-row" data-chat-step data-chat-delay="1300">
+          <div class="kanban-deal-card featured-card" data-chat-step data-chat-delay="1800">
+            <div class="card-user-row" data-chat-step data-chat-delay="2300">
               <img src="/images/people/mariana.jpg" alt="Mariana Costa" class="deal-avatar" />
               <div>
                 <strong>Mariana Souza</strong>
                 <small>WhatsApp · Apartamento 2 quartos</small>
               </div>
-              <span class="deal-tag purple-tag">Visita</span>
             </div>
-
-            <!-- Executive IA Summary Quote -->
-            <div class="card-summary-quote" data-chat-step data-chat-delay="2300">
-              <span class="quote-label">RESUMO DA IA</span>
+            <div class="card-summary-quote typing-summary" data-chat-step data-chat-delay="3000">
+              <span class="quote-label">RESUMO DO ATENDIMENTO</span>
               <p>Mariana mora de aluguel e precisa mudar até outubro. Gostou do apartamento da Rua das Acácias porque tem elevador e aceita financiamento. Quer visitar sábado às 10h30 e perguntou sobre uso do FGTS.</p>
             </div>
-
-            <!-- Lead Meta Chips -->
-            <div class="card-chips-row" data-chat-step data-chat-delay="3300">
+            <div class="card-chips-row" data-chat-step data-chat-delay="3900">
               <span class="chip">Até outubro</span>
               <span class="chip">Financiamento</span>
               <span class="chip">Sábado · 10h30</span>
             </div>
-
-            <!-- Assignment Footer -->
-            <div class="card-footer-assign" data-chat-step data-chat-delay="4200">
+            <div class="card-footer-assign" data-chat-step data-chat-delay="4700">
               <div class="assign-text">
                 <small>ENCAMINHADO PARA</small>
                 <strong>Rafael · Corretor da região</strong>
               </div>
-              <button class="btn-takeover" type="button">Assumir atendimento ↗</button>
+              <button class="btn-takeover" type="button" data-chat-step data-chat-delay="5400">Assumir atendimento ↗</button>
             </div>
           </div>
-        </div>
-
       </div>
     </div>
 
@@ -115,6 +63,13 @@ import WhatsappUI from "./WhatsappUI.astro";
     color: #fff;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
+
+  .kanban-builder-demo { min-height: 510px; display: grid; place-items: center; position: relative; max-width: 520px; margin: 0 auto 38px; }
+  .add-card-trigger { position: absolute; top: 12px; width: 58px; height: 58px; border-radius: 50%; border: 0; background: #00a884; color: #fff; font-size: 34px; box-shadow: 0 12px 28px rgba(0,168,132,.3); animation: add-card-click 1.1s ease forwards; }
+  .builder-stage { width: 100%; box-sizing: border-box; transform-origin: top center; }
+  .typing-summary p { overflow: hidden; animation: summary-reveal 1.2s steps(9,end) both; }
+  @keyframes add-card-click { 0%,65% { transform: scale(1); opacity: 1; } 80% { transform: scale(.82); } 100% { transform: scale(.2); opacity: 0; } }
+  @keyframes summary-reveal { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 
   .shell {
     width: 100%;
@@ -249,9 +204,7 @@ import WhatsappUI from "./WhatsappUI.astro";
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
   }
 
-  .kanban-deal-card.featured-card {
-    border-color: #a855f7;
-  }
+  .kanban-deal-card.featured-card { border-color: #e2e8f0; }
 
   .card-user-row {
     display: flex;
@@ -336,7 +289,7 @@ import WhatsappUI from "./WhatsappUI.astro";
   .btn-takeover {
     padding: 8px 14px;
     border-radius: 8px;
-    background: #7659ef;
+    background: #00a884;
     color: #fff;
     font-size: 11px;
     font-weight: 700;
@@ -346,7 +299,7 @@ import WhatsappUI from "./WhatsappUI.astro";
   }
 
   .btn-takeover:hover {
-    background: #5f3ee6;
+    background: #008f70;
   }
 
   .takeaway-banner {

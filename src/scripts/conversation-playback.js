@@ -18,7 +18,14 @@ const playConversation = (root) => {
 
     steps.forEach((step, index) => {
       const delay = Number(step.dataset.chatDelay ?? index * 760);
-      timers.push(window.setTimeout(() => step.classList.add("is-visible"), delay));
+      timers.push(window.setTimeout(() => {
+        if (!step.classList.contains("wa-typing")) {
+          steps
+            .filter((candidate) => candidate.classList.contains("wa-typing"))
+            .forEach((typing) => typing.classList.remove("is-visible"));
+        }
+        step.classList.add("is-visible");
+      }, delay));
     });
 
     if (root.hasAttribute("data-chat-loop")) {
@@ -41,4 +48,3 @@ const playConversation = (root) => {
 };
 
 document.querySelectorAll("[data-chat-playback]").forEach(playConversation);
-

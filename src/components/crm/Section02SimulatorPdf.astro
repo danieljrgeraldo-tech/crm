@@ -305,6 +305,37 @@ import WhatsappUI from "./WhatsappUI.astro";
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
   }
 
+  .sim-form {
+    animation: simulator-form-live 8s ease-in-out infinite;
+  }
+
+  .sim-form .f-btn {
+    animation: simulator-button-live 8s ease-in-out infinite;
+  }
+
+  .paper-file-document {
+    animation: simulator-pdf-live 8s ease-in-out infinite;
+    transform-origin: top center;
+  }
+
+  @keyframes simulator-form-live {
+    0%, 8% { opacity: .45; transform: translateY(8px); }
+    18%, 88% { opacity: 1; transform: translateY(0); }
+    100% { opacity: .45; transform: translateY(8px); }
+  }
+
+  @keyframes simulator-button-live {
+    0%, 34% { transform: scale(1); }
+    39% { transform: scale(.96); box-shadow: 0 0 0 5px rgba(0,168,132,.16); }
+    45%, 100% { transform: scale(1); }
+  }
+
+  @keyframes simulator-pdf-live {
+    0%, 42% { opacity: .15; transform: translateY(18px) scale(.97); }
+    55%, 88% { opacity: 1; transform: translateY(0) scale(1); }
+    100% { opacity: .15; transform: translateY(18px) scale(.97); }
+  }
+
   .card-tag {
     font-size: 9px;
     font-weight: 800;
