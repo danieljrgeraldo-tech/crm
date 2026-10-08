@@ -1,0 +1,225 @@
+<div class="hero-demo" aria-label="Demonstração de uma conversa atendida por inteligência artificial">
+  <div class="demo-bar">
+    <div class="demo-brand"><i>DJ</i><strong>Central de atendimento</strong></div>
+    <div class="demo-live"><span></span> Atendimento acontecendo agora</div>
+  </div>
+
+  <div class="demo-body">
+    <section class="chat-window" aria-label="Conversa simulada com uma cliente">
+      <header>
+        <div class="person">
+          <span class="person-avatar"><img src="/images/people/mariana.jpg" alt="" width="72" height="72" /><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-1.75-.88-2.9-1.57-4.06-3.57-.17-.3.17-.28.5-.93.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-1.05-.02-1.82.97-1.82 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49 1.89.81 2.63.88 3.58.74.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 012.89 6.99c0 5.45-4.44 9.88-9.88 9.88"/></svg></i></span>
+          <div><strong>Mariana Costa <em>(Novo lead)</em></strong><small>WhatsApp · online agora</small></div>
+        </div>
+        <span class="service-status"><i></i> IA atendendo</span>
+      </header>
+
+      <div class="conversation-stage">
+        <p class="stage-label"><i></i> Qualificação com IA em tempo real</p>
+        <div class="message customer message-one">
+          <p>Quero comprar no atacado. Como funcionam as condições?</p>
+          <time>10:24</time>
+        </div>
+        <div class="ai-reading stage-two">
+          <span><i></i><b>IA analisando a intenção</b></span>
+          <small>Identificou: compra no atacado</small>
+        </div>
+        <div class="message assistant message-two stage-three">
+          <small>Resposta automática</small>
+          <p>Claro. Qual quantidade você pretende comprar por mês?</p>
+          <time>10:24 · ✓✓</time>
+        </div>
+        <div class="message customer compact message-three stage-four">
+          <p>Em torno de 150 peças.</p>
+          <time>10:25</time>
+        </div>
+        <div class="qualification-card stage-five">
+          <header><span>✦</span><div><small>QUALIFICAÇÃO INTELIGENTE</small><strong>Oportunidade de alto potencial</strong></div><b>Concluída</b></header>
+          <div><span><small>Perfil</small><strong>Atacado</strong></span><span><small>Volume</small><strong>150 peças</strong></span><span><small>Próxima ação</small><strong>Especialista</strong></span></div>
+        </div>
+        <div class="message assistant compact message-four stage-six">
+          <small>Resposta automática</small>
+          <p>Perfeito. Já organizei seus dados e vou encaminhar você ao vendedor certo.</p>
+          <time>10:25 · ✓✓</time>
+        </div>
+      </div>
+
+      <footer><span>＋</span><p>Responder mensagem...</p><b>Enviar</b></footer>
+    </section>
+
+    <section class="operation-window" aria-label="Ações que a inteligência artificial realiza durante a conversa">
+      <header>
+        <div><small>ENQUANTO CONVERSA</small><strong>A IA organiza tudo em segundo plano.</strong></div>
+        <span><i></i> IA trabalhando</span>
+      </header>
+
+      <div class="operation-progress"><span></span><b>Analisando e atualizando a operação</b></div>
+
+      <div class="operation-list" data-scroll-focus-group>
+        <article class="operation-item operation-one">
+          <i>01</i>
+          <div><small>ENTENDEU O INTERESSE</small><strong>Cliente quer comprar no atacado</strong><p>A dúvida e a intenção foram identificadas.</p></div>
+          <span>Feito</span>
+        </article>
+        <article class="operation-item operation-two">
+          <i>02</i>
+          <div><small>ORGANIZOU OS DADOS</small><strong>150 peças · Região Sul</strong><p>O CRM foi atualizado sem preenchimento manual.</p></div>
+          <span>Feito</span>
+        </article>
+        <article class="operation-item operation-three">
+          <i>03</i>
+          <div><small>ESCOLHEU O VENDEDOR</small><strong>Rafael recebeu a conversa</strong><p>O histórico completo foi enviado junto.</p></div>
+          <span>Agora</span>
+        </article>
+        <article class="operation-item operation-four">
+          <i>04</i>
+          <div><small>PROGRAMOU O RETORNO</small><strong>Amanhã, às 09:00</strong><p>Se o cliente parar, o sistema chama novamente.</p></div>
+          <span>Pronto</span>
+        </article>
+      </div>
+
+      <div class="operation-result">
+        <span>✓</span>
+        <div><small>RESULTADO PARA A EQUIPE</small><strong>Uma oportunidade organizada e pronta para continuar.</strong></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<style>
+  .hero-demo {
+    width: min(1160px,100%); overflow: hidden; border: 1px solid rgba(145,130,255,.34);
+    border-radius: 24px; color: #e9ebf3; background: #10131b;
+    box-shadow: 0 45px 120px rgba(0,0,0,.55), 0 0 90px rgba(103,78,255,.13);
+  }
+  .demo-bar {
+    height: 62px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px;
+    border-bottom: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.035);
+  }
+  .demo-brand,.demo-live,.person,.service-status,.operation-window > header span,.operation-result { display:flex; align-items:center; }
+  .demo-brand { gap:.75rem; font-size:.79rem; }
+  .demo-brand i {
+    width:32px; height:32px; display:grid; place-items:center; border-radius:9px; color:white;
+    background:linear-gradient(145deg,#7859ff,#4c89ff); font-size:.59rem; font-style:normal;
+  }
+  .demo-live { gap:.5rem; color:#a5aaba; font-size:.69rem; }
+  .demo-live span,.service-status i,.operation-window > header span i {
+    width:7px; height:7px; border-radius:50%; background:#43d39e; box-shadow:0 0 0 5px rgba(67,211,158,.1);
+  }
+  .demo-body { display:grid; grid-template-columns:minmax(0,1.04fr) minmax(410px,.96fr); min-height:650px; }
+  .chat-window {
+    min-width:0; display:grid; grid-template-rows:82px 1fr 72px; border-right:1px solid rgba(255,255,255,.08);
+    background:radial-gradient(circle at 30% 25%,rgba(92,119,255,.12),transparent 34%),#151924;
+  }
+  .chat-window > header {
+    display:flex; align-items:center; justify-content:space-between; padding:0 26px;
+    border-bottom:1px solid rgba(255,255,255,.08); background:rgba(8,11,18,.35);
+  }
+  .person { gap:.8rem; }
+  .person-avatar { position:relative; flex:0 0 auto; }.person img { width:42px; height:42px; display:block; border:2px solid rgba(136,116,255,.75); border-radius:50%; object-fit:cover; }.person-avatar > i { position:absolute;right:-4px;bottom:-3px;width:19px;height:19px;display:grid;place-items:center;border:2px solid #11151f;border-radius:50%;color:white;background:#25d366;box-shadow:0 4px 9px rgba(0,0,0,.24); }.person-avatar svg { width:10px;height:10px;fill:currentColor; }
+  .person div { display:flex; flex-direction:column; }
+  .person strong { font-size:.82rem; }
+  .person strong em { color:#a99cff;font-size:.61rem;font-style:normal;font-weight:650; }
+  .person small { margin-top:.18rem; color:#76d9b5; font-size:.59rem; }
+  .service-status { gap:.4rem; padding:.45rem .7rem; border:1px solid rgba(133,111,255,.25); border-radius:999px; color:#c8bfff; background:rgba(105,81,230,.13); font-size:.6rem; font-weight:700; }
+  .service-status i { width:5px; height:5px; box-shadow:none; }
+  .conversation-stage { position:relative; min-height:490px; padding:28px clamp(20px,4vw,46px); overflow:hidden; }
+  .stage-label { display:flex; align-items:center; gap:.5rem; margin:0 0 1.2rem; color:#9a90db; font-size:.62rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+  .stage-label i { width:7px; height:7px; border-radius:50%; background:#43d39e; box-shadow:0 0 0 5px rgba(67,211,158,.1); }
+  .message {
+    width:fit-content; max-width:82%; margin-bottom:1rem; padding:1rem 1.05rem;
+    border:1px solid rgba(255,255,255,.11); border-radius:16px; background:#202634;
+    box-shadow:0 12px 30px rgba(0,0,0,.16); opacity:0; transform:translateY(12px) scale(.98);
+  }
+  .message p { margin:0; font-size:.84rem; line-height:1.55; }
+  .message time { display:block; margin-top:.45rem; color:#9aa1b2; font-size:.55rem; text-align:right; }
+  .message.assistant { margin-left:auto; border-color:rgba(137,115,255,.42); background:linear-gradient(145deg,#3c356b,#29284e); }
+  .message.assistant small { display:block; margin-bottom:.45rem; color:#b7aaff; font-size:.52rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+  .message.compact { padding-block:.78rem; }
+  .message-one { animation:stage-one 18s cubic-bezier(.2,.75,.2,1) infinite; }
+  .stage-two { animation:stage-two 18s cubic-bezier(.2,.75,.2,1) infinite; }
+  .stage-three { animation:stage-three 18s cubic-bezier(.2,.75,.2,1) infinite; }
+  .stage-four { animation:stage-four 18s cubic-bezier(.2,.75,.2,1) infinite; }
+  .stage-five { animation:stage-five 18s cubic-bezier(.2,.75,.2,1) infinite; }
+  .stage-six { animation:stage-six 18s cubic-bezier(.2,.75,.2,1) infinite; }
+  .ai-reading { width:fit-content; margin:-.35rem 0 .8rem auto; padding:.65rem .8rem; border:1px solid rgba(67,211,158,.24); border-radius:11px; color:#b9f2dc; background:rgba(35,129,98,.13); opacity:0; transform:translateY(10px); }
+  .ai-reading > span { display:flex; align-items:center; gap:.45rem; }.ai-reading > span i { width:7px; height:7px; border-radius:50%; background:#43d39e; animation:ai-pulse 1s ease infinite; }.ai-reading b { font-size:.58rem; }.ai-reading small { display:block; margin-top:.25rem; color:#75bda2; font-size:.49rem; }
+  .qualification-card { margin:0 0 1rem auto; padding:.85rem; border:1px solid rgba(127,105,239,.5); border-radius:14px; background:linear-gradient(145deg,rgba(109,83,229,.23),rgba(58,50,112,.32)); box-shadow:0 14px 30px rgba(0,0,0,.16); opacity:0; transform:translateY(10px); }
+  .qualification-card header { display:grid; grid-template-columns:30px 1fr auto; gap:.65rem; align-items:center; }.qualification-card header > span { width:30px;height:30px;display:grid;place-items:center;border-radius:9px;color:white;background:#7358ed; }.qualification-card header div { display:flex; flex-direction:column; }.qualification-card header small { color:#b7aaff;font-size:.44rem;font-weight:800;letter-spacing:.07em; }.qualification-card header strong { margin-top:.15rem;font-size:.65rem; }.qualification-card header b { padding:.28rem .38rem;border-radius:5px;color:#76ddb5;background:rgba(67,211,158,.1);font-size:.4rem; }
+  .qualification-card > div { display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem;margin-top:.7rem; }.qualification-card > div span { display:flex;flex-direction:column;padding:.55rem;border:1px solid rgba(255,255,255,.08);border-radius:8px;background:rgba(255,255,255,.04); }.qualification-card > div small { color:#858da0;font-size:.42rem; }.qualification-card > div strong { margin-top:.18rem;font-size:.51rem; }
+  .chat-window > footer {
+    margin:0 22px 18px; display:grid; grid-template-columns:auto 1fr auto; gap:.7rem; align-items:center;
+    padding:.68rem .75rem; border:1px solid rgba(255,255,255,.1); border-radius:12px; background:#1c212d;
+  }
+  .chat-window > footer span,.chat-window > footer p { color:#858c9e; }
+  .chat-window > footer p { margin:0; font-size:.67rem; }
+  .chat-window > footer b { padding:.55rem .8rem; border-radius:8px; color:white; background:#7358ed; font-size:.61rem; }
+  .operation-window { padding:28px; color:#1c2636; background:radial-gradient(circle at 90% 5%,rgba(115,88,237,.14),transparent 32%),linear-gradient(155deg,#e8eef7,#d6e0ed); }
+  .operation-window > header { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; padding-bottom:1.25rem; }
+  .operation-window > header > div { display:flex; flex-direction:column; }
+  .operation-window > header small { color:#654bcf; font-size:.53rem; font-weight:800; letter-spacing:.1em; }
+  .operation-window > header strong { max-width:270px; margin-top:.4rem; font-size:1rem; line-height:1.3; }
+  .operation-window > header span { gap:.4rem; color:#5f6b7c; font-size:.57rem; }
+  .operation-progress { display:flex;align-items:center;gap:.65rem;margin:0 0 .9rem;padding:.62rem .75rem;border:1px solid #c5baf1;border-radius:10px;color:#5742b2;background:rgba(241,238,255,.76);overflow:hidden; }
+  .operation-progress > span { width:58px;height:5px;overflow:hidden;border-radius:99px;background:#d9d2f5; }.operation-progress > span::after { content:"";display:block;width:42%;height:100%;border-radius:inherit;background:#7358ed;animation:operation-loading 2.2s ease-in-out infinite; }.operation-progress b { font-size:.52rem; }
+  .operation-list { position:relative; display:grid; gap:.7rem; }
+  .operation-list::before { content:""; position:absolute; left:21px; top:34px; bottom:34px; width:1px; background:#aebacc; }
+  .operation-item {
+    position:relative; z-index:1; display:grid; grid-template-columns:44px 1fr auto; gap:.82rem; min-height:94px;
+    padding:.9rem; border:1px solid #bac6d6; border-radius:14px; background:rgba(250,252,255,.66);
+    opacity:.78; box-shadow:0 10px 24px rgba(49,65,88,.06); transition:opacity .35s,transform .35s,border-color .35s,background .35s,box-shadow .35s;
+  }
+  .operation-item > i {
+    width:35px; height:35px; display:grid; place-items:center; border:1px solid #b9c4d3;
+    border-radius:11px; color:#667286; background:#edf2f8; font-size:.54rem; font-style:normal; font-weight:800;
+  }
+  .operation-item > div { min-width:0; display:flex; flex-direction:column; }
+  .operation-item small { color:#654bcf; font-size:.49rem; font-weight:800; letter-spacing:.07em; }
+  .operation-item strong { margin-top:.25rem; font-size:.73rem; line-height:1.3; }
+  .operation-item p { margin:.22rem 0 0; color:#5f6b7d; font-size:.59rem; line-height:1.35; }
+  .operation-item > span { align-self:start; padding:.3rem .42rem; border-radius:6px; color:#614eb2; background:rgba(117,88,237,.12); font-size:.48rem; }
+  .operation-result { gap:.75rem; margin-top:1rem; padding:1rem; border:1px solid #9bcfbc; border-radius:13px; background:#dff3eb; }
+  .operation-result > span { width:32px; height:32px; display:grid; flex:0 0 auto; place-items:center; border-radius:10px; color:#167653; background:#c6eadc; }
+  .operation-result div { display:flex; flex-direction:column; }
+  .operation-result small { color:#1d6b4e; font-size:.48rem; font-weight:800; letter-spacing:.07em; }
+  .operation-result strong { margin-top:.2rem; font-size:.67rem; line-height:1.35; }
+
+  @keyframes stage-one { 0%,3%,100%{opacity:0;transform:translateY(12px)} 7%,88%{opacity:1;transform:none} 95%{opacity:0;transform:translateY(-5px)} }
+  @keyframes stage-two { 0%,13%,100%{opacity:0;transform:translateY(10px)} 18%,88%{opacity:1;transform:none} 95%{opacity:0} }
+  @keyframes stage-three { 0%,27%,100%{opacity:0;transform:translateY(12px)} 32%,88%{opacity:1;transform:none} 95%{opacity:0} }
+  @keyframes stage-four { 0%,41%,100%{opacity:0;transform:translateY(12px)} 46%,88%{opacity:1;transform:none} 95%{opacity:0} }
+  @keyframes stage-five { 0%,55%,100%{opacity:0;transform:translateY(10px)} 60%,88%{opacity:1;transform:none} 95%{opacity:0} }
+  @keyframes stage-six { 0%,69%,100%{opacity:0;transform:translateY(12px)} 74%,88%{opacity:1;transform:none} 95%{opacity:0} }
+  @keyframes operation-loading { 0%{transform:translateX(-110%)} 60%,100%{transform:translateX(240%)} }
+  @keyframes ai-pulse { 50%{box-shadow:0 0 0 6px rgba(67,211,158,.12)} }
+
+  @media (max-width:760px) {
+    .hero-demo { border-radius:18px; }
+    .demo-bar { height:56px; padding-inline:14px; }
+    .demo-live { font-size:.58rem; }
+    .demo-brand strong { font-size:.68rem; }
+    .demo-body { grid-template-columns:1fr; }
+    .chat-window { min-height:800px; border-right:0; border-bottom:1px solid rgba(255,255,255,.08); }
+    .chat-window > header { padding-inline:16px; }
+    .person img { width:44px; height:44px; }
+    .person strong { font-size:.82rem; }
+    .conversation-stage { min-height:650px; padding:24px 15px; }
+    .message { max-width:91%; padding:.92rem 1rem; border-radius:15px; }
+    .message p { font-size:.86rem; }
+    .operation-window { padding:24px 14px; }
+    .operation-window > header { align-items:flex-start; }
+    .operation-window > header strong { font-size:1.05rem; }
+    .operation-item { grid-template-columns:42px 1fr; min-height:112px; padding:1rem .85rem; }
+    .operation-item { opacity:.56; transform:scale(.975); }
+    .operation-item.is-scroll-active { opacity:1; transform:scale(1.025); border-color:#7459e9; background:#f0edff; box-shadow:0 16px 34px rgba(91,69,190,.18),inset 4px 0 0 #7459e9; }
+    .operation-item strong { padding-right:2.3rem; font-size:.8rem; }
+    .operation-item p { max-width:235px; font-size:.66rem; line-height:1.45; }
+    .operation-item > span { position:absolute; right:.75rem; top:.8rem; }
+    .operation-result strong { font-size:.72rem; }
+  }
+
+  @media (prefers-reduced-motion:reduce) {
+    .message,.ai-reading,.qualification-card { animation:none; opacity:1; transform:none; }
+    .operation-item { opacity:1; transform:none; }
+  }
+</style>

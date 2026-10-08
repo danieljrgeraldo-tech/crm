@@ -1,0 +1,79 @@
+---
+import { site } from "../../data/site-content.js";
+import Button from "./Button.astro";
+import SectionLabel from "./SectionLabel.astro";
+
+const hero = site.hero;
+---
+
+<section
+  id="top"
+  class="relative overflow-hidden bg-paper pt-24 lg:pt-28"
+  aria-label="Introdução"
+>
+  <!-- Linhas técnicas de fundo -->
+  <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+    <div class="technical-line top-0 left-[6%] h-full w-px"></div>
+    <div class="technical-line top-0 right-[6%] h-full w-px hidden lg:block"></div>
+  </div>
+
+  <div class="site-container relative z-10 pb-5 lg:pb-8">
+    <div class="grid grid-cols-1 items-end gap-5 lg:grid-cols-12 lg:gap-4">
+      <!-- Coluna textual -->
+      <div class="flex flex-col justify-end pt-3 lg:col-span-6 lg:col-start-1 lg:pr-4 xl:pr-8">
+        <SectionLabel text={hero.eyebrow} motion={false} />
+
+        <h1 class="mt-3 font-display text-[2.75rem] font-light leading-[0.95] tracking-tight text-ink sm:text-6xl lg:mt-4 lg:text-7xl xl:text-[5.5rem]">
+          <span class="block">{hero.title}</span>
+        </h1>
+
+        <p class="mt-4 max-w-xl text-base leading-relaxed text-graphite sm:text-lg lg:mt-5 lg:text-xl">
+          {hero.text}
+        </p>
+
+        <p class="mt-2 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
+          {hero.complement}
+        </p>
+
+        <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-7">
+          <Button href="#contato" variant="primary" size="lg">
+            {site.cta.primary}
+          </Button>
+          <Button href="#metodo" variant="text" size="lg">
+            {site.cta.secondary}
+          </Button>
+        </div>
+      </div>
+
+      <!-- Coluna de imagem -->
+      <div class="lg:col-span-6 lg:col-start-7 lg:-ml-12 xl:-ml-16">
+        <div
+          class="hero-image-mask relative aspect-[16/10] w-full overflow-hidden bg-line-light lg:aspect-[4/5] lg:h-[min(70vh,46rem)] lg:max-h-[46rem]"
+        >
+          <img
+            src="/images/daniel-hero.webp"
+            alt={hero.imageAlt}
+            width="1280"
+            height="1714"
+            class="hero-image h-full w-full object-cover object-[52%_30%]"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <!-- Sobreposição editorial -->
+          <div class="pointer-events-none absolute inset-y-0 left-0 hidden w-16 bg-gradient-to-r from-paper to-transparent lg:block" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marcadores inferiores -->
+    <div
+      class="relative z-10 mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-line pt-4 lg:mt-7 lg:gap-x-10 lg:pt-6"
+    >
+      {hero.markers.map((marker) => (
+        <span class="font-sans text-xs font-medium uppercase tracking-widest text-muted">
+          {marker}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>

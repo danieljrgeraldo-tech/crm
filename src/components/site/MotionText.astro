@@ -1,0 +1,13 @@
+---
+export interface Props {
+  as?: "h1" | "h2" | "h3" | "p" | "span";
+  class?: string;
+  type?: "reveal-line" | "reveal" | "fade";
+}
+
+const { as: Tag = "span", class: className = "", type = "reveal" } = Astro.props;
+---
+
+<Tag class={className} data-motion={type}>
+  <slot />
+</Tag>

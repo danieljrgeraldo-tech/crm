@@ -1,0 +1,13 @@
+---
+const { title, text, tone = "dark" } = Astro.props;
+const isLight = tone === "light";
+---
+
+<article class:list={[
+  "premium-card section-reveal rounded-lg p-6 shadow-card",
+  isLight ? "border border-stone-200 bg-white" : "border border-white/10 bg-black/25"
+]}>
+  <span class="checkmark mb-5" aria-hidden="true"></span>
+  <h3 class:list={["text-lg font-semibold", isLight ? "text-stone-950" : "text-white"]}>{title}</h3>
+  <p class:list={["mt-3 text-sm leading-7", isLight ? "text-stone-600" : "text-white/62"]}>{text}</p>
+</article>

@@ -1,0 +1,221 @@
+---
+import WhatsappUI from "./WhatsappUI.astro";
+---
+
+<section class="memory-section">
+  <div class="shell">
+    <div class="section-grid">
+      
+      <!-- Text & Timeline -->
+      <div class="text-content">
+        <span class="section-tag">MEMÓRIA CONTINUADA</span>
+        <h2 class="section-title">
+          Ela lembra do cliente. <br />
+          <span class="highlight">Mesmo dias depois.</span>
+        </h2>
+        <p class="section-desc">
+          Se o cliente voltar amanhã ou semanas depois, a IA recupera o que já foi conversado e continua de onde parou, sem exigir que ele repita tudo do zero.
+        </p>
+
+        <div class="memory-facts">
+          <span><i></i>Carta de crédito de R$ 450 mil</span>
+          <span><i></i>Lance embutido de 30% planejado</span>
+          <span><i></i>Objetivo: compra de galpão comercial</span>
+        </div>
+      </div>
+
+      <!-- Visual Content (WhatsApp with Integrated Memory Note) -->
+      <div class="visual-content">
+        <WhatsappUI contactName="Daniel Junior · Crédito" contactStatus="online agora" avatarUrl="/images/people/fernanda.jpg">
+          <div data-chat-playback data-chat-loop class="memory-chat-sequence">
+          <div class="wa-time-divider" data-chat-step data-chat-delay="100"><span>Segunda-feira — 19:51</span></div>
+          <div class="wa-bubble outgoing" data-chat-step data-chat-delay="450">
+            Te passei a simulação da carta de R$ 450 mil com lance embutido de 30%. Se contemplar no lance, o crédito líquido fica em R$ 315 mil.
+            <span class="wa-meta">19:51 <span class="wa-checks">✓✓</span></span>
+          </div>
+          <div class="wa-bubble incoming" data-chat-step data-chat-delay="1200">
+            Show! Vou alinhar com meu sócio sobre o valor da entrada e te chamo.
+            <span class="wa-meta">19:52</span>
+          </div>
+          <div class="wa-time-divider highlight-time" data-chat-step data-chat-delay="2200"><span>3 dias depois — Quinta-feira</span></div>
+          <div class="wa-bubble incoming" data-chat-step data-chat-delay="2850">
+            oi, conversei com ele aqui... a gente tem 40 mil guardado pra somar no lance livre
+            <span class="wa-meta">09:45</span>
+          </div>
+          <div class="wa-typing" data-chat-step data-chat-delay="4050"><i></i><i></i><i></i></div>
+          <div class="wa-bubble outgoing" data-chat-step data-chat-delay="4850">
+            Perfeito, Marcelo! Com os R$ 40 mil de recurso próprio mais os 30% embutidos, seu lance vai para quase 39% no total. Aumenta muito a chance na assembleia do dia 18.
+            <span class="wa-meta">09:46 <span class="wa-checks">✓✓</span></span>
+          </div>
+          <div class="wa-bubble incoming" data-chat-step data-chat-delay="6000">
+            Ótimo! Como faço pra cadastrar antes do fechamento do grupo?
+            <span class="wa-meta">09:47</span>
+          </div>
+          </div>
+        </WhatsappUI>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .memory-section {
+    padding: 90px 0;
+    background: #0f172a;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .shell {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .section-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(118, 89, 239, 0.15);
+    color: #a89cf0;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+  }
+
+  .section-title .highlight {
+    color: #4cd9a4;
+  }
+
+  .section-desc {
+    margin-top: 16px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #94a3b8;
+  }
+
+  .memory-facts {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .memory-facts span { display: flex; align-items: center; gap: 9px; color: #cbd5e1; font-size: 13px; }
+  .memory-facts i { width: 7px; height: 7px; border-radius: 50%; background: #7659ef; box-shadow: 0 0 0 5px rgba(118,89,239,.12); }
+
+  .memory-chat-sequence { display: flex; flex-direction: column; gap: 9px; }
+
+  .timeline-card {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .timeline-card.active {
+    border-color: #00a884;
+    background: #1e293b;
+    box-shadow: 0 4px 16px rgba(0, 168, 132, 0.2);
+  }
+
+  .t-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 3px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .t-badge.green {
+    color: #4cd9a4;
+    background: rgba(0, 168, 132, 0.2);
+    border: 1px solid rgba(0, 168, 132, 0.3);
+  }
+
+  .timeline-card p {
+    font-size: 13px;
+    color: #e2e8f0;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .timeline-card p strong {
+    color: #ffffff;
+  }
+
+  .timeline-gap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .gap-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .gap-text {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #a89cf0;
+    background: rgba(118, 89, 239, 0.2);
+    border: 1px solid rgba(118, 89, 239, 0.4);
+    padding: 3px 12px;
+    border-radius: 10px;
+  }
+
+  .visual-content {
+    position: relative;
+  }
+
+  .wa-time-divider {
+    text-align: center;
+    margin: 8px 0;
+  }
+
+  .wa-time-divider span {
+    background: #182229;
+    color: #8696a0;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 10px;
+  }
+
+  .wa-time-divider.highlight-time span {
+    background: rgba(0, 168, 132, 0.2);
+    color: #00a884;
+    border: 1px solid rgba(0, 168, 132, 0.3);
+  }
+
+  @media (max-width: 900px) {
+    .section-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

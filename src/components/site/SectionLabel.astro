@@ -1,0 +1,12 @@
+---
+export interface Props {
+  text: string;
+  motion?: boolean;
+}
+
+const { text, motion = true } = Astro.props;
+---
+
+<span class="section-label" {...(motion ? { "data-motion": "fade" } : {})}>
+  {text}
+</span>

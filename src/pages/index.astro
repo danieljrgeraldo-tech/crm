@@ -1,0 +1,79 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import CrmHeader from "../components/crm/CrmHeader.astro";
+import Section01Hero from "../components/crm/Section01Hero.astro";
+import Section02SimulatorPdf from "../components/crm/Section02SimulatorPdf.astro";
+import Section03Memory from "../components/crm/Section03Memory.astro";
+import Section04CrmKanban from "../components/crm/Section04CrmKanban.astro";
+import SectionCrmOverview from "../components/crm/SectionCrmOverview.astro";
+import Section05Followup from "../components/crm/Section05Followup.astro";
+import Section06Scheduling from "../components/crm/Section06Scheduling.astro";
+import Section07QualificationSummary from "../components/crm/Section07QualificationSummary.astro";
+import Section08TeamDistribution from "../components/crm/Section08TeamDistribution.astro";
+import Section09ManagerControl from "../components/crm/Section09ManagerControl.astro";
+import Section10Segments from "../components/crm/Section10Segments.astro";
+import Section11DanielImplementation from "../components/crm/Section11DanielImplementation.astro";
+import Section12CtaFinal from "../components/crm/Section12CtaFinal.astro";
+import CrmFooter from "../components/crm/CrmFooter.astro";
+---
+
+<SiteLayout
+  title="Daniel Junior | IA no WhatsApp para Consórcios, Crédito e Operações Financeiras"
+  description="Uma esteira comercial inteligente no WhatsApp: simulações de crédito e consórcio, cálculo de meia-parcela, proposta em PDF, qualificação de lastro e agendamento estratégico com consultores."
+  robots="noindex, nofollow"
+  canonicalUrl="https://ia-financeira.pages.dev/"
+>
+  <CrmHeader />
+
+  <main>
+    <!-- 01. Hero (Dark Slate) -->
+    <Section01Hero />
+
+    <!-- 02. Simulador personalizado: formulário -> PDF -> WhatsApp -->
+    <Section02SimulatorPdf />
+
+    <!-- 03. A conversa continua com memória financeira -->
+    <Section03Memory />
+
+    <!-- 04. Agendamento estratégico (Meet para cotas altas / Ligação de 10 min) -->
+    <Section06Scheduling />
+
+    <!-- 05. Conversa vira resumo, card e perfil do tomador no CRM -->
+    <Section07QualificationSummary />
+
+    <!-- 06. Distribuição para o especialista certo (Consórcio, Imóvel, PJ) -->
+    <Section08TeamDistribution />
+
+    <!-- 07. Organização / CRM / Pipeline da Mesa de Crédito -->
+    <Section04CrmKanban />
+
+    <!-- 08. Follow-up contextual com datas de corte e assembleia -->
+    <Section05Followup />
+
+    <!-- 09. CRM e gestão centralizada da carteira -->
+    <SectionCrmOverview />
+    <Section09ManagerControl />
+
+    <!-- 10. Aplicações por segmento financeiro -->
+    <Section10Segments />
+
+    <!-- 11. Implementação Sob Medida / Daniel Junior (Experiência em Negócios e Finanças desde 2013) -->
+    <Section11DanielImplementation />
+
+    <!-- 12. CTA Final -->
+    <Section12CtaFinal />
+  </main>
+
+  <CrmFooter />
+</SiteLayout>
+
+<script>
+  import "../scripts/conversation-playback.js";
+</script>
+
+<style>
+  main {
+    overflow: visible;
+    background: #0f172a;
+  }
+</style>

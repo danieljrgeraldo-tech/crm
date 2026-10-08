@@ -1,0 +1,655 @@
+---
+import WhatsappUI from "./WhatsappUI.astro";
+---
+
+<section id="simulacao" class="simulator-section">
+  <div class="shell">
+    <div class="section-header">
+      <span class="section-tag">SIMULAÇÃO & PROPOSTA AUTOMÁTICA</span>
+      <h2 class="section-title">
+        O cliente fez uma simulação de crédito? <br />
+        <span class="highlight">A IA entrega o PDF e conduz a negociação.</span>
+      </h2>
+      <p class="section-desc">
+        O cliente preenche a simulação no seu site ou anúncio, recebe a proposta detalhada em PDF diretamente no WhatsApp e a IA já inicia o atendimento entendendo a capacidade de pagamento, prazo e lance.
+      </p>
+    </div>
+
+    <!-- Callout: Se sua empresa não tiver simulador, nós implementamos! -->
+    <div class="no-simulator-callout">
+      <div class="ns-icon">
+        <svg class="ns-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+      </div>
+      <div class="ns-content">
+        <strong>Sua assessoria ou corretora ainda não tem um simulador?</strong>
+        <p>Nós desenvolvemos e integramos um simulador exclusivo de consórcio, home equity ou crédito estruturado no seu site ou via link direto, conectado em tempo real à IA no WhatsApp.</p>
+      </div>
+    </div>
+
+    <!-- 2-Column Stage Layout with Perfectly Equalized Spacing -->
+    <div class="stage-container">
+      
+      <!-- Left Column: Form & Authentic Paper File Sheet -->
+      <div class="stage-col-left">
+        
+        <!-- 1. Simulator Form -->
+        <div class="sim-card sim-form">
+          <div class="card-tag">1. FORMULÁRIO DO SEU SITE OU LINK</div>
+          <div class="form-title">Simulador de Crédito & Consórcio</div>
+          
+          <div class="form-fields">
+            <div class="f-group">
+              <label>Valor desejado</label>
+              <div class="f-val">R$ 250.000,00</div>
+            </div>
+            <div class="f-group">
+              <label>Finalidade</label>
+              <div class="f-val">Aquisição Imobiliária / Reforma</div>
+            </div>
+            <div class="f-row">
+              <div class="f-group">
+                <label>Prazo</label>
+                <div class="f-val">180 meses</div>
+              </div>
+              <div class="f-group">
+                <label>Nome</label>
+                <div class="f-val">João Martins</div>
+              </div>
+            </div>
+            <div class="f-btn">Ver minha simulação →</div>
+          </div>
+        </div>
+
+        <!-- Equalized Arrow Connector 1 (Form -> PDF) -->
+        <div class="flow-arrow-separator">
+          <svg class="svg-arrow-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </div>
+
+        <!-- 2. Authentic Paper File Document -->
+        <div class="paper-file-document">
+          <div class="pdf-generation-status" aria-hidden="true">
+            <div class="generator-file-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+            </div>
+            <strong>Gerando seu PDF</strong>
+            <span>Calculando parcelas e lances...</span>
+            <div class="generation-track"><i></i></div>
+            <small>PDF pronto ✓</small>
+          </div>
+          <div class="folded-corner"></div>
+
+          <div class="file-header-ribbon">
+            <div class="file-tag-badge">
+              <svg class="file-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <strong>Simulacao_Credito_250k.pdf</strong>
+            </div>
+            <span class="file-type-text">ARQUIVO PDF</span>
+          </div>
+
+          <div class="paper-sheet-content">
+            <div class="a4-header-row">
+              <div class="logo-placeholder-box">
+                <span>[ SUA MARCA AQUI ]</span>
+              </div>
+              <div class="a4-doc-info">
+                <strong>SIMULAÇÃO PERSONALIZADA</strong>
+              </div>
+            </div>
+
+            <div class="a4-divider"></div>
+
+            <div class="a4-summary-table">
+              <div class="a4-row"><span>Cliente:</span> <strong>João Martins</strong></div>
+              <div class="a4-row"><span>Crédito Solicitado:</span> <strong>R$ 250.000,00</strong></div>
+              <div class="a4-row"><span>Objetivo:</span> <strong>Aquisição Imobiliária</strong></div>
+              <div class="a4-row highlight-row"><span>Meia-Parcela Estimada:</span> <strong class="green-txt">R$ 815,00/mês</strong></div>
+            </div>
+
+            <div class="a4-footer-note">
+              <small>Simulação com opção de lance embutido de até 30% da carta.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Equalized Arrow Connector 2 (PDF -> Mobile Flow) -->
+        <div class="flow-arrow-separator mobile-only-arrow">
+          <svg class="svg-arrow-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </div>
+
+      </div>
+
+      <!-- Desktop Center Connector Arrow -->
+      <div class="stage-center-arrow">
+        <svg class="svg-stage-arrow-direct" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </div>
+
+      <!-- Right Column: WhatsApp Chat -->
+      <div class="stage-col-right">
+        <div class="stage-wa-box">
+          <div class="wa-stage-tag">A CONVERSA CONTINUA NO WHATSAPP</div>
+          
+          <WhatsappUI contactName="João Martins" contactStatus="online agora" avatarUrl="/images/people/lucas.jpg">
+            <div data-chat-playback data-chat-loop class="simulator-chat-sequence">
+            <div class="wa-pdf-attachment-box" data-chat-step data-chat-delay="300">
+              <div class="pdf-icon-wrap">📄</div>
+              <div class="pdf-att-details">
+                <strong>Simulacao_Credito_250k.pdf</strong>
+                <small>Documento PDF · 1 página</small>
+              </div>
+              <span class="wa-meta">10:30 <span class="wa-checks">✓✓</span></span>
+            </div>
+
+            <div class="wa-gap-divider" data-chat-step data-chat-delay="1200"><span>3 minutos depois</span></div>
+
+            <div class="wa-typing" data-chat-step data-chat-delay="1800"><i></i><i></i><i></i></div>
+            <div class="wa-bubble outgoing" data-chat-step data-chat-delay="2550">
+              Oi, João! Sou a consultora virtual. Vi que você acabou de simular uma carta de R$ 250 mil no site e já gerei a sua proposta em PDF com a opção de meia-parcela aqui em cima.
+              <span class="wa-meta">10:33 <span class="wa-checks">✓✓</span></span>
+            </div>
+
+            <div class="wa-bubble outgoing" data-chat-step data-chat-delay="3700">
+              A meia-parcela de R$ 815 cabe com folga no seu orçamento mensal ou prefere que eu recalcule com outro prazo e lance embutido?
+              <span class="wa-meta">10:33 <span class="wa-checks">✓✓</span></span>
+            </div>
+
+            <div class="wa-bubble incoming" data-chat-step data-chat-delay="4900">
+              A parcela ficou ótima! Mas como funciona se eu quiser dar lance pra pegar o dinheiro mais rápido?
+              <span class="wa-meta">10:34</span>
+            </div>
+
+            <div class="wa-typing" data-chat-step data-chat-delay="5500"><i></i><i></i><i></i></div>
+            <div class="wa-bubble outgoing" data-chat-step data-chat-delay="6250">
+              Você pode usar até 30% da própria carta (R$ 75 mil) como lance embutido, sem tirar do bolso. Quer que eu agende uma ligação rápida de 10 min com o nosso especialista para te mostrar o histórico das assembleias?
+              <span class="wa-meta">10:34 <span class="wa-checks">✓✓</span></span>
+            </div>
+            </div>
+          </WhatsappUI>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Impact Statement Banner -->
+    <div class="closing-impact-banner">
+      <p>💡 <strong>O cliente não vira só um cadastro no seu banco de dados.</strong> Ele já entra em uma conversa de venda ativa com contexto.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .simulator-section {
+    padding: 90px 0;
+    background: #f8fafc;
+    color: #0f172a;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .simulator-chat-sequence { display: flex; flex-direction: column; gap: 10px; }
+
+  .shell {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 24px;
+  }
+
+  .section-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(0, 168, 132, 0.12);
+    color: #008f70;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #0f172a;
+  }
+
+  .section-title .highlight {
+    color: #008f70;
+  }
+
+  .section-desc {
+    margin-top: 16px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #475569;
+  }
+
+  .no-simulator-callout {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #ffffff;
+    border: 1px solid #00a884;
+    border-left: 4px solid #00a884;
+    border-radius: 12px;
+    padding: 16px 20px;
+    max-width: 820px;
+    margin: 0 auto 36px;
+    box-shadow: 0 4px 15px rgba(0, 168, 132, 0.08);
+  }
+
+  .ns-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(0, 168, 132, 0.12);
+    color: #008f70;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+
+  .ns-svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .ns-content strong {
+    display: block;
+    font-size: 13.5px;
+    color: #0f172a;
+    margin-bottom: 3px;
+  }
+
+  .ns-content p {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #475569;
+    margin: 0;
+  }
+
+  /* 2-Column Stage Layout with Symmetrical Gaps */
+  .stage-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .stage-col-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Managed strictly by flow-arrow-separator */
+  }
+
+  .sim-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  }
+
+  .sim-form .f-btn {
+    animation: none;
+  }
+
+  .simulator-section.is-demo-active .sim-form .f-btn {
+    animation: simulator-button-live 10s ease-in-out infinite;
+  }
+
+  .paper-file-document {
+    transform-origin: top center;
+  }
+
+  @keyframes simulator-button-live {
+    0%, 14% { transform: scale(1); }
+    18% { transform: scale(.96); box-shadow: 0 0 0 6px rgba(0,168,132,.18); }
+    23%, 100% { transform: scale(1); }
+  }
+
+  .card-tag {
+    font-size: 9px;
+    font-weight: 800;
+    color: #008f70;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+
+  .form-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 14px;
+  }
+
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .f-group label {
+    display: block;
+    font-size: 10px;
+    color: #64748b;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .f-val {
+    padding: 9px 12px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0f172a;
+  }
+
+  .f-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .f-btn {
+    margin-top: 4px;
+    padding: 11px;
+    background: linear-gradient(135deg, #00a884, #008f70);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  /* Equalized Symmetrical Arrow Separator */
+  .flow-arrow-separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00a884;
+    height: 44px; /* Fixed equalized height for symmetrical spacing */
+  }
+
+  .mobile-only-arrow {
+    display: none;
+  }
+
+  .svg-arrow-green {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Authentic Paper File Document Sheet */
+  .paper-file-document {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+  }
+
+  .pdf-generation-status {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #ffffff;
+    color: #0f172a;
+  }
+
+  .simulator-section.is-demo-active .pdf-generation-status { animation: generator-stage 10s ease-in-out infinite; }
+
+  .generator-file-icon { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; color: #00a884; background: rgba(0,168,132,.11); }
+  .generator-file-icon svg { width: 24px; height: 24px; }
+  .pdf-generation-status strong { font-size: 15px; }
+  .pdf-generation-status span { font-size: 11px; color: #64748b; }
+  .pdf-generation-status small { color: #008f70; font-weight: 800; opacity: 0; }
+  .simulator-section.is-demo-active .pdf-generation-status small { animation: ready-label 10s ease infinite; }
+  .generation-track { width: 68%; height: 8px; border-radius: 99px; background: #e2e8f0; overflow: hidden; }
+  .generation-track i { display: block; width: 100%; height: 100%; border-radius: inherit; background: linear-gradient(90deg,#00a884,#4cd9a4); transform: scaleX(0); transform-origin: left; }
+  .simulator-section.is-demo-active .generation-track i { animation: generate-progress 10s ease-in-out infinite; }
+
+  .file-header-ribbon,
+  .paper-sheet-content { opacity: 0; clip-path: inset(0 0 100% 0); }
+  .simulator-section.is-demo-active .file-header-ribbon,
+  .simulator-section.is-demo-active .paper-sheet-content { animation: document-build 10s ease-in-out infinite; }
+
+  .paper-sheet-content::after { content: ""; position: absolute; left: 0; right: 0; height: 2px; background: linear-gradient(90deg,transparent,#00a884,transparent); box-shadow: 0 0 14px rgba(0,168,132,.45); opacity: 0; }
+  .simulator-section.is-demo-active .paper-sheet-content::after { animation: document-scan 10s ease-in-out infinite; }
+
+  @keyframes generate-progress { 0%,22% { transform: scaleX(0); } 50% { transform: scaleX(.72); } 64%,100% { transform: scaleX(1); } }
+  @keyframes ready-label { 0%,56% { opacity: 0; } 62%,72% { opacity: 1; } 78%,100% { opacity: 0; } }
+  @keyframes generator-stage { 0%,62% { opacity: 1; visibility: visible; } 72%,92% { opacity: 0; visibility: hidden; } 98%,100% { opacity: 1; visibility: visible; } }
+  @keyframes document-build { 0%,58% { opacity: 0; clip-path: inset(0 0 100% 0); } 72%,92% { opacity: 1; clip-path: inset(0 0 0 0); } 98%,100% { opacity: 0; clip-path: inset(0 0 100% 0); } }
+  @keyframes document-scan { 0%,58% { top: 0; opacity: 0; } 62% { opacity: 1; } 72% { top: 100%; opacity: 1; } 76%,100% { top: 100%; opacity: 0; } }
+
+  .folded-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 24px 24px 0;
+    border-color: transparent #e2e8f0 transparent transparent;
+    box-shadow: -2px 2px 4px rgba(0,0,0,0.1);
+    z-index: 2;
+  }
+
+  .file-header-ribbon {
+    background: #f1f5f9;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .file-tag-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #7659ef;
+  }
+
+  .file-svg-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .file-type-text {
+    font-size: 9.5px;
+    font-weight: 800;
+    color: #64748b;
+    letter-spacing: 0.05em;
+    margin-right: 20px;
+  }
+
+  .paper-sheet-content {
+    padding: 20px;
+    background: #ffffff;
+  }
+
+  .a4-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+
+  .logo-placeholder-box {
+    border: 2px dashed #94a3b8;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: #f8fafc;
+  }
+
+  .logo-placeholder-box span {
+    font-size: 10px;
+    font-weight: 800;
+    color: #475569;
+    letter-spacing: 0.05em;
+  }
+
+  .a4-doc-info strong {
+    display: block;
+    font-size: 11px;
+    color: #0f172a;
+  }
+
+  .a4-doc-info small {
+    font-size: 10px;
+    color: #64748b;
+  }
+
+  .a4-divider {
+    height: 1px;
+    background: #e2e8f0;
+    margin-bottom: 14px;
+  }
+
+  .a4-summary-table {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .a4-row {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .a4-row span { color: #64748b; font-size: 12px; }
+  .a4-row strong { color: #0f172a; font-size: 12px; }
+
+  .a4-row.highlight-row {
+    background: #f0fdf4;
+    padding: 8px;
+    border-radius: 6px;
+    border-bottom: none;
+  }
+
+  .green-txt { color: #008f70; }
+
+  .a4-footer-note {
+    text-align: center;
+    color: #64748b;
+    font-size: 9.5px;
+  }
+
+  .stage-center-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00a884;
+    padding: 10px;
+  }
+
+  .svg-stage-arrow-direct {
+    width: 28px;
+    height: 28px;
+    color: #00a884;
+  }
+
+  .stage-wa-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wa-stage-tag {
+    font-size: 9.5px;
+    font-weight: 800;
+    color: #008f70;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .wa-pdf-attachment-box {
+    background: #182229;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 4px solid #7659ef;
+    margin-bottom: 6px;
+  }
+
+  .pdf-icon-wrap { font-size: 20px; }
+  .pdf-att-details { flex: 1; }
+  .pdf-att-details strong { display: block; font-size: 12px; color: #e9edef; }
+  .pdf-att-details small { font-size: 10px; color: #8696a0; }
+
+  .wa-gap-divider { text-align: center; margin: 8px 0; }
+  .wa-gap-divider span {
+    background: #182229;
+    color: #8696a0;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 8px;
+  }
+
+  .closing-impact-banner {
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 18px;
+    max-width: 680px;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+
+  .closing-impact-banner p {
+    font-size: 13.5px;
+    color: #334155;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .stage-container {
+      grid-template-columns: 1fr;
+    }
+    .mobile-only-arrow {
+      display: flex;
+    }
+    .stage-center-arrow {
+      display: none;
+    }
+  }
+</style>

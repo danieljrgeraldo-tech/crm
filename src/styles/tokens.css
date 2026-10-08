@@ -1,0 +1,75 @@
+/* Tokens visuais — Daniel Junior V2 */
+:root {
+  /* Cores */
+  --paper: #F1ECE3;
+  --paper-light: #F8F5EF;
+  --paper-dark: #E8E2D6;
+  --ink: #191815;
+  --graphite: #292722;
+  --muted: #777166;
+  --line: #CEC5B8;
+  --line-light: #E0D9CE;
+  --wine: #642E2B;
+  --wine-dark: #4A2220;
+  --copper: #A46743;
+  --copper-light: #C2825D;
+  --white: #FCFBF8;
+
+  /* Tipografia */
+  --font-display: "Newsreader Variable", Georgia, "Times New Roman", serif;
+  --font-sans: "Geist Sans Variable", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Tamanhos */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.5rem;
+  --text-6xl: 5rem;
+  --text-7xl: 6.5rem;
+  --text-8xl: 8rem;
+
+  /* Espaçamento */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 6rem;
+  --space-16: 8rem;
+  --space-20: 12rem;
+
+  /* Grid */
+  --max-site: 1440px;
+  --max-content: 1280px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+
+  /* Transições */
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+  --duration-slow: 800ms;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --text-7xl: 4.5rem;
+    --text-8xl: 5.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --text-5xl: 2.5rem;
+    --text-6xl: 3rem;
+    --text-7xl: 3.5rem;
+    --text-8xl: 4rem;
+  }
+}

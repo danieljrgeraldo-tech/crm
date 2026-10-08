@@ -1,0 +1,241 @@
+---
+import WhatsappUI from "./WhatsappUI.astro";
+
+const whatsappUrl = "https://wa.me/5548998493150?text=Ol%C3%A1%2C%20Daniel.%20Quero%20ver%20como%20a%20IA%20financeira%20no%20WhatsApp%20funciona%20na%20minha%20opera%C3%A7%C3%A3o.";
+---
+
+<section id="inicio" class="hero-section">
+  <div class="hero-glow-bg" aria-hidden="true"></div>
+  <div class="shell hero-layout">
+    
+    <!-- Hero Copy -->
+    <div class="hero-text-content">
+      <div class="hero-tag">OPERAÇÕES FINANCEIRAS NO WHATSAPP</div>
+      <h1 class="hero-title">
+        Uma IA no WhatsApp que calcula parcelas, qualifica crédito e <span class="highlight">prepara o fechamento.</span>
+      </h1>
+      <p class="hero-lead">
+        Ela simula consórcio e home equity, explica lances e prazos com naturalidade, gera a proposta em PDF e entrega o cliente pronto para o seu consultor fechar.
+      </p>
+      <div class="hero-cta-bar">
+        <a href={whatsappUrl} target="_blank" rel="noreferrer" class="btn-primary">
+          Ver na prática no WhatsApp <span class="arrow">↗</span>
+        </a>
+        <a href="#simulacao" class="btn-secondary">
+          Como funciona a simulação <span class="arrow">↓</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero Visual Stage: Ultra-Faithful WhatsApp Interface with Integrated Internal AI Notes -->
+    <div class="hero-stage">
+      <div class="hero-whatsapp-container">
+        <WhatsappUI contactName="Daniel Junior · Crédito" contactStatus="online agora" avatarUrl="/images/people/fernanda.jpg" class="hero-live-chat">
+          <div data-chat-playback data-chat-loop data-chat-bottom-up class="hero-chat-sequence">
+          <div class="wa-bubble incoming" data-chat-step data-chat-delay="250">
+            Boa tarde! Vi a postagem sobre consórcio imobiliário. Como funciona essa meia-parcela até contemplar?
+            <span class="wa-meta">14:22</span>
+          </div>
+          <div class="wa-typing" data-chat-step data-chat-delay="1450"><i></i><i></i><i></i></div>
+          <div class="wa-bubble outgoing" data-chat-step data-chat-delay="2600">
+            Boa tarde! Funciona assim: você paga metade da parcela mensalmente. Em uma carta de R$ 300 mil, fica em torno de R$ 980 até a contemplação por sorteio ou lance.
+            <span class="wa-meta">14:23 <span class="wa-checks">✓✓</span></span>
+          </div>
+          <div class="wa-bubble incoming" data-chat-step data-chat-delay="4200">
+            E se eu quiser ofertar lance embutido, preciso tirar dinheiro do bolso?
+            <span class="wa-meta">14:24</span>
+          </div>
+          <div class="wa-typing" data-chat-step data-chat-delay="5600"><i></i><i></i><i></i></div>
+          <div class="wa-bubble outgoing" data-chat-step data-chat-delay="6800">
+            Não precisa! O lance embutido desconta até 30% do valor da própria carta. Você potencializa a sua chance sem descapitalizar o seu caixa.
+            <span class="wa-meta">14:25 <span class="wa-checks">✓✓</span></span>
+          </div>
+          </div>
+        </WhatsappUI>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    position: relative;
+    padding: 130px 0 90px;
+    background: #0f172a;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  .hero-glow-bg {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 168, 132, 0.12) 0%, rgba(118, 89, 239, 0.06) 60%, transparent 80%);
+    filter: blur(90px);
+    pointer-events: none;
+  }
+
+  .shell {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(0, 168, 132, 0.15);
+    color: #00a884;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.3rem, 3.8vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: #f1f5f9;
+  }
+
+  .hero-title .highlight {
+    color: #4cd9a4;
+  }
+
+  .hero-lead {
+    margin-top: 18px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    max-width: 500px;
+  }
+
+  .hero-cta-bar {
+    display: flex;
+    gap: 14px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 26px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #00a884 0%, #008f70 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.98rem;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0, 168, 132, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(0, 168, 132, 0.4);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 22px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #cbd5e1;
+    font-weight: 600;
+    font-size: 0.98rem;
+    text-decoration: none;
+  }
+
+  /* Stage */
+  .hero-stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-whatsapp-container {
+    width: 100%;
+  }
+
+  .hero-chat-sequence {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 8px;
+    min-height: 410px;
+  }
+
+  .hero-whatsapp-container :global(.wa-chat-body) {
+    min-height: 410px;
+    max-height: 410px;
+  }
+
+  @media (max-width: 900px) {
+    .hero-chat-sequence { min-height: 410px; }
+    .hero-whatsapp-container :global(.wa-chat-body) { min-height: 410px; max-height: 410px; }
+  }
+
+  .compact-bubble { margin-top: -4px; }
+
+  .audio-bubble {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 210px;
+  }
+
+  .audio-play {
+    display: grid;
+    place-items: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #00a884;
+    color: #0b141a;
+    font-size: 9px;
+  }
+
+  .audio-wave { color: #94a3b8; letter-spacing: 1px; }
+  .audio-bubble small { color: #94a3b8; font-size: 9px; }
+
+  @media (max-width: 900px) {
+    .hero-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      text-align: center;
+    }
+
+    .hero-lead {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta-bar {
+      justify-content: center;
+    }
+  }
+</style>

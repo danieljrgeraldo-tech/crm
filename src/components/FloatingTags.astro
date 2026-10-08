@@ -1,0 +1,11 @@
+---
+import { floatingTags } from "../data/site";
+---
+
+<div class="pointer-events-none absolute inset-0 z-20">
+  {floatingTags.map((tag, index) => (
+    <span class={`floating-tag floating-tag-${index + 1}`}>
+      {tag}
+    </span>
+  ))}
+</div>

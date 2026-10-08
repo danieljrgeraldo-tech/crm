@@ -1,0 +1,225 @@
+---
+import WhatsappUI from "./WhatsappUI.astro";
+---
+
+<section id="followup" class="followup-section">
+  <div class="shell">
+    <div class="section-grid">
+      <!-- Text & Logic -->
+      <div class="text-content">
+        <span class="section-tag">FOLLOW-UP CONTEXTUAL</span>
+        <h2 class="section-title">
+          O cliente parou de responder? <br />
+          <span class="highlight">Ela chama de novo.</span>
+        </h2>
+        <p class="section-desc">
+          Você define a estratégia. A IA acompanha a conversa específica, percebe a ausência de resposta e retoma no momento exato com todo o contexto anterior.
+        </p>
+
+        <div class="logic-flow">
+          <div class="logic-step">
+            <span class="step-num badge-teal">01</span>
+            <div class="step-body">
+              <strong>Silêncio Identificado</strong>
+              <p>Simulação da carta de R$ 300 mil ficou sem retorno após o envio da proposta em PDF.</p>
+            </div>
+          </div>
+
+          <div class="logic-step highlight-step">
+            <span class="step-num badge-green">02</span>
+            <div class="step-body">
+              <strong>Reabordagem Contextual</strong>
+              <p>A mensagem retoma o prazo de assembleia, a parcela e a estratégia de lance.</p>
+            </div>
+          </div>
+
+          <div class="logic-step success-step">
+            <span class="step-num badge-purple">03</span>
+            <div class="step-body">
+              <strong>Cliente Respondeu → Cancelamento Automático</strong>
+              <p>O fluxo de cadência é pausado imediatamente sem incomodar o cliente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Content (WhatsApp with Integrated System Notes) -->
+      <div class="visual-content">
+        <WhatsappUI contactName="Ricardo Silveira" contactStatus="online agora" avatarUrl="/images/people/fernanda.jpg">
+          <div data-chat-playback data-chat-loop class="followup-chat-sequence">
+          <div class="wa-time-divider" data-chat-step data-chat-delay="100"><span>Ontem — 15:43</span></div>
+          <div class="wa-bubble outgoing" data-chat-step data-chat-delay="450">
+            Ricardo, deixei a simulação da carta de R$ 300 mil com a opção de meia-parcela de R$ 980 aqui em cima. Se quiser simular com 20% ou 30% de lance embutido, me avisa que calculo na hora.
+            <span class="wa-meta">15:43 <span class="wa-checks">✓✓</span></span>
+          </div>
+
+          <div class="wa-time-divider highlight-time" data-chat-step data-chat-delay="1500"><span>Hoje — 10:00</span></div>
+
+          <div class="wa-typing" data-chat-step data-chat-delay="2650"><i></i><i></i><i></i></div>
+          <div class="wa-bubble outgoing" data-chat-step data-chat-delay="3400">
+            Oi, Ricardo! Conseguiu avaliar a simulação? Como a data de corte para a próxima assembleia é dia 18, dá tempo de registrar seu lance se você quiser participar neste mês.
+            <span class="wa-meta">10:01 <span class="wa-checks">✓✓</span></span>
+          </div>
+
+          <div class="wa-bubble incoming" data-chat-step data-chat-delay="4750">
+            oi, vi sim! fiquei em dúvida se eu posso usar o saldo do meu FGTS pra dar lance nessa carta
+            <span class="wa-meta">10:12</span>
+          </div>
+
+          <div class="wa-typing" data-chat-step data-chat-delay="5950"><i></i><i></i><i></i></div>
+          <div class="wa-bubble outgoing" data-chat-step data-chat-delay="6750">
+            Pode sim! Para consórcio imobiliário você pode usar 100% do FGTS tanto para lance quanto para amortizar o saldo devedor depois. Quer que eu veja o valor que você tem disponível?
+            <span class="wa-meta">10:13 <span class="wa-checks">✓✓</span></span>
+          </div>
+          </div>
+        </WhatsappUI>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .followup-section {
+    padding: 90px 0;
+    background: #0f172a;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .shell {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .section-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(0, 168, 132, 0.15);
+    color: #00a884;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+  }
+
+  .section-title .highlight {
+    color: #4cd9a4;
+  }
+
+  .section-desc {
+    margin-top: 16px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #94a3b8;
+  }
+
+  .logic-flow {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* Clean High-Contrast Cards for Logic Steps */
+  .logic-step {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .logic-step:hover {
+    transform: translateX(4px);
+  }
+
+  .logic-step.highlight-step {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: #1e293b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .logic-step.success-step {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: #1e293b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .step-num {
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 10px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .badge-teal { background: rgba(0, 168, 132, 0.2); color: #4cd9a4; border: 1px solid rgba(0, 168, 132, 0.4); }
+  .badge-green { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+  .badge-purple { background: rgba(0, 168, 132, 0.2); color: #4cd9a4; border: 1px solid rgba(0, 168, 132, 0.4); }
+
+  .step-body strong {
+    display: block;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+
+  .step-body p {
+    font-size: 12px;
+    color: #cbd5e1;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .visual-content {
+    position: relative;
+  }
+
+  .followup-chat-sequence { display: flex; flex-direction: column; gap: 9px; }
+
+  .wa-time-divider { text-align: center; margin: 8px 0; }
+  .wa-time-divider span {
+    background: #182229;
+    color: #8696a0;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 10px;
+  }
+
+  .wa-time-divider.highlight-time span {
+    background: rgba(0, 168, 132, 0.2);
+    color: #00a884;
+    border: 1px solid rgba(0, 168, 132, 0.3);
+  }
+
+  @media (max-width: 900px) {
+    .section-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
